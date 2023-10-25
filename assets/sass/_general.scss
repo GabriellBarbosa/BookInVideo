@@ -1,0 +1,26 @@
+:root {
+    --gray-0: #000000;
+    --gray-1: #0E1013;
+    --gray-2: #1B1B1B;
+    --gray-3: #282A2D;
+    --gray-4: #606163;
+    --gray-5: #b0b2b3;
+    --gray-6: #d4d6d8;
+    --gray-7: #eee5e0;
+    --gray-8: #ffffff;
+
+    --c-0-light: #d79c6b;
+    --c-0-dark: #955A29;
+    --c-1-dark: #39200A;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1160px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
