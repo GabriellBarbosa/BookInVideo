@@ -17,7 +17,7 @@
                 </svg>
             </a>
 
-            <div class="menu_links">
+            <div class="menu">
                 <div id="hamburguer_menu">
                     <span class="line"></span>
                 </div>
