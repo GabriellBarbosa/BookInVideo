@@ -9,25 +9,12 @@ describe('MenuMobileControl', () => {
         menuElement = document.createElement('menuElement');
     });
 
-    // it('add active class to button and menuElement', () => {
-    //     const menuMobileControl = new MenuMobileControl(button, menuElement);
-
-    //     menuMobileControl.execute();
-    //     button.click();
-    
-    //     expect([ ...button.classList ]).toContain("active");
-    //     expect([ ...menuElement.classList ]).toContain("active");
-    // });
-
-    it('button and menuElement active class should be equal', () => {
+    it('add active class to menuElement on button click', () => {
         const menuMobileControl = new MenuMobileControl(button, menuElement);
-        
-        menuElement.classList.add('active');
-        
+
         menuMobileControl.execute();
         button.click();
     
-        expect([ ...button.classList ]).toContain("active");
         expect([ ...menuElement.classList ]).toContain("active");
     });
 })

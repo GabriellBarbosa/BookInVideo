@@ -14,15 +14,7 @@ class MenuMobileControl {
     }
 
     _toggleActive() {
-        this._buttonElement.classList.toggle('active');
-
-        if (
-            (this._buttonElement.classList.contains('active') && this._menuElement.classList.contains('active')) ||
-            (!this._buttonElement.classList.contains('active') && !this._menuElement.classList.contains('active'))
-        ) {
-            console.log(`chamou`)
-            this._menuElement.classList.toggle('active');
-        }
+        this._menuElement.classList.toggle('active');
     }
 }
 
