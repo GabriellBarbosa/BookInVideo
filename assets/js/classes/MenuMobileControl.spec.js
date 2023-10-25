@@ -1,4 +1,4 @@
-const MenuMobileControl = require('./MenuMobileControl');
+import MenuMobileControl from './MenuMobileControl';
 
 describe('MenuMobileControl', () => {
     let button;

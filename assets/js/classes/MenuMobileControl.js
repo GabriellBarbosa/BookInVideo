@@ -26,4 +26,4 @@ class MenuMobileControl {
     }
 }
 
-module.exports = MenuMobileControl;
+export default MenuMobileControl;
