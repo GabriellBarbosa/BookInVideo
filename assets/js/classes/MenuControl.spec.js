@@ -18,7 +18,7 @@ describe('MenuControl class', () => {
         expect([ ...menuElement.classList ]).toContain("active");
     });
 
-    it('remove active class to menuElement on button click', () => {
+    it('remove active class in menuElement on button click', () => {
         const menuControl = new MenuControl(button, menuElement);
 
         menuElement.classList.add('active');
