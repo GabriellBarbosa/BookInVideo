@@ -2,11 +2,11 @@
     background-color: var(--gray-0);
 
     .navigation {
+        min-height: 70px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        min-height: 70px;
         @media only screen and (max-width: 760px) {
             min-height: 52px;
         }
@@ -15,15 +15,19 @@
             padding: 20px 0;
         }
 
-        .menu {
+        #header_menu {
             #hamburguer_menu {
+                display: none;
                 width: 40px;
                 height: 40px;
                 background-color: var(--gray-3);
                 border-radius: 4px;
                 cursor: pointer;
 
-                display: none;
+                &:hover {
+                    background-color: var(--gray-4);
+                }
+
                 @media only screen and (max-width: 760px) {
                     & {
                         display: flex;
@@ -31,11 +35,6 @@
                         align-items: center;
                     }
                 }
-
-                &:hover {
-                    background-color: var(--gray-4);
-                }
-
 
                 span.line {
                     display: block;
@@ -58,24 +57,6 @@
     
                     &::after {
                         top: 8px;
-                    }
-                }
-            }
-
-            #hamburguer_menu.active {
-                span.line {
-                    background-color: transparent;
-
-                    &::before, &::after {
-                        top: 0;
-                    }
-
-                    &::before {
-                        transform: rotate(45deg);
-                    }
-
-                    &::after {
-                        transform: rotate(-45deg);
                     }
                 }
             }
@@ -141,6 +122,32 @@
                             }
                         }
                     }
+                }
+            }
+        }
+
+        #header_menu.active {
+            #hamburguer_menu {
+                span.line {
+                    background-color: transparent;
+
+                    &::before, &::after {
+                        top: 0;
+                    }
+
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 760px) {
+                .links_container {
+                    display: block;
                 }
             }
         }

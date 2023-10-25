@@ -1,7 +1,7 @@
 import MenuMobileController from './classes/MenuMobileController.js';
 
 const menuMobileController = new MenuMobileController(
-    ".menu #hamburguer_menu", 
-    ".menu .links_container"
+    "#header_menu #hamburguer_menu", 
+    "#header_menu"
 );
 menuMobileController.init();
