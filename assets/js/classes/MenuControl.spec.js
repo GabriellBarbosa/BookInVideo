@@ -1,6 +1,6 @@
-import MenuMobileControl from './MenuMobileControl';
+import MenuControl from './MenuControl';
 
-describe('MenuMobileControl', () => {
+describe('MenuControl class', () => {
     let button;
     let menuElement;
 
@@ -10,9 +10,9 @@ describe('MenuMobileControl', () => {
     });
 
     it('add active class to menuElement on button click', () => {
-        const menuMobileControl = new MenuMobileControl(button, menuElement);
+        const menuControl = new MenuControl(button, menuElement);
 
-        menuMobileControl.execute();
+        menuControl.execute();
         button.click();
     
         expect([ ...menuElement.classList ]).toContain("active");

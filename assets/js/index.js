@@ -1,13 +1,13 @@
-import MenuMobileControl from './classes/MenuMobileControl.js';
+import MenuControl from './classes/MenuControl.js';
 
-initMobileMenuControl();
+initMenuControl();
 
-function initMobileMenuControl() {
+function initMenuControl() {
     const menuButton = document.querySelector('#header_menu #hamburguer_menu');
     const menuElement = document.querySelector('#header_menu');
     
     if (menuButton && menuElement) {
-        const menuMobileControl = new MenuMobileControl(menuButton, menuElement);
-        menuMobileControl.execute();
+        const menuControl = new MenuControl(menuButton, menuElement);
+        menuControl.execute();
     }
 }

@@ -1,4 +1,4 @@
-class MenuMobileControl {
+class MenuControl {
     _buttonElement;
     _menuElement;
 
@@ -18,4 +18,4 @@ class MenuMobileControl {
     }
 }
 
-export default MenuMobileControl;
+export default MenuControl;
