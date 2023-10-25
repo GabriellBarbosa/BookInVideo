@@ -12,7 +12,7 @@ describe('MenuControl class', () => {
     it('add active class to menuElement on button click', () => {
         const menuControl = new MenuControl(button, menuElement);
 
-        menuControl.execute();
+        menuControl.init();
         button.click();
     
         expect([ ...menuElement.classList ]).toContain("active");
@@ -22,7 +22,7 @@ describe('MenuControl class', () => {
         const menuControl = new MenuControl(button, menuElement);
 
         menuElement.classList.add('active');
-        menuControl.execute();
+        menuControl.init();
         button.click();
     
         expect([ ...menuElement.classList ]).not.toContain("active");

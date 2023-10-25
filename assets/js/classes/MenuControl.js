@@ -9,7 +9,7 @@ class MenuControl {
         this._toggleActive = this._toggleActive.bind(this);
     }
 
-    execute() {
+    init() {
         this._buttonElement.addEventListener('click', this._toggleActive);
     }
 

@@ -8,6 +8,6 @@ function initMenuControl() {
     
     if (menuButton && menuElement) {
         const menuControl = new MenuControl(menuButton, menuElement);
-        menuControl.execute();
+        menuControl.init();
     }
 }
