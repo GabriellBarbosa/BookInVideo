@@ -10,6 +10,7 @@
     
         @media only screen and (max-width: 760px) {
             background-image: url('assets/images/banner-mobile.jpg');
+            background-attachment: scroll;
         }
     
         .banner {
@@ -92,6 +93,7 @@
             border-radius: 0.25rem;
 
             @media only screen and (max-width: 760px) {
+                position: static;
                 width: 100%;
                 max-width: 30.313rem;
             }
