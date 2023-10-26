@@ -40,17 +40,15 @@
         <div class="container">
             <h2 class="plan_subscription_title">Assinatura</h2>
             <p class="plan_subscription_subtitle">Tenha acesso vitalício ao BookInVideo</p>
-            <div class="plan_wrapper">
+            <div class="plan_card">
                 <h2>Vitalício</h2>
                 <ul class="plan_benefits">
                     <li>Acesso Ilimitado</li>
                     <li>Suporte</li>
                     <li>Certificado de Conclusão</li>
                 </ul>
-    
-                <span>R$ 70</span>
-    
-                <button>Assinar</button>
+                <span class="plan_price">R$ 70</span>
+                <button class="plan_subscription_btn">Assinar</button>
             </div>
         </div>
     </section>
