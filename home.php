@@ -35,6 +35,25 @@
             <p>Os exemplos desse curso estão em JavaScript, porém os conceitos aprendidos aqui não se limitam a apenas uma linguagem de programação. </p>
         </div>
     </main>
+
+    <section class="plan">
+        <div class="container">
+            <h2 class="plan_subscription_title">Assinatura</h2>
+            <p class="plan_subscription_subtitle">Tenha acesso vitalício ao BookInVideo</p>
+            <div class="plan_wrapper">
+                <h2>Vitalício</h2>
+                <ul class="plan_benefits">
+                    <li>Acesso Ilimitado</li>
+                    <li>Suporte</li>
+                    <li>Certificado de Conclusão</li>
+                </ul>
+    
+                <span>R$ 70</span>
+    
+                <button>Assinar</button>
+            </div>
+        </div>
+    </section>
 </div>
 
 <?php get_footer() ?>

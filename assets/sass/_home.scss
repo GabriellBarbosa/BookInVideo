@@ -179,4 +179,61 @@
             }
         }
     }
+
+    .plan {
+        background-color: var(--gray-3);
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        display: flex;
+        align-items: center;
+
+        .plan_subscription_title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .plan_subscription_subtitle {
+            font-size: 0.875rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: var(--gray-6);
+            margin-top: 0.625rem;
+            text-align: center;
+        }
+
+        .plan_wrapper {
+            margin-top: 1.25rem;
+            padding: 1.25rem;
+            border: 0.063rem solid var(--c-1-dark);
+            background-color: var(--gray-0);
+            border-radius: 4px;
+            width: 18.625rem;
+
+            .plan_benefits {
+                margin-top: 0.625rem;
+
+                > li {
+                    display: flex;
+                    align-items: center;
+                    padding: 0.625rem 0;
+                    border-bottom: 0.063rem solid var(--c-1-dark);
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: 1rem;
+                    line-height: 1.438rem;
+                    color: var(--gray-6);
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 1rem;
+                        height: 1rem;
+                        background-image: url('assets/images/check-icon.svg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin-right: 0.625rem;
+                    }
+                }
+            }
+        }
+    }
 }
