@@ -1,4 +1,4 @@
-#page-home {
+#page-home {    
     .intro {
         background-image: url('assets/images/banner.jpg');
         background-repeat: no-repeat;
@@ -72,9 +72,11 @@
     }
 
     .course {
+        margin-top: 40px;
         display: flex;
         align-items: start;
-
+        justify-content: center;
+        
         .clean_code_course {
             display: flex;
             min-width: 360px;
@@ -138,6 +140,28 @@
                         }
                     }
                 }
+            }
+        }
+
+        .clean_code_description {
+            margin-left: 40px;
+            max-width: 485px;
+
+            > h3 {
+                font-size: 14px;
+                font-weight: bold;
+                margin-top: 20px;
+                &:first-child {
+                    margin-top: 0px;
+                }
+            }
+
+            > p {
+                font-size: 14px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                line-height: 20px;
+                color: var(--gray-5);
+                margin-top: 10px;
             }
         }
     }

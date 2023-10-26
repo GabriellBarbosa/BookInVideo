@@ -26,7 +26,7 @@
             </div>
         </div>
     
-        <div>
+        <div class="clean_code_description">
             <h3>Para quem é esse curso?</h3>
             <p>Esse curso é voltado para pessoas que já sabem programar e desejam escrever códigos melhores.</p>
             <h3>Sobre o curso</h3>
