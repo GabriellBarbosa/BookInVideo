@@ -34,6 +34,9 @@ $stylesheet_directory_uri = get_stylesheet_directory_uri();
         <div class="copyright">
             <div class="container">
                 <p>BookInVideo © 2024. Alguns direitos reservados. CNPJ: 0001.5563/5563-00</p>
+                <div class="footer_logo_mobile">
+                    <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt=""></a>
+                </div>
             </div>
         </div>
     </footer>
