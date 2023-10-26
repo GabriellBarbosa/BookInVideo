@@ -9,7 +9,6 @@
     
         @media only screen and (max-width: 760px) {
             background-image: url('assets/images/banner-mobile.jpg');
-        
         }
     
         .banner {
@@ -76,13 +75,23 @@
         display: flex;
         align-items: start;
         justify-content: center;
-        
+
+        @media only screen and (max-width: 760px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
         .clean_code_course {
             display: flex;
             min-width: 360px;
             background-color: var(--gray-0);
             border: 1px solid var(--c-1-dark);
             border-radius: 4px;
+
+            @media only screen and (max-width: 760px) {
+                width: 100%;
+                max-width: 485px;
+            }
 
             .clean_code_info {
                 padding: 20px;
@@ -146,6 +155,11 @@
         .clean_code_description {
             margin-left: 40px;
             max-width: 485px;
+
+            @media only screen and (max-width: 760px) {
+                margin-top: 40px;
+                margin-left: 0px;
+            }
 
             > h3 {
                 font-size: 14px;
