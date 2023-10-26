@@ -50,6 +50,13 @@
                 <span class="plan_price">R$ 70</span>
                 <button class="plan_subscription_btn">Assinar</button>
             </div>
+            <div class="payment_methods_wrapper">
+                <ul class="payment_methods_list">
+                    <li>Crédito</li>
+                    <li>Pix</li>
+                    <li>Boleto</li>
+                </ul>
+            </div>
         </div>
     </section>
 </div>

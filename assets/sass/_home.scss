@@ -255,5 +255,57 @@
                 cursor: pointer;
             }
         }
+
+        .payment_methods_wrapper {
+            &::after {
+                content: "";
+                display: block;
+                width: 1.25rem;
+                height: 0.125rem;
+                margin: 1.25rem auto 2.5rem auto;
+                background-color: var(--gray-5);
+            }
+
+            .payment_methods_list {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 2.5rem;
+    
+                li {
+                    position: relative;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                    font-size: 0.875rem;
+                    margin-right: 1.563rem;
+                }
+
+                li:last-child {
+                    margin-right: 0;
+                }
+    
+                li:nth-child(2) {
+                    &::before, &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        width: 0.313rem;
+                        height: 0.313rem;
+                        background-color: var(--c-0-light);
+                        border-radius: 50%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+    
+                    &::before {
+                        left: -0.938rem;
+                    }
+    
+                    &::after {
+                        right: -0.938rem;
+                    }
+                }
+            }
+        }
     }
 }
