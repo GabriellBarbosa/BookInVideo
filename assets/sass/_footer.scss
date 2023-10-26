@@ -5,11 +5,25 @@
     .footer_wrapper {
         display: flex;
         align-items: start;
+
+        @media only screen and (max-width: 860px) {
+            .footer_logo {
+                display: none;
+            }
+        }
     
         .footer_links {
             display: flex;
             ul {
                 margin-left: 3.75rem;
+
+                &:first-child {
+                    @media only screen and (max-width: 860px) {
+                        & {
+                            margin-left: 0;
+                        }
+                    }
+                }
 
                 p {
                     font-size: 1rem;
@@ -41,6 +55,12 @@
 
         p {
             font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        @media only screen and (max-width: 860px) {
+            p {
+                text-align: center;
+            }
         }
     }
 }

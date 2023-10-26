@@ -6,7 +6,7 @@ $stylesheet_directory_uri = get_stylesheet_directory_uri();
     <footer id="footer_component">
         <div class="container">
             <div class="footer_wrapper">
-                <div>
+                <div class="footer_logo">
                     <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt=""></a>
                 </div>
                 <div class="footer_links">
