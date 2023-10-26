@@ -1,0 +1,46 @@
+#footer_component {
+    padding-top: 2.5rem;
+    background-color: var(--gray-1);
+
+    .footer_wrapper {
+        display: flex;
+        align-items: start;
+    
+        .footer_links {
+            display: flex;
+            ul {
+                margin-left: 3.75rem;
+
+                p {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-bottom: 1.25rem;
+                }
+
+                li {
+                    color: var(--gray-5);
+                    margin-bottom: 0.625rem;
+                    a {
+                        font-size: 1rem;
+                        font-family: Georgia, 'Times New Roman', Times, serif;
+                        line-height: 1.438rem;
+                        color: var(--gray-5);
+
+                        &:hover {
+                            color: var(--c-0-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        padding: 2.5rem 0;
+        border-top: 0.063rem solid var(--c-1-dark);
+
+        p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    }
+}
