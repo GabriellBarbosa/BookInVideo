@@ -22,11 +22,15 @@
         }
     
         .intro_title {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: bold;
             color: var(--gray-7);
             text-transform: uppercase;
             text-align: center;
+
+            @media only screen and (max-width: 760px) {
+                font-size: 1.5rem;
+            }
         }
     
         .intro_quote {
@@ -34,7 +38,7 @@
             p {
                 position: relative;
                 display: block;
-                max-width: 13.125rem;
+                max-width: 15rem;
                 margin-top: 2.5rem;
                 color: var(--gray-7);
                 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -70,6 +74,8 @@
             color: var(--gray-7);
             margin-top: 1.875rem;
             font-style: normal;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     }
 

@@ -5,7 +5,7 @@
         <div class="banner container">
             <h1 class="intro_title">Curso de Código Limpo</h1>
             <blockquote class="intro_quote">
-                <p>"Atenção nas pequenas coisas não é uma coisa pequena."</p>
+                <p>"Código limpo sempre parece ter sido escrito por alguém que se importa."</p>
             </blockquote>
             <cite class="intro_quoter">Robert C. Martin</cite>
         </div>
