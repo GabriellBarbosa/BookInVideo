@@ -13,7 +13,7 @@
     
     <main class="course container">
         <div class="clean_code_course">
-            <div>
+            <div class="clean_code_cover">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/clean-code-cover.png" alt="">
             </div>
             <div class="clean_code_info">

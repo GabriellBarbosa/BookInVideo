@@ -26,6 +26,7 @@
             font-weight: bold;
             color: var(--gray-7);
             text-transform: uppercase;
+            text-align: center;
         }
     
         .intro_quote {
@@ -96,7 +97,12 @@
             @media only screen and (max-width: 760px) {
                 position: static;
                 width: 100%;
-                max-width: 30.313rem;
+                max-width: 22.5rem;
+                min-width: 0;
+            }
+
+            .clean_code_cover {
+                min-width: 80px;
             }
 
             .clean_code_info {
@@ -122,12 +128,18 @@
 
                 .clean_code_items {
                     display: flex;
+                    flex-wrap: wrap;
+
                     p {
                         font-size: 0.875rem;
                         font-family: Georgia, 'Times New Roman', Times, serif;
                         color: var(--gray-5);
                         margin-right: 1.563rem;
                         position: relative;
+
+                        @media only screen and (max-width: 380px) {
+                            padding-top: 0.313rem;
+                        }
 
                         &.clean_code_certificate {
                             margin-right: 0px;
@@ -143,6 +155,10 @@
                             background-color: var(--c-0-light);
                             top: 50%;
                             transform: translateY(-50%);
+
+                            @media only screen and (max-width: 380px) {
+                                display: none;
+                            }
                         }
 
                         &.clean_code_hours::before {
