@@ -224,12 +224,19 @@
         }
 
         .plan_card {
+            display: block;
             margin-top: 1.25rem;
             padding: 1.25rem;
             border: 0.063rem solid var(--c-1-dark);
             background-color: var(--gray-0);
             border-radius: 4px;
             width: 18.625rem;
+
+            @media only screen and (max-width: 380px) {
+                width: 100%;
+                max-width: 18.625rem;
+                min-width: 0;
+            }
 
             .plan_benefits {
                 margin-top: 0.625rem;
