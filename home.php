@@ -48,7 +48,7 @@
                     <li>Certificado de Conclusão</li>
                 </ul>
                 <span class="plan_price">R$ 70</span>
-                <button class="plan_subscription_btn">Assinar</button>
+                <a class="plan_subscription_btn">Assinar</a>
             </div>
             <div class="payment_methods_wrapper">
                 <ul class="payment_methods_list">

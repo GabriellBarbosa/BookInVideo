@@ -283,12 +283,18 @@
                 display: block;
                 margin: 1.25rem auto 0 auto;
                 padding: 0.625rem 2.5rem;
-                font-size: 1rem;
+                font-size: 1.25rem;
                 border-radius: 0.25rem;
                 background-color: var(--c-0-dark);
                 color: var(--gray-8);
                 text-align: center;
+                width: fit-content;
                 cursor: pointer;
+                transition: all .2s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
 
