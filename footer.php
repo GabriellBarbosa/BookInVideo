@@ -7,7 +7,7 @@ $stylesheet_directory_uri = get_stylesheet_directory_uri();
         <div class="container">
             <div class="footer_wrapper">
                 <div class="footer_logo">
-                    <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt=""></a>
+                    <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt="bookinvideo"></a>
                 </div>
                 <div class="footer_links">
                     <ul>
@@ -35,7 +35,7 @@ $stylesheet_directory_uri = get_stylesheet_directory_uri();
             <div class="container">
                 <p>BookInVideo © 2024. Alguns direitos reservados. CNPJ: 0001.5563/5563-00</p>
                 <div class="footer_logo_mobile">
-                    <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt=""></a>
+                    <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt="bookinvideo"></a>
                 </div>
             </div>
         </div>
