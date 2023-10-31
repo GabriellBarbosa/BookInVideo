@@ -10,24 +10,30 @@ $stylesheet_directory_uri = get_stylesheet_directory_uri();
                     <a href="/"><img src="<?= $stylesheet_directory_uri; ?>/assets/images/logo.svg" alt="bookinvideo"></a>
                 </div>
                 <div class="footer_links">
-                    <ul>
+                    <div class="links_wrapper">
                         <p class="link_list_title">Mapa do site</p>
-                        <li class=""><a href="">Home</a></li>
-                        <li class=""><a href="">Minha Conta</a></li>
-                        <li class=""><a href="">Contato</a></li>
-                        <li class=""><a href="">Termos</a></li>
-                        <li class=""><a href="">Privacidade</a></li>
-                    </ul>
-                    <ul>
+                        <ul>
+                            <li class=""><a href="">Home</a></li>
+                            <li class=""><a href="">Minha Conta</a></li>
+                            <li class=""><a href="">Contato</a></li>
+                            <li class=""><a href="">Termos</a></li>
+                            <li class=""><a href="">Privacidade</a></li>
+                        </ul>
+                    </div>
+                    <div class="links_wrapper">
                         <p class="link_list_title">Fique por dentro</p>
-                        <li class=""><a href="">instagram.com/bookinvideo</a></li>
-                        <li class=""><a href="">facebook.com/bookinvideo</a></li>
-                        <li class=""><a href="">linkedIn.com/bookinvideo</a></li>
-                    </ul>
-                    <ul>
+                        <ul>
+                            <li class=""><a href="">instagram.com/bookinvideo</a></li>
+                            <li class=""><a href="">facebook.com/bookinvideo</a></li>
+                            <li class=""><a href="">linkedIn.com/bookinvideo</a></li>
+                        </ul>
+                    </div>
+                    <div class="links_wrapper">
                         <p class="link_list_title">Ajuda</p>
-                        <li class=""><a href="">suporte@bookinvideo.com</a></li>
-                    </ul>
+                        <ul>
+                            <li class=""><a href="">suporte@bookinvideo.com</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

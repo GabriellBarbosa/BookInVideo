@@ -19,7 +19,7 @@
                 flex-direction: column;
             }
 
-            ul {
+            .links_wrapper {
                 margin-left: 3.75rem;
 
                 @media only screen and (max-width: 860px) {
@@ -33,24 +33,26 @@
                     margin-bottom: 2.5rem;
                 }
 
-                p {
+
+                p.link_list_title {
                     font-size: 1rem;
                     font-weight: bold;
                     margin-bottom: 1.25rem;
                 }
+            }
 
-                li {
+            ul li {
+                color: var(--gray-5);
+                margin-bottom: 0.625rem;
+                
+                a {
+                    font-size: 1rem;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    line-height: 1.438rem;
                     color: var(--gray-5);
-                    margin-bottom: 0.625rem;
-                    a {
-                        font-size: 1rem;
-                        font-family: Georgia, 'Times New Roman', Times, serif;
-                        line-height: 1.438rem;
-                        color: var(--gray-5);
 
-                        &:hover {
-                            color: var(--c-0-light);
-                        }
+                    &:hover {
+                        color: var(--c-0-light);
                     }
                 }
             }
