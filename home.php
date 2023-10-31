@@ -5,9 +5,9 @@
         <div class="banner container">
             <h1 class="intro_title">Curso de Código Limpo</h1>
             <blockquote class="intro_quote">
-                <p>"Código limpo sempre parece ter sido escrito por alguém que se importa."</p>
+                <p>"Um código limpo sempre parece ter sido escrito por alguém que se importa."</p>
             </blockquote>
-            <cite class="intro_quoter">Robert C. Martin</cite>
+            <cite class="intro_quoter">MICHAEL FEATHERS</cite>
         </div>
     </section>
     
