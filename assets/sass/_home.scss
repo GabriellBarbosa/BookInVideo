@@ -23,6 +23,7 @@
     
         .intro_title {
             font-size: 1.5rem;
+            line-height: 1.75rem;
             font-weight: bold;
             color: var(--gray-7);
             text-transform: uppercase;
@@ -220,15 +221,16 @@
 
         .plan_subscription_title {
             font-size: 1.5rem;
+            line-height: 1.75rem;
             font-weight: bold;
             text-align: center;
         }
 
         .plan_subscription_subtitle {
             font-size: 0.875rem;
+            line-height: 1.25rem;
             font-family: Georgia, 'Times New Roman', Times, serif;
             color: var(--gray-6);
-            margin-top: 0.625rem;
             text-align: center;
         }
 
