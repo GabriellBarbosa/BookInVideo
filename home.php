@@ -8,7 +8,9 @@
                 <p>"Um código limpo sempre parece ter sido escrito por alguém que se importa."</p>
             </blockquote>
             <cite class="intro_quoter">MICHAEL FEATHERS</cite>
-            <a href="/" class="intro-subscription">Inscreva-se</a>
+            <div class="intro_subscription_button">
+                <a href="/" class="subscription_button">Inscreva-se</a>
+            </div>
         </div>
     </section>
     
@@ -49,7 +51,9 @@
                     <li>Certificado de Conclusão</li>
                 </ul>
                 <span class="plan_price">R$ 70</span>
-                <a class="plan_subscription_btn">Assinar</a>
+                <div class="plan_subscription_button">
+                    <a class="subscription_button">Inscreva-se</a>
+                </div>
             </div>
             <div class="payment_methods_wrapper">
                 <ul class="payment_methods_list">

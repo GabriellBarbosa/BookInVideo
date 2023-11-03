@@ -70,28 +70,8 @@
             text-transform: uppercase;
         }
 
-        a.intro-subscription {
-            display: flex;
-            align-items: center;
-            background-color: var(--c-0-dark);
-            padding: 0.625rem 1.875rem;
+        .intro_subscription_button {
             margin-top: 2.5rem;
-            font-size: 1rem;
-            line-height: 1.438rem;
-            border-radius: 0.25rem;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                width: 6px;
-                height: 6px;
-                margin-left: 10px;
-                background-image: url('assets/images/arrow.png');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
         }
     }
 
@@ -295,22 +275,10 @@
                 color: var(--gray-8);
             }
 
-            .plan_subscription_btn {
-                display: block;
-                margin: 1.25rem auto 0 auto;
-                padding: 0.625rem 2.5rem;
-                font-size: 1.25rem;
-                border-radius: 0.25rem;
-                background-color: var(--c-0-dark);
-                color: var(--gray-8);
-                text-align: center;
-                width: fit-content;
-                cursor: pointer;
-                transition: all .2s ease;
-
-                &:hover {
-                    transform: scale(1.1);
-                }
+            .plan_subscription_button {
+                margin-top: 1.25rem;
+                display: flex;
+                justify-content: center;
             }
         }
 
