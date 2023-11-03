@@ -3,11 +3,12 @@
 <div id="page-home">
     <section class="intro">
         <div class="banner container">
-            <h1 class="intro_title">Curso de Código Limpo</h1>
+            <h1 class="title intro_title">Curso de Código Limpo</h1>
             <blockquote class="intro_quote">
                 <p>"Um código limpo sempre parece ter sido escrito por alguém que se importa."</p>
             </blockquote>
             <cite class="intro_quoter">MICHAEL FEATHERS</cite>
+            <a href="/" class="intro-subscription">Inscreva-se</a>
         </div>
     </section>
     
@@ -38,7 +39,7 @@
 
     <section class="plan">
         <div class="container">
-            <h2 class="plan_subscription_title">Assinatura</h2>
+            <h2 class="title">Assinatura</h2>
             <p class="plan_subscription_subtitle">Tenha acesso vitalício ao BookInVideo</p>
             <div class="plan_card">
                 <h2>Vitalício</h2>

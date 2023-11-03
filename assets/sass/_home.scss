@@ -22,12 +22,7 @@
         }
     
         .intro_title {
-            font-size: 1.5rem;
-            line-height: 1.75rem;
-            font-weight: bold;
-            color: var(--gray-7);
             text-transform: uppercase;
-            text-align: center;
         }
     
         .intro_quote {
@@ -73,6 +68,30 @@
             font-style: normal;
             font-weight: bold;
             text-transform: uppercase;
+        }
+
+        a.intro-subscription {
+            display: flex;
+            align-items: center;
+            background-color: var(--c-0-dark);
+            padding: 0.625rem 1.875rem;
+            margin-top: 2.5rem;
+            font-size: 1rem;
+            line-height: 1.438rem;
+            border-radius: 0.25rem;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                width: 6px;
+                height: 6px;
+                margin-left: 10px;
+                background-image: url('assets/images/arrow.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
         }
     }
 
@@ -218,13 +237,6 @@
         padding-top: 2.5rem;
         display: flex;
         align-items: center;
-
-        .plan_subscription_title {
-            font-size: 1.5rem;
-            line-height: 1.75rem;
-            font-weight: bold;
-            text-align: center;
-        }
 
         .plan_subscription_subtitle {
             font-size: 0.875rem;
