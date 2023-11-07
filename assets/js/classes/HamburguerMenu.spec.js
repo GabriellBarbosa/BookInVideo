@@ -10,19 +10,19 @@ describe('HamburguerMenu class', () => {
     });
 
     it('add active class to menuElement on button click', () => {
-        const menuControl = new HamburguerMenu(button, menuElement);
+        const hamburguerMenu = new HamburguerMenu(button, menuElement);
 
-        menuControl.init();
+        hamburguerMenu.toggleActiveOnClick();
         button.click();
     
         expect([ ...menuElement.classList ]).toContain("active");
     });
 
     it('remove active class in menuElement on button click', () => {
-        const menuControl = new HamburguerMenu(button, menuElement);
+        const hamburguerMenu = new HamburguerMenu(button, menuElement);
 
         menuElement.classList.add('active');
-        menuControl.init();
+        hamburguerMenu.toggleActiveOnClick();
         button.click();
     
         expect([ ...menuElement.classList ]).not.toContain("active");

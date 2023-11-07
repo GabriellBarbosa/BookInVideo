@@ -9,7 +9,7 @@ class HamburguerMenu {
         this._toggleActive = this._toggleActive.bind(this);
     }
 
-    init() {
+    toggleActiveOnClick() {
         this._buttonElement.addEventListener('click', this._toggleActive);
     }
 

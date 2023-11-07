@@ -7,7 +7,7 @@ function initMenuControl() {
     const menuElement = document.querySelector('#header_menu');
     
     if (menuButton && menuElement) {
-        const menuControl = new HamburguerMenu(menuButton, menuElement);
-        menuControl.init();
+        const hamburguerMenu = new HamburguerMenu(menuButton, menuElement);
+        hamburguerMenu.toggleActiveOnClick();
     }
 }
