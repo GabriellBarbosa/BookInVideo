@@ -7,6 +7,9 @@ class HamburguerMenu {
         this._menuElement = menuElement;
 
         this._toggleActive = this._toggleActive.bind(this);
+
+        if (!buttonElement || !menuElement)
+            throw new Error('HamburguerMenu has invalid args');
     }
 
     toggleActiveOnClick() {

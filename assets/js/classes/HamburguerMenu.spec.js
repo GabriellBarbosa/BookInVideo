@@ -27,4 +27,16 @@ describe('HamburguerMenu class', () => {
     
         expect([ ...menuElement.classList ]).not.toContain("active");
     });
+
+    it('undefined constructor args', () => {
+        expect(() => new HamburguerMenu(undefined, undefined)).toThrow('HamburguerMenu has invalid args');
+    });
+
+    it('first constructor arg undefined ', () => {
+        expect(() => new HamburguerMenu(button, undefined)).toThrow('HamburguerMenu has invalid args');
+    });
+
+    it('second constructor arg undefined ', () => {
+        expect(() => new HamburguerMenu(undefined, menuElement)).toThrow('HamburguerMenu has invalid args');
+    });
 })
