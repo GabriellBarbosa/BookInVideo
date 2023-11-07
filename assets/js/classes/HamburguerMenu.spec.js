@@ -1,6 +1,6 @@
-import MenuControl from './MenuControl';
+import HamburguerMenu from './HamburguerMenu';
 
-describe('MenuControl class', () => {
+describe('HamburguerMenu class', () => {
     let button;
     let menuElement;
 
@@ -10,7 +10,7 @@ describe('MenuControl class', () => {
     });
 
     it('add active class to menuElement on button click', () => {
-        const menuControl = new MenuControl(button, menuElement);
+        const menuControl = new HamburguerMenu(button, menuElement);
 
         menuControl.init();
         button.click();
@@ -19,7 +19,7 @@ describe('MenuControl class', () => {
     });
 
     it('remove active class in menuElement on button click', () => {
-        const menuControl = new MenuControl(button, menuElement);
+        const menuControl = new HamburguerMenu(button, menuElement);
 
         menuElement.classList.add('active');
         menuControl.init();

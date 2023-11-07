@@ -1,4 +1,4 @@
-class MenuControl {
+class HamburguerMenu {
     _buttonElement;
     _menuElement;
 
@@ -18,4 +18,4 @@ class MenuControl {
     }
 }
 
-export default MenuControl;
+export default HamburguerMenu;
