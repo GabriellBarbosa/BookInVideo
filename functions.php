@@ -1,4 +1,11 @@
 <?php
+
+add_action('init', 'bookinvideo_react_routing');
+
+function bookinvideo_react_routing() {
+    add_rewrite_rule('^content/(.+)?', 'index.php?pagename=content', 'top');
+}
+
 add_action('wp_enqueue_scripts', 'bookinvideo_register_css');
 
 function bookinvideo_register_css() {
@@ -18,4 +25,5 @@ function bookinvideo_enqueue_react_css() {
     wp_register_style('react-built-css', get_template_directory_uri() . '/react-built/index.css');
     wp_enqueue_style('react-built-css');
 }
+
 ?>
