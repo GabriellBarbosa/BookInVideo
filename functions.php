@@ -1,8 +1,8 @@
 <?php
 
-add_action('init', 'bookinvideo_react_routing');
+add_action('init', 'bookinvideo_fix_react_routing');
 
-function bookinvideo_react_routing() {
+function bookinvideo_fix_react_routing() {
     add_rewrite_rule('^content/(.+)?', 'index.php?pagename=content', 'top');
 }
 
