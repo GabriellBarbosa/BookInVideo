@@ -1,4 +1,4 @@
-<?php /* Template Name: Content */ ?>
+<?php /* Template Name: Course */ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

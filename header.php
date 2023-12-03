@@ -24,7 +24,7 @@
 
                 <div class="links_container">
                     <div class="links_wrapper">
-                        <a href="cursos" class="link">Curso</a>
+                        <a href="/curso/codigo-limpo" class="link">Curso</a>
                         <a href="plano" class="link">Inscreva-se</a>
                         <a href="contato" class="link contact">Contato</a>
                         <a href="entrar" class="link login">Login</a>

@@ -3,7 +3,7 @@
 add_action('init', 'bookinvideo_fix_react_routing');
 
 function bookinvideo_fix_react_routing() {
-    add_rewrite_rule('^content/(.+)?', 'index.php?pagename=content', 'top');
+    add_rewrite_rule('^(curso|slide)/(.+)?', 'index.php?pagename=curso', 'top');
 }
 
 add_action('wp_enqueue_scripts', 'bookinvideo_register_css');

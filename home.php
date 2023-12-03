@@ -15,7 +15,7 @@
     </section>
     
     <main class="course container">
-        <div class="clean_code_course">
+        <a class="clean_code_course" href="/curso/codigo-limpo">
             <div class="clean_code_cover">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/clean-code-cover.png" alt="Código Limpo: habilidades práticas do Agile Software">
             </div>
@@ -27,7 +27,7 @@
                     <p class="clean_code_certificate">Certificado</p>
                 </div>
             </div>
-        </div>
+        </a>
     
         <div class="clean_code_description">
             <h3>Para quem é esse curso?</h3>
