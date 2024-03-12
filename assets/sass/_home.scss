@@ -43,6 +43,7 @@
                     display: block;
                     width: 30px;
                     height: 2px;
+                    border-radius: 4px;
                     background-color: var(--gray-8);
                     left: 50%;
                     transform: translateX(-50%);
@@ -75,9 +76,11 @@
 
         .course_info_wrapper {
             background-color: var(--gray-3);
+            color: var(--gray-7);
             width: fit-content;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 10px 20px;
+            border-radius: 4px;
             margin-top: 40px;
             transform: translateY(50%);
 
@@ -114,7 +117,8 @@
                 width: 30px;
                 height: 2px;
                 margin: 10px auto 0 auto;
-                background-color: var(--gray-8);
+                border-radius: 4px;
+                background-color: var(--gray-4);
             }
         }
 
@@ -135,7 +139,6 @@
             margin-right: 40px;
 
             h3 {
-                font-weight: normal;
                 text-transform: uppercase;
                 font-size: 24px;
 
@@ -163,8 +166,11 @@
 
             li {
                 font-family: Georgia, 'Times New Roman', Times, serif;
+                font-style: italic;
                 padding: 10px 20px;
+                border-radius: 4px;
                 background-color: var(--gray-3);
+                color: var(--gray-7);
                 width: fit-content;
                 margin: 0 20px 20px 0;
             }

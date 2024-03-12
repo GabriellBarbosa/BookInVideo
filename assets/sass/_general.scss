@@ -37,7 +37,6 @@ img {
     font-weight: bold;
     color: var(--gray-8);
     text-align: center;
-    letter-spacing: .6px;
 
     @media only screen and (max-width: 760px) {
         font-size: 1.5rem;
@@ -61,7 +60,7 @@ img {
         display: block;
         width: 8px;
         height: 8px;
-        margin-left: 32px;
+        margin-left: 40px;
         background-image: url('assets/images/arrow.svg');
         background-position: center;
         background-size: cover;

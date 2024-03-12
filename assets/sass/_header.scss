@@ -1,5 +1,5 @@
 .header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     float: left;
     min-width: 100%;
     min-height: 64px;
@@ -10,6 +10,7 @@
         align-items: center;
 
         .logo {
+            display: block;
             padding: 20px 0;
         }
 
