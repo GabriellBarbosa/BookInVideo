@@ -78,161 +78,98 @@
             width: fit-content;
             margin: 0 auto;
             padding: 15px 20px;
-            border-radius: 4px;
             margin-top: 40px;
             transform: translateY(50%);
 
             ul, ul li {
                 display: flex;
                 align-items: center;
+            }
 
-                li:nth-child(2)::before,
-                li:nth-child(2)::after {
-                    content: "";
-                    display: block;
-                    width: 6px;
-                    height: 6px;
-                    border-radius: 50%;
-                    background-color: #9be564;
-                    margin: 0 16px;
-                }
+            ul li:nth-child(2)::before,
+            ul li:nth-child(2)::after {
+                content: "";
+                display: block;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #9be564;
+                margin: 0 16px;
             }
         }
     }
 
     .course {
-        margin-top: 2.5rem;
-        display: flex;
-        align-items: start;
-        justify-content: center;
+        margin-top: 70px;
 
-        @media only screen and (max-width: 760px) {
-            flex-direction: column;
-            align-items: center;
-            max-width: 25rem;
+        h2 {
+            font-size: 36px;
+            line-height: 36px;
+            font-weight: bold;
+            text-align: center;
+            
+            &::after {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 2px;
+                margin: 10px auto 0 auto;
+                background-color: var(--gray-8);
+            }
         }
 
-        .clean_code_course {
-            position: sticky;
-            top: 1.25rem;
+        .course_wrapper {
             display: flex;
-            min-width: 22.5rem;
-            background-color: var(--gray-0);
-            border-radius: 0.25rem;
-            transition: all 0.2s;
-            cursor: pointer;
-
-            @media only screen and (max-width: 760px) {
-                position: static;
-                width: 100%;
-                max-width: 22.5rem;
-                min-width: 0;
-            }
-
-            &:hover {
-                transform: scale(1.06);
-                box-shadow: 0 0 8px 1px rgba(215, 156, 107, 0.3);
-            }
-
-            .clean_code_cover {
-                min-width: 80px;
-            }
-
-            .clean_code_info {
-                padding: 1.25rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                .clean_code_title {
-                    font-size: 0.875rem;
-                    font-weight: bold;
-                    text-transform: uppercase;
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        width: 1.875rem;
-                        height: 0.125rem;
-                        background-color: var(--gray-7);
-                        margin-top: 0.313rem;
-                    }
-                }
-
-                .clean_code_items {
-                    display: flex;
-                    flex-wrap: wrap;
-
-                    p {
-                        font-size: 0.875rem;
-                        font-family: Georgia, 'Times New Roman', Times, serif;
-                        color: var(--gray-5);
-                        margin-right: 1.563rem;
-                        position: relative;
-
-                        @media only screen and (max-width: 380px) {
-                            padding-top: 0.313rem;
-                        }
-
-                        &.clean_code_certificate {
-                            margin-right: 0px;
-                        }
-
-                        &.clean_code_hours::before, &.clean_code_hours::after {
-                            content: "";
-                            position: absolute;
-                            display: block;
-                            width: 0.313rem;
-                            height: 0.313rem;
-                            border-radius: 50%;
-                            background-color: var(--c-0-light);
-                            top: 50%;
-                            transform: translateY(-50%);
-
-                            @media only screen and (max-width: 380px) {
-                                display: none;
-                            }
-                        }
-
-                        &.clean_code_hours::before {
-                            left: -0.813rem;
-
-                        }
-
-                        &.clean_code_hours::after {
-                            right: -0.813rem;
-                        }
-                    }
-                }
-            }
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 40px;
         }
 
-        .clean_code_description {
-            margin-left: 2.5rem;
-            max-width: 30.313rem;
+        .course_link {
+            display: block;
+            background-color: var(--gray-1);
+            width: 328px;
+            padding: 20px;
+            border-left: 4px solid #219EBC;
+            border-radius: 4px;
+            margin-right: 40px;
 
-            @media only screen and (max-width: 760px) {
-                margin-top: 2.5rem;
-                margin-left: 0px;
-            }
+            h3 {
+                font-weight: normal;
+                text-transform: uppercase;
+                font-size: 24px;
 
-            > h3 {
-                font-size: 0.875rem;
-                font-weight: bold;
-                margin-top: 1.25rem;
-                &:first-child {
-                    margin-top: 0px;
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #219EBC;
+                    margin: 10px 0;
                 }
             }
 
-            > p {
-                font-size: 0.875rem;
+            p {
+                font-size: 16px;
                 font-family: Georgia, 'Times New Roman', Times, serif;
-                line-height: 1.25rem;
                 color: var(--gray-5);
-                margin-top: 0.625rem;
             }
         }
+
+        .keywords {
+            max-width: 402px;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                padding: 10px 20px;
+                background-color: var(--gray-3);
+                width: fit-content;
+                margin: 0 20px 20px 0;
+            }
+        }
+
     }
 
     .plan {
