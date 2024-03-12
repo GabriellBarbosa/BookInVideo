@@ -60,11 +60,12 @@ img {
 }
 
 .title {
-  font-size: 1.75rem;
-  line-height: 2rem;
+  font-size: 36px;
+  line-height: 36px;
   font-weight: bold;
-  color: var(--gray-7);
+  color: var(--gray-8);
   text-align: center;
+  letter-spacing: 0.6px;
 }
 @media only screen and (max-width: 760px) {
   .title {
@@ -77,10 +78,9 @@ img {
   display: flex;
   align-items: center;
   background-color: var(--c-0-dark);
-  padding: 0.625rem 1.875rem;
-  font-size: 1rem;
-  line-height: 1.438rem;
-  border-radius: 0.25rem;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 4px;
   transition: all 0.2s;
   width: -moz-fit-content;
   width: fit-content;
@@ -89,9 +89,9 @@ img {
 .subscription_button::after {
   content: "";
   display: block;
-  width: 6px;
-  height: 6px;
-  margin-left: 10px;
+  width: 8px;
+  height: 8px;
+  margin-left: 32px;
   background-image: url("assets/images/arrow.svg");
   background-position: center;
   background-size: cover;
@@ -103,6 +103,9 @@ img {
 
 .header {
   background-color: rgba(0, 0, 0, 0.6);
+  float: left;
+  min-width: 100%;
+  min-height: 64px;
 }
 .header .navigation {
   display: flex;
@@ -297,70 +300,95 @@ img {
   }
 }
 
-#page-home .intro {
+#page-home .banner {
   background-image: url("assets/images/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-attachment: fixed;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 @media only screen and (max-width: 760px) {
-  #page-home .intro {
+  #page-home .banner {
     background-image: url("assets/images/banner-mobile.jpg");
     background-attachment: scroll;
   }
 }
-#page-home .intro .banner {
+#page-home .banner .intro {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: inherit;
 }
-#page-home .intro .intro_title {
+#page-home .banner .intro_title {
+  margin-top: 40px;
   text-transform: uppercase;
 }
-#page-home .intro .intro_quote p {
+#page-home .banner .intro_quote p {
   position: relative;
   display: block;
-  max-width: 16.563rem;
-  margin-top: 1.875rem;
+  max-width: 265px;
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 21px;
   color: var(--gray-7);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 0.875rem;
   text-align: center;
-  line-height: 1.25rem;
 }
-#page-home .intro .intro_quote p::before, #page-home .intro .intro_quote p::after {
+#page-home .banner .intro_quote p::before, #page-home .banner .intro_quote p::after {
   content: "";
   position: absolute;
   display: block;
-  width: 3.75rem;
-  height: 0.125rem;
-  background-color: var(--gray-7);
+  width: 30px;
+  height: 2px;
+  background-color: var(--gray-8);
   left: 50%;
   transform: translateX(-50%);
 }
-#page-home .intro .intro_quote p::before {
-  top: -0.625rem;
+#page-home .banner .intro_quote p::before {
+  top: -10px;
 }
-#page-home .intro .intro_quote p::after {
-  bottom: -0.625rem;
+#page-home .banner .intro_quote p::after {
+  bottom: -10px;
 }
-#page-home .intro .intro_quoter {
+#page-home .banner .intro_quoter {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.875rem;
-  color: var(--gray-7);
-  margin-top: 1.875rem;
+  font-size: 14px;
+  margin-top: 30px;
+  color: var(--gray-8);
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
-#page-home .intro .intro_subscription_button {
-  margin-top: 2.5rem;
+#page-home .banner .intro_subscription_button {
+  margin-top: 60px;
+}
+#page-home .banner .course_info_wrapper {
+  background-color: var(--gray-3);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin-top: 40px;
+  transform: translateY(50%);
+}
+#page-home .banner .course_info_wrapper ul, #page-home .banner .course_info_wrapper ul li {
+  display: flex;
+  align-items: center;
+}
+#page-home .banner .course_info_wrapper ul li:nth-child(2)::before,
+#page-home .banner .course_info_wrapper ul li:nth-child(2)::after, #page-home .banner .course_info_wrapper ul li li:nth-child(2)::before,
+#page-home .banner .course_info_wrapper ul li li:nth-child(2)::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #9be564;
+  margin: 0 16px;
 }
 #page-home .course {
   margin-top: 2.5rem;

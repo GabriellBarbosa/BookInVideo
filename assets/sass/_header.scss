@@ -1,5 +1,8 @@
 .header {
     background-color: rgba(0, 0, 0, 0.6);
+    float: left;
+    min-width: 100%;
+    min-height: 64px;
 
     .navigation {
         display: flex;

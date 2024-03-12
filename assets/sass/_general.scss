@@ -32,11 +32,12 @@ img {
 }
 
 .title {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 36px;
+    line-height: 36px;
     font-weight: bold;
-    color: var(--gray-7);
+    color: var(--gray-8);
     text-align: center;
+    letter-spacing: .6px;
 
     @media only screen and (max-width: 760px) {
         font-size: 1.5rem;
@@ -48,10 +49,9 @@ img {
     display: flex;
     align-items: center;
     background-color: var(--c-0-dark);
-    padding: 0.625rem 1.875rem;
-    font-size: 1rem;
-    line-height: 1.438rem;
-    border-radius: 0.25rem;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 4px;
     transition: all .2s;
     width: fit-content;
     cursor: pointer;
@@ -59,9 +59,9 @@ img {
     &::after {
         content: "";
         display: block;
-        width: 6px;
-        height: 6px;
-        margin-left: 10px;
+        width: 8px;
+        height: 8px;
+        margin-left: 32px;
         background-image: url('assets/images/arrow.svg');
         background-position: center;
         background-size: cover;

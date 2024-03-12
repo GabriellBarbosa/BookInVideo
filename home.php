@@ -1,8 +1,8 @@
 <?php get_header() ?>
 
 <div id="page-home">
-    <section class="intro">
-        <div class="banner container">
+    <section class="banner">
+        <div class="intro container">
             <h1 class="title intro_title">Curso de Código Limpo</h1>
             <blockquote class="intro_quote">
                 <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava."</p>
@@ -11,6 +11,13 @@
             <div class="intro_subscription_button">
                 <a href="/" class="subscription_button">Inscreva-se</a>
             </div>
+        </div>
+        <div class="course_info_wrapper">
+            <ul>
+                <li>Versão beta</li>
+                <li>4.4 horas</li>
+                <li>23 aulas</li>
+            </ul>
         </div>
     </section>
     
