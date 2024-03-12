@@ -102,21 +102,15 @@ img {
 }
 
 .header {
-  background-color: var(--gray-0);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .header .navigation {
-  min-height: 4.375rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-@media only screen and (max-width: 760px) {
-  .header .navigation {
-    min-height: 3.25rem;
-  }
-}
 .header .navigation .logo {
-  padding: 1.25rem 0;
+  padding: 20px 0;
 }
 .header .navigation #header_menu #hamburguer_menu {
   display: none;
@@ -161,10 +155,10 @@ img {
   cursor: default;
 }
 .header .navigation #header_menu .links_container a.link {
-  padding: 0.625rem 0.313rem;
-  margin-left: 0.625rem;
-  color: var(--gray-7);
-  font-size: 0.875rem;
+  padding: 10px 0;
+  margin-left: 20px;
+  color: var(--gray-8);
+  font-size: 16px;
 }
 .header .navigation #header_menu .links_container a.link:hover {
   color: var(--c-0-light);
