@@ -43,7 +43,7 @@ button {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif !important;
   background-color: var(--gray-2);
   color: var(--gray-7);
 }
@@ -105,9 +105,7 @@ img {
 
 .header {
   background-color: rgba(0, 0, 0, 0.8);
-  float: left;
-  min-width: 100%;
-  min-height: 64px;
+  height: 64px;
 }
 .header .navigation {
   display: flex;
@@ -326,15 +324,20 @@ img {
   margin-top: 40px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 760px) {
+  #page-home .banner .intro_title {
+    font-size: 24px;
+  }
+}
 #page-home .banner .intro_quote p {
   position: relative;
   display: block;
-  max-width: 265px;
+  max-width: 280px;
   margin-top: 30px;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--gray-7);
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "PT Serif", serif;
   font-style: italic;
   text-align: center;
 }
@@ -356,7 +359,6 @@ img {
   bottom: -10px;
 }
 #page-home .banner .intro_quoter {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin-top: 30px;
   color: var(--gray-8);
@@ -382,6 +384,7 @@ img {
 #page-home .banner .course_info_wrapper ul, #page-home .banner .course_info_wrapper ul li {
   display: flex;
   align-items: center;
+  font-family: "PT Serif", serif;
 }
 #page-home .banner .course_info_wrapper ul li:nth-child(2)::before,
 #page-home .banner .course_info_wrapper ul li:nth-child(2)::after {
@@ -434,7 +437,7 @@ img {
   flex-wrap: wrap;
 }
 #page-home .course .keywords li {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "PT Serif", serif;
   font-style: italic;
   padding: 10px 20px;
   border-radius: 4px;

@@ -5,7 +5,7 @@
         <div class="intro container">
             <h1 class="title intro_title">Curso de Código Limpo</h1>
             <blockquote class="intro_quote">
-                <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava."</p>
+                <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava"</p>
             </blockquote>
             <cite class="intro_quoter">MICHAEL FEATHERS</cite>
             <div class="intro_subscription_button">

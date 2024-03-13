@@ -21,17 +21,21 @@
         .intro_title {
             margin-top: 40px;
             text-transform: uppercase;
+
+            @media screen and (max-width: 760px) {
+                font-size: 24px;
+            }
         }
     
         .intro_quote p {
             position: relative;
             display: block;
-            max-width: 265px;
+            max-width: 280px;
             margin-top: 30px;
-            font-size: 14px;
-            line-height: 21px;
+            font-size: 16px;
+            line-height: 24px;
             color: var(--gray-7);
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: "PT Serif", serif;
             font-style: italic;
             text-align: center;
 
@@ -57,7 +61,6 @@
         }
     
         .intro_quoter {
-            font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
             margin-top: 30px;
             color: var(--gray-8);
@@ -65,7 +68,6 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: .1em;
-
         }
 
         .intro_subscription_button {
@@ -85,6 +87,7 @@
             ul, ul li {
                 display: flex;
                 align-items: center;
+                font-family: "PT Serif", serif;
             }
 
             ul li:nth-child(2)::before,
@@ -146,7 +149,7 @@
             flex-wrap: wrap;
 
             li {
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: "PT Serif", serif;
                 font-style: italic;
                 padding: 10px 20px;
                 border-radius: 4px;
