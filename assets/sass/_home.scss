@@ -39,6 +39,11 @@
             font-style: italic;
             text-align: center;
 
+            @media only screen and (max-width: 760px) {
+                font-size: 14px;
+                line-height: 21px;
+            }
+
             &::before, &::after {
                 content: "";
                 position: absolute;
@@ -67,7 +72,7 @@
             font-style: normal;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: .1em;
+            letter-spacing: 1px;
         }
 
         .intro_subscription_button {
@@ -111,16 +116,27 @@
             justify-content: center;
             align-items: flex-start;
             margin-top: 40px;
+
+            @media screen and (max-width: 760px) {
+                flex-direction: column;
+                max-width: 330px;
+                margin: 40px auto 0 auto;
+            }
         }
 
         .course_link {
             display: block;
             background-color: var(--gray-1);
-            width: 328px;
+            max-width: 330px;
+            width: 100%;
             padding: 20px;
             border-left: 4px solid #219EBC;
             border-radius: 4px;
             margin-right: 40px;
+
+            @media screen and (max-width: 760px) {
+                margin: 0 auto;
+            }
 
             h3 {
                 text-transform: uppercase;
@@ -148,6 +164,11 @@
             display: flex;
             flex-wrap: wrap;
 
+            @media screen and (max-width: 760px) {
+                margin: 40px auto 0 auto;
+                justify-content: center;
+            }
+
             li {
                 font-family: "PT Serif", serif;
                 font-style: italic;
@@ -157,6 +178,10 @@
                 color: var(--gray-7);
                 width: fit-content;
                 margin: 0 20px 20px 0;
+
+                @media screen and (max-width: 760px) {
+                    margin: 0 10px 20px 10px;
+                }
             }
         }
 

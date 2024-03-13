@@ -61,7 +61,7 @@ img {
 
 .title {
   font-size: 36px;
-  line-height: 36px;
+  line-height: 42px;
   font-weight: bold;
   text-align: center;
 }
@@ -105,7 +105,9 @@ img {
 
 .header {
   background-color: rgba(0, 0, 0, 0.8);
-  height: 64px;
+  float: left;
+  min-width: 100%;
+  min-height: 64px;
 }
 .header .navigation {
   display: flex;
@@ -341,6 +343,12 @@ img {
   font-style: italic;
   text-align: center;
 }
+@media only screen and (max-width: 760px) {
+  #page-home .banner .intro_quote p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
 #page-home .banner .intro_quote p::before, #page-home .banner .intro_quote p::after {
   content: "";
   position: absolute;
@@ -365,7 +373,7 @@ img {
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
 }
 #page-home .banner .intro_subscription_button {
   margin-top: 60px;
@@ -405,14 +413,27 @@ img {
   align-items: flex-start;
   margin-top: 40px;
 }
+@media screen and (max-width: 760px) {
+  #page-home .course .course_wrapper {
+    flex-direction: column;
+    max-width: 330px;
+    margin: 40px auto 0 auto;
+  }
+}
 #page-home .course .course_link {
   display: block;
   background-color: var(--gray-1);
-  width: 328px;
+  max-width: 330px;
+  width: 100%;
   padding: 20px;
   border-left: 4px solid #219EBC;
   border-radius: 4px;
   margin-right: 40px;
+}
+@media screen and (max-width: 760px) {
+  #page-home .course .course_link {
+    margin: 0 auto;
+  }
 }
 #page-home .course .course_link h3 {
   text-transform: uppercase;
@@ -436,6 +457,12 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 760px) {
+  #page-home .course .keywords {
+    margin: 40px auto 0 auto;
+    justify-content: center;
+  }
+}
 #page-home .course .keywords li {
   font-family: "PT Serif", serif;
   font-style: italic;
@@ -446,6 +473,11 @@ img {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 20px 20px 0;
+}
+@media screen and (max-width: 760px) {
+  #page-home .course .keywords li {
+    margin: 0 10px 20px 10px;
+  }
 }
 #page-home .video_wrapper {
   background-color: var(--gray-3);
