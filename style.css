@@ -54,8 +54,8 @@ img {
 }
 
 .container {
-  max-width: 72.5rem;
-  padding: 0 0.938rem;
+  max-width: 1160px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -321,7 +321,6 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: inherit;
 }
 #page-home .banner .intro_title {
   margin-top: 40px;

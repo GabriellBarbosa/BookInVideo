@@ -16,7 +16,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: inherit;
         }
     
         .intro_title {
@@ -24,38 +23,36 @@
             text-transform: uppercase;
         }
     
-        .intro_quote {
-            p {
-                position: relative;
+        .intro_quote p {
+            position: relative;
+            display: block;
+            max-width: 265px;
+            margin-top: 30px;
+            font-size: 14px;
+            line-height: 21px;
+            color: var(--gray-7);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-align: center;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
                 display: block;
-                max-width: 265px;
-                margin-top: 30px;
-                font-size: 14px;
-                line-height: 21px;
-                color: var(--gray-7);
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                font-style: italic;
-                text-align: center;
-    
-                &::before, &::after {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    width: 30px;
-                    height: 2px;
-                    border-radius: 4px;
-                    background-color: var(--gray-8);
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-    
-                &::before {
-                    top: -10px;
-                }
-    
-                &::after {
-                    bottom: -10px;
-                }
+                width: 30px;
+                height: 2px;
+                border-radius: 4px;
+                background-color: var(--gray-8);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                bottom: -10px;
             }
         }
     
@@ -68,6 +65,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: .1em;
+
         }
 
         .intro_subscription_button {
