@@ -103,24 +103,7 @@
     }
 
     .course {
-        margin-top: 70px;
-
-        h2 {
-            font-size: 36px;
-            line-height: 36px;
-            font-weight: bold;
-            text-align: center;
-            
-            &::after {
-                content: "";
-                display: block;
-                width: 30px;
-                height: 2px;
-                margin: 10px auto 0 auto;
-                border-radius: 4px;
-                background-color: var(--gray-4);
-            }
-        }
+        margin-top: 75px;
 
         .course_wrapper {
             display: flex;
@@ -178,126 +161,15 @@
 
     }
 
-    .plan {
+    .video_wrapper {
         background-color: var(--gray-3);
-        margin-top: 2.5rem;
-        padding-top: 2.5rem;
-        display: flex;
-        align-items: center;
+        margin-top: 60px;
+        padding: 60px 0;
 
-        .plan_subscription_subtitle {
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: var(--gray-6);
-            text-align: center;
-        }
-
-        .plan_card {
-            display: block;
-            margin-top: 1.25rem;
-            padding: 1.25rem;
-            background-color: var(--gray-0);
+        .video {
+            margin-top: 40px;
             border-radius: 4px;
-            width: 18.625rem;
-
-            @media only screen and (max-width: 380px) {
-                width: 100%;
-                max-width: 18.625rem;
-                min-width: 0;
-            }
-
-            .plan_benefits {
-                margin-top: 0.625rem;
-
-                > li {
-                    display: flex;
-                    align-items: center;
-                    padding: 0.625rem 0;
-                    border-bottom: 0.063rem solid var(--c-1-dark);
-                    font-family: Georgia, 'Times New Roman', Times, serif;
-                    font-size: 1rem;
-                    line-height: 1.438rem;
-                    color: var(--gray-6);
-
-                    &::before {
-                        content: "";
-                        display: block;
-                        width: 1rem;
-                        height: 1rem;
-                        background-image: url('assets/images/check-icon.svg');
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        margin-right: 0.625rem;
-                    }
-                }
-            }
-
-            .plan_price {
-                display: block;
-                text-align: center;
-                font-size: 1.5rem;
-                margin-top: 20px;
-                color: var(--gray-8);
-            }
-
-            .plan_subscription_button {
-                margin-top: 1.25rem;
-                display: flex;
-                justify-content: center;
-            }
-        }
-
-        .payment_methods_wrapper {
-            &::after {
-                content: "";
-                display: block;
-                width: 1.25rem;
-                height: 0.125rem;
-                margin: 1.25rem auto 2.5rem auto;
-                background-color: var(--gray-5);
-            }
-
-            .payment_methods_list {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 2.5rem;
-    
-                li {
-                    position: relative;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-weight: bold;
-                    font-size: 0.875rem;
-                    margin-right: 1.563rem;
-                }
-
-                li:last-child {
-                    margin-right: 0;
-                }
-    
-                li:nth-child(2) {
-                    &::before, &::after {
-                        content: "";
-                        position: absolute;
-                        display: block;
-                        width: 0.313rem;
-                        height: 0.313rem;
-                        background-color: var(--c-0-light);
-                        border-radius: 50%;
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-    
-                    &::before {
-                        left: -0.938rem;
-                    }
-    
-                    &::after {
-                        right: -0.938rem;
-                    }
-                }
-            }
+            overflow: hidden;
         }
     }
 }

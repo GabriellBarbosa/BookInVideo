@@ -35,13 +35,17 @@ img {
     font-size: 36px;
     line-height: 36px;
     font-weight: bold;
-    color: var(--gray-8);
     text-align: center;
+}
 
-    @media only screen and (max-width: 760px) {
-        font-size: 1.5rem;
-        line-height: 1.75rem;
-    }
+.title_separator::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 10px auto 0 auto;
+    border-radius: 4px;
+    background-color: var(--gray-4);
 }
 
 .subscription_button {
@@ -49,7 +53,7 @@ img {
     align-items: center;
     background-color: var(--c-0-dark);
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 4px;
     transition: all .2s;
     width: fit-content;
@@ -60,7 +64,7 @@ img {
         display: block;
         width: 8px;
         height: 8px;
-        margin-left: 40px;
+        margin-left: 60px;
         background-image: url('assets/images/arrow.svg');
         background-position: center;
         background-size: cover;

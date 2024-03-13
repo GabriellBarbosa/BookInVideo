@@ -22,7 +22,7 @@
     </section>
     
     <main class="course container">
-        <h2>Curso</h2>
+        <h2 class="title title_separator">Curso</h2>
         <div class="course_wrapper">
             <a class="course_link" href="/curso/codigo-limpo">
                 <h3>Código Limpo</h3>
@@ -40,28 +40,14 @@
 
     </main>
 
-    <section class="plan">
+    <section class="video_wrapper">
         <div class="container">
-            <h2 class="title">Assinatura</h2>
-            <p class="plan_subscription_subtitle">Tenha acesso vitalício ao BookInVideo</p>
-            <div class="plan_card">
-                <h2>Vitalício</h2>
-                <ul class="plan_benefits">
-                    <li>Acesso Ilimitado</li>
-                    <li>Suporte</li>
-                    <li>Certificado de Conclusão</li>
-                </ul>
-                <span class="plan_price">R$ 70</span>
-                <div class="plan_subscription_button">
-                    <a class="subscription_button">Inscreva-se</a>
+            <h2 class="title title_separator">Vídeo de introdução</h2>
+            <div class="video">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/922895312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0000-intro"></iframe>
                 </div>
-            </div>
-            <div class="payment_methods_wrapper">
-                <ul class="payment_methods_list">
-                    <li>Crédito</li>
-                    <li>Pix</li>
-                    <li>Boleto</li>
-                </ul>
+                <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
         </div>
     </section>

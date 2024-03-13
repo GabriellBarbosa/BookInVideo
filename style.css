@@ -63,14 +63,17 @@ img {
   font-size: 36px;
   line-height: 36px;
   font-weight: bold;
-  color: var(--gray-8);
   text-align: center;
 }
-@media only screen and (max-width: 760px) {
-  .title {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-  }
+
+.title_separator::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 10px auto 0 auto;
+  border-radius: 4px;
+  background-color: var(--gray-4);
 }
 
 .subscription_button {
@@ -78,7 +81,7 @@ img {
   align-items: center;
   background-color: var(--c-0-dark);
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 4px;
   transition: all 0.2s;
   width: -moz-fit-content;
@@ -90,7 +93,7 @@ img {
   display: block;
   width: 8px;
   height: 8px;
-  margin-left: 40px;
+  margin-left: 60px;
   background-image: url("assets/images/arrow.svg");
   background-position: center;
   background-size: cover;
@@ -392,22 +395,7 @@ img {
   margin: 0 16px;
 }
 #page-home .course {
-  margin-top: 70px;
-}
-#page-home .course h2 {
-  font-size: 36px;
-  line-height: 36px;
-  font-weight: bold;
-  text-align: center;
-}
-#page-home .course h2::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 2px;
-  margin: 10px auto 0 auto;
-  border-radius: 4px;
-  background-color: var(--gray-4);
+  margin-top: 75px;
 }
 #page-home .course .course_wrapper {
   display: flex;
@@ -457,108 +445,13 @@ img {
   width: fit-content;
   margin: 0 20px 20px 0;
 }
-#page-home .plan {
+#page-home .video_wrapper {
   background-color: var(--gray-3);
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
-  display: flex;
-  align-items: center;
+  margin-top: 60px;
+  padding: 60px 0;
 }
-#page-home .plan .plan_subscription_subtitle {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: var(--gray-6);
-  text-align: center;
-}
-#page-home .plan .plan_card {
-  display: block;
-  margin-top: 1.25rem;
-  padding: 1.25rem;
-  background-color: var(--gray-0);
+#page-home .video_wrapper .video {
+  margin-top: 40px;
   border-radius: 4px;
-  width: 18.625rem;
-}
-@media only screen and (max-width: 380px) {
-  #page-home .plan .plan_card {
-    width: 100%;
-    max-width: 18.625rem;
-    min-width: 0;
-  }
-}
-#page-home .plan .plan_card .plan_benefits {
-  margin-top: 0.625rem;
-}
-#page-home .plan .plan_card .plan_benefits > li {
-  display: flex;
-  align-items: center;
-  padding: 0.625rem 0;
-  border-bottom: 0.063rem solid var(--c-1-dark);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1rem;
-  line-height: 1.438rem;
-  color: var(--gray-6);
-}
-#page-home .plan .plan_card .plan_benefits > li::before {
-  content: "";
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  background-image: url("assets/images/check-icon.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-right: 0.625rem;
-}
-#page-home .plan .plan_card .plan_price {
-  display: block;
-  text-align: center;
-  font-size: 1.5rem;
-  margin-top: 20px;
-  color: var(--gray-8);
-}
-#page-home .plan .plan_card .plan_subscription_button {
-  margin-top: 1.25rem;
-  display: flex;
-  justify-content: center;
-}
-#page-home .plan .payment_methods_wrapper::after {
-  content: "";
-  display: block;
-  width: 1.25rem;
-  height: 0.125rem;
-  margin: 1.25rem auto 2.5rem auto;
-  background-color: var(--gray-5);
-}
-#page-home .plan .payment_methods_wrapper .payment_methods_list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2.5rem;
-}
-#page-home .plan .payment_methods_wrapper .payment_methods_list li {
-  position: relative;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 0.875rem;
-  margin-right: 1.563rem;
-}
-#page-home .plan .payment_methods_wrapper .payment_methods_list li:last-child {
-  margin-right: 0;
-}
-#page-home .plan .payment_methods_wrapper .payment_methods_list li:nth-child(2)::before, #page-home .plan .payment_methods_wrapper .payment_methods_list li:nth-child(2)::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0.313rem;
-  height: 0.313rem;
-  background-color: var(--c-0-light);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-#page-home .plan .payment_methods_wrapper .payment_methods_list li:nth-child(2)::before {
-  left: -0.938rem;
-}
-#page-home .plan .payment_methods_wrapper .payment_methods_list li:nth-child(2)::after {
-  right: -0.938rem;
+  overflow: hidden;
 }
