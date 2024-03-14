@@ -1,5 +1,8 @@
 <?php
 
+$template_directory = get_template_directory();
+require_once($template_directory . '/custom-post-types/course-cpt.php');
+
 add_action('init', 'bookinvideo_fix_react_routing');
 
 function bookinvideo_fix_react_routing() {
