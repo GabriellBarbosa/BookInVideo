@@ -21,7 +21,7 @@
         </div>
     </section>
     
-    <main class="course container">
+    <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
         <div class="course_wrapper">
             <a class="course_link" href="/curso/codigo-limpo">

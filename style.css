@@ -405,23 +405,23 @@ img {
   background-color: #9be564;
   margin: 0 16px;
 }
-#page-home .course {
+#page-home .course_section {
   margin-top: 75px;
 }
-#page-home .course .course_wrapper {
+#page-home .course_section .course_wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   margin-top: 40px;
 }
 @media screen and (max-width: 760px) {
-  #page-home .course .course_wrapper {
+  #page-home .course_section .course_wrapper {
     flex-direction: column;
     max-width: 330px;
     margin: 40px auto 0 auto;
   }
 }
-#page-home .course .course_link {
+#page-home .course_section .course_link {
   display: block;
   background-color: var(--gray-1);
   max-width: 330px;
@@ -432,15 +432,15 @@ img {
   margin-right: 40px;
 }
 @media screen and (max-width: 760px) {
-  #page-home .course .course_link {
+  #page-home .course_section .course_link {
     margin: 0 auto;
   }
 }
-#page-home .course .course_link h3 {
+#page-home .course_section .course_link h3 {
   text-transform: uppercase;
   font-size: 24px;
 }
-#page-home .course .course_link h3::after {
+#page-home .course_section .course_link h3::after {
   content: "";
   display: block;
   width: 30px;
@@ -448,23 +448,23 @@ img {
   background-color: #219EBC;
   margin: 10px 0;
 }
-#page-home .course .course_link p {
+#page-home .course_section .course_link p {
   font-size: 16px;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: var(--gray-5);
 }
-#page-home .course .keywords {
+#page-home .course_section .keywords {
   max-width: 402px;
   display: flex;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 760px) {
-  #page-home .course .keywords {
+  #page-home .course_section .keywords {
     margin: 40px auto 0 auto;
     justify-content: center;
   }
 }
-#page-home .course .keywords li {
+#page-home .course_section .keywords li {
   font-family: "PT Serif", serif;
   font-style: italic;
   padding: 10px 20px;
@@ -476,7 +476,7 @@ img {
   margin: 0 20px 20px 0;
 }
 @media screen and (max-width: 760px) {
-  #page-home .course .keywords li {
+  #page-home .course_section .keywords li {
     margin: 0 10px 20px 10px;
   }
 }
