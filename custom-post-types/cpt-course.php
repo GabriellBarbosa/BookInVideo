@@ -12,7 +12,8 @@ function register_cpt_course() {
         'rewrite' => array('slug' => 'curso', 'with_front' => true),
         'query_var' => true,
         'supports' => array('custom-fields', 'author', 'title', 'related_course'),
-        'publicly_queryable' => true
+        'publicly_queryable' => true,
+        'taxonomies' => array( 'codigo-limpo' )
     ));
 }
 

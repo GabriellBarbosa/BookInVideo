@@ -13,6 +13,7 @@ function register_cpt_lesson() {
         'query_var' => true,
         'supports' => array('custom-fields', 'author', 'title'),
         'publicly_queryable' => true,
+        'taxonomies' => array( 'codigo-limpo' )
     ));
 }
 
