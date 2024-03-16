@@ -1,32 +1,57 @@
 <?php get_header() ?>
 
 <?php
+$chapters = get_chapters('codigo-limpo');
 
-$taxonomy_name = 'codigo-limpo';
-$custom_terms = get_terms($taxonomy_name);
-
-foreach($custom_terms as $custom_term) {
+foreach ($chapters as $chapter) {
     wp_reset_query();
-    $args = array(
+    $lesson_posts = get_lesson_posts($chapter->slug);
+    $course_content = array(
+        'chapter' => $chapter->name,
+        'lessons' => get_filled_lessons($lesson_posts)
+    );
+}
+
+function get_chapters($course_slug) {
+    return get_terms($course_slug);
+}
+
+function get_lesson_posts($slug) {
+    $chapter_lessons_query = array(
         'post_type' => 'Aula',
         'tax_query' => array(
             array(
                 'taxonomy' => 'codigo-limpo',
                 'field' => 'slug',
-                'terms' => $custom_term->slug,
+                'terms' => $slug,
             ),
         ),
-     );
+    );
+    return new WP_Query($chapter_lessons_query);
+}
 
-     $loop = new WP_Query($args);
+function get_filled_lessons($lesson_posts) {
+    global $post;
+    $result = array();
 
-     if($loop->have_posts()) {
-        echo '<h2>'.$custom_term->name.'</h2>';
-
-        while($loop->have_posts()) : $loop->the_post();
-            echo '<a href="'.get_permalink().'">'.get_the_title().'</a><br>';
+    if ($lesson_posts->have_posts()) {
+        while ($lesson_posts->have_posts()) : $lesson_posts->the_post();
+            array_push($result, get_lesson_fields($post->ID));
         endwhile;
-     }
+    }
+
+    return $result;
+}
+
+function get_lesson_fields($post_id) {
+    $lesson_meta_data = get_post_meta($post_id);
+    return array(
+        'name'      => $lesson_meta_data['name'][0],
+        'slug'      => $lesson_meta_data['slug'][0],
+        'sequence'  => $lesson_meta_data['sequence'][0],
+        'video_src' => $lesson_meta_data['video_src'][0],
+        'duration'  => $lesson_meta_data['duration'][0],
+    );
 }
 ?>
 
