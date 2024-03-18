@@ -6,6 +6,7 @@ class CourseContent {
         foreach ($modules as $module) {
             $course_content = array(
                 'module' => $module->name,
+                'sequence' => $module->description,
                 'lessons' => $this->get_module_lessons($module->slug)
             );
             array_push($result, $course_content);
