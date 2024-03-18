@@ -1,19 +1,19 @@
 <?php
-include(get_template_directory() . '/endpoints/Lesson.php');
+include(get_template_directory() . '/endpoints/CourseContent.php');
 
 class Course {
-    private $courseContent;
+    private $content;
 
     public function __construct() {
-        $this->courseContent = new Lesson(); // rename to CourseContent
+        $this->courseContent = new CourseContent();
     }
 
     function get_by_slug($slug) {
         $course = $this->find_by_slug($slug);
-        $courseContent = $this->courseContent->getAll();
+        $content = $this->courseContent->get_module_with_lessons();
         $result = array(
             'course' => $course->post_title, 
-            'content' => $courseContent
+            'content' => $content
         );
         return $course ? $result : $this->get_not_found_err();
     }

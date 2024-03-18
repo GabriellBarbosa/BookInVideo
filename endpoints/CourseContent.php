@@ -1,36 +1,41 @@
 <?php
-class Lesson {
-    public function getAll() {
-        $chapters = $this->get_chapters('codigo-limpo');
+class CourseContent {
+    public function get_module_with_lessons() {
         $result = array();
-        foreach ($chapters as $chapter) {
-            wp_reset_query();
-            $lesson_posts = $this->get_lesson_posts($chapter->slug);
+        $modules = $this->get_modules('codigo-limpo');
+        foreach ($modules as $module) {
             $course_content = array(
-                'chapter' => $chapter->name,
-                'lessons' => $this->get_filled_lessons($lesson_posts)
+                'module' => $module->name,
+                'lessons' => $this->get_module_lessons($module->slug)
             );
             array_push($result, $course_content);
         }
         return $result;
     }
 
-    private function get_chapters($course_slug) {
+    private function get_modules($course_slug) {
         return get_terms($course_slug);
     }
 
-    private function get_lesson_posts($slug) {
-        $chapter_lessons_query = array(
-            'post_type' => 'Aula',
+    private function get_module_lessons($module_slug) {
+        $lesson_posts = $this->get_lesson_posts($module_slug);
+        return $this->get_filled_lessons($lesson_posts);
+    }
+
+
+    private function get_lesson_posts($module_slug) {
+        wp_reset_query();
+        $module_lessons_query = array(
+            'post_type' => 'aula',
             'tax_query' => array(
                 array(
                     'taxonomy' => 'codigo-limpo',
                     'field' => 'slug',
-                    'terms' => $slug,
+                    'terms' => $module_slug,
                 ),
             ),
         );
-        return new WP_Query($chapter_lessons_query);
+        return new WP_Query($module_lessons_query);
     }
 
     private function get_filled_lessons($lesson_posts) {
