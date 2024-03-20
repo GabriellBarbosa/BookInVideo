@@ -1,5 +1,5 @@
 <?php
-include(get_template_directory() . '/endpoints/Course.php');
+include(get_template_directory() . '/domain/entities/Course.php');
 
 add_action('rest_api_init', 'registerGetCourse');
 add_action('rest_api_init', 'registerGetLesson');
@@ -16,8 +16,8 @@ function registerGetCourse() {
 }
 
 function getCourse($request) {
-    $course = new Course();
-    $response = $course->getBySlug($request['slug']);
+    $course = new Course($request['slug']);
+    $response = $course->get();
     return rest_ensure_response($response);
 }
 
