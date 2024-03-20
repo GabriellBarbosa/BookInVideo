@@ -10,10 +10,11 @@ class Course {
 
     function get_by_slug($slug) {
         $course = $this->find_by_slug($slug);
-        $content = $this->courseContent->get_module_with_lessons();
+        $modules = $this->courseContent->get_modules_with_lessons();
         $result = array(
-            'course' => $course->post_title, 
-            'content' => $content
+            'name' => $course->post_title, 
+            'slug' => $course->post_name,
+            'modules' => $modules
         );
         return $course ? $result : $this->get_not_found_err();
     }

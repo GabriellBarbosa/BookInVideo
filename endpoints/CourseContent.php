@@ -1,11 +1,11 @@
 <?php
 class CourseContent {
-    public function get_module_with_lessons() {
+    public function get_modules_with_lessons() {
         $result = array();
         $modules = $this->get_modules('codigo-limpo');
         foreach ($modules as $module) {
             $course_content = array(
-                'module' => $module->name,
+                'name' => $module->name,
                 'sequence' => $module->description,
                 'lessons' => $this->get_module_lessons($module->slug)
             );
