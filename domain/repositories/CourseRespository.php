@@ -1,14 +1,14 @@
 <?php
 class CourseRepository {
-    public function findBySlug($slug, $fields) {
-        $courseQueryResult = $this->getCourseQuery($slug);
-        $coursePosts = $courseQueryResult->get_posts();
+    public function getCourse($slug, $fields) {
+        $queryResult = $this->courseQuery($slug);
+        $coursePosts = $queryResult->get_posts();
         $singleCoursePost = array_shift($coursePosts);
-        $fields = $this->getPostFields($singleCoursePost->ID, $fields);
+        $fields = $this->getPostCustomFields($singleCoursePost->ID, $fields);
         return $fields;
     }
 
-    private function getCourseQuery($slug) {
+    private function courseQuery($slug) {
         return new WP_Query(array(
             'post_type' => 'curso',
             'name' => $slug,
@@ -21,11 +21,11 @@ class CourseRepository {
     }
 
     public function getLessons($courseSlug, $moduleSlug, $fields) {
-        $lessonPosts = $this->getLessonsQuery($courseSlug, $moduleSlug);
-        return $this->getLessonsFields($lessonPosts, $fields);
+        $queryResult = $this->lessonsQuery($courseSlug, $moduleSlug);
+        return $this->getLessonsWithCustomFields($queryResult, $fields);
     }
 
-    private function getLessonsQuery($courseSlug, $moduleSlug) {
+    private function lessonsQuery($courseSlug, $moduleSlug) {
         wp_reset_query();
         return new WP_Query(array(
             'post_type' => 'aula',
@@ -39,18 +39,18 @@ class CourseRepository {
         ));
     }
 
-    private function getLessonsFields($lessonPosts, $fields) {
+    private function getLessonsWithCustomFields($lessonsQuery, $fields) {
         global $post;
         $result = array();
-        if ($lessonPosts->have_posts()) {
-            while ($lessonPosts->have_posts()) : $lessonPosts->the_post();
-                array_push($result, $this->getPostFields($post->ID, $fields));
+        if ($lessonsQuery->have_posts()) {
+            while ($lessonsQuery->have_posts()) : $lessonsQuery->the_post();
+                array_push($result, $this->getPostCustomFields($post->ID, $fields));
             endwhile;
         }
         return $result;
     }
 
-    private function getPostFields($postID, $fields) {
+    private function getPostCustomFields($postID, $fields) {
         $metaData = get_post_meta($postID);
         $result = array();
         foreach ($fields as $field) {

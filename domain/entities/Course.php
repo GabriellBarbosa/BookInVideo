@@ -12,7 +12,7 @@ class Course {
 
     public function get() {
         $fields = ['name', 'slug'];
-        $course = $this->courseRepository->findBySlug($this->slug, $fields);
+        $course = $this->courseRepository->getCourse($this->slug, $fields);
         return $this->mountCourse($course);
     }
 
