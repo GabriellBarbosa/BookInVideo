@@ -45,17 +45,21 @@ class Course {
     public function getLesson($courseSlug, $lessonSlug) {
         $lessonQuery = array(
             'post_type' => 'aula',
-            'name' => $lessonSlug,
             'numberposts' => 1,
             'tax_query' => array(
+                'taxonomy' => $courseSlug,
+            ),
+            'meta_query' => array(
                 array(
-                    'taxonomy' => $courseSlug
-                )
+                    'key' => 'slug',
+                    'value' => $lessonSlug,
+                    'compare' => 'LIKE'
+                ),
             )
         );
         $lessonQueryResult = new WP_Query($lessonQuery);
         $lessonPosts = $lessonQueryResult->get_posts();
-        return $lessonPosts;
+        return array_shift($lessonPosts);
     }
 }
 ?>
