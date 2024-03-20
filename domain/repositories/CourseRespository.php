@@ -65,7 +65,6 @@ class CourseRepository {
                 array(
                     'key' => 'slug',
                     'value' => $lessonSlug,
-                    'compare' => 'LIKE'
                 ),
             )
         ));

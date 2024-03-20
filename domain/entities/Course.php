@@ -1,5 +1,5 @@
 <?php
-include(get_template_directory() . '/domain/repositories/CourseRespository.php');
+require_once get_template_directory() . '/domain/repositories/CourseRespository.php';
 
 class Course {
     private $courseSlug = null;
