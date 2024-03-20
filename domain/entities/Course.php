@@ -47,10 +47,15 @@ class Course {
 
     private function getLessons($moduleSlug) {
         $fields = ['name', 'slug', 'sequence','duration'];
-        $lessons = $this->courseRepository->getLessons($this->slug, $moduleSlug, $fields);
-        return $lessons;
+        return $this->courseRepository->getLessons(
+            $this->slug, $moduleSlug, $fields);
     }
-    // ============
+
+    public function getLesson($lessonSlug) {
+        $fields = ['name', 'sequence', 'video_src'];
+        return $this->courseRepository->getSingleLesson(
+            $this->slug, $lessonSlug, $fields);
+    }
 
     private function getNotFoundErr() {
         return new WP_Error(
@@ -58,26 +63,6 @@ class Course {
             'O curso não foi encontrado', 
             array('status' => 404)
         );
-    }
-
-    public function getLesson($courseSlug, $lessonSlug) {
-        $lessonQuery = array(
-            'post_type' => 'aula',
-            'numberposts' => 1,
-            'tax_query' => array(
-                'taxonomy' => $courseSlug,
-            ),
-            'meta_query' => array(
-                array(
-                    'key' => 'slug',
-                    'value' => $lessonSlug,
-                    'compare' => 'LIKE'
-                ),
-            )
-        );
-        $lessonQueryResult = new WP_Query($lessonQuery);
-        $lessonPosts = $lessonQueryResult->get_posts();
-        return array_shift($lessonPosts);
     }
 }
 ?>

@@ -50,6 +50,31 @@ class CourseRepository {
         return $result;
     }
 
+    public function getSingleLesson($courseSlug, $lessonSlug, $fields) {
+        $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
+        $lessonPosts = $queryResult->get_posts();
+        $singleLessonPost = array_shift($lessonPosts);
+        $fields = $this->getPostCustomFields($singleLessonPost->ID, $fields);
+        return $fields;
+    }
+
+    private function lessonQuery($courseSlug, $lessonSlug) {
+        return new WP_Query(array(
+            'post_type' => 'aula',
+            'numberposts' => 1,
+            'tax_query' => array(
+                'taxonomy' => $courseSlug,
+            ),
+            'meta_query' => array(
+                array(
+                    'key' => 'slug',
+                    'value' => $lessonSlug,
+                    'compare' => 'LIKE'
+                ),
+            )
+        ));
+    }
+
     private function getPostCustomFields($postID, $fields) {
         $metaData = get_post_meta($postID);
         $result = array();
