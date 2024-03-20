@@ -1,65 +1,65 @@
 <?php
 class CourseContent {
-    public function get_modules_with_lessons() {
+    public function getModulesWithLessons($courseSlug) {
         $result = array();
-        $modules = $this->get_modules('codigo-limpo');
+        $modules = $this->getModules($courseSlug);
         foreach ($modules as $module) {
-            $course_content = array(
+            $courseContent = array(
                 'name' => $module->name,
                 'sequence' => $module->description,
-                'lessons' => $this->get_module_lessons($module->slug)
+                'lessons' => $this->getModuleLessons($module->slug, $courseSlug)
             );
-            array_push($result, $course_content);
+            array_push($result, $courseContent);
         }
         return $result;
     }
 
-    private function get_modules($course_slug) {
-        return get_terms($course_slug);
+    private function getModules($courseSlug) {
+        return get_terms($courseSlug);
     }
 
-    private function get_module_lessons($module_slug) {
-        $lesson_posts = $this->get_lesson_posts($module_slug);
-        return $this->get_filled_lessons($lesson_posts);
+    private function getModuleLessons($moduleSlug, $courseSlug) {
+        $lessonPosts = $this->getLessonPosts($moduleSlug, $courseSlug);
+        return $this->getFilledLessons($lessonPosts);
     }
 
 
-    private function get_lesson_posts($module_slug) {
+    private function getLessonPosts($moduleSlug, $courseSlug) {
         wp_reset_query();
         $module_lessons_query = array(
             'post_type' => 'aula',
             'tax_query' => array(
                 array(
-                    'taxonomy' => 'codigo-limpo',
+                    'taxonomy' => $courseSlug,
                     'field' => 'slug',
-                    'terms' => $module_slug,
+                    'terms' => $moduleSlug,
                 ),
             ),
         );
         return new WP_Query($module_lessons_query);
     }
 
-    private function get_filled_lessons($lesson_posts) {
+    private function getFilledLessons($lessonPosts) {
         global $post;
         $result = array();
     
-        if ($lesson_posts->have_posts()) {
-            while ($lesson_posts->have_posts()) : $lesson_posts->the_post();
-                array_push($result, $this->get_lesson_fields($post->ID));
+        if ($lessonPosts->have_posts()) {
+            while ($lessonPosts->have_posts()) : $lessonPosts->the_post();
+                array_push($result, $this->getLessonFields($post->ID));
             endwhile;
         }
     
         return $result;
     }
 
-    private function get_lesson_fields($post_id) {
-        $lesson_meta_data = get_post_meta($post_id);
+    private function getLessonFields($postId) {
+        $lessonMetaData = get_post_meta($postId);
         return array(
-            'name'      => $lesson_meta_data['name'][0],
-            'slug'      => $lesson_meta_data['slug'][0],
-            'sequence'  => $lesson_meta_data['sequence'][0],
-            'video_src' => $lesson_meta_data['video_src'][0],
-            'duration'  => $lesson_meta_data['duration'][0],
+            'name'      => $lessonMetaData['name'][0],
+            'slug'      => $lessonMetaData['slug'][0],
+            'sequence'  => $lessonMetaData['sequence'][0],
+            'video_src' => $lessonMetaData['video_src'][0],
+            'duration'  => $lessonMetaData['duration'][0],
         );
     }
 }

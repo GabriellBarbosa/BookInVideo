@@ -1,22 +1,41 @@
 <?php
 include(get_template_directory() . '/endpoints/Course.php');
 
-add_action('rest_api_init', 'register_api_get_course');
+add_action('rest_api_init', 'registerGetCourse');
+add_action('rest_api_init', 'registerGetLesson');
 
-function register_api_get_course() {
+function registerGetCourse() {
     $slug = '(?P<slug>[-\w]+)';
     $apiRoute = '/curso' . '/' . $slug;
     register_rest_route('api', $apiRoute, array(
         array(
             'methods' => WP_REST_Server::READABLE,
-            'callback' => 'get_course'
+            'callback' => 'getCourse'
         )
     ));
 }
 
-function get_course($request) {
+function getCourse($request) {
     $course = new Course();
-    $response = $course->get_by_slug($request['slug']);
+    $response = $course->getBySlug($request['slug']);
+    return rest_ensure_response($response);
+}
+
+function registerGetLesson() {
+    $courseSlug = '(?P<courseSlug>[-\w]+)';
+    $lessonSlug = '(?P<lessonSlug>[-\w]+)';
+    $apiRoute = '/curso' . '/' . $courseSlug . '/' . $lessonSlug;
+    register_rest_route('api', $apiRoute, array(
+        array(
+            'methods' => WP_REST_Server::READABLE,
+            'callback' => 'getLesson'
+        )
+    ));
+}
+
+function getLesson($request) {
+    $course = new Course();
+    $response = $course->getLesson($request['courseSlug'], $request['lessonSlug']);
     return rest_ensure_response($response);
 }
 ?>
