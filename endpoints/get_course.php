@@ -17,7 +17,10 @@ function registerGetCourse() {
 
 function getCourse($request) {
     $course = new Course($request['slug']);
-    $response = $course->get();
+    $courseFound = $course->get();
+    $response = $courseFound 
+        ? $courseFound 
+        : getNotFoundErr('O curso não foi encontrado');
     return rest_ensure_response($response);
 }
 
@@ -35,7 +38,18 @@ function registerGetLesson() {
 
 function getLesson($request) {
     $course = new Course($request['courseSlug']);
-    $response = $course->getSingleLesson($request['lessonSlug']);
+    $lessonFound = $course->getSingleLesson($request['lessonSlug']);
+    $response = $lessonFound
+        ? $lessonFound
+        : getNotFoundErr('A aula não foi encontrada');
     return rest_ensure_response($response);
+}
+
+function getNotFoundErr($message) {
+    return new WP_Error(
+        'not_found', 
+        $message, 
+        array('status' => 404)
+    );
 }
 ?>

@@ -24,7 +24,7 @@ class Course {
                 'modules' => $this->getModules()
             );
         } else {
-            return $this->getNotFoundErr();
+            return null;
         }
     }
 
@@ -55,14 +55,6 @@ class Course {
         $fields = ['name', 'sequence', 'video_src'];
         return $this->courseRepository->getSingleLesson(
             $this->courseSlug, $lessonSlug, $fields);
-    }
-
-    private function getNotFoundErr() {
-        return new WP_Error(
-            'not_found', 
-            'O curso não foi encontrado', 
-            array('status' => 404)
-        );
     }
 }
 ?>
