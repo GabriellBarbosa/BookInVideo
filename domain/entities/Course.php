@@ -2,17 +2,17 @@
 include(get_template_directory() . '/domain/repositories/CourseRespository.php');
 
 class Course {
-    private $slug = null;
+    private $courseSlug = null;
     private $courseRepository = null;
 
     public function __construct($slug) {
-        $this->slug = $slug;
+        $this->courseSlug = $slug;
         $this->courseRepository = new CourseRepository();
     }
 
     public function get() {
         $fields = ['name', 'slug'];
-        $course = $this->courseRepository->getCourse($this->slug, $fields);
+        $course = $this->courseRepository->getCourse($this->courseSlug, $fields);
         return $this->mountCourse($course);
     }
 
@@ -29,7 +29,7 @@ class Course {
     }
 
     private function getModules() {
-        $modules = $this->courseRepository->getModules($this->slug);
+        $modules = $this->courseRepository->getModules($this->courseSlug);
         $result = array();
         foreach ($modules as $module) {
             array_push($result, $this->mountModule($module));
@@ -48,13 +48,13 @@ class Course {
     private function getLessons($moduleSlug) {
         $fields = ['name', 'slug', 'sequence','duration'];
         return $this->courseRepository->getLessons(
-            $this->slug, $moduleSlug, $fields);
+            $this->courseSlug, $moduleSlug, $fields);
     }
 
     public function getSingleLesson($lessonSlug) {
         $fields = ['name', 'sequence', 'video_src'];
         return $this->courseRepository->getSingleLesson(
-            $this->slug, $lessonSlug, $fields);
+            $this->courseSlug, $lessonSlug, $fields);
     }
 
     private function getNotFoundErr() {
