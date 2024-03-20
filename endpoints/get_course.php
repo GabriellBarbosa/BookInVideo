@@ -35,7 +35,7 @@ function registerGetLesson() {
 
 function getLesson($request) {
     $course = new Course($request['courseSlug']);
-    $response = $course->getLesson($request['lessonSlug']);
+    $response = $course->getSingleLesson($request['lessonSlug']);
     return rest_ensure_response($response);
 }
 ?>

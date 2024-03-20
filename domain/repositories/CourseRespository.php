@@ -4,8 +4,7 @@ class CourseRepository {
         $queryResult = $this->courseQuery($slug);
         $coursePosts = $queryResult->get_posts();
         $singleCoursePost = array_shift($coursePosts);
-        $fields = $this->getPostCustomFields($singleCoursePost->ID, $fields);
-        return $fields;
+        return $this->getPostCustomFields($singleCoursePost->ID, $fields);
     }
 
     private function courseQuery($slug) {
@@ -54,8 +53,7 @@ class CourseRepository {
         $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
         $lessonPosts = $queryResult->get_posts();
         $singleLessonPost = array_shift($lessonPosts);
-        $fields = $this->getPostCustomFields($singleLessonPost->ID, $fields);
-        return $fields;
+        return $this->getPostCustomFields($singleLessonPost->ID, $fields);
     }
 
     private function lessonQuery($courseSlug, $lessonSlug) {
