@@ -57,9 +57,11 @@ class CourseRepository {
     private function lessonQuery($courseSlug, $lessonSlug) {
         return new WP_Query(array(
             'post_type' => 'aula',
-            'numberposts' => 1,
             'tax_query' => array(
-                'taxonomy' => $courseSlug,
+                array(
+                    'taxonomy' => $courseSlug,
+                    'operator' => 'EXISTS'
+                )
             ),
             'meta_query' => array(
                 array(
