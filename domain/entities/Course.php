@@ -52,7 +52,7 @@ class Course {
     }
 
     public function getSingleLesson($lessonSlug) {
-        $fields = ['name', 'sequence', 'video_src'];
+        $fields = ['name', 'sequence', 'video_src', 'prev', 'next'];
         return $this->courseRepository->getSingleLesson(
             $this->courseSlug, $lessonSlug, $fields);
     }
