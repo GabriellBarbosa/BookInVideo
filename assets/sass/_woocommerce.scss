@@ -8,3 +8,30 @@
         text-decoration: underline;
     }
 }
+
+.woocommerce-error,
+.woocommerce-message,
+.woocommerce-info {
+    background-color: #eee;
+    color: var(--gray-0);
+    border: none;
+    border-left: 4px solid;
+    padding: 15px 20px;
+
+    a {
+        color: var(--gray-0);
+    }
+
+    &::before {
+        display: none;
+    }
+}
+
+.woocommerce-error {
+    border-color: #f25c54;
+}
+
+.woocommerce-message,
+.woocommerce-info {
+    border-color: #7cb518;
+}

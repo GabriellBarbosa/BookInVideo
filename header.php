@@ -27,7 +27,7 @@
                         <a href="/curso/codigo-limpo" class="link">Curso</a>
                         <a href="plano" class="link">Inscreva-se</a>
                         <a href="contato" class="link contact">Contato</a>
-                        <a href="entrar" class="link login">Login</a>
+                        <a href="conta" class="link login">Login</a>
                     </div>
                 </div>
             </div>
