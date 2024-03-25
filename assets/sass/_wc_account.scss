@@ -1,0 +1,35 @@
+.woocommerce-form.woocommerce-form-login.login {
+    border: none;
+    padding: 0;
+
+    .woocommerce-form-row label .required {
+        display: none;
+    }
+
+    input {
+        padding: 10px 15px;
+        border-radius: 4px;
+    }
+
+    .woocommerce-form-login__submit {
+        background-color: var(--c-0-dark);
+        color: var(--gray-8);
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: normal;
+        transition: .2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .woocommerce-form-login__rememberme {
+        margin-top: 20px;
+    }
+
+    .lost_password {
+        margin-top: 20px;
+    }
+}

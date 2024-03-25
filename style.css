@@ -103,6 +103,17 @@ img {
   transform: scale(1.1);
 }
 
+.page_title_wrapper {
+  padding-top: 64px;
+}
+.page_title_wrapper .page_title {
+  font-family: "PT Serif", serif;
+  font-size: 36px;
+  text-align: center;
+  background-color: var(--gray-1);
+  padding: 20px 0;
+}
+
 .header {
   background-color: rgba(0, 0, 0, 0.8);
   float: left;
@@ -490,4 +501,44 @@ img {
   margin-top: 40px;
   border-radius: 4px;
   overflow: hidden;
+}
+
+.woocommerce {
+  max-width: 1160px;
+  padding: 0 15px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.woocommerce a {
+  text-decoration: underline;
+}
+
+.woocommerce-form.woocommerce-form-login.login {
+  border: none;
+  padding: 0;
+}
+.woocommerce-form.woocommerce-form-login.login .woocommerce-form-row label .required {
+  display: none;
+}
+.woocommerce-form.woocommerce-form-login.login input {
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+.woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__submit {
+  background-color: var(--c-0-dark);
+  color: var(--gray-8);
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  transition: 0.2s ease;
+}
+.woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__submit:hover {
+  transform: scale(1.1);
+}
+.woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__rememberme {
+  margin-top: 20px;
+}
+.woocommerce-form.woocommerce-form-login.login .lost_password {
+  margin-top: 20px;
 }

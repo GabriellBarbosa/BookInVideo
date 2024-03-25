@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
     <header class="header">
         <nav class="navigation container">
             <div>
