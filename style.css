@@ -561,6 +561,16 @@ img {
   grid-column: 2/3;
   grid-row: 2;
 }
+.woocommerce-account .woocommerce h2::before,
+.woocommerce-account .woocommerce h2.register_title::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: var(--gray-4);
+}
 .woocommerce-account .woocommerce .register_call_to_action {
   grid-column: 2/3;
   grid-row: 3;
@@ -593,6 +603,9 @@ img {
   border-radius: 4px;
   font-size: 16px;
   font-family: "Inter", sans-serif;
+  background-color: var(--gray-3);
+  color: var(--gray-8);
+  box-shadow: 0 0 3px 0 rgb(0, 0, 0);
 }
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login input[type=text]:focus,
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login input[type=password]:focus {
@@ -601,7 +614,7 @@ img {
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__submit {
   background-color: var(--c-0-dark);
   color: var(--gray-8);
-  padding: 10px 20px;
+  padding: 15px;
   margin-top: 20px;
   font-size: 18px;
   font-weight: normal;
@@ -632,13 +645,5 @@ img {
   .woocommerce-account .woocommerce h2.register_title {
     grid-column: 1/2;
     margin-top: 20px;
-  }
-  .woocommerce-account .woocommerce h2.register_title::before {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 2px;
-    background-color: var(--gray-4);
-    margin-bottom: 10px;
   }
 }
