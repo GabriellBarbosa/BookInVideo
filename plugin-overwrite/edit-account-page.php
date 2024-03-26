@@ -1,12 +1,12 @@
 <?php
-add_filter('woocommerce_save_account_details_required_fields', 'bookinvideo_account_remove_required_fields');
-function bookinvideo_account_remove_required_fields($required_fields) {
+add_filter('woocommerce_save_account_details_required_fields', 'removeDisplayNameFromRequiredFields');
+function removeDisplayNameFromRequiredFields($required_fields) {
 	unset($required_fields['account_display_name']);
 	return $required_fields;
 }
 
-add_filter('woocommerce_save_account_details_errors', 'bookinvideo_prevent_change_of_unalterable_fields', 10, 2);
-function bookinvideo_prevent_change_of_unalterable_fields(&$error, &$user){
+add_filter('woocommerce_save_account_details_errors', 'blockUnalterableFieldsChange', 10, 2);
+function blockUnalterableFieldsChange(&$error, &$user){
 	$current_user = get_user_by('id', $user->ID);
 
 	if ($current_user->user_email !== $user->user_email)
