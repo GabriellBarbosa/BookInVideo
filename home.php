@@ -8,8 +8,8 @@
                 <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava"</p>
             </blockquote>
             <cite class="intro_quoter">MICHAEL FEATHERS</cite>
-            <div class="intro_subscription_button">
-                <a href="/" class="subscription_button">Inscreva-se</a>
+            <div class="intro_call_to_action">
+                <a href="/" class="call_to_action">Inscreva-se</a>
             </div>
         </div>
         <div class="course_info_wrapper">

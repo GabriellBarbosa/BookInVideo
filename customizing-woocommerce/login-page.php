@@ -24,14 +24,14 @@ function bookinvideo_register_section() {
     echo '<h2 class="register_title">'.'Cadastre-se'.'</h2>';
     echo '<div class="register_call_to_action">';
         echo '<p>'.'Inscreva-se para realizar seu cadastro e ter acesso ilimitado ao curso de Código Limpo.'.'</p>';
-        echo '<div><a href="/" class="subscription_button">Inscreva-se</a></div>';
+        echo '<div><a href="/" class="call_to_action">Inscreva-se</a></div>';
     echo '</div>';
 }
 
 add_filter('login_errors', 'bookinvideo_change_login_error_message', 10, 1);   
 function bookinvideo_change_login_error_message( $error ) {
     if ($error) {
-        $error = '<span>E-mail ou senha inválida</span>';
+        $error = '<span>E-mail e/ou senha inválidos</span>';
     }
     return $error;
 }
