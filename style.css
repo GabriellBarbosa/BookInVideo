@@ -514,6 +514,16 @@ body.woocommerce-page {
   margin-top: 40px;
 }
 
+.woocommerce h2::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: var(--gray-4);
+}
+
 .woocommerce-error,
 .woocommerce-message,
 .woocommerce-info {
@@ -556,7 +566,7 @@ body.woocommerce-page {
   font-size: 16px;
   background-color: var(--gray-2);
   color: var(--gray-8);
-  box-shadow: 0 0 1px 1px rgb(0, 0, 0);
+  box-shadow: 0 0 0 1px rgb(0, 0, 0);
 }
 
 .woocommerce-Input.woocommerce-Input--email.input-text.disable-input,
@@ -596,16 +606,6 @@ body.woocommerce-page {
 .woocommerce-account .woocommerce h2.register_title {
   grid-column: 2/3;
   grid-row: 2;
-}
-.woocommerce-account .woocommerce h2::before,
-.woocommerce-account .woocommerce h2.register_title::before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 2px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-color: var(--gray-4);
 }
 .woocommerce-account .woocommerce .register_call_to_action {
   grid-column: 2/3;
@@ -700,12 +700,11 @@ body.woocommerce-page {
   }
 }
 .woocommerce-account.logged-in .woocommerce h2 {
-  font-size: 36px;
   font-family: "PT Serif", serif;
-  font-weight: normal;
+  font-size: 36px;
 }
 .woocommerce-account.logged-in .woocommerce p, .woocommerce-account.logged-in .woocommerce .call_to_action {
-  margin: 16px 0 36px 0;
+  margin: 16px 0 40px 0;
 }
 .woocommerce-account.logged-in .woocommerce p {
   font-size: 16px;
@@ -727,7 +726,7 @@ body.woocommerce-page {
   }
 }
 .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul li.is-active a {
-  border-left: 3px solid var(--c-0-light);
+  color: var(--c-0-light);
 }
 .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul a {
   display: block;
@@ -742,7 +741,7 @@ body.woocommerce-page {
   }
 }
 .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul a:hover {
-  background-color: var(--gray-3);
+  background-color: var(--gray-1);
 }
 
 .woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-form-row.form-row-first,
@@ -770,4 +769,7 @@ body.woocommerce-page {
 }
 .woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm fieldset legend {
   padding: 0 4px;
+}
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-Button.button {
+  color: var(--gray-1);
 }

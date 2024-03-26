@@ -9,6 +9,18 @@ body.woocommerce-page {
     margin-top: 40px;
 }
 
+.woocommerce h2 {
+    &::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin-bottom: 10px; 
+        border-radius: 4px;
+        background-color: var(--gray-4);
+    }
+}
+
 .woocommerce-error,
 .woocommerce-message,
 .woocommerce-info {
@@ -49,7 +61,7 @@ body.woocommerce-page {
     font-size: 16px;
     background-color: var(--gray-2);
     color: var(--gray-8);
-    box-shadow:  0 0 1px 1px rgb(0, 0, 0);
+    box-shadow:  0 0 0 1px rgb(0, 0, 0);
 }
 
 .woocommerce-Input.woocommerce-Input--email.input-text.disable-input,
