@@ -12,7 +12,7 @@ function blockUnalterableFieldsChange(&$error, &$user){
 	if ($current_user->user_email !== $user->user_email)
 		$error->add( 'error', '<b>Endereço de e-mail</b> não pode ser alterado.');
 
-	if ($current_user->first_name != $user->first_name)
+	if ($current_user->first_name !== $user->first_name)
 		$error->add( 'error', '<b>Nome</b> não pode ser alterado.');
 }
 ?>
