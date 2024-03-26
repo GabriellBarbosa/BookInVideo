@@ -4,9 +4,9 @@ require_once($template_directory . '/custom-post-types/cpt-course.php');
 require_once($template_directory . '/custom-post-types/cpt-lesson.php');
 require_once($template_directory . '/endpoints/get_course.php');
 require_once($template_directory . '/custom-taxonomies/codigo-limpo-taxonomy.php');
-require_once($template_directory . '/plugin-overwrite/login-page.php');
-require_once($template_directory . '/plugin-overwrite/myaccount-page.php');
-require_once($template_directory . '/plugin-overwrite/edit-account-page.php');
+require_once($template_directory . '/plugin-overwrite/wc_login.php');
+require_once($template_directory . '/plugin-overwrite/wc_myaccount.php');
+require_once($template_directory . '/plugin-overwrite/wc_edit-account.php');
 
 add_action('after_setup_theme', 'bookinvideo_add_woocommerce_support');
 function bookinvideo_add_woocommerce_support() {
