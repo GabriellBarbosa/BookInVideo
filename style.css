@@ -503,6 +503,10 @@ img {
   overflow: hidden;
 }
 
+body.woocommerce-page {
+  background-color: var(--gray-3);
+}
+
 .woocommerce {
   max-width: 1160px;
   padding: 0 15px;
@@ -518,6 +522,7 @@ img {
   border: none;
   border-left: 4px solid;
   padding: 15px 20px;
+  line-height: 27px;
 }
 .woocommerce-error a,
 .woocommerce-message a,
@@ -537,6 +542,40 @@ img {
 .woocommerce-message,
 .woocommerce-info {
   border-color: #9be564;
+}
+
+.woocommerce label {
+  color: var(--gray-6);
+}
+
+.woocommerce-Input.woocommerce-Input--text.input-text,
+.woocommerce-Input.woocommerce-Input--email.input-text,
+.woocommerce-Input.woocommerce-Input--password.input-text {
+  padding: 15px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--gray-2);
+  color: var(--gray-8);
+  box-shadow: 0 0 1px 1px rgb(0, 0, 0);
+}
+
+.woocommerce-Input.woocommerce-Input--email.input-text.disable-input,
+.woocommerce-Input.woocommerce-Input--text.input-text.disable-input {
+  color: var(--gray-plus);
+  background-color: var(--gray-0);
+  box-shadow: none;
+}
+
+.woocommerce-Input.woocommerce-Input--text.input-text.disable-input:focus {
+  box-shadow: none;
+}
+
+.woocommerce-Input.woocommerce-Input--text.input-text:focus {
+  box-shadow: 0 0 3px 1px var(--c-0-light);
+}
+
+.woocommerce form .form-row .required {
+  color: #f25c54;
 }
 
 .woocommerce-account .woocommerce {
@@ -593,22 +632,6 @@ img {
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-row label .required {
   display: none;
 }
-.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login label {
-  color: var(--gray-6);
-}
-.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login input {
-  padding: 15px 10px;
-  border-radius: 4px;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  background-color: var(--gray-3);
-  color: var(--gray-8);
-  box-shadow: 0 0 3px 0 rgb(0, 0, 0);
-}
-.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login input[type=text]:focus,
-.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login input[type=password]:focus {
-  box-shadow: 0 0 3px 3px var(--c-0-light);
-}
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__submit {
   background-color: var(--c-0-dark);
   color: var(--gray-8);
@@ -658,46 +681,93 @@ img {
   -moz-column-gap: 0;
        column-gap: 0;
 }
-.woocommerce-account.logged-in .woocommerce-MyAccount-navigation {
+.woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation {
+  width: 200px;
+}
+@media screen and (max-width: 760px) {
+  .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation {
+    width: 100%;
+  }
+}
+.woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-content {
+  margin-left: 40px;
   width: unset;
 }
-.woocommerce-account.logged-in .woocommerce-MyAccount-content {
-  margin-left: 40px;
+@media screen and (max-width: 760px) {
+  .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-content {
+    margin-left: 0;
+    margin-top: 30px;
+  }
 }
-.woocommerce-account.logged-in h2 {
+.woocommerce-account.logged-in .woocommerce h2 {
   font-size: 36px;
   font-family: "PT Serif", serif;
+  font-weight: normal;
 }
-.woocommerce-account.logged-in p, .woocommerce-account.logged-in .call_to_action {
+.woocommerce-account.logged-in .woocommerce p, .woocommerce-account.logged-in .woocommerce .call_to_action {
   margin: 16px 0 36px 0;
 }
-.woocommerce-account.logged-in p {
+.woocommerce-account.logged-in .woocommerce p {
   font-size: 16px;
   line-height: 24px;
   max-width: 500px;
   color: var(--gray-6);
 }
-.woocommerce-account.logged-in .woocommerce-MyAccount-navigation ul {
-  width: 200px;
+.woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul {
   border-radius: 4px;
   overflow: hidden;
 }
-.woocommerce-account.logged-in .woocommerce-MyAccount-navigation ul a {
-  display: flex;
-  align-items: center;
+@media screen and (max-width: 760px) {
+  .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul li {
+    margin: 0 5px 10px 5px;
+  }
+}
+.woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul li.is-active a {
+  border-left: 3px solid var(--c-0-light);
+}
+.woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul a {
+  display: block;
   background-color: var(--gray-0);
-  text-decoration: none;
   padding: 20px;
 }
-.woocommerce-account.logged-in .woocommerce-MyAccount-navigation ul a:hover {
+@media screen and (max-width: 760px) {
+  .woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul a {
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+  }
+}
+.woocommerce-account.logged-in .woocommerce .woocommerce-MyAccount-navigation ul a:hover {
   background-color: var(--gray-3);
 }
-.woocommerce-account.logged-in .woocommerce-MyAccount-navigation ul a::before {
-  content: "";
+
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-form-row.form-row-first,
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-form-row.form-row-last {
+  float: none;
+  width: 100%;
+}
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-form-row.form-row-first {
+  margin-top: 0;
+}
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .form-row {
+  margin: 20px 0;
+}
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm span.display_name {
   display: block;
-  height: 4px;
-  width: 4px;
-  border-radius: 50%;
-  margin-right: 8px;
-  background-color: var(--c-0-light);
+  font-family: "PT Serif";
+  margin-top: 4px;
+  color: var(--gray-plus);
+}
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm fieldset {
+  padding: 15px;
+  border-radius: 4px;
+  border-color: var(--gray-plus);
+  border-style: solid;
+}
+.woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm fieldset legend {
+  padding: 0 4px;
 }

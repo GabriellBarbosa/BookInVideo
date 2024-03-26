@@ -1,0 +1,35 @@
+.woocommerce-edit-account {
+    .woocommerce .woocommerce-EditAccountForm {
+        .woocommerce-form-row.form-row-first,
+        .woocommerce-form-row.form-row-last {
+            float: none;
+            width: 100%;
+        }
+
+        .woocommerce-form-row.form-row-first {
+            margin-top: 0;
+        }
+
+        .form-row {
+            margin: 20px 0;
+        }
+
+        span.display_name {
+            display: block;
+            font-family: 'PT Serif';
+            margin-top: 4px;
+            color: var(--gray-plus);
+        }
+
+        fieldset {
+            padding: 15px;
+            border-radius: 4px;
+            border-color: var(--gray-plus);
+
+            border-style: solid;
+            legend {
+                padding: 0 4px;
+            }
+        }
+    }
+}

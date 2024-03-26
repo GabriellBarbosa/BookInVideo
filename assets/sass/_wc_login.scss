@@ -61,25 +61,6 @@
             display: none;
         }
 
-        label {
-            color: var(--gray-6);
-        }
-    
-        input {
-            padding: 15px 10px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--gray-3);
-            color: var(--gray-8);
-            box-shadow:  0 0 3px 0 rgb(0, 0, 0);
-        }
-
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            box-shadow: 0 0 3px 3px var(--c-0-light);
-        }
-    
         .woocommerce-form-login__submit {
             background-color: var(--c-0-dark);
             color: var(--gray-8);
