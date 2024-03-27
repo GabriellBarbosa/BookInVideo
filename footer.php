@@ -45,6 +45,7 @@ $stylesheet_directory_uri = get_stylesheet_directory_uri();
                 </div>
             </div>
         </div>
+        <?php wp_footer(); ?>
     </footer>
     <script src="<?= $stylesheet_directory_uri; ?>/assets/js/index.js" type="module"></script>
 </body>

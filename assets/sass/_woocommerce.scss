@@ -7,9 +7,11 @@ body.woocommerce-page {
     padding: 0 15px;
     margin: 0 auto;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.woocommerce h2 {
+.woocommerce h2,
+.woocommerce h3 {
     &::before {
         content: '';
         display: block;
@@ -55,7 +57,8 @@ body.woocommerce-page {
 
 .woocommerce-Input.woocommerce-Input--text.input-text,
 .woocommerce-Input.woocommerce-Input--email.input-text,
-.woocommerce-Input.woocommerce-Input--password.input-text {
+.woocommerce-Input.woocommerce-Input--password.input-text,
+.woocommerce-input-wrapper .input-text {
     padding: 15px 10px;
     border-radius: 4px;
     font-size: 16px;
@@ -75,14 +78,17 @@ body.woocommerce-page {
     box-shadow: none;
 }
 
-.woocommerce-Input.woocommerce-Input--text.input-text:focus {
+.woocommerce-Input.woocommerce-Input--text.input-text:focus,
+.woocommerce-input-wrapper .input-text:focus {
     box-shadow: 0 0 3px 1px var(--c-0-light);
 }
 
-.woocommerce form .form-row .required {
-    color: #f25c54;
+.woocommerce form .form-row .required,
+abbr.required {
+    color: var(--gray-6);
 }
 
-// .woocommerce-form-row.hidden {
-//     display: none;
-// }
+.woocommerce-page .woocommerce .woocommerce-Button.button {
+    margin-top: 20px;
+    color: var(--gray-1);
+}

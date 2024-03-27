@@ -31,23 +31,6 @@ img {
     margin: 0 auto;
 }
 
-.title {
-    font-size: 36px;
-    line-height: 42px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.title_separator::after {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 2px;
-    margin: 10px auto 0 auto;
-    border-radius: 4px;
-    background-color: var(--gray-4);
-}
-
 .call_to_action {
     display: flex;
     align-items: center;
@@ -80,7 +63,6 @@ img {
     padding-top: 64px;
 
     .page_title {
-        font-family: 'PT Serif', serif;
         font-size: 36px;
         text-align: center;
         background-color: var(--gray-1);
