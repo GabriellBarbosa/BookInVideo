@@ -98,7 +98,7 @@
 
         .course_info_wrapper {
             background-color: var(--gray-3);
-            color: var(--gray-7);
+            color: var(--gray-8);
             width: fit-content;
             margin: 0 auto;
             padding: 10px 20px;
@@ -109,7 +109,6 @@
             ul, ul li {
                 display: flex;
                 align-items: center;
-                font-family: "PT Serif", serif;
             }
 
             ul li:nth-child(2)::before,
@@ -192,7 +191,7 @@
                 padding: 10px 20px;
                 border-radius: 4px;
                 background-color: var(--gray-3);
-                color: var(--gray-7);
+                color: var(--gray-6);
                 width: fit-content;
                 margin: 0 20px 20px 0;
 
