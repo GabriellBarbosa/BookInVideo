@@ -66,7 +66,7 @@ img {
   padding: 10px 20px;
   font-size: 18px;
   border-radius: 4px;
-  transition: all 0.2s;
+  transition: 0.2s ease;
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
@@ -402,6 +402,7 @@ img {
 #page-home .banner .course_info_wrapper ul, #page-home .banner .course_info_wrapper ul li {
   display: flex;
   align-items: center;
+  font-family: "PT Serif", serif;
 }
 #page-home .banner .course_info_wrapper ul li:nth-child(2)::before,
 #page-home .banner .course_info_wrapper ul li:nth-child(2)::after {
@@ -497,6 +498,70 @@ img {
   margin-top: 40px;
   border-radius: 4px;
   overflow: hidden;
+}
+#page-home .pricing_wrapper {
+  padding-top: 60px;
+}
+#page-home .pricing_wrapper .plan {
+  padding: 36px 0 36px 36px;
+  border-radius: 4px;
+  background-color: var(--gray-1);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 40px auto 60px auto;
+}
+#page-home .pricing_wrapper .plan .price_info_wrapper {
+  display: flex;
+  align-items: center;
+}
+#page-home .pricing_wrapper .plan .price p {
+  font-family: "PT Serif", serif;
+  font-style: italic;
+  line-height: 24px;
+}
+#page-home .pricing_wrapper .plan .price span {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 43.2px;
+}
+#page-home .pricing_wrapper .plan .plan_info {
+  border-left: 1px solid var(--gray-3);
+  padding-left: 36px;
+  margin-left: 36px;
+}
+#page-home .pricing_wrapper .plan .plan_info ul li {
+  display: flex;
+  align-items: center;
+  font-family: "PT Serif", serif;
+  padding: 8px 36px 8px 8px;
+}
+#page-home .pricing_wrapper .plan .plan_info ul li:nth-child(even) {
+  background-color: var(--gray-0);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+#page-home .pricing_wrapper .plan .plan_info ul li::before {
+  content: "";
+  display: block;
+  margin-right: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--c-0-light);
+}
+#page-home .pricing_wrapper .plan .subscribe_btn {
+  margin: 36px 36px 0 0;
+  padding: 15px 0;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--c-0-dark);
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+#page-home .pricing_wrapper .plan .subscribe_btn:hover {
+  transform: scale(1.05);
 }
 
 body.woocommerce-page {

@@ -36,8 +36,8 @@
                 <li>Single responsability principle</li>
                 <li>Open-closed principle</li>
             </ul>
+            
         </div>
-
     </main>
 
     <section class="video_wrapper">
@@ -48,6 +48,29 @@
                     <iframe src="https://player.vimeo.com/video/922895312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0000-intro"></iframe>
                 </div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing_wrapper">
+        <div class="container">
+            <h2 class="title title_separator">Inscreva-se</h2>
+            <div class="plan"> 
+                <div class="price_info_wrapper">
+                    <div class="price">
+                        <p>Código Limpo</p>
+                        <span>R$ 72</span>
+                    </div>
+                    <div class="plan_info">
+                        <ul>
+                            <li>Acesso ilimitado</li>
+                            <li>4.4 horas</li>
+                            <li>23 aulas</li>
+                            <li>Certificado no lançamento final</li>
+                        </ul>
+                    </div>
+                </div>
+                <a class="subscribe_btn" href="">Assinar</a>
             </div>
         </div>
     </section>
