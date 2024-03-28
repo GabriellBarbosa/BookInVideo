@@ -266,15 +266,21 @@
             }
         }
 
-        .plan .subscribe_btn {
+        .plan .redirect {
             margin: 36px 36px 0 0;
-            padding: 15px 0;
-            font-size: 18px;
+        }
+
+        .plan .subscribe_btn {
             display: block;
             text-align: center;
             font-weight: bold;
-            background-color: var(--c-0-dark);
+            font-size: 18px;
+            width: 100%;
+            padding: 15px 0;
             border-radius: 4px;
+            background-color: var(--c-0-dark);
+            color: var(--gray-7);
+            cursor: pointer;
             transition: .2s ease;
 
             &:hover {

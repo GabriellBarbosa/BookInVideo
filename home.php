@@ -52,25 +52,41 @@
         </div>
     </section>
 
+    <?php
+    $product = getProduct('codigo-limpo');
+
+    function getProduct(string $slug) {
+        $post = get_page_by_path($slug, OBJECT, 'product');
+        $wcProduct = new WC_Product($post->ID);
+        return $post ? formatProduct($wcProduct) : null;
+    }
+
+    function formatProduct(WC_Product $product) {
+        return array(
+            'id' => $product->get_id(),
+            'name' => $product->get_name(),
+            'price' => $product->get_price(),
+            'description' => $product->get_description(),
+            'link' => $product->get_permalink(),
+        );
+    }
+    ?>
+
     <section class="pricing_wrapper">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
             <div class="plan"> 
                 <div class="price_info_wrapper">
                     <div class="price">
-                        <p>Código Limpo</p>
-                        <span>R$ 72</span>
+                        <p><?= $product['name']; ?></p>
+                        <span>R$ <?= $product['price']; ?></span>
                     </div>
-                    <div class="plan_info">
-                        <ul>
-                            <li>Acesso ilimitado</li>
-                            <li>4.4 horas</li>
-                            <li>23 aulas</li>
-                            <li>Certificado no lançamento final</li>
-                        </ul>
-                    </div>
+                    <div class="plan_info"><?= $product['description']; ?></div>
                 </div>
-                <a class="subscribe_btn" href="">Assinar</a>
+                <form class="redirect" action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
+                    <button class="subscribe_btn" type="submit" name="add-to-cart" value="<?= $product['id'] ?>">Assinar</button>
+                </form>
             </div>
         </div>
     </section>

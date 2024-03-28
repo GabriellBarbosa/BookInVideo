@@ -7,8 +7,13 @@ require_once($template_directory . '/custom-taxonomies/codigo-limpo-taxonomy.php
 require_once($template_directory . '/plugin-overwrite/wc_login.php');
 require_once($template_directory . '/plugin-overwrite/wc_myaccount.php');
 require_once($template_directory . '/plugin-overwrite/wc_edit-account.php');
+require_once($template_directory . '/plugin-overwrite/wc_cart_validation.php');
+require_once($template_directory . '/plugin-overwrite/wc_skip_cart.php');
+
+add_filter('wc_add_to_cart_message', '__return_false', 10, 2);
 
 add_action('after_setup_theme', 'bookinvideo_add_woocommerce_support');
+
 function bookinvideo_add_woocommerce_support() {
     add_theme_support('woocommerce');
 }

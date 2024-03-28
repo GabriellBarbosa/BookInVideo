@@ -543,15 +543,20 @@ img {
   border-radius: 50%;
   background-color: var(--c-0-light);
 }
-#page-home .pricing_wrapper .plan .subscribe_btn {
+#page-home .pricing_wrapper .plan .redirect {
   margin: 36px 36px 0 0;
-  padding: 15px 0;
-  font-size: 18px;
+}
+#page-home .pricing_wrapper .plan .subscribe_btn {
   display: block;
   text-align: center;
   font-weight: bold;
-  background-color: var(--c-0-dark);
+  font-size: 18px;
+  width: 100%;
+  padding: 15px 0;
   border-radius: 4px;
+  background-color: var(--c-0-dark);
+  color: var(--gray-7);
+  cursor: pointer;
   transition: 0.2s ease;
 }
 #page-home .pricing_wrapper .plan .subscribe_btn:hover {
@@ -651,6 +656,10 @@ abbr.required {
 .woocommerce-page .woocommerce .woocommerce-Button.button {
   margin-top: 20px;
   color: var(--gray-1);
+}
+
+.woocommerce-page .woocommerce .woocommerce-info .woocommerce-Button.button {
+  margin-top: 0;
 }
 
 .woocommerce-account .woocommerce {
