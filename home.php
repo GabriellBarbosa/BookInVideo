@@ -26,7 +26,7 @@
         <div class="course_wrapper">
             <a class="course_link" href="/curso/codigo-limpo">
                 <h3>Código Limpo</h3>
-                <p>Baseado no livro de Robert C. Martin</p>
+                <p>Inspirado no livro de Robert C. Martin</p>
             </a>
             <ul class="keywords">
                 <li>Nomes</li>
@@ -42,7 +42,7 @@
 
     <section class="video_wrapper">
         <div class="container">
-            <h2 class="title title_separator">Vídeo de introdução</h2>
+            <h2 class="title title_separator">Introdução</h2>
             <div class="video">
                 <div style="padding:56.25% 0 0 0;position:relative;">
                     <iframe src="https://player.vimeo.com/video/922895312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0000-intro"></iframe>

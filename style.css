@@ -433,10 +433,8 @@ img {
 #page-home .course_section .course_link {
   display: block;
   background-color: var(--gray-1);
-  max-width: 330px;
-  width: 100%;
-  padding: 20px;
-  border-left: 4px solid #219EBC;
+  width: 360px;
+  padding: 32px;
   border-radius: 4px;
   margin-right: 40px;
 }
@@ -446,21 +444,17 @@ img {
   }
 }
 #page-home .course_section .course_link h3 {
+  font-family: "PT Serif", serif;
   text-transform: uppercase;
-  font-size: 24px;
-}
-#page-home .course_section .course_link h3::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 2px;
-  background-color: #219EBC;
-  margin: 10px 0;
+  font-size: 32px;
+  text-align: center;
 }
 #page-home .course_section .course_link p {
-  font-size: 16px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: var(--gray-5);
+  font-family: "PT Serif", serif;
+  font-style: italic;
+  text-align: center;
+  color: var(--gray-6);
+  margin-top: 8px;
 }
 #page-home .course_section .keywords {
   max-width: 402px;
