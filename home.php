@@ -25,8 +25,13 @@
         <h2 class="title title_separator">Curso</h2>
         <div class="course_wrapper">
             <a class="course_link" href="/curso/codigo-limpo">
+                <p>Robert C. Martin</p>
                 <h3>Código Limpo</h3>
-                <p>Inspirado no livro de Robert C. Martin</p>
+                <ul>
+                    <li>23 aulas</li>
+                    <li>4.4 horas</li>
+                    <li>5 capítulos</li>
+                </ul>
             </a>
             <ul class="keywords">
                 <li>Nomes</li>
@@ -36,7 +41,6 @@
                 <li>Single responsability principle</li>
                 <li>Open-closed principle</li>
             </ul>
-            
         </div>
     </main>
 
