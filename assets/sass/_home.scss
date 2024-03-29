@@ -240,6 +240,18 @@
         .plan .price_info_wrapper {
             display: flex;
             align-items: center;
+
+            @media screen and (max-width: 760px) {
+                flex-direction: column;
+            }
+        }
+
+        .plan .price {
+            padding-right: 36px;
+            
+            @media screen and (max-width: 760px) {
+                text-align: center;
+            }
         }
 
         .plan .price p {
@@ -249,6 +261,7 @@
         }
 
         .plan .price span {
+            display: block;
             font-size: 36px;
             font-weight: bold;
             line-height: 43.2px;
@@ -257,7 +270,13 @@
         .plan .plan_info {
             border-left: 1px solid var(--gray-3);
             padding-left: 36px;
-            margin-left: 36px;
+
+            @media screen and (max-width: 760px) {
+                flex-direction: column;
+                padding-left: 0;
+                border-left: none;
+                margin-top: 36px;
+            }
         }
 
         .plan .plan_info ul li {

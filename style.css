@@ -516,12 +516,26 @@ img {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 760px) {
+  #page-home .pricing_wrapper .plan .price_info_wrapper {
+    flex-direction: column;
+  }
+}
+#page-home .pricing_wrapper .plan .price {
+  padding-right: 36px;
+}
+@media screen and (max-width: 760px) {
+  #page-home .pricing_wrapper .plan .price {
+    text-align: center;
+  }
+}
 #page-home .pricing_wrapper .plan .price p {
   font-family: "PT Serif", serif;
   font-style: italic;
   line-height: 24px;
 }
 #page-home .pricing_wrapper .plan .price span {
+  display: block;
   font-size: 36px;
   font-weight: bold;
   line-height: 43.2px;
@@ -529,7 +543,14 @@ img {
 #page-home .pricing_wrapper .plan .plan_info {
   border-left: 1px solid var(--gray-3);
   padding-left: 36px;
-  margin-left: 36px;
+}
+@media screen and (max-width: 760px) {
+  #page-home .pricing_wrapper .plan .plan_info {
+    flex-direction: column;
+    padding-left: 0;
+    border-left: none;
+    margin-top: 36px;
+  }
 }
 #page-home .pricing_wrapper .plan .plan_info ul li {
   display: flex;
