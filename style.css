@@ -425,6 +425,11 @@ img {
   margin-top: 40px;
   gap: 40px;
 }
+@media screen and (max-width: 760px) {
+  #page-home .course_section .course_wrapper {
+    grid-template-columns: minmax(0, 360px);
+  }
+}
 #page-home .course_section .course_link {
   justify-self: end;
   display: block;
