@@ -348,7 +348,7 @@ img {
   margin-top: 30px;
   font-size: 16px;
   line-height: 24px;
-  color: var(--gray-7);
+  color: var(--gray-6);
   font-family: "PT Serif", serif;
   font-style: italic;
   text-align: center;
@@ -453,7 +453,7 @@ img {
   font-family: "PT Serif", serif;
   font-style: italic;
   color: var(--gray-5);
-  font-family: 14px;
+  font-size: 14px;
   line-height: 21px;
 }
 #page-home .course_section .course_link ul {
