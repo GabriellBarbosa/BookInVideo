@@ -32,7 +32,7 @@ $allowed_html = array(
 	<?= '<h2>' . esc_html( $current_user->first_name ) . ' ' . esc_html( $current_user->last_name ) . '</h2>' ?>
 	<?= '<p>Neste painel, você pode editar seus dados, alterar sua senha e ver os seus pedidos.</p>' ?>
 	<?= '<h2>Curso</h2>' ?>
-	<?= '<a class="call_to_action" href="/curso/codigo-limpo">Ir para o curso</a>' ?>
+	<?= '<a class="call_to_action" href="/curso/codigo-limpo/0101-configuracao">Ir para o curso</a>' ?>
 	<?= '<h2>Certificado</h2>' ?>
 	<?= '<p>O certificado estará disponível após o lançamento final do curso de código limpo.</p>' ?>
 <?= '</div>' ?>

@@ -24,7 +24,7 @@
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
         <div class="course_wrapper">
-            <a class="course_link" href="/curso/codigo-limpo">
+            <a class="course_link" href="/curso/codigo-limpo/0101-configuracao">
                 <p>Robert C. Martin</p>
                 <h3>Código Limpo</h3>
                 <ul>

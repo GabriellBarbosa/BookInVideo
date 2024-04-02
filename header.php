@@ -1,3 +1,15 @@
+<?php
+function getMyAccountButtonText() {
+    $currentUser = wp_get_current_user();
+    if ($currentUser->ID > 0) {
+        $first_name = get_user_meta($currentUser->ID, 'first_name', true);
+        return $first_name ? $first_name : 'Minha conta';
+    } else {
+        return'Login';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,10 +36,12 @@
 
                 <div class="links_container">
                     <div class="links_wrapper">
-                        <a href="/curso/codigo-limpo" class="link">Curso</a>
+                        <a href="/curso/codigo-limpo/0101-configuracao" class="link">Curso</a>
                         <a href="plano" class="link">Inscreva-se</a>
                         <a href="contato" class="link contact">Contato</a>
-                        <a href="conta" class="link login">Login</a>
+                        <a href="conta" class="link login">
+                            <?= getMyAccountButtonText(); ?>
+                        </a>
                     </div>
                 </div>
             </div>
