@@ -1,7 +1,5 @@
 <?php
 $template_directory =  get_template_directory();
-require_once($template_directory . '/api/auth.php'); // just for testing.
-
 require_once($template_directory . '/custom-post-types/cpt-course.php');
 require_once($template_directory . '/custom-post-types/cpt-lesson.php');
 require_once($template_directory . '/api/get_course.php');
@@ -15,13 +13,14 @@ require_once($template_directory . '/plugin-overwrite/jwt_token.php');
 
 add_filter('wc_add_to_cart_message', '__return_false', 10, 2);
 
-add_action('wp_login', 'bookinvideo_generate_jtw_token');
+add_action('wp_login', 'bookinvideo_set_jwt_cookies');
 
-function bookinvideo_generate_jtw_token($user_login) {
+function bookinvideo_set_jwt_cookies($user_login) {
     $jwtToken = new JwtToken();
-    $token = $jwtToken->generate($user_login);
+    $token = $jwtToken->generateSplittedToken($user_login);
     if ($token) {
-        setcookie('bom', $token, time() + 3600, COOKIEPATH, COOKIE_DOMAIN);
+        setcookie('header.payload', $token['headerAndPayload'], time() + 3600, COOKIEPATH, COOKIE_DOMAIN);
+        setcookie('signature', $token['signature'], time() + 3600, COOKIEPATH, COOKIE_DOMAIN, false, true); // set true to secure in production
     }
 }
 
