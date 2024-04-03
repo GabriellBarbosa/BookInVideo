@@ -1,6 +1,5 @@
 <?php
 $template_directory =  get_template_directory();
-require_once($template_directory . '/utils/UserUtils.php');
 require_once($template_directory . '/custom-post-types/cpt-course.php');
 require_once($template_directory . '/custom-post-types/cpt-lesson.php');
 require_once($template_directory . '/api/get_course.php');
@@ -11,7 +10,6 @@ require_once($template_directory . '/plugin-overwrite/wc_myaccount.php');
 require_once($template_directory . '/plugin-overwrite/wc_edit-account.php');
 require_once($template_directory . '/plugin-overwrite/wc_cart_validation.php');
 require_once($template_directory . '/plugin-overwrite/wc_skip_cart.php');
-require_once($template_directory . '/plugin-overwrite/jwt_token.php');
 
 add_filter('wc_add_to_cart_message', '__return_false', 10, 2);
 
