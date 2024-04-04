@@ -11,9 +11,10 @@ $product = getCourseProductInfo();
                 <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava"</p>
             </blockquote>
             <cite class="intro_quoter">MICHAEL FEATHERS</cite>
-            <div class="intro_call_to_action">
-                <a href="/" class="call_to_action">Inscreva-se</a>
-            </div>
+            <form class="intro_call_to_action" action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
+                <button class="call_to_action" type="submit" name="add-to-cart" value="<?= $product['id'] ?>">Inscreva-se</button>
+            </form>
         </div>
         <div class="course_info_wrapper">
             <ul>
