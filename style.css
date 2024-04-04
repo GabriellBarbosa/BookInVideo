@@ -155,21 +155,25 @@ img {
 .header .navigation #header_menu .links_container {
   cursor: default;
 }
-.header .navigation #header_menu .links_container a.link {
+.header .navigation #header_menu .links_container a.link,
+.header .navigation #header_menu .links_container button.link {
   padding: 10px 0;
   margin-left: 20px;
   color: var(--gray-8);
   font-size: 16px;
 }
-.header .navigation #header_menu .links_container a.link:hover {
+.header .navigation #header_menu .links_container a.link:hover,
+.header .navigation #header_menu .links_container button.link:hover {
   color: var(--c-0-light);
 }
-.header .navigation #header_menu .links_container a.link.link.login {
+.header .navigation #header_menu .links_container a.link.link.login,
+.header .navigation #header_menu .links_container button.link.link.login {
   background-color: var(--gray-3);
   padding: 0.625rem 1.25rem;
   border-radius: 0.25rem;
 }
-.header .navigation #header_menu .links_container a.link.link.login:hover {
+.header .navigation #header_menu .links_container a.link.link.login:hover,
+.header .navigation #header_menu .links_container button.link.link.login:hover {
   background-color: var(--c-0-dark);
   color: var(--gray-7);
 }
@@ -187,16 +191,20 @@ img {
   .header .navigation #header_menu .links_container .links_wrapper {
     margin: 0 0.938rem;
   }
-  .header .navigation #header_menu .links_container a.link {
+  .header .navigation #header_menu .links_container a.link,
+  .header .navigation #header_menu .links_container button.link {
     margin: 0;
     display: block;
     padding: 0.938rem 0.313rem;
     border-bottom: 0.063rem solid var(--gray-3);
   }
-  .header .navigation #header_menu .links_container a.link.contact, .header .navigation #header_menu .links_container a.link.login {
+  .header .navigation #header_menu .links_container a.link.link:nth-child(2), .header .navigation #header_menu .links_container a.link.login,
+  .header .navigation #header_menu .links_container button.link.link:nth-child(2),
+  .header .navigation #header_menu .links_container button.link.login {
     border-bottom: none;
   }
-  .header .navigation #header_menu .links_container a.link.login {
+  .header .navigation #header_menu .links_container a.link.login,
+  .header .navigation #header_menu .links_container button.link.login {
     margin-top: 0.313rem;
     margin-bottom: 0.938rem;
   }
@@ -217,6 +225,16 @@ img {
   .header .navigation #header_menu.active .links_container {
     display: block;
   }
+}
+
+.header .navigation .links_container .subscribe_form {
+  display: inline-block;
+}
+.header .navigation .links_container .subscribe_form button.link {
+  background-color: transparent;
+  color: var(--gray-8);
+  font-size: 16px;
+  cursor: pointer;
 }
 
 #footer_component {

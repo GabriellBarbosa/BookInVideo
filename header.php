@@ -8,6 +8,7 @@ function getMyAccountButtonText() {
         return'Login';
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +38,10 @@ function getMyAccountButtonText() {
                 <div class="links_container">
                     <div class="links_wrapper">
                         <a href="/curso/codigo-limpo/0101-configuracao" class="link">Curso</a>
-                        <a href="plano" class="link">Inscreva-se</a>
-                        <a href="contato" class="link contact">Contato</a>
+                        <form class="subscribe_form" action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
+                            <button class="link" type="submit" name="add-to-cart" value="<?= getCourseProduct()->get_id() ?>">Inscreva-se</button>
+                        </form>
                         <a href="conta" class="link login">
                             <?= getMyAccountButtonText(); ?>
                         </a>

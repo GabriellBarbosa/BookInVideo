@@ -65,7 +65,8 @@
             .links_container {
                 cursor: default;
 
-                a.link {
+                a.link,
+                button.link {
                     padding: 10px 0;
                     margin-left: 20px;
                     color: var(--gray-8);
@@ -102,13 +103,14 @@
                             margin: 0 0.938rem;
                         }
 
-                        a.link {
+                        a.link,
+                        button.link {
                             margin: 0;
                             display: block;
                             padding: 0.938rem 0.313rem;
                             border-bottom: 0.063rem solid var(--gray-3);
 
-                            &.contact, &.login {
+                            &.link:nth-child(2), &.login {
                                 border-bottom: none;
                             }
 
@@ -147,5 +149,16 @@
                 }
             }
         }
+    }
+}
+
+.header .navigation .links_container .subscribe_form {
+    display: inline-block;
+
+    button.link {
+        background-color: transparent;
+        color: var(--gray-8);
+        font-size: 16px;
+        cursor: pointer;
     }
 }

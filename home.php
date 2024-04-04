@@ -1,4 +1,7 @@
-<?php get_header() ?>
+<?php 
+get_header();
+$product = getCourseProductInfo();
+?>
 
 <div id="page-home">
     <section class="banner">
@@ -55,26 +58,6 @@
             </div>
         </div>
     </section>
-
-    <?php
-    $product = getProduct('codigo-limpo');
-
-    function getProduct(string $slug) {
-        $post = get_page_by_path($slug, OBJECT, 'product');
-        $wcProduct = new WC_Product($post->ID);
-        return $post ? formatProduct($wcProduct) : null;
-    }
-
-    function formatProduct(WC_Product $product) {
-        return array(
-            'id' => $product->get_id(),
-            'name' => $product->get_name(),
-            'price' => $product->get_price(),
-            'description' => $product->get_description(),
-            'link' => $product->get_permalink(),
-        );
-    }
-    ?>
 
     <section class="pricing_wrapper">
         <div class="container">
