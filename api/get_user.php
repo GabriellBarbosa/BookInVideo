@@ -14,7 +14,8 @@ function getUser($request) {
     $response = array(
         'user' => $currentUser->ID == 0 ? null : array(
             'username' => get_user_meta($currentUser->ID, 'first_name', true)
-        )
+        ),
+        'activated' => SubscribedUserSpec::isSastifiedBy($currentUser)
     );
     return rest_ensure_response($response);
 }
