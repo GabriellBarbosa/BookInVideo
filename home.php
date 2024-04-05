@@ -1,6 +1,6 @@
 <?php 
 get_header();
-$product = getCourseProductInfo();
+$product = getCourseProductData();
 ?>
 
 <div id="page-home">
@@ -11,10 +11,9 @@ $product = getCourseProductInfo();
                 <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava"</p>
             </blockquote>
             <cite class="intro_quoter">MICHAEL FEATHERS</cite>
-            <form class="intro_call_to_action" action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
-                <button class="call_to_action" type="submit" name="add-to-cart" value="<?= $product['id'] ?>">Inscreva-se</button>
-            </form>
+            <div class="intro_call_to_action">
+                <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
+            </div>
         </div>
         <div class="course_info_wrapper">
             <ul>
@@ -71,10 +70,9 @@ $product = getCourseProductInfo();
                     </div>
                     <div class="plan_info"><?= $product['description']; ?></div>
                 </div>
-                <form class="redirect" action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
-                    <button class="subscribe_btn" type="submit" name="add-to-cart" value="<?= $product['id'] ?>">Assinar</button>
-                </form>
+                <div class="redirect">
+                    <?= displaySubscribeButton('Assinar', 'subscribe_btn'); ?>
+                </div>
             </div>
         </div>
     </section>

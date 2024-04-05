@@ -38,13 +38,10 @@ function getMyAccountButtonText() {
                 <div class="links_container">
                     <div class="links_wrapper">
                         <a href="/curso/codigo-limpo/0101-configuracao" class="link">Curso</a>
-                        <form class="subscribe_form" action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
-                            <button class="link" type="submit" name="add-to-cart" value="<?= getCourseProduct()->get_id() ?>">Inscreva-se</button>
-                        </form>
-                        <a href="conta" class="link login">
-                            <?= getMyAccountButtonText(); ?>
-                        </a>
+                        <div class="subscribe_form">
+                            <?= displaySubscribeButton('Inscreva-se', 'link'); ?>
+                        </div>
+                        <a href="conta" class="link login"><?= getMyAccountButtonText(); ?></a>
                     </div>
                 </div>
             </div>

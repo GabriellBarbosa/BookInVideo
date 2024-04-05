@@ -62,15 +62,10 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 		</form>
 
 		<h2 class="register_title">Cadastre-se</h2>
-
 		<div class="register_call_to_action">
-			<p>Inscreva-se para realizar seu cadastro e ter acesso ilimitado ao curso de Código limpo.</p>
-			<form action="http://bookinvideo.local/product/codigo-limpo/" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="quantity" value="1" inputmode="numeric" autocomplete="off">
-                <button class="call_to_action" type="submit" name="add-to-cart" value="<?= getCourseProduct()->get_id() ?>">Inscreva-se</button>
-            </form>
+			<p>Inscreva-se para realizar seu cadastro e ter acesso ilimitado ao curso de código limpo.</p>
+			<?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
 		</div>
-
 
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
