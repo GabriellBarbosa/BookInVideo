@@ -1,6 +1,6 @@
 <?php
-require_once get_template_directory() . '/domain/entities/Course.php';
-require_once get_template_directory() . '/domain/UnllogedLesson.php';
+require_once get_template_directory() . '/src/entities/Course.php';
+require_once get_template_directory() . '/src/UnllogedLesson.php';
 
 add_action('rest_api_init', 'registerGetCourse');
 add_action('rest_api_init', 'registerGetLesson');
