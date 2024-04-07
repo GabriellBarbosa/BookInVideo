@@ -1,12 +1,14 @@
-<?php declare(strict_types=1);
+<?php 
+declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once __ROOT__.'/tests/mock/CourseRepository.php';
 
-final class CourseTest extends TestCase {
+final class CourseContentTest extends TestCase {
     public function testGetCourseContent(): void {
         $course = new Course('codigo-limpo', new MockCourseRepository());
-        $this->assertSame($course->get(), array(
+        $content = $course->getContent('codigo-limpo');
+        $this->assertSame($content, array(
             'name' => 'Codigo limpo', 
             'slug' => 'codigo-limpo',
             'modules' => array(

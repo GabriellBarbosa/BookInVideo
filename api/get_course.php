@@ -11,14 +11,14 @@ function registerGetCourse() {
     register_rest_route('api', $apiRoute, array(
         array(
             'methods' => WP_REST_Server::READABLE,
-            'callback' => 'getCourse'
+            'callback' => 'getCourseContent'
         )
     ));
 }
 
-function getCourse($request) {
+function getCourseContent($request) {
     $course = new Course($request['slug'], new CourseRepository());
-    $courseFound = $course->get();
+    $courseFound = $course->getContent($request['slug']);
     $response = $courseFound 
         ? $courseFound 
         : getNotFoundErr('O curso não foi encontrado');

@@ -8,19 +8,19 @@ class Course {
         $this->courseRepository = $respository;
     }
 
-    public function get() {
-        $course = $this->courseRepository->getCourse($this->courseSlug);
+    public function getContent($courseSlug) {
+        $course = $this->courseRepository->getCourse($courseSlug);
         if ($course) {
             return array(
                 'name' => $course['name'],
                 'slug' => $course['slug'],
-                'modules' => $this->getModules()
+                'modules' => $this->getModules($courseSlug)
             );
         } else return null;
     }
 
-    private function getModules() {
-        $modules = $this->courseRepository->getModules($this->courseSlug);
+    private function getModules($courseSlug) {
+        $modules = $this->courseRepository->getModules($courseSlug);
         $result = array();
         foreach ($modules as $module) {
             array_push($result, array(
