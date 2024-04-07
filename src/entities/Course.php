@@ -1,54 +1,36 @@
 <?php
-require_once get_template_directory() . '/src/repositories/CourseRespository.php';
-
 class Course {
     private $courseSlug = null;
     private $courseRepository = null;
 
-    public function __construct($slug) {
+    public function __construct($slug, ICourseRepository $respository) {
         $this->courseSlug = $slug;
-        $this->courseRepository = new CourseRepository();
+        $this->courseRepository = $respository;
     }
 
     public function get() {
-        $fields = ['name', 'slug'];
-        $course = $this->courseRepository->getCourse($this->courseSlug, $fields);
-        return $this->mountCourse($course);
-    }
-
-    private function mountCourse($course) {
+        $course = $this->courseRepository->getCourse($this->courseSlug);
         if ($course) {
             return array(
-                'name' => $course['name'], 
+                'name' => $course['name'],
                 'slug' => $course['slug'],
                 'modules' => $this->getModules()
             );
-        } else {
-            return null;
-        }
+        } else return null;
     }
 
     private function getModules() {
         $modules = $this->courseRepository->getModules($this->courseSlug);
         $result = array();
         foreach ($modules as $module) {
-            array_push($result, $this->mountModule($module));
+            array_push($result, array(
+                'name' => $module->name,
+                'sequence' => $module->description,
+                'lessons' => $this->courseRepository->getLessons(
+                    $this->courseSlug, $module->slug)
+            ));
         }
         return $result;
-    }
-
-    private function mountModule($module) {
-        return array(
-            'name' => $module->name,
-            'sequence' => $module->description,
-            'lessons' => $this->getLessons($module->slug)
-        );
-    }
-
-    private function getLessons($moduleSlug) {
-        $fields = ['name', 'slug', 'sequence','duration'];
-        return $this->courseRepository->getLessons(
-            $this->courseSlug, $moduleSlug, $fields);
     }
 
     public function getSingleLesson($lessonSlug) {

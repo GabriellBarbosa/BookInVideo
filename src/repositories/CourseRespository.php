@@ -1,6 +1,7 @@
 <?php
-class CourseRepository {
-    public function getCourse($slug, $fields) {
+class CourseRepository implements ICourseRepository {
+    public function getCourse($slug) {
+        $fields = ['name', 'slug'];
         $queryResult = $this->courseQuery($slug);
         $coursePosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($coursePosts, $fields);
@@ -18,7 +19,8 @@ class CourseRepository {
         return get_terms($courseSlug);
     }
 
-    public function getLessons($courseSlug, $moduleSlug, $fields) {
+    public function getLessons($courseSlug, $moduleSlug) {
+        $fields = ['name', 'slug', 'sequence','duration'];
         $queryResult = $this->lessonsQuery($courseSlug, $moduleSlug);
         return $this->getLessonsWithCustomFields($queryResult, $fields);
     }
@@ -72,10 +74,10 @@ class CourseRepository {
         ));
     }
 
-    private function getSinglePostWithCustomFields($post, $fields) {
-        $singlePost = array_shift($post);
-        return $singlePost 
-            ? $this->getPostCustomFields($singlePost->ID, $fields)
+    private function getSinglePostWithCustomFields($posts, $fields) {
+        $post = array_shift($posts);
+        return $post 
+            ? $this->getPostCustomFields($post->ID, $fields)
             : null;
     }
 

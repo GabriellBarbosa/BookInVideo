@@ -1,10 +1,14 @@
 <?php
 $template_directory =  get_template_directory();
-require_once($template_directory . '/src/SubscribedUser.php');
-require_once($template_directory . '/custom-post-types/cpt-course.php');
-require_once($template_directory . '/custom-post-types/cpt-lesson.php');
+
+require_once($template_directory . '/src/interfaces/ICourseRepository.php');
+require_once($template_directory . '/src/repositories/CourseRespository.php');
 require_once($template_directory . '/api/get_course.php');
 require_once($template_directory . '/api/get_user.php');
+require_once($template_directory . '/src/SubscribedUser.php');
+
+require_once($template_directory . '/custom-post-types/cpt-course.php');
+require_once($template_directory . '/custom-post-types/cpt-lesson.php');
 require_once($template_directory . '/custom-taxonomies/codigo-limpo-taxonomy.php');
 require_once($template_directory . '/plugin-overwrite/wc_login.php');
 require_once($template_directory . '/plugin-overwrite/wc_myaccount.php');

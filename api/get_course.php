@@ -17,7 +17,7 @@ function registerGetCourse() {
 }
 
 function getCourse($request) {
-    $course = new Course($request['slug']);
+    $course = new Course($request['slug'], new CourseRepository());
     $courseFound = $course->get();
     $response = $courseFound 
         ? $courseFound 
@@ -39,7 +39,7 @@ function registerGetLesson() {
 }       
 
 function getLesson($request) {
-    $course = new Course($request['courseSlug']);
+    $course = new Course($request['courseSlug'], new CourseRepository());
     $lesson = $course->getSingleLesson($request['lessonSlug']);
     $user = wp_get_current_user();
     $response = $lesson
