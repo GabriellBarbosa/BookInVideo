@@ -50,7 +50,8 @@ class CourseRepository implements ICourseRepository {
         return $result;
     }
 
-    public function getSingleLesson($courseSlug, $lessonSlug, $fields) {
+    public function getSingleLesson($courseSlug, $lessonSlug) {
+        $fields = ['name', 'sequence', 'video_src', 'prev', 'next', 'has_code', 'has_slide'];
         $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
         $lessonPosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($lessonPosts, $fields);

@@ -1,6 +1,5 @@
 <?php
 require_once get_template_directory() . '/src/entities/Course.php';
-require_once get_template_directory() . '/src/UnllogedLesson.php';
 
 add_action('rest_api_init', 'registerGetCourse');
 add_action('rest_api_init', 'registerGetLesson');
@@ -17,7 +16,7 @@ function registerGetCourse() {
 }
 
 function getCourseContent($request) {
-    $course = new Course($request['slug'], new CourseRepository());
+    $course = new Course(new CourseRepository());
     $courseFound = $course->getContent($request['slug']);
     $response = $courseFound 
         ? $courseFound 
@@ -39,21 +38,16 @@ function registerGetLesson() {
 }       
 
 function getLesson($request) {
-    $course = new Course($request['courseSlug'], new CourseRepository());
-    $lesson = $course->getSingleLesson($request['lessonSlug']);
-    $user = wp_get_current_user();
+    $course = new Course(
+        new CourseRepository(),
+        new UserRepositoryImpl()
+    );
+    $lesson = $course->getSingleLesson(
+        $request['courseSlug'], $request['lessonSlug']);
     $response = $lesson
-        ? getEligibleLessonFields($user, $lesson)
+        ? $lesson
         : getNotFoundErr('A aula não foi encontrada');
     return rest_ensure_response($response);
-}
-
-function getEligibleLessonFields($user, $lesson) {
-    if ($user->ID) {
-        return $lesson;
-    } else {
-        return UnloggedLesson::getFields($lesson);
-    }
 }
 
 function getNotFoundErr($message) {

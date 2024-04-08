@@ -1,11 +1,11 @@
 <?php
 class Course {
-    private $courseSlug = null;
     private $courseRepository = null;
+    private $userRepository = null;
 
-    public function __construct($slug, ICourseRepository $respository) {
-        $this->courseSlug = $slug;
-        $this->courseRepository = $respository;
+    public function __construct(ICourseRepository $c, UserRepository $u = null) {
+        $this->courseRepository = $c;
+        $this->userRepository = $u;
     }
 
     public function getContent($courseSlug) {
@@ -27,16 +27,26 @@ class Course {
                 'name' => $module->name,
                 'sequence' => $module->description,
                 'lessons' => $this->courseRepository->getLessons(
-                    $this->courseSlug, $module->slug)
+                    $courseSlug, $module->slug)
             ));
         }
         return $result;
     }
 
-    public function getSingleLesson($lessonSlug) {
-        $fields = ['name', 'sequence', 'video_src', 'prev', 'next', 'has_code', 'has_slide'];
-        return $this->courseRepository->getSingleLesson(
-            $this->courseSlug, $lessonSlug, $fields);
+    public function getSingleLesson($courseSlug, $lessonSlug) {
+        $lesson = $this->courseRepository->getSingleLesson($courseSlug, $lessonSlug);
+        if ($this->userRepository->isSubscribed()) {
+            return $lesson;
+        }
+        return $this->removeSensitiveFields($lesson);
+    }
+
+    private function removeSensitiveFields($lesson) {
+        $lessonCopy = $lesson;
+        $lessonCopy['video_src'] = null;
+        $lessonCopy['has_slide'] = null;
+        $lessonCopy['has_code'] = null;
+        return $lessonCopy;
     }
 }
 ?>

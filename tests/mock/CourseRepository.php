@@ -3,6 +3,7 @@ interface ICourseRepository {
     public function getCourse($courseSlug);
     public function getModules($courseSlug);
     public function getLessons($courseSlug, $moduleSlug);
+    public function getSingleLesson($courseSlug, $lessonSlug);
 }
 
 class MockCourseRepository implements ICourseRepository {
@@ -34,6 +35,18 @@ class MockCourseRepository implements ICourseRepository {
                 'sequence' => '02',
                 'duration' => '15:05'
             ),
+        );
+    }
+
+    public function getSingleLesson($courseSlug, $lessonSlug) {
+        return array(
+            'name' => 'Codigo limpo',
+            'sequence' => '0102',
+            'video_src' => 'http://vimeo.com',
+            'prev' => '0101-configuracao',
+            'next' => '0201-nomes-significativos',
+            'has_code' => 'true', 
+            'has_slide' => 'true'
         );
     }
 }

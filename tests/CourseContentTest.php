@@ -6,7 +6,7 @@ require_once __ROOT__.'/tests/mock/CourseRepository.php';
 
 final class CourseContentTest extends TestCase {
     public function testGetCourseContent(): void {
-        $course = new Course('codigo-limpo', new MockCourseRepository());
+        $course = new Course(new MockCourseRepository());
         $content = $course->getContent('codigo-limpo');
         $this->assertSame($content, array(
             'name' => 'Codigo limpo', 
