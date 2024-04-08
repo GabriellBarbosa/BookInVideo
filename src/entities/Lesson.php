@@ -4,7 +4,7 @@ class Lesson {
     private $userRepository = null;
 
     public function __construct(
-        ICourseRepository $courseRepo, UserRepository $userRepo
+        CourseRepository $courseRepo, UserRepository $userRepo
     ) {
         $this->courseRepository = $courseRepo;
         $this->userRepository = $userRepo;

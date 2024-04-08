@@ -1,5 +1,5 @@
 <?php
-class CourseRepository implements ICourseRepository {
+class CourseRepositoryImpl implements CourseRepository {
     public function getCourse($slug) {
         $fields = ['name', 'slug'];
         $queryResult = $this->courseQuery($slug);

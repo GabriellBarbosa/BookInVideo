@@ -16,7 +16,7 @@ function registerGetCourse() {
 }
 
 function getCourseContent($request) {
-    $courseContent = new CourseContent(new CourseRepository());
+    $courseContent = new CourseContent(new CourseRepositoryImpl());
     $content = $courseContent->get($request['slug']);
     $response = $content 
         ? $content 

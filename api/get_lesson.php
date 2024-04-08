@@ -14,7 +14,7 @@ function registerGetLesson() {
 }       
 
 function getLesson($request) {
-    $lesson = new Lesson(new CourseRepository(), new UserRepositoryImpl());
+    $lesson = new Lesson(new CourseRepositoryImpl(), new UserRepositoryImpl());
     $lessonFound = $lesson->get($request['courseSlug'], $request['lessonSlug']);
     $response = $lessonFound
         ? $lessonFound

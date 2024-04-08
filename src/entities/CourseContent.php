@@ -2,7 +2,7 @@
 class CourseContent {
     private $courseRepository = null;
 
-    public function __construct(ICourseRepository $courseRepository) {
+    public function __construct(CourseRepository $courseRepository) {
         $this->courseRepository = $courseRepository;
     }
 

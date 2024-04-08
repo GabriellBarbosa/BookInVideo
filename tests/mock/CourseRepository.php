@@ -1,12 +1,12 @@
 <?php
-interface ICourseRepository {
+interface CourseRepository {
     public function getCourse($courseSlug);
     public function getModules($courseSlug);
     public function getLessons($courseSlug, $moduleSlug);
     public function getSingleLesson($courseSlug, $lessonSlug);
 }
 
-class MockCourseRepository implements ICourseRepository {
+class MockCourseRepository implements CourseRepository {
     public function getCourse($courseSlug) {
         return array(
             'name' => 'Codigo limpo', 
