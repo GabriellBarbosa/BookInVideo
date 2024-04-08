@@ -1,14 +1,12 @@
 <?php
-class Course {
+class CourseContent {
     private $courseRepository = null;
-    private $userRepository = null;
 
-    public function __construct(ICourseRepository $c, UserRepository $u = null) {
-        $this->courseRepository = $c;
-        $this->userRepository = $u;
+    public function __construct(ICourseRepository $courseRepository) {
+        $this->courseRepository = $courseRepository;
     }
 
-    public function getContent($courseSlug) {
+    public function get($courseSlug) {
         $course = $this->courseRepository->getCourse($courseSlug);
         if ($course) {
             return array(
@@ -31,22 +29,6 @@ class Course {
             ));
         }
         return $result;
-    }
-
-    public function getSingleLesson($courseSlug, $lessonSlug) {
-        $lesson = $this->courseRepository->getSingleLesson($courseSlug, $lessonSlug);
-        if ($this->userRepository->isSubscribed()) {
-            return $lesson;
-        }
-        return $this->removeSensitiveFields($lesson);
-    }
-
-    private function removeSensitiveFields($lesson) {
-        $lessonCopy = $lesson;
-        $lessonCopy['video_src'] = null;
-        $lessonCopy['has_slide'] = null;
-        $lessonCopy['has_code'] = null;
-        return $lessonCopy;
     }
 }
 ?>
