@@ -24,11 +24,34 @@ class CourseContent {
             array_push($result, array(
                 'name' => $module->name,
                 'sequence' => $module->description,
-                'lessons' => $this->courseRepository->getLessons(
-                    $courseSlug, $module->slug)
+                'lessons' => $this->getLessons($courseSlug, $module->slug)
             ));
         }
         return $result;
+    }
+
+    private function getLessons($courseSlug, $moduleSlug) {
+        $completedLessons = $this->courseRepository->getCompletedLessons($courseSlug, $moduleSlug);
+        $lessons = $this->courseRepository->getLessons( $courseSlug, $moduleSlug);
+        return $this->addCompletedLessonField($lessons, $completedLessons);
+    }
+
+    private function addCompletedLessonField($lessons, $completedLessons) {
+        $result = array();
+        foreach ($lessons as $lesson) {
+            $lessonCopy = $lesson;
+            $lessonCopy['completed'] = $this->lessonIsCompleted($completedLessons, $lessonCopy['slug']);
+            array_push($result, $lessonCopy);
+        }
+        return $result;
+    }
+
+    private function lessonIsCompleted($completedLessons, $lessonSlug) {
+        foreach ($completedLessons as $completedLesson) {
+            if ($completedLesson->lessonSlug == $lessonSlug) 
+                return true;
+        }
+        return false;
     }
 }
 ?>

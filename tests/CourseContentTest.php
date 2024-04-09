@@ -12,6 +12,7 @@ final class CourseContentTest extends TestCase {
         $courseRepository->method('getCourse')->willReturn($this->mockedCourse());
         $courseRepository->method('getModules')->willReturn($this->mockedModule());
         $courseRepository->method('getLessons')->willReturn($this->mockedLessons());
+        $courseRepository->method('getCompletedLessons')->willReturn($this->mockedCompletedLessons());
 
         $courseContent = new CourseContent($courseRepository);
         $content = $courseContent->get('codigo-limpo');
@@ -28,13 +29,15 @@ final class CourseContentTest extends TestCase {
                             'name' => 'random lesson',
                             'slug' => '0000-random-lesson',
                             'sequence' => '01',
-                            'duration' => '15:05'
+                            'duration' => '15:05',
+                            'completed' => true
                         ),
                         array(
                             'name' => 'other lesson', 
                             'slug' => '0000-other-lesson',
                             'sequence' => '02',
-                            'duration' => '15:05'
+                            'duration' => '15:05',
+                            'completed' => false
                         ),
                     )
                 ),
@@ -71,5 +74,11 @@ final class CourseContentTest extends TestCase {
                 'duration' => '15:05'
             ),
         );
+    }
+
+    private function mockedCompletedLessons() {
+        $lesson = new StdClass();
+        $lesson->lessonSlug = '0000-random-lesson';
+        return array($lesson);
     }
 }

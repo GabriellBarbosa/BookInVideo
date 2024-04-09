@@ -107,6 +107,16 @@ class CourseRepositoryImpl implements CourseRepository {
 
         return $insertionFeedback > 0;
     }
+
+    public function getCompletedLessons($courseSlug) {
+        global $wpdb;
+        $user = wp_get_current_user();
+        $query = $wpdb->prepare(
+            "SELECT `lessonSlug` FROM `wp_completed_lessons` WHERE `userId` = %d AND `courseSlug` = %s;",
+            array($user->ID, $courseSlug)
+        );
+        return $wpdb->get_results($query);
+    }
 }
 ?>
 
