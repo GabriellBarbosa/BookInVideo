@@ -8,8 +8,8 @@ function createCompletedLessonsTable() {
 
     $sql = "CREATE TABLE $table_name (
         userId int NOT NULL,
-        lessonSlug int NOT NULL,
-        courseSlug int NOT NULL,
+        lessonSlug varchar(255) NOT NULL,
+        courseSlug varchar(255) NOT NULL,
         createdAt datetime NOT NULL,
         PRIMARY KEY  (userId, courseSlug, lessonSlug)
     ) $charset_collate;";

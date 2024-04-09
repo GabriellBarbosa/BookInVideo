@@ -4,8 +4,18 @@ use PHPUnit\Framework\TestCase;
 require_once __ROOT__ . '/tests/mock/CourseRepository.php';
 require_once __ROOT__ . '/tests/mock/UserRepository.php';
 require_once __ROOT__ . '/src/entities/Lesson.php';
+require_once __ROOT__ . '/src/repositories/CourseRespositoryImpl.php';
+require_once __ROOT__ . '/src/repositories/UserRepositoryImpl.php';
 
 final class LessonTest extends TestCase {
+    private $userRepository = null;
+    private $courseRepository = null;
+
+    protected function setUp(): void {
+        $this->userRepository = $this->createMock(UserRepositoryImpl::class);
+        $this->courseRepository = $this->createMock(CourseRepositoryImpl::class);
+    }
+
     public function testGetLesson() {
         $lesson = new Lesson(new MockCourseRepository(), new SubscribedUserRepository());
         $lessonFound = $lesson->get('codigo-limpo', '0102-codigo-limpo');
@@ -37,13 +47,17 @@ final class LessonTest extends TestCase {
     }
 
     public function testCompleteLesson() {
-        $lesson = new Lesson(new MockCourseRepository(), new UnsubscribedUserRepository());
-        $completedLesson = $lesson->complete('codigo-limpo', '0102-codigo-limpo');
-        
-        $this->assertEquals($completedLesson, array(
-            'lessonSlug' => '0102-codigo-limpo',
-            'courseSlug' => 'codigo-limpo',
-        ));
+        $this->courseRepository->method('completeLesson')->willReturn(true);
+        $lesson = new Lesson($this->courseRepository, $this->userRepository);
+        $completedFeedback = $lesson->complete('codigo-limpo', '0102-codigo-limpo');
+        $this->assertEquals($completedFeedback, true);
+    }
+
+    public function testCompleteLessonFail() {
+        $this->courseRepository->method('completeLesson')->willReturn(false);
+        $lesson = new Lesson($this->courseRepository, $this->userRepository);
+        $completedFeedback = $lesson->complete('codigo-limpo', '0102-codigo-limpo');
+        $this->assertEquals($completedFeedback, false);
     }
 }
 ?>

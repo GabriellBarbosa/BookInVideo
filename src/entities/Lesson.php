@@ -27,12 +27,8 @@ class Lesson {
     }
 
     public function complete($courseSlug, $lessonSlug) {
-        // verify lesson exists
-        // verify if its already completed
         $completedLesson = $this->courseRepository->completeLesson($courseSlug, $lessonSlug);
-        if ($completedLesson) {
-            return $completedLesson;
-        }
+        return $completedLesson;
     }
 }
 ?>

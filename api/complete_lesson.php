@@ -20,9 +20,6 @@ function registerCompleteLesson() {
 function completeLesson($request) {
     $lesson = new Lesson(new CourseRepositoryImpl(), new UserRepositoryImpl());
     $completed = $lesson->complete($request['courseSlug'], $request['lessonSlug']);
-    $response = $completed
-        ? $lessonFound
-        : getNotFoundErr('ocorreu um erro');
-    return rest_ensure_response($response);
+    return rest_ensure_response($completed);
 }
 ?>

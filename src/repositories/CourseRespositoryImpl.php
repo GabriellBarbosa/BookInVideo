@@ -93,8 +93,9 @@ class CourseRepositoryImpl implements CourseRepository {
     }
 
     public function completeLesson($courseSlug, $lessonSlug) {
+        global $wpdb;
         $user = wp_get_current_user();
-        $wpdb->insert( 
+        $insertionFeedback = $wpdb->insert( 
             'wp_completed_lessons', 
             array(
                 'userId' => $user->ID,
@@ -103,6 +104,8 @@ class CourseRepositoryImpl implements CourseRepository {
                 'createdAt' => current_time( 'mysql' ), 
             ) 
         );
+
+        return $insertionFeedback > 0;
     }
 }
 ?>
