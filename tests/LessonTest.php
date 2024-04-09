@@ -7,10 +7,10 @@ require_once __ROOT__ . '/src/entities/Lesson.php';
 
 final class LessonTest extends TestCase {
     public function testGetLesson() {
-        $lesson = new Lesson(new MockCourseRepository(),new SubscribedUserRepository());
+        $lesson = new Lesson(new MockCourseRepository(), new SubscribedUserRepository());
         $lessonFound = $lesson->get('codigo-limpo', '0102-codigo-limpo');
 
-        $this->assertSame($lessonFound, array(
+        $this->assertEquals($lessonFound, array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
             'video_src' => 'http://vimeo.com',
@@ -25,7 +25,7 @@ final class LessonTest extends TestCase {
         $lesson = new Lesson(new MockCourseRepository(), new UnsubscribedUserRepository());
         $lessonFound = $lesson->get('codigo-limpo', '0102-codigo-limpo');
 
-        $this->assertSame($lessonFound, array(
+        $this->assertEquals($lessonFound, array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
             'video_src' => null,
@@ -33,6 +33,16 @@ final class LessonTest extends TestCase {
             'next' => '0201-nomes-significativos',
             'has_code' => null, 
             'has_slide' => null
+        ));
+    }
+
+    public function testCompleteLesson() {
+        $lesson = new Lesson(new MockCourseRepository(), new UnsubscribedUserRepository());
+        $completedLesson = $lesson->complete('codigo-limpo', '0102-codigo-limpo');
+        
+        $this->assertEquals($completedLesson, array(
+            'lessonSlug' => '0102-codigo-limpo',
+            'courseSlug' => 'codigo-limpo',
         ));
     }
 }

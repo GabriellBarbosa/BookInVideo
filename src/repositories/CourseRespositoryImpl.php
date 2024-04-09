@@ -75,6 +75,7 @@ class CourseRepositoryImpl implements CourseRepository {
         ));
     }
 
+
     private function getSinglePostWithCustomFields($posts, $fields) {
         $post = array_shift($posts);
         return $post 
@@ -89,6 +90,19 @@ class CourseRepositoryImpl implements CourseRepository {
             $result[$field] = $metaData[$field][0];
         }
         return $result;
+    }
+
+    public function completeLesson($courseSlug, $lessonSlug) {
+        $user = wp_get_current_user();
+        $wpdb->insert( 
+            'wp_completed_lessons', 
+            array(
+                'userId' => $user->ID,
+                'courseSlug' => $courseSlug, 
+                'lessonSlug' => $lessonSlug, 
+                'createdAt' => current_time( 'mysql' ), 
+            ) 
+        );
     }
 }
 ?>

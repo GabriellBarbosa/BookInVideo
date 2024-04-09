@@ -1,10 +1,5 @@
 <?php
-interface CourseRepository {
-    public function getCourse($courseSlug);
-    public function getModules($courseSlug);
-    public function getLessons($courseSlug, $moduleSlug);
-    public function getSingleLesson($courseSlug, $lessonSlug);
-}
+require_once __DIR__ . '/../../src/interfaces/CourseRepository.php';
 
 class MockCourseRepository implements CourseRepository {
     public function getCourse($courseSlug) {
@@ -48,6 +43,10 @@ class MockCourseRepository implements CourseRepository {
             'has_code' => 'true', 
             'has_slide' => 'true'
         );
+    }
+
+    public function completeLesson($courseSlug, $lessonSlug) {
+        return 1;
     }
 }
 ?>

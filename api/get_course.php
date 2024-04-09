@@ -1,6 +1,5 @@
 <?php
 require_once get_template_directory() . '/src/entities/CourseContent.php';
-require_once get_template_directory() . '/src/entities/Lesson.php';
 
 add_action('rest_api_init', 'registerGetCourse');
 
