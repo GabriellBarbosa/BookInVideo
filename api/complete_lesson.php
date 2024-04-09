@@ -18,8 +18,16 @@ function registerCompleteLesson() {
 }
 
 function completeLesson($request) {
-    $lesson = new Lesson(new CourseRepositoryImpl(), new UserRepositoryImpl());
-    $completed = $lesson->complete($request['courseSlug'], $request['lessonSlug']);
-    return rest_ensure_response($completed);
+    return rest_ensure_response(tryToCompleteLesson(
+        $request['courseSlug'], $request['lessonSlug']));
+}
+
+function tryToCompleteLesson($courseSlug, $lessonSlug) {
+    try {
+        $lesson = new Lesson(new CourseRepositoryImpl(), new UserRepositoryImpl());
+        return $lesson->complete($courseSlug, $lessonSlug);
+    } catch (Exception $err) {
+        return new WP_Error('forbidden', $err->getMessage(), array('status' => 403));
+    }
 }
 ?>

@@ -70,14 +70,28 @@ final class LessonTest extends TestCase {
 
     public function testCompleteLesson() {
         $this->courseRepository->method('completeLesson')->willReturn(true);
+        $this->userRepository->method('isSubscribed')->willReturn(true);
+
         $completedFeedback = $this->lesson->complete('codigo-limpo', '0102-codigo-limpo');
+
         $this->assertEquals($completedFeedback, true);
     }
 
     public function testCompleteLessonFail() {
         $this->courseRepository->method('completeLesson')->willReturn(false);
+        $this->userRepository->method('isSubscribed')->willReturn(true);
+
         $completedFeedback = $this->lesson->complete('codigo-limpo', '0102-codigo-limpo');
+
         $this->assertEquals($completedFeedback, false);
+    }
+
+    public function testUnsubscribedUserCompleteLesson() {
+        $this->userRepository->method('isSubscribed')->willReturn(false);
+
+        $this->expectException(Exception::class);
+        
+        $this->lesson->complete('codigo-limpo', '0102-codigo-limpo');
     }
 }
 ?>

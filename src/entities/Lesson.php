@@ -27,8 +27,11 @@ class Lesson {
     }
 
     public function complete($courseSlug, $lessonSlug) {
-        $completedLesson = $this->courseRepository->completeLesson($courseSlug, $lessonSlug);
-        return $completedLesson;
+        if ($this->userRepository->isSubscribed()) {
+            $isCompleted = $this->courseRepository->completeLesson($courseSlug, $lessonSlug);
+            return $isCompleted;
+        }
+        throw new Exception('Não foi possível completar a aula');
     }
 }
 ?>
