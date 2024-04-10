@@ -65,7 +65,7 @@ $product = getCourseProductData();
             <div class="plan"> 
                 <div class="price_info_wrapper">
                     <div class="price">
-                        <p><?= $product['name']; ?></p>
+                        <p>Curso <?= $product['name']; ?></p>
                         <span>R$ <?= $product['price']; ?></span>
                     </div>
                     <div class="plan_info"><?= $product['description']; ?></div>
