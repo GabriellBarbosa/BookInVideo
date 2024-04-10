@@ -1,5 +1,5 @@
 <?php
-require_once get_template_directory() . '/src/entities/CourseContent.php';
+require_once get_template_directory() . '/src/entities/Course.php';
 
 add_action('rest_api_init', 'registerGetCourse');
 
@@ -15,8 +15,9 @@ function registerGetCourse() {
 }
 
 function getCourseContent($request) {
-    $courseContent = new CourseContent(new CourseRepositoryImpl());
-    $content = $courseContent->get($request['slug']);
+    $course = new Course(
+        $request['slug'], new CourseRepositoryImpl());
+    $content = $course->getContent();
     $response = $content 
         ? $content 
         : getNotFoundErr('O curso não foi encontrado');

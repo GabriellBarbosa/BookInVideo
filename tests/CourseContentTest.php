@@ -4,9 +4,9 @@ use PHPUnit\Framework\TestCase;
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once __ROOT__ . '/src/interfaces/CourseRepository.php';
 require_once __ROOT__ . '/src/repositories/CourseRespositoryImpl.php';
-require_once __ROOT__ . '/src/entities/CourseContent.php';
+require_once __ROOT__ . '/src/entities/Course.php';
 
-final class CourseContentTest extends TestCase {
+final class CourseTest extends TestCase {
     public function testGetCourseContent(): void {
         $courseRepository = $this->createMock(CourseRepositoryImpl::class);
         $courseRepository->method('getCourse')->willReturn($this->mockedCourse());
@@ -14,8 +14,8 @@ final class CourseContentTest extends TestCase {
         $courseRepository->method('getLessons')->willReturn($this->mockedLessons());
         $courseRepository->method('getCompletedLessons')->willReturn($this->mockedCompletedLessons());
 
-        $courseContent = new CourseContent($courseRepository);
-        $content = $courseContent->get('codigo-limpo');
+        $course = new Course('codigo-limpo', $courseRepository);
+        $content = $course->getContent();
         
         $this->assertSame($content, array(
             'name' => 'Codigo limpo', 
