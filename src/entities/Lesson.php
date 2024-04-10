@@ -11,11 +11,22 @@ class Lesson {
     }
 
     public function get($courseSlug, $lessonSlug) {
+        $completedLessons = $this->courseRepository->getCompletedLessons($courseSlug);
         $lesson = $this->courseRepository->getSingleLesson($courseSlug, $lessonSlug);
+        $lesson['completed'] = false;
         if ($this->userRepository->isSubscribed()) {
+            $lesson['completed'] = $this->lessonIsCompleted($completedLessons, $lessonSlug);
             return $lesson;
         }
         return $this->emptySensitiveFields($lesson);
+    }
+
+    private function lessonIsCompleted($completedLessons, $lessonSlug) {
+        foreach ($completedLessons as $completedLesson) {
+            if ($completedLesson->lessonSlug == $lessonSlug) 
+                return true;
+        }
+        return false;
     }
 
     private function emptySensitiveFields($lesson) {

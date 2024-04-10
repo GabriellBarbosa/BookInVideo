@@ -39,7 +39,8 @@ final class LessonTest extends TestCase {
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
             'has_code' => 'true', 
-            'has_slide' => 'true'
+            'has_slide' => 'true',
+            'completed' => false
         ));
     }
 
@@ -64,7 +65,8 @@ final class LessonTest extends TestCase {
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
             'has_code' => null, 
-            'has_slide' => null
+            'has_slide' => null,
+            'completed' => false
         ));
     }
 
@@ -92,6 +94,26 @@ final class LessonTest extends TestCase {
         $this->expectException(Exception::class);
         
         $this->lesson->complete('codigo-limpo', '0102-codigo-limpo');
+    }
+
+    public function testGetCompletedLesson() {
+        $completedLesson = new StdClass();
+        $completedLesson->lessonSlug = '0102-codigo-limpo';
+        $this->courseRepository->method('getCompletedLessons')->willReturn(array($completedLesson));
+        $this->userRepository->method('isSubscribed')->willReturn(true);
+        $this->courseRepository->method('getSingleLesson')->willReturn(array(
+            'name' => 'Codigo limpo',
+            'sequence' => '0102',
+            'video_src' => 'http://vimeo.com',
+            'prev' => '0101-configuracao',
+            'next' => '0201-nomes-significativos',
+            'has_code' => 'true', 
+            'has_slide' => 'true'
+        ));
+
+        $lesson = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');
+
+        $this->assertEquals($lesson['completed'], true);
     }
 }
 ?>

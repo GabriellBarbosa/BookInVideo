@@ -33,8 +33,7 @@ class Course {
     }
 
     private function getLessons($moduleSlug) {
-        $completedLessons = $this->courseRepository->getCompletedLessons(
-            $this->courseSlug, $moduleSlug);
+        $completedLessons = $this->courseRepository->getCompletedLessons($this->courseSlug);
         $lessons = $this->courseRepository->getLessons(
             $this->courseSlug, $moduleSlug);
         return $this->addCompletedLessonField($lessons, $completedLessons);
