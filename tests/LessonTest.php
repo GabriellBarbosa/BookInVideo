@@ -23,6 +23,7 @@ final class LessonTest extends TestCase {
         $this->courseRepository->method('getSingleLesson')->willReturn(array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
+            'slug' => '0102-codigo-limpo',
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
@@ -35,6 +36,7 @@ final class LessonTest extends TestCase {
         $this->assertEquals($lessonFound, array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
+            'slug' => '0102-codigo-limpo',
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
@@ -49,6 +51,7 @@ final class LessonTest extends TestCase {
         $this->courseRepository->method('getSingleLesson')->willReturn(array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
+            'slug' => '0102-codigo-limpo',
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
@@ -61,6 +64,7 @@ final class LessonTest extends TestCase {
         $this->assertEquals($lessonFound, array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
+            'slug' => '0102-codigo-limpo',
             'video_src' => null,
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
@@ -104,6 +108,7 @@ final class LessonTest extends TestCase {
         $this->courseRepository->method('getSingleLesson')->willReturn(array(
             'name' => 'Codigo limpo',
             'sequence' => '0102',
+            'slug' => '0102-codigo-limpo',
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
