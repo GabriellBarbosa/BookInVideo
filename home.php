@@ -1,7 +1,4 @@
-<?php 
-get_header();
-$product = getCourseProductData();
-?>
+<?php get_header(); ?>
 
 <div id="page-home">
     <section class="banner">
@@ -62,18 +59,7 @@ $product = getCourseProductData();
     <section class="pricing_wrapper">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
-            <div class="plan"> 
-                <div class="price_info_wrapper">
-                    <div class="price">
-                        <p>Curso <?= $product['name']; ?></p>
-                        <span>R$ <?= $product['price']; ?></span>
-                    </div>
-                    <div class="plan_info"><?= $product['description']; ?></div>
-                </div>
-                <div class="redirect">
-                    <?= displaySubscribeButton('Assinar', 'subscribe_btn'); ?>
-                </div>
-            </div>
+            <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
         </div>
     </section>
 </div>
