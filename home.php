@@ -34,7 +34,7 @@
                 </ul>
             </a>
             <ul class="keywords">
-                <li>Nomes</li>
+                <li>Nomes significativos</li>
                 <li>Funções</li>
                 <li>Testes unitários</li>
                 <li>Classes</li>

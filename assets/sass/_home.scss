@@ -59,6 +59,7 @@
             @media only screen and (max-width: 760px) {
                 font-size: 14px;
                 line-height: 21px;
+                margin-top: 20px;
             }
 
             &::before, &::after {
@@ -130,7 +131,7 @@
 
         .course_wrapper {
             display: grid;
-            grid-template-columns: 360px 360px;
+            grid-template-columns:  repeat(2, minmax(300px, 400px));
             align-items: start;
             justify-content: center;
             margin-top: 40px;

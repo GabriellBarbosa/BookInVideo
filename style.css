@@ -48,6 +48,10 @@ body {
   color: var(--gray-7);
 }
 
+button {
+  font-family: "Inter", sans-serif;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -376,6 +380,7 @@ img {
   #page-home .banner .intro_quote p {
     font-size: 14px;
     line-height: 21px;
+    margin-top: 20px;
   }
 }
 #page-home .banner .intro_quote p::before, #page-home .banner .intro_quote p::after {
@@ -438,7 +443,7 @@ img {
 }
 #page-home .course_section .course_wrapper {
   display: grid;
-  grid-template-columns: 360px 360px;
+  grid-template-columns: repeat(2, minmax(300px, 400px));
   align-items: start;
   justify-content: center;
   margin-top: 40px;
