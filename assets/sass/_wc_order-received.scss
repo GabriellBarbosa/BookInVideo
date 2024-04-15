@@ -1,0 +1,27 @@
+.woocommerce-order-received .woocommerce {
+    color: var(--gray-1);
+
+    .woocommerce-thankyou-order-received {
+        margin-bottom: 32px;
+    }
+
+    .woocommerce-table--order-details,
+    address {
+        margin-top: 16px;
+    }
+
+    address {
+        padding: 16px;
+    }
+
+    ul.order_details li {
+        padding-bottom: 6px;
+    }
+
+    @media screen and (max-width: 760px) {
+        ul.order_details li {
+            float: none;
+            border-right: none;
+        }
+    }
+}

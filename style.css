@@ -48,7 +48,7 @@ body {
   color: var(--gray-7);
 }
 
-button {
+button, input {
   font-family: "Inter", sans-serif;
 }
 
@@ -456,6 +456,7 @@ img {
 }
 #page-home .course_section .course_link {
   justify-self: end;
+  position: relative;
   display: block;
   background-color: var(--gray-1);
   width: 100%;
@@ -466,6 +467,18 @@ img {
   #page-home .course_section .course_link {
     margin: 0 auto;
   }
+}
+#page-home .course_section .course_link .beta {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 2px solid #9be564;
+  color: #9be564;
 }
 #page-home .course_section .course_link h3 {
   font-family: "PT Serif", serif;
@@ -751,6 +764,10 @@ abbr.required {
   width: 100% !important;
 }
 
+address {
+  line-height: 27px;
+}
+
 .woocommerce-account .woocommerce {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -967,7 +984,6 @@ abbr.required {
 .woocommerce-edit-address.logged-in address {
   margin-top: 16px;
   color: var(--gray-6);
-  line-height: 27px;
 }
 .woocommerce-edit-address.logged-in .woocommerce-address-fields {
   margin-top: 10px;
@@ -1069,7 +1085,7 @@ body.woocommerce-checkout .select2-results__options {
   color: var(--gray-1);
   border: none;
 }
-body.woocommerce-checkout #billing_city_field {
+body.woocommerce-checkout #billing_neighborhood_field {
   width: 47%;
   float: right;
   clear: none;
@@ -1187,4 +1203,27 @@ body.woocommerce-checkout #place_order {
 }
 body.woocommerce-checkout #place_order:hover {
   transform: scale(1.03);
+}
+
+.woocommerce-order-received .woocommerce {
+  color: var(--gray-1);
+}
+.woocommerce-order-received .woocommerce .woocommerce-thankyou-order-received {
+  margin-bottom: 32px;
+}
+.woocommerce-order-received .woocommerce .woocommerce-table--order-details,
+.woocommerce-order-received .woocommerce address {
+  margin-top: 16px;
+}
+.woocommerce-order-received .woocommerce address {
+  padding: 16px;
+}
+.woocommerce-order-received .woocommerce ul.order_details li {
+  padding-bottom: 6px;
+}
+@media screen and (max-width: 760px) {
+  .woocommerce-order-received .woocommerce ul.order_details li {
+    float: none;
+    border-right: none;
+  }
 }

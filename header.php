@@ -41,7 +41,7 @@ function getMyAccountButtonText() {
                         <div class="subscribe_form">
                             <?= displaySubscribeButton('Inscreva-se', 'link'); ?>
                         </div>
-                        <a href="conta" class="link login"><?= getMyAccountButtonText(); ?></a>
+                        <a href="/conta" class="link login"><?= getMyAccountButtonText(); ?></a>
                     </div>
                 </div>
             </div>

@@ -2,17 +2,23 @@
 add_filter('woocommerce_create_account_default_checked', '__return_true');
 add_filter('woocommerce_enable_order_notes_field', '__return_false');
 
-add_filter('woocommerce_checkout_fields', 'removeSomeCheckoutFields');
-function removeSomeCheckoutFields($fields) {
+add_filter('woocommerce_checkout_fields', 'removeNotRequiredCheckoutFields');
+function removeNotRequiredCheckoutFields($fields) {
     unset($fields['billing']['billing_address_2']);
-    unset($fields['billing']['billing_neighborhood']);
-    unset($fields['billing']['billing_phone']);
+    return $fields;
+}
+
+add_filter('woocommerce_checkout_fields', 'changeSomeFieldsToRequired');
+function changeSomeFieldsToRequired($fields) {
+    $fields['billing']['billing_neighborhood']['required'] = 1;
+    $fields['billing']['billing_phone']['required'] = 1;
     return $fields;
 }
 
 add_filter('woocommerce_checkout_fields', 'changeFieldsPriority');
 function changeFieldsPriority($fields) {
     $fields['billing']['billing_email']['priority'] = 21;
+    $fields['billing']['billing_phone']['priority'] = 27;
     return $fields;
 }
 
@@ -33,7 +39,7 @@ function displayCreatePasswordTitle() {
 
 add_action('woocommerce_form_field','displayTitleBeforeAddressFields', 10, 2);
 function displayTitleBeforeAddressFields( $field, $key ){
-    if (is_checkout() && ( $key == 'billing_cnpj')) {
+    if (is_checkout() && ( $key == 'billing_phone')) {
         $field .= '<h3 class="form-row form-row-wide">Endereço de faturamento</h3>';
     }
     return $field;
