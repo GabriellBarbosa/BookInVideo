@@ -1,12 +1,4 @@
 .woocommerce-edit-address.logged-in {
-    .woocommerce .woocommerce-MyAccount-content {
-        width: 490px;
-
-        @media screen and (max-width: 760px) {
-            width: 100%;
-        }
-    }
-
     .woocommerce-MyAccount-content > p {
         display: none;
     }

@@ -1,0 +1,58 @@
+body.woocommerce-orders {
+    .woocommerce-orders-table td,
+    .woocommerce-orders-table {
+        border: none;
+        border-spacing: 0;
+    }
+
+    @media screen and (max-width: 760px) {
+        .woocommerce-orders-table {
+            border: 2px solid var(--gray-4);
+        }
+    }
+
+    .woocommerce-orders-table td,
+    .woocommerce-orders-table th {
+        font-size: 16px;
+    }
+
+    .woocommerce-orders-table th,
+    .woocommerce-orders-table td {
+        padding: 15px;
+    }
+
+    .woocommerce-orders-table tbody td {
+        border-top: 1px solid var(--gray-4);
+
+        @media screen and (max-width: 760px) {
+            border: none;
+        }
+    }
+
+    .woocommerce-orders-table .woocommerce-orders-table__cell-order-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    @media screen and (max-width: 760px) {
+        .woocommerce-orders-table .woocommerce-orders-table__cell-order-actions::before {
+            display: none;
+        }
+    }
+
+    .woocommerce-orders-table .woocommerce-orders-table__cell-order-actions a {
+        display: block;
+        text-align: center;
+        background-color: transparent;
+        font-weight: normal;
+        color: var(--gray-6);
+        padding: 10px;
+        border: 2px solid var(--gray-6);
+    }
+
+    .woocommerce-orders-table .woocommerce-orders-table__cell-order-actions a.pay {
+        border-color: #9be564;
+        color: #9be564;
+    }
+}
