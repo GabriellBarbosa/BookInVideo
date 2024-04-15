@@ -51,6 +51,12 @@ body.woocommerce-page {
     border-color: #9be564;
 }
 
+.woocommerce-error a,
+.woocommerce-message a,
+.woocommerce-info a {
+    text-decoration: underline;
+}
+
 .woocommerce label {
     color: var(--gray-6);
 }

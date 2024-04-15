@@ -695,6 +695,12 @@ body.woocommerce-page {
   border-color: #9be564;
 }
 
+.woocommerce-error a,
+.woocommerce-message a,
+.woocommerce-info a {
+  text-decoration: underline;
+}
+
 .woocommerce label {
   color: var(--gray-6);
 }
@@ -1223,6 +1229,7 @@ body.woocommerce-checkout #place_order:hover {
 }
 .woocommerce-order-received .woocommerce ul.order_details li {
   padding-bottom: 6px;
+  border-color: var(--gray-5);
 }
 @media screen and (max-width: 760px) {
   .woocommerce-order-received .woocommerce ul.order_details li {
@@ -1232,6 +1239,10 @@ body.woocommerce-checkout #place_order:hover {
     padding: 6px 0;
     font-size: 12px;
   }
+}
+.woocommerce-order-received .woocommerce .code-container label {
+  color: var(--gray-1);
+  line-height: 22.4px;
 }
 .woocommerce-order-received .woocommerce .pix-payment > p {
   max-width: 600px;
@@ -1244,5 +1255,25 @@ body.woocommerce-checkout #place_order:hover {
   margin: 16px 0;
 }
 .woocommerce-order-received .woocommerce .pix-payment .pix-exiration-container {
+  margin-bottom: 2em;
+}
+.woocommerce-order-received .woocommerce .boleto-payment > p {
+  line-height: 22.4px;
+  margin-top: 16px;
+}
+.woocommerce-order-received .woocommerce .boleto-payment p strong {
+  font-weight: normal;
+}
+.woocommerce-order-received .woocommerce .boleto-payment .code-container {
+  margin: 0 0 16px 0;
+}
+.woocommerce-order-received .woocommerce .boleto-payment .boleto-actions {
+  margin: 16px 0;
+}
+.woocommerce-order-received .woocommerce .boleto-payment .boleto-actions a {
+  background-color: var(--gray-8);
+  border: 2px solid var(--gray-5);
+}
+.woocommerce-order-received .woocommerce .boleto-payment .boleto-exiration-container {
   margin-bottom: 2em;
 }
