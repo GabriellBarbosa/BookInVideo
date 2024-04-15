@@ -1,6 +1,10 @@
 .woocommerce-order-received .woocommerce {
     color: var(--gray-1);
 
+    h2::before {
+        background-color: var(--gray-5);
+    }
+
     .woocommerce-thankyou-order-received {
         margin-bottom: 32px;
     }
@@ -22,6 +26,28 @@
         ul.order_details li {
             float: none;
             border-right: none;
+            border-bottom: 1px dashed var(--gray-4);
+            padding: 6px 0;
+            font-size: 12px;
+        }
+    }
+
+    .pix-payment {
+        > p {
+            max-width: 600px;
+            line-height: 22.4px;
+        }
+
+        .pix-qr-container {
+            margin: 16px 0;
+        }
+
+        .code-container {
+            margin: 16px 0;
+        }
+
+        .pix-exiration-container {
+            margin-bottom: 2em;
         }
     }
 }
