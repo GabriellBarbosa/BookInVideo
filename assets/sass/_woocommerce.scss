@@ -129,3 +129,60 @@ abbr.required {
 address {
     line-height: 27px;
 }
+
+.woocommerce-checkout #payment {
+    background-color: var(--gray-8);
+}
+
+.woocommerce-checkout #payment div.payment_box::before {
+    border: 1em solid #e8ebed;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+    background-color: #e8ebed;
+}
+
+#wc-rm-pagbank-cc-form label {
+    font-size: 14px;
+}
+
+.woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry,
+.woocommerce-checkout #payment div.payment_box input.input-text,
+.woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number,
+#wc-rm-pagbank-cc-form .input-text {
+    padding: 15px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.woocommerce-privacy-policy-text,
+.woocommerce-privacy-policy-text a {
+    font-size: 14px;
+    line-height: 19.6px;
+    color: var(--gray-3);
+}
+
+.woocommerce-privacy-policy-text a {
+    text-decoration: underline;
+    color: var(--gray-1);
+    &:hover {
+        color: var(--c-0-light);
+    }
+}
+
+#place_order {
+    font-weight: normal;
+    background-color: var(--c-0-dark);
+    font-size: 18px;
+    margin-top: 18px;
+    padding: 15px 0;
+    width: 100%;
+    transition: .2s ease;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
