@@ -13,12 +13,20 @@ class Lesson {
     public function get($courseSlug, $lessonSlug) {
         $completedLessons = $this->courseRepository->getCompletedLessons($courseSlug);
         $lesson = $this->courseRepository->getSingleLesson($courseSlug, $lessonSlug);
+        if ($lesson)
+            return $this->enrichLesson($lesson, $completedLessons, $lessonSlug);
+        else
+            return null;
+    }
+
+    private function enrichLesson($lesson, $completedLessons, $lessonSlug) {
         $lesson['completed'] = false;
         if ($this->userRepository->isSubscribed()) {
             $lesson['completed'] = $this->lessonIsCompleted($completedLessons, $lessonSlug);
             return $lesson;
+        } else {
+            return $this->emptySensitiveFields($lesson);
         }
-        return $this->emptySensitiveFields($lesson);
     }
 
     private function lessonIsCompleted($completedLessons, $lessonSlug) {

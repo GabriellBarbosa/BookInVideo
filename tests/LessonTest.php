@@ -120,5 +120,15 @@ final class LessonTest extends TestCase {
 
         $this->assertEquals($lesson['completed'], true);
     }
+
+    public function testLessonNotFound() {
+        $completedLesson = new StdClass();
+        $completedLesson->lessonSlug = '0102-codigo-limpo';
+        $this->courseRepository->method('getSingleLesson')->willReturn(null);
+
+        $lesson = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');
+
+        $this->assertEquals($lesson, null);
+    }
 }
 ?>
