@@ -20,12 +20,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-$allowed_html = array(
-	'a' => array(
-		'href' => array(),
-	),
-);
 ?>
 
 <?= '<div class="myaccount_content">' ?>
