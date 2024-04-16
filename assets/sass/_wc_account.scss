@@ -71,5 +71,14 @@
                 color: var(--gray-6);
             }
         }
+
+        .woocommerce-EditAccountForm.edit-account,
+        .woocommerce-address-fields__field-wrapper {
+            max-width: 600px;
+            
+            @media screen and (max-width: 760px) {
+                max-width: 100%;
+            }
+        }
     }
 }

@@ -24,6 +24,7 @@ require_once($template_directory . '/plugin-overwrite/wc_edit-account.php');
 require_once($template_directory . '/plugin-overwrite/wc_cart_validation.php');
 require_once($template_directory . '/plugin-overwrite/wc_skip_cart.php');
 require_once($template_directory . '/plugin-overwrite/wc_checkout.php');
+require_once($template_directory . '/plugin-overwrite/wc_address.php');
 
 add_filter('wc_add_to_cart_message', '__return_false', 10, 2);
 

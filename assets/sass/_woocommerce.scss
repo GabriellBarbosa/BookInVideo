@@ -92,7 +92,7 @@ span.select2-selection {
 
 .woocommerce form .form-row .required,
 abbr.required {
-    color: var(--gray-6);
+    display: none;
 }
 
 .woocommerce-page .woocommerce .woocommerce-Button.button {

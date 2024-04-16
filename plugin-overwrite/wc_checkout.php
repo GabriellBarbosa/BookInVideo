@@ -8,22 +8,22 @@ function removeNotRequiredCheckoutFields($fields) {
     return $fields;
 }
 
-add_filter('woocommerce_checkout_fields', 'changeSomeFieldsToRequired');
-function changeSomeFieldsToRequired($fields) {
+add_filter('woocommerce_checkout_fields', 'changeSomeCheckoutFieldsToRequired');
+function changeSomeCheckoutFieldsToRequired($fields) {
     $fields['billing']['billing_neighborhood']['required'] = 1;
     $fields['billing']['billing_phone']['required'] = 1;
     return $fields;
 }
 
-add_filter('woocommerce_checkout_fields', 'changeFieldsPriority');
-function changeFieldsPriority($fields) {
+add_filter('woocommerce_checkout_fields', 'changeCheckoutFieldsPriority');
+function changeCheckoutFieldsPriority($fields) {
     $fields['billing']['billing_email']['priority'] = 21;
     $fields['billing']['billing_phone']['priority'] = 27;
     return $fields;
 }
 
-add_filter('gettext', 'changeBillingDetailsTitle', 20, 3);
-function changeBillingDetailsTitle($translated_text, $text, $domain) {
+add_filter('gettext', 'changeCheckoutBillingDetailsTitle', 20, 3);
+function changeCheckoutBillingDetailsTitle($translated_text, $text, $domain) {
     switch ( $translated_text ) {
         case 'Detalhes de faturamento' :
             $translated_text = __( 'Dados', 'woocommerce' );
@@ -37,8 +37,8 @@ function displayCreatePasswordTitle() {
     echo '<h3>Crie sua senha</h3>';
 }
 
-add_action('woocommerce_form_field','displayTitleBeforeAddressFields', 10, 2);
-function displayTitleBeforeAddressFields( $field, $key ){
+add_action('woocommerce_form_field','displayTitleBeforeCheckoutAddressFields', 10, 2);
+function displayTitleBeforeCheckoutAddressFields( $field, $key ){
     if (is_checkout() && ( $key == 'billing_phone')) {
         $field .= '<h3 class="form-row form-row-wide">Endereço de faturamento</h3>';
     }

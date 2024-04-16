@@ -31,7 +31,7 @@
         margin-top: 16px;
         color: var(--gray-6);
     }
-
+    
     .woocommerce-address-fields {
         margin-top: 10px;
     }
@@ -43,6 +43,18 @@
     .button {
         margin-top: 20px;
         color: var(--gray-1);
+    }
+
+    #billing_neighborhood_field {
+        float: right;
+    }
+
+    @media screen and (max-width: 760px) {
+        .form-row-first,
+        .form-row-last {
+            float: none;
+            width: 100%;
+        }
     }
 
     .woocommerce form .form-row.woocommerce-validated input.input-text {

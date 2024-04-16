@@ -736,7 +736,7 @@ span.select2-selection {
 
 .woocommerce form .form-row .required,
 abbr.required {
-  color: var(--gray-6);
+  display: none;
 }
 
 .woocommerce-page .woocommerce .woocommerce-Button.button {
@@ -983,6 +983,16 @@ address {
   font-family: "PT Serif";
   color: var(--gray-6);
 }
+.woocommerce-account.logged-in .woocommerce .woocommerce-EditAccountForm.edit-account,
+.woocommerce-account.logged-in .woocommerce .woocommerce-address-fields__field-wrapper {
+  max-width: 600px;
+}
+@media screen and (max-width: 760px) {
+  .woocommerce-account.logged-in .woocommerce .woocommerce-EditAccountForm.edit-account,
+  .woocommerce-account.logged-in .woocommerce .woocommerce-address-fields__field-wrapper {
+    max-width: 100%;
+  }
+}
 
 .woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-form-row.form-row-first,
 .woocommerce-edit-account .woocommerce .woocommerce-EditAccountForm .woocommerce-form-row.form-row-last {
@@ -1049,6 +1059,16 @@ address {
 .woocommerce-edit-address.logged-in .button {
   margin-top: 20px;
   color: var(--gray-1);
+}
+.woocommerce-edit-address.logged-in #billing_neighborhood_field {
+  float: right;
+}
+@media screen and (max-width: 760px) {
+  .woocommerce-edit-address.logged-in .form-row-first,
+  .woocommerce-edit-address.logged-in .form-row-last {
+    float: none;
+    width: 100%;
+  }
 }
 .woocommerce-edit-address.logged-in .woocommerce form .form-row.woocommerce-validated input.input-text {
   border: none;
@@ -1120,9 +1140,6 @@ body.woocommerce-checkout h3:nth-child(2)::before {
 }
 body.woocommerce-checkout label {
   color: var(--gray-4);
-}
-body.woocommerce-checkout .woocommerce form .form-row .required, body.woocommerce-checkout abbr.required {
-  display: none;
 }
 body.woocommerce-checkout .input-text,
 body.woocommerce-checkout span.select2-selection {
