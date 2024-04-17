@@ -12,7 +12,7 @@ class LessonMetaBox {
         'slide',
     );
 
-    public function displayFields($lessonPost) { ?>
+    public function displayFields($postID) { ?>
         <div>
             <?php foreach ($this->fields as $field) { ?>
                 <label 
@@ -23,7 +23,7 @@ class LessonMetaBox {
                     style="padding: 10px; margin: 10px 0 20px 0; width: 370px;"
                     type="text"
                     name="<?= $field; ?>"
-                    value="<?= get_post_meta($lessonPost->ID, $field, true); ?>"
+                    value="<?= get_post_meta($postID, $field, true); ?>"
                 >
                 <br>
             <?php } ?>
@@ -39,16 +39,16 @@ class LessonMetaBox {
         }
     }
 
+    private function postCanBeSaved($postType, $postID) {
+        return $postType == "aula" && current_user_can("edit_post", $postID);
+    }
+
     private function getFieldValue($field, $httpPost) {
         $value = "";
         if (isset($httpPost[$field])) {
             $value = $httpPost[$field];
         }
         return trim($value);
-    }
-
-    private function postCanBeSaved($postType, $postID) {
-        return $postType == "aula" && current_user_can("edit_post", $postID);
     }
 }
 ?>

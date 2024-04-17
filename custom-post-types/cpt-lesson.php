@@ -24,10 +24,10 @@ function addLessonMetaBox() {
     add_meta_box("lesson-metabox", "lesson fields", "displayLessonMetaBox", "aula", "normal", "high", null);
 }
 
-function displayLessonMetaBox($lessonPost) {
+function displayLessonMetaBox($post) {
     wp_nonce_field(basename(__FILE__), "meta-box-nonce");
     $lessonMetaBox = new LessonMetaBox();
-    $lessonMetaBox->displayFields($lessonPost);
+    $lessonMetaBox->displayFields($post->ID);
 }
 
 add_action("save_post", "saveLessonMetaBoxFields", 10, 3);
