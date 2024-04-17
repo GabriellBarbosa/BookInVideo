@@ -39,9 +39,9 @@ class Lesson {
 
     private function emptySensitiveFields($lesson) {
         $lessonCopy = $lesson;
-        $lessonCopy['video_src'] = null;
-        $lessonCopy['has_slide'] = null;
-        $lessonCopy['has_code'] = null;
+        $lessonCopy['video_src'] = '';
+        $lessonCopy['slide'] = '';
+        $lessonCopy['code'] = '';
         return $lessonCopy;
     }
 

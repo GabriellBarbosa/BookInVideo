@@ -27,8 +27,8 @@ final class LessonTest extends TestCase {
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
-            'has_code' => 'true', 
-            'has_slide' => 'true'
+            'slide' => '/slide', 
+            'code' => '/code'
         ));
 
         $lessonFound = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');
@@ -40,8 +40,8 @@ final class LessonTest extends TestCase {
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
-            'has_code' => 'true', 
-            'has_slide' => 'true',
+            'slide' => '/slide', 
+            'code' => '/code',
             'completed' => false
         ));
     }
@@ -55,8 +55,8 @@ final class LessonTest extends TestCase {
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
-            'has_code' => 'true', 
-            'has_slide' => 'true'
+            'slide' => '/slide', 
+            'code' => '/code'
         ));
 
         $lessonFound = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');
@@ -65,11 +65,11 @@ final class LessonTest extends TestCase {
             'name' => 'Codigo limpo',
             'sequence' => '0102',
             'slug' => '0102-codigo-limpo',
-            'video_src' => null,
+            'video_src' => '',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
-            'has_code' => null, 
-            'has_slide' => null,
+            'slide' => '', 
+            'code' => '',
             'completed' => false
         ));
     }
@@ -112,8 +112,8 @@ final class LessonTest extends TestCase {
             'video_src' => 'http://vimeo.com',
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
-            'has_code' => 'true', 
-            'has_slide' => 'true'
+            'slide' => '/', 
+            'code' => '/'
         ));
 
         $lesson = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');

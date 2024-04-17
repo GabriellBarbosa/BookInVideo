@@ -51,7 +51,7 @@ class CourseRepositoryImpl implements CourseRepository {
     }
 
     public function getSingleLesson($courseSlug, $lessonSlug) {
-        $fields = ['name', 'slug', 'sequence', 'video_src', 'prev', 'next', 'has_code', 'has_slide'];
+        $fields = ['name', 'slug', 'sequence', 'video_src', 'prev', 'next', 'code', 'slide'];
         $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
         $lessonPosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($lessonPosts, $fields);
