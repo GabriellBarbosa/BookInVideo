@@ -10,6 +10,7 @@ class LessonMetaBox {
         'next',
         'code',
         'slide',
+        'note',
     );
 
     public function displayFields($postID) { ?>

@@ -28,7 +28,8 @@ final class LessonTest extends TestCase {
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
             'slide' => '/slide', 
-            'code' => '/code'
+            'code' => '/code',
+            'note' => 'Me diga o que voce achou do curso'
         ));
 
         $lessonFound = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');
@@ -42,6 +43,7 @@ final class LessonTest extends TestCase {
             'next' => '0201-nomes-significativos',
             'slide' => '/slide', 
             'code' => '/code',
+            'note' => 'Me diga o que voce achou do curso',
             'completed' => false
         ));
     }
@@ -56,7 +58,8 @@ final class LessonTest extends TestCase {
             'prev' => '0101-configuracao',
             'next' => '0201-nomes-significativos',
             'slide' => '/slide', 
-            'code' => '/code'
+            'code' => '/code',
+            'note' => 'Me diga o que voce achou do curso',
         ));
 
         $lessonFound = $this->lesson->get('codigo-limpo', '0102-codigo-limpo');
@@ -70,6 +73,7 @@ final class LessonTest extends TestCase {
             'next' => '0201-nomes-significativos',
             'slide' => '', 
             'code' => '',
+            'note' => '',
             'completed' => false
         ));
     }

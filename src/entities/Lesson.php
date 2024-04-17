@@ -42,6 +42,7 @@ class Lesson {
         $lessonCopy['video_src'] = '';
         $lessonCopy['slide'] = '';
         $lessonCopy['code'] = '';
+        $lessonCopy['note'] = '';
         return $lessonCopy;
     }
 
