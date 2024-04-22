@@ -5,8 +5,13 @@
 @import './header';
 @import './footer';
 @import './home';
+@import './_pricing_card';
 @import './woocommerce';
 @import './wc_login';
 @import './wc_account';
 @import './wc_edit_account';
 @import './_wc_account_adress';
+@import './_wc_checkout';
+@import './_wc_order_received';
+@import './_wc_account_orders';
+@import './_wc_lost_password';

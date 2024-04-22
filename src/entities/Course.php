@@ -1,60 +1,61 @@
 <?php
-require_once get_template_directory() . '/src/repositories/CourseRespository.php';
-
 class Course {
-    private $courseSlug = null;
     private $courseRepository = null;
+    private $courseSlug = null;
 
-    public function __construct($slug) {
-        $this->courseSlug = $slug;
-        $this->courseRepository = new CourseRepository();
+    public function __construct($courseSlug, CourseRepository $courseRepository) {
+        $this->courseRepository = $courseRepository;
+        $this->courseSlug = $courseSlug;
     }
 
-    public function get() {
-        $fields = ['name', 'slug'];
-        $course = $this->courseRepository->getCourse($this->courseSlug, $fields);
-        return $this->mountCourse($course);
-    }
-
-    private function mountCourse($course) {
+    public function getContent() {
+        $course = $this->courseRepository->getCourse($this->courseSlug);
         if ($course) {
             return array(
-                'name' => $course['name'], 
+                'name' => $course['name'],
                 'slug' => $course['slug'],
                 'modules' => $this->getModules()
             );
-        } else {
-            return null;
-        }
+        } else return null;
     }
 
     private function getModules() {
         $modules = $this->courseRepository->getModules($this->courseSlug);
         $result = array();
         foreach ($modules as $module) {
-            array_push($result, $this->mountModule($module));
+            array_push($result, array(
+                'name' => $module->name,
+                'sequence' => $module->description,
+                'lessons' => $this->getLessons($module->slug)
+            ));
         }
         return $result;
     }
 
-    private function mountModule($module) {
-        return array(
-            'name' => $module->name,
-            'sequence' => $module->description,
-            'lessons' => $this->getLessons($module->slug)
-        );
-    }
-
     private function getLessons($moduleSlug) {
-        $fields = ['name', 'slug', 'sequence','duration'];
-        return $this->courseRepository->getLessons(
-            $this->courseSlug, $moduleSlug, $fields);
+        $completedLessons = $this->courseRepository->getCompletedLessons($this->courseSlug);
+        $lessons = $this->courseRepository->getLessons(
+            $this->courseSlug, $moduleSlug);
+        return $this->addCompletedLessonField($lessons, $completedLessons);
     }
 
-    public function getSingleLesson($lessonSlug) {
-        $fields = ['name', 'sequence', 'video_src', 'prev', 'next', 'has_code', 'has_slide'];
-        return $this->courseRepository->getSingleLesson(
-            $this->courseSlug, $lessonSlug, $fields);
+    private function addCompletedLessonField($lessons, $completedLessons) {
+        $result = array();
+        foreach ($lessons as $lesson) {
+            $lessonCopy = $lesson;
+            $lessonCopy['completed'] = $this->lessonIsCompleted(
+                $completedLessons, $lessonCopy['slug']);
+            array_push($result, $lessonCopy);
+        }
+        return $result;
+    }
+
+    private function lessonIsCompleted($completedLessons, $lessonSlug) {
+        foreach ($completedLessons as $completedLesson) {
+            if ($completedLesson->lessonSlug == $lessonSlug) 
+                return true;
+        }
+        return false;
     }
 }
 ?>

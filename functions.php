@@ -1,16 +1,30 @@
 <?php
 $template_directory =  get_template_directory();
+
 require_once($template_directory . '/src/SubscribedUser.php');
-require_once($template_directory . '/custom-post-types/cpt-course.php');
-require_once($template_directory . '/custom-post-types/cpt-lesson.php');
+require_once($template_directory . '/src/interfaces/CourseRepository.php');
+require_once($template_directory . '/src/interfaces/UserRepository.php');
+
+require_once($template_directory . '/src/repositories/CourseRespositoryImpl.php');
+require_once($template_directory . '/src/repositories/UserRepositoryImpl.php');
+
 require_once($template_directory . '/api/get_course.php');
 require_once($template_directory . '/api/get_user.php');
+require_once($template_directory . '/api/get_lesson.php');
+require_once($template_directory . '/api/complete_lesson.php');
+
+require_once($template_directory . '/custom-post-types/cpt-course.php');
+require_once($template_directory . '/custom-post-types/cpt-lesson.php');
+require_once($template_directory . '/custom-db-tables/completedLessons.php');
+
 require_once($template_directory . '/custom-taxonomies/codigo-limpo-taxonomy.php');
 require_once($template_directory . '/plugin-overwrite/wc_login.php');
 require_once($template_directory . '/plugin-overwrite/wc_myaccount.php');
 require_once($template_directory . '/plugin-overwrite/wc_edit-account.php');
 require_once($template_directory . '/plugin-overwrite/wc_cart_validation.php');
 require_once($template_directory . '/plugin-overwrite/wc_skip_cart.php');
+require_once($template_directory . '/plugin-overwrite/wc_checkout.php');
+require_once($template_directory . '/plugin-overwrite/wc_address.php');
 
 add_filter('wc_add_to_cart_message', '__return_false', 10, 2);
 
@@ -36,7 +50,7 @@ function bookinvideo_register_css() {
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
 
 function bookinvideo_enqueue_react_js() {
-    wp_enqueue_script('course-js', get_template_directory_uri() . '/course-page-in-react/index.js', [], '1.0.2', true);
+    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '1.0.2', true);
     $wcProduct = new WC_Product(getCourseProductPostID());
     wp_localize_script('course-js', 'wp_data',  array(
         'product' => get_permalink(getCourseProductPostID()),
@@ -48,9 +62,27 @@ function bookinvideo_enqueue_react_js() {
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_css');
 
 function bookinvideo_enqueue_react_css() {
-    wp_register_style('course-css', get_template_directory_uri() . '/course-page-in-react/index.css');
+    wp_register_style('course-css', get_template_directory_uri() . '/react-app/index.css');
     wp_enqueue_style('course-css');
 }
+
+function displayPricingCard($displayAssignButton = true) { 
+    $product = getCourseProductData(); ?>
+    <div class="pricing_card"> 
+        <div class="price_info_wrapper">
+            <div class="price">
+                <p><?= $product['name']; ?></p>
+                <span>R$ <?= $product['price']; ?></span>
+            </div>
+            <div class="pricing_card_info"><?= $product['description']; ?></div>
+        </div>
+        <?php if ($displayAssignButton) { ?>
+        <div class="redirect">
+            <?= displaySubscribeButton('Assinar', 'subscribe_btn'); ?>
+        </div>
+        <?php } ?>
+    </div>
+<?php }
 
 function displaySubscribeButton(string $text, string $className) { 
     $courseProduct = getCourseProductData(); ?>

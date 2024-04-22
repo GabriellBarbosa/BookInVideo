@@ -1,6 +1,7 @@
 <?php
-class CourseRepository {
-    public function getCourse($slug, $fields) {
+class CourseRepositoryImpl implements CourseRepository {
+    public function getCourse($slug) {
+        $fields = ['name', 'slug'];
         $queryResult = $this->courseQuery($slug);
         $coursePosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($coursePosts, $fields);
@@ -18,7 +19,8 @@ class CourseRepository {
         return get_terms($courseSlug);
     }
 
-    public function getLessons($courseSlug, $moduleSlug, $fields) {
+    public function getLessons($courseSlug, $moduleSlug) {
+        $fields = ['name', 'slug', 'sequence','duration'];
         $queryResult = $this->lessonsQuery($courseSlug, $moduleSlug);
         return $this->getLessonsWithCustomFields($queryResult, $fields);
     }
@@ -48,7 +50,18 @@ class CourseRepository {
         return $result;
     }
 
-    public function getSingleLesson($courseSlug, $lessonSlug, $fields) {
+    public function getSingleLesson($courseSlug, $lessonSlug) {
+        $fields = [
+            'name', 
+            'slug', 
+            'sequence', 
+            'video_src', 
+            'prev', 
+            'next', 
+            'code', 
+            'slide',
+            'note'
+        ];
         $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
         $lessonPosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($lessonPosts, $fields);
@@ -72,10 +85,11 @@ class CourseRepository {
         ));
     }
 
-    private function getSinglePostWithCustomFields($post, $fields) {
-        $singlePost = array_shift($post);
-        return $singlePost 
-            ? $this->getPostCustomFields($singlePost->ID, $fields)
+
+    private function getSinglePostWithCustomFields($posts, $fields) {
+        $post = array_shift($posts);
+        return $post 
+            ? $this->getPostCustomFields($post->ID, $fields)
             : null;
     }
 
@@ -86,6 +100,32 @@ class CourseRepository {
             $result[$field] = $metaData[$field][0];
         }
         return $result;
+    }
+
+    public function completeLesson($courseSlug, $lessonSlug) {
+        global $wpdb;
+        $user = wp_get_current_user();
+        $insertionFeedback = $wpdb->insert( 
+            'wp_completed_lessons', 
+            array(
+                'userId' => $user->ID,
+                'courseSlug' => $courseSlug, 
+                'lessonSlug' => $lessonSlug, 
+                'createdAt' => current_time( 'mysql' ), 
+            ) 
+        );
+
+        return $insertionFeedback > 0;
+    }
+
+    public function getCompletedLessons($courseSlug) {
+        global $wpdb;
+        $user = wp_get_current_user();
+        $query = $wpdb->prepare(
+            "SELECT `lessonSlug` FROM `wp_completed_lessons` WHERE `userId` = %d AND `courseSlug` = %s;",
+            array($user->ID, $courseSlug)
+        );
+        return $wpdb->get_results($query);
     }
 }
 ?>

@@ -1,18 +1,17 @@
-<?php 
-get_header();
-$product = getCourseProductData();
-?>
+<?php get_header(); ?>
 
 <div id="page-home">
     <section class="banner">
         <div class="intro container">
-            <h1 class="title intro_title">Curso de Código Limpo</h1>
-            <blockquote class="intro_quote">
-                <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava"</p>
-            </blockquote>
-            <cite class="intro_quoter">MICHAEL FEATHERS</cite>
-            <div class="intro_call_to_action">
-                <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
+            <div>
+                <h1 class="title intro_title">Curso de Código Limpo</h1>
+                <blockquote class="intro_quote">
+                    "Um código limpo sempre parece ter sido escrito por alguém que se importava"
+                </blockquote>
+                <span class="intro_quoter">MICHAEL FEATHERS</span>
+                <div class="intro_call_to_action">
+                    <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
+                </div>
             </div>
         </div>
         <div class="course_info_wrapper">
@@ -28,6 +27,7 @@ $product = getCourseProductData();
         <h2 class="title title_separator">Curso</h2>
         <div class="course_wrapper">
             <a class="course_link" href="/curso/codigo-limpo/0101-configuracao">
+                <span class="beta">beta</span>
                 <p>Robert C. Martin</p>
                 <h3>Código Limpo</h3>
                 <ul>
@@ -37,7 +37,7 @@ $product = getCourseProductData();
                 </ul>
             </a>
             <ul class="keywords">
-                <li>Nomes</li>
+                <li>Nomes significativos</li>
                 <li>Funções</li>
                 <li>Testes unitários</li>
                 <li>Classes</li>
@@ -62,18 +62,7 @@ $product = getCourseProductData();
     <section class="pricing_wrapper">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
-            <div class="plan"> 
-                <div class="price_info_wrapper">
-                    <div class="price">
-                        <p><?= $product['name']; ?></p>
-                        <span>R$ <?= $product['price']; ?></span>
-                    </div>
-                    <div class="plan_info"><?= $product['description']; ?></div>
-                </div>
-                <div class="redirect">
-                    <?= displaySubscribeButton('Assinar', 'subscribe_btn'); ?>
-                </div>
-            </div>
+            <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
         </div>
     </section>
 </div>
