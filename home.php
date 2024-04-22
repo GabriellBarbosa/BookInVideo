@@ -3,13 +3,15 @@
 <div id="page-home">
     <section class="banner">
         <div class="intro container">
-            <h1 class="title intro_title">Curso de Código Limpo</h1>
-            <blockquote class="intro_quote">
-                <p>"Um código limpo sempre parece ter sido escrito por alguém que se importava"</p>
-            </blockquote>
-            <cite class="intro_quoter">MICHAEL FEATHERS</cite>
-            <div class="intro_call_to_action">
-                <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
+            <div>
+                <h1 class="title intro_title">Curso de Código Limpo</h1>
+                <blockquote class="intro_quote">
+                    "Um código limpo sempre parece ter sido escrito por alguém que se importava"
+                </blockquote>
+                <span class="intro_quoter">MICHAEL FEATHERS</span>
+                <div class="intro_call_to_action">
+                    <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
+                </div>
             </div>
         </div>
         <div class="course_info_wrapper">
