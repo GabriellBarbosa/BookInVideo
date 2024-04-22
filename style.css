@@ -30,8 +30,8 @@ button {
 :root {
   --gray-0: #000000;
   --gray-1: #0E1013;
-  --gray-2: #1B1B1B;
-  --gray-3: #282A2D;
+  --gray-2: #1B1D20;
+  --gray-3: #222326;
   --gray-4: #606163;
   --gray-5: #b0b2b3;
   --gray-6: #d4d6d8;
@@ -390,7 +390,7 @@ img {
   width: 30px;
   height: 2px;
   border-radius: 4px;
-  background-color: var(--gray-8);
+  background-color: var(--gray-5);
   left: 50%;
   transform: translateX(-50%);
 }
@@ -407,7 +407,7 @@ img {
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.4px;
 }
 #page-home .banner .intro_call_to_action {
   margin-top: 60px;
