@@ -62,7 +62,7 @@ function bookinvideo_enqueue_react_js() {
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_css');
 
 function bookinvideo_enqueue_react_css() {
-    wp_register_style('course-css', get_template_directory_uri() . '/react-app/index.css');
+    wp_register_style('course-css', get_template_directory_uri() . '/react-app/index.css', [], '1.0.1');
     wp_enqueue_style('course-css');
 }
 
