@@ -102,7 +102,7 @@ img {
 }
 
 .header {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--gray-0);
   float: left;
   min-width: 100%;
   min-height: 64px;
@@ -319,6 +319,10 @@ img {
     display: flex;
     justify-content: center;
   }
+}
+
+body.home .header {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #page-home .title {
@@ -641,6 +645,35 @@ img {
 }
 .pricing_card .subscribe_btn:hover {
   transform: scale(1.05);
+}
+
+body.privacy-policy {
+  background-color: var(--gray-8);
+}
+body.privacy-policy #footer_component {
+  margin-top: 40px;
+}
+body.privacy-policy .content h2 {
+  color: var(--gray-0);
+  font-size: 24px;
+  margin-top: 40px;
+}
+body.privacy-policy .content p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 16px;
+}
+body.privacy-policy .content p, body.privacy-policy .content li {
+  color: var(--gray-2);
+}
+body.privacy-policy .content ul {
+  margin-top: 16px;
+}
+body.privacy-policy .content ul li {
+  list-style: square;
+  font-size: 16px;
+  line-height: 28.8px;
+  margin-left: 32px;
 }
 
 body.woocommerce-page {

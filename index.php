@@ -4,7 +4,7 @@
     <div class="page_title_wrapper">
         <h1 class="page_title"><?= the_title(); ?></h1>
     </div>
-    <div>
+    <div class="container content">
         <?php the_content(); ?>
     </div>
 <?php endwhile; else: ?>
