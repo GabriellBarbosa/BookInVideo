@@ -2,90 +2,40 @@
     background-color: var(--gray-1);
 
     .footer_wrapper {
-        display: flex;
-        align-items: start;
-        padding: 2.5rem 0;
+        padding: 40px 0;
 
-        @media only screen and (max-width: 860px) {
-            .footer_logo {
-                display: none;
-            }
-        }
-    
-        .footer_links {
+        ul {
             display: flex;
+            justify-content: center;
+        }
 
-            @media only screen and (max-width: 760px) {
-                flex-direction: column;
-            }
+        ul li {
+            margin: 0 10px;
 
-            .links_wrapper {
-                margin-left: 2.5rem;
+            a {
+                font-size: 16px;
+                font-family: 'PT Serif', serif;
+                color: var(--gray-8);
+                padding: 10px 0;
 
-                @media only screen and (max-width: 860px) {
-                    &:first-child {
-                        margin-left: 0;
-                    }
-                }
-
-                @media only screen and (max-width: 760px) {
-                    margin-left: 0;
-                    margin-bottom: 2.5rem;
-                }
-
-
-                p.link_list_title {
-                    font-size: 1rem;
-                    font-weight: bold;
-                    margin-bottom: 1.25rem;
-                }
-            }
-
-            ul li {
-                color: var(--gray-5);
-                margin-bottom: 0.625rem;
-                
-                a {
-                    font-size: 1rem;
-                    font-family: Georgia, 'Times New Roman', Times, serif;
-                    line-height: 1.438rem;
-                    color: var(--gray-5);
-
-                    &:hover {
-                        color: var(--c-0-light);
-                    }
+                &:hover {
+                    color: var(--c-0-light);
                 }
             }
         }
     }
 
     .copyright {
-        padding: 2.5rem 0;
-        border-top: 0.063rem solid var(--c-1-dark);
-
-        p {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 1.438rem;
-        }
+        font-family: 'PT Serif', serif;
+        line-height: 24px;
+        text-align: center;
+        color: var(--gray-plus);
+        margin-top: 16px;
         
         @media only screen and (max-width: 860px) {
-            p {
-                margin: 0 auto;
-                text-align: center;
-                max-width: 22rem;
-            }
-        }
-
-        .footer_logo_mobile {
-            display: none;
-            margin-top: 1.25rem;
-
-            @media only screen and (max-width: 860px) {
-                & {
-                    display: flex;
-                    justify-content: center;
-                }
-            }
+            margin: 0 auto;
+            text-align: center;
+            max-width: 22rem;
         }
     }
 }

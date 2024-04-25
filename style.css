@@ -246,78 +246,36 @@ img {
   background-color: var(--gray-1);
 }
 #footer_component .footer_wrapper {
+  padding: 40px 0;
+}
+#footer_component .footer_wrapper ul {
   display: flex;
-  align-items: start;
-  padding: 2.5rem 0;
+  justify-content: center;
 }
-@media only screen and (max-width: 860px) {
-  #footer_component .footer_wrapper .footer_logo {
-    display: none;
-  }
+#footer_component .footer_wrapper ul li {
+  margin: 0 10px;
 }
-#footer_component .footer_wrapper .footer_links {
-  display: flex;
+#footer_component .footer_wrapper ul li a {
+  font-size: 16px;
+  font-family: "PT Serif", serif;
+  color: var(--gray-8);
+  padding: 10px 0;
 }
-@media only screen and (max-width: 760px) {
-  #footer_component .footer_wrapper .footer_links {
-    flex-direction: column;
-  }
-}
-#footer_component .footer_wrapper .footer_links .links_wrapper {
-  margin-left: 2.5rem;
-}
-@media only screen and (max-width: 860px) {
-  #footer_component .footer_wrapper .footer_links .links_wrapper:first-child {
-    margin-left: 0;
-  }
-}
-@media only screen and (max-width: 760px) {
-  #footer_component .footer_wrapper .footer_links .links_wrapper {
-    margin-left: 0;
-    margin-bottom: 2.5rem;
-  }
-}
-#footer_component .footer_wrapper .footer_links .links_wrapper p.link_list_title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 1.25rem;
-}
-#footer_component .footer_wrapper .footer_links ul li {
-  color: var(--gray-5);
-  margin-bottom: 0.625rem;
-}
-#footer_component .footer_wrapper .footer_links ul li a {
-  font-size: 1rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  line-height: 1.438rem;
-  color: var(--gray-5);
-}
-#footer_component .footer_wrapper .footer_links ul li a:hover {
+#footer_component .footer_wrapper ul li a:hover {
   color: var(--c-0-light);
 }
 #footer_component .copyright {
-  padding: 2.5rem 0;
-  border-top: 0.063rem solid var(--c-1-dark);
-}
-#footer_component .copyright p {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  line-height: 1.438rem;
+  font-family: "PT Serif", serif;
+  line-height: 24px;
+  text-align: center;
+  color: var(--gray-plus);
+  margin-top: 16px;
 }
 @media only screen and (max-width: 860px) {
-  #footer_component .copyright p {
+  #footer_component .copyright {
     margin: 0 auto;
     text-align: center;
     max-width: 22rem;
-  }
-}
-#footer_component .copyright .footer_logo_mobile {
-  display: none;
-  margin-top: 1.25rem;
-}
-@media only screen and (max-width: 860px) {
-  #footer_component .copyright .footer_logo_mobile {
-    display: flex;
-    justify-content: center;
   }
 }
 
