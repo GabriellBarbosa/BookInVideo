@@ -93,12 +93,13 @@ img {
 
 .page_title_wrapper {
   padding-top: 64px;
+  background-color: var(--gray-1);
 }
 .page_title_wrapper .page_title {
   font-size: 36px;
   text-align: center;
-  background-color: var(--gray-1);
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header {
@@ -251,11 +252,13 @@ img {
 #footer_component .footer_wrapper ul {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #footer_component .footer_wrapper ul li {
   margin: 0 10px;
 }
 #footer_component .footer_wrapper ul li a {
+  display: block;
   font-size: 16px;
   font-family: "PT Serif", serif;
   color: var(--gray-8);
@@ -273,9 +276,7 @@ img {
 }
 @media only screen and (max-width: 860px) {
   #footer_component .copyright {
-    margin: 0 auto;
     text-align: center;
-    max-width: 22rem;
   }
 }
 
