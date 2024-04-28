@@ -330,7 +330,7 @@ body.home .header {
   position: relative;
   display: block;
   max-width: 280px;
-  margin: 30px auto 0 auto;
+  margin: 30px auto;
   font-size: 16px;
   line-height: 24px;
   color: var(--gray-6);
@@ -342,7 +342,7 @@ body.home .header {
   #page-home .banner .intro_quote {
     font-size: 14px;
     line-height: 21px;
-    margin-top: 20px;
+    margin: 20px auto;
   }
 }
 #page-home .banner .intro_quote::before, #page-home .banner .intro_quote::after {
@@ -365,13 +365,17 @@ body.home .header {
 #page-home .banner .intro_quoter {
   display: block;
   font-size: 14px;
-  margin-top: 30px;
   color: var(--gray-8);
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
+}
+@media only screen and (max-width: 760px) {
+  #page-home .banner .intro_quoter {
+    font-size: 12px;
+  }
 }
 #page-home .banner .intro_call_to_action button {
   margin: 60px auto 0 auto;
