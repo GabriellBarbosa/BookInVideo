@@ -49,6 +49,11 @@
         float: right;
     }
 
+    #billing_city_field {
+        float: none;
+        width: 100%;
+    }
+
     @media screen and (max-width: 760px) {
         .form-row-first,
         .form-row-last {

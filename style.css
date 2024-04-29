@@ -1070,6 +1070,10 @@ address {
 .woocommerce-edit-address.logged-in #billing_neighborhood_field {
   float: right;
 }
+.woocommerce-edit-address.logged-in #billing_city_field {
+  float: none;
+  width: 100%;
+}
 @media screen and (max-width: 760px) {
   .woocommerce-edit-address.logged-in .form-row-first,
   .woocommerce-edit-address.logged-in .form-row-last {
