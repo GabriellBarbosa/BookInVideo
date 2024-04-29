@@ -344,7 +344,6 @@ body.home .header {
   #page-home .banner .intro_quote {
     font-size: 14px;
     line-height: 21px;
-    margin: 20px auto;
   }
 }
 #page-home .banner .intro_quote::before, #page-home .banner .intro_quote::after {
