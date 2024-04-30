@@ -49,4 +49,9 @@ add_action('woocommerce_checkout_order_review','displayBookinvideoPrincingCard',
 function displayBookinvideoPrincingCard() {
     displayPricingCard(false);
 }
+
+add_action('wp', 'removeTermsPageAccordion');
+function removeTermsPageAccordion() {
+    remove_action( 'woocommerce_checkout_terms_and_conditions', 'wc_terms_and_conditions_page_content', 30 );
+}
 ?>

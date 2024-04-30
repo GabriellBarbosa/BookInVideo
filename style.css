@@ -1247,6 +1247,14 @@ body.woocommerce-checkout .pricing_card {
 body.woocommerce-checkout .woocommerce-checkout #payment {
   margin-top: 20px;
 }
+body.woocommerce-checkout .woocommerce-terms-and-conditions-checkbox-text,
+body.woocommerce-checkout .woocommerce-terms-and-conditions-checkbox-text a {
+  color: var(--gray-1);
+  font-size: 14px;
+}
+body.woocommerce-checkout .woocommerce-terms-and-conditions-checkbox-text a {
+  text-decoration: underline;
+}
 
 .woocommerce-order-received .woocommerce {
   color: var(--gray-1);
