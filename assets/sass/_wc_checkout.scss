@@ -83,6 +83,11 @@ body.woocommerce-checkout {
         clear: none;
     }
 
+    #billing_city_field {
+        float: none;
+        width: 100%;
+    }
+
     .woocommerce form .show-password-input::after, .woocommerce-page form .show-password-input::after {
         color: var(--gray-3);
     }

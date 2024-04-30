@@ -1173,6 +1173,10 @@ body.woocommerce-checkout #billing_neighborhood_field {
   float: right;
   clear: none;
 }
+body.woocommerce-checkout #billing_city_field {
+  float: none;
+  width: 100%;
+}
 body.woocommerce-checkout .woocommerce form .show-password-input::after, body.woocommerce-checkout .woocommerce-page form .show-password-input::after {
   color: var(--gray-3);
 }
