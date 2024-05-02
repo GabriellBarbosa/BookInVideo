@@ -12,7 +12,11 @@ function registerCompleteLesson() {
     register_rest_route('api', $apiRoute, array(
         array(
             'methods' => WP_REST_Server::CREATABLE,
-            'callback' => 'completeLesson'
+            'callback' => 'completeLesson',
+            'permission_callback' => function($request) {
+                $userRepository = new UserRepositoryImpl();
+                return $userRepository->isSubscribed();
+            }
         )
     ));
 }
