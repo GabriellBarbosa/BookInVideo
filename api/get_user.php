@@ -6,6 +6,7 @@ function registerGetUser() {
     register_rest_route('api', $apiRoute, array(
         'methods' => WP_REST_Server::READABLE,
         'callback' => 'getUser',
+        'permission_callback' => '__return_true'
     ));
 }
 

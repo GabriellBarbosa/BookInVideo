@@ -1,15 +1,16 @@
 <?php
 require_once get_template_directory() . '/src/entities/Lesson.php';
 
-add_action('rest_api_init', 'registerGetLesson');
+add_action('rest_api_init', 'registerGetLessonRoute');
 
-function registerGetLesson() {
+function registerGetLessonRoute() {
     $courseSlug = '(?P<courseSlug>[-\w]+)';
     $lessonSlug = '(?P<lessonSlug>[-\w]+)';
     $apiRoute = '/curso' . '/' . $courseSlug . '/' . $lessonSlug;
     register_rest_route('api', $apiRoute, array(
         'methods' => WP_REST_Server::READABLE,
         'callback' => 'getLesson',
+        'permission_callback' => '__return_true'
     ));
 }       
 
