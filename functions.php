@@ -16,12 +16,13 @@ require_once($template_directory . '/api/complete_lesson.php');
 require_once($template_directory . '/custom-post-types/cpt-course.php');
 require_once($template_directory . '/custom-post-types/cpt-lesson.php');
 require_once($template_directory . '/custom-db-tables/completedLessons.php');
-
 require_once($template_directory . '/custom-taxonomies/codigo-limpo-taxonomy.php');
+
 require_once($template_directory . '/plugin-overwrite/wc_login.php');
 require_once($template_directory . '/plugin-overwrite/wc_myaccount.php');
 require_once($template_directory . '/plugin-overwrite/wc_edit-account.php');
 require_once($template_directory . '/plugin-overwrite/wc_cart.php');
+require_once($template_directory . '/plugin-overwrite/wc_checkout-account-creation.php');
 require_once($template_directory . '/plugin-overwrite/wc_checkout.php');
 require_once($template_directory . '/plugin-overwrite/wc_address.php');
 require_once($template_directory . '/plugin-overwrite/wc_order-status.php');
