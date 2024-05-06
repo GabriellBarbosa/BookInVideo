@@ -5,7 +5,7 @@ function removeDisplayNameFromRequiredFields($required_fields) {
 	return $required_fields;
 }
 
-add_filter('woocommerce_save_account_details_errors', 'blockUnalterableFieldsChange', 10, 2);
+add_action('woocommerce_save_account_details_errors', 'blockUnalterableFieldsChange', 10, 2);
 function blockUnalterableFieldsChange(&$error, &$user){
 	$current_user = get_user_by('id', $user->ID);
 
