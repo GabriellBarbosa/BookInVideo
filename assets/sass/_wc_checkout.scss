@@ -180,4 +180,24 @@ body.woocommerce-checkout {
     .woocommerce-terms-and-conditions-checkbox-text a {
         text-decoration: underline;
     }
+
+    .wc_payment_method {
+        border-bottom: 1px solid var(--gray-6);
+        
+        &:last-child {
+            border-bottom: none;
+        }
+
+        > label {
+            padding: 10px 0;
+            display: inline-block;
+            width: 92%;
+            cursor: pointer;
+        }
+
+        img {
+            display: inline-block;
+            width: 24px;
+        }
+    }
 }
