@@ -1257,13 +1257,18 @@ body.woocommerce-checkout .woocommerce-terms-and-conditions-checkbox-text a {
   text-decoration: underline;
 }
 body.woocommerce-checkout .wc_payment_method {
+  position: relative;
   border-bottom: 1px solid var(--gray-6);
 }
 body.woocommerce-checkout .wc_payment_method:last-child {
   border-bottom: none;
 }
+body.woocommerce-checkout .wc_payment_method > input {
+  position: absolute;
+  top: 20px;
+}
 body.woocommerce-checkout .wc_payment_method > label {
-  padding: 10px 0;
+  padding: 10px 24px;
   display: inline-block;
   width: 92%;
   cursor: pointer;

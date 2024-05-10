@@ -182,14 +182,20 @@ body.woocommerce-checkout {
     }
 
     .wc_payment_method {
+        position: relative;
         border-bottom: 1px solid var(--gray-6);
         
         &:last-child {
             border-bottom: none;
         }
 
+        > input {
+            position: absolute;
+            top: 20px;
+        }
+
         > label {
-            padding: 10px 0;
+            padding: 10px 24px;
             display: inline-block;
             width: 92%;
             cursor: pointer;
