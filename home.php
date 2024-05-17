@@ -63,6 +63,11 @@
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
+            <ul class="payment_methods">
+                <li>Pix</li>
+                <li>Cartão de crédito</li>
+                <li>Boleto</li>
+            </ul>
         </div>
     </section>
 </div>

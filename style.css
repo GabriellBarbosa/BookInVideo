@@ -394,13 +394,19 @@ body.home .header {
   transform: translateY(50%);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 }
-#page-home .banner .course_info_wrapper ul, #page-home .banner .course_info_wrapper ul li {
+#page-home .course_info_wrapper ul,
+#page-home .course_info_wrapper li,
+#page-home .payment_methods,
+#page-home .payment_methods li {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: "PT Serif", serif;
 }
-#page-home .banner .course_info_wrapper ul li:nth-child(2)::before,
-#page-home .banner .course_info_wrapper ul li:nth-child(2)::after {
+#page-home .course_info_wrapper ul li:nth-child(2)::before,
+#page-home .course_info_wrapper ul li:nth-child(2)::after,
+#page-home .payment_methods li:nth-child(2)::before,
+#page-home .payment_methods li:nth-child(2)::after {
   content: "";
   display: block;
   width: 6px;
@@ -509,12 +515,15 @@ body.home .header {
   overflow: hidden;
 }
 #page-home .pricing_wrapper {
-  padding-top: 60px;
+  padding: 60px 0;
 }
 #page-home .pricing_wrapper .pricing_card_wrapper {
   width: -moz-fit-content;
   width: fit-content;
-  margin: 40px auto 60px auto;
+  margin: 40px auto;
+}
+#page-home .payment_methods {
+  margin: 0 auto;
 }
 
 .pricing_card {
