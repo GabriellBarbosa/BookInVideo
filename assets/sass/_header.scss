@@ -17,10 +17,10 @@
         #header_menu {
             #hamburguer_menu {
                 display: none;
-                width: 2.5rem;
-                height: 2.5rem;
+                width: 40px;
+                height: 40px;
                 background-color: var(--gray-3);
-                border-radius: 0.25rem;
+                border-radius: 4px;
                 cursor: pointer;
 
                 &:hover {
@@ -37,6 +37,7 @@
 
                 span.line {
                     display: block;
+                    text-align: right;
                     height: 2px;
                     width: 20px;
                     border-radius: 4px;
