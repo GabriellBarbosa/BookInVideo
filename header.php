@@ -45,6 +45,8 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
             <div id="header_menu">
                 <div id="hamburguer_menu">
                     <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
                 </div>
 
                 <div class="links_container">

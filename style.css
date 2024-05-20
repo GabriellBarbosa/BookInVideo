@@ -119,6 +119,7 @@ img {
 }
 .header .navigation #header_menu #hamburguer_menu {
   display: none;
+  padding: 10px;
   width: 40px;
   height: 40px;
   background-color: var(--gray-3);
@@ -133,31 +134,29 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 }
 .header .navigation #header_menu #hamburguer_menu span.line {
   display: block;
   text-align: right;
   height: 2px;
-  width: 20px;
   border-radius: 4px;
-  background-color: var(--gray-7);
+  background-color: var(--gray-8);
   position: relative;
   transition: all 0.2s ease;
 }
-.header .navigation #header_menu #hamburguer_menu span.line::before, .header .navigation #header_menu #hamburguer_menu span.line::after {
-  content: "";
-  position: absolute;
-  background-color: var(--gray-7);
-  display: block;
-  height: 2px;
+.header .navigation #header_menu #hamburguer_menu span.line:nth-child(1) {
   width: 20px;
-  border-radius: 4px;
-  top: -8px;
-  transition: all 0.1s linear;
+  margin-bottom: 6px;
 }
-.header .navigation #header_menu #hamburguer_menu span.line::after {
-  top: 8px;
+.header .navigation #header_menu #hamburguer_menu span.line:nth-child(2) {
+  width: 16px;
+  align-self: flex-end;
+}
+.header .navigation #header_menu #hamburguer_menu span.line:nth-child(3) {
+  width: 20px;
+  margin-top: 6px;
 }
 .header .navigation #header_menu .links_container {
   cursor: default;
@@ -216,22 +215,23 @@ img {
     margin-bottom: 0.938rem;
   }
 }
-.header .navigation #header_menu.active #hamburguer_menu span.line {
-  background-color: transparent;
-}
-.header .navigation #header_menu.active #hamburguer_menu span.line::before, .header .navigation #header_menu.active #hamburguer_menu span.line::after {
-  top: 0;
-}
-.header .navigation #header_menu.active #hamburguer_menu span.line::before {
-  transform: rotate(45deg);
-}
-.header .navigation #header_menu.active #hamburguer_menu span.line::after {
-  transform: rotate(-45deg);
-}
 @media only screen and (max-width: 760px) {
   .header .navigation #header_menu.active .links_container {
     display: block;
   }
+}
+.header .navigation #header_menu.active #hamburguer_menu span.line:nth-child(1), .header .navigation #header_menu.active #hamburguer_menu span.line:nth-child(3) {
+  position: absolute;
+  margin: 0;
+}
+.header .navigation #header_menu.active #hamburguer_menu span.line:nth-child(1) {
+  transform: rotate(45deg);
+}
+.header .navigation #header_menu.active #hamburguer_menu span.line:nth-child(2) {
+  background-color: transparent;
+}
+.header .navigation #header_menu.active #hamburguer_menu span.line:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .header .navigation .links_container .subscribe_form {
