@@ -52,7 +52,7 @@ function bookinvideo_register_css() {
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
 
 function bookinvideo_enqueue_react_js() {
-    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '1.4', true);
+    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '1.5', true);
     $wcProduct = new WC_Product(getCourseProductPostID());
     wp_localize_script('course-js', 'wp_data',  array(
         'product' => get_permalink(getCourseProductPostID()),
@@ -64,7 +64,7 @@ function bookinvideo_enqueue_react_js() {
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_css');
 
 function bookinvideo_enqueue_react_css() {
-    wp_register_style('course-css', get_template_directory_uri() . '/react-app/index.css', [], '1.4');
+    wp_register_style('course-css', get_template_directory_uri() . '/react-app/index.css', [], '1.5');
     wp_enqueue_style('course-css');
 }
 
