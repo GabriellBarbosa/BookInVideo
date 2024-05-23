@@ -1287,8 +1287,7 @@ body.woocommerce-checkout .wc_payment_method > label {
   cursor: pointer;
 }
 body.woocommerce-checkout .wc_payment_method img {
-  display: inline-block;
-  width: 24px;
+  display: none;
 }
 
 .woocommerce-order-received .woocommerce {
