@@ -53,16 +53,6 @@ function bookinvideo_register_hamburguer_menu_js() {
     wp_enqueue_script('menu-mobile-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.0');
 }
 
-add_filter('script_loader_tag', 'bookinvideo_add_type_module_to_menu_script' , 10, 3);
-
-function bookinvideo_add_type_module_to_menu_script($tag, $handle, $src) {
-    if ( 'menu-mobile-js' !== $handle ) {
-        return $tag;
-    }
-    $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
-    return $tag;
-}
-
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
 
 function bookinvideo_enqueue_react_js() {
