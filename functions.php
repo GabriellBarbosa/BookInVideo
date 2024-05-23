@@ -28,8 +28,6 @@ require_once($template_directory . '/plugin-overwrite/wc_address.php');
 require_once($template_directory . '/plugin-overwrite/wc_order-status.php');
 require_once($template_directory . '/plugin-overwrite/wc_order-details.php');
 
-add_filter('wc_add_to_cart_message', '__return_false', 10, 2);
-
 add_action('after_setup_theme', 'bookinvideo_add_woocommerce_support');
 
 function bookinvideo_add_woocommerce_support() {
@@ -47,6 +45,22 @@ add_action('wp_enqueue_scripts', 'bookinvideo_register_css');
 function bookinvideo_register_css() {
     wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '4.1');
     wp_enqueue_style('bookinvideo-style');
+}
+
+add_action('wp_enqueue_scripts', 'bookinvideo_menu_mobile_js');
+
+function bookinvideo_menu_mobile_js() {
+    wp_enqueue_script('menu-mobile-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.0');
+}
+
+add_filter('script_loader_tag', 'bookinvideo_add_type_module_to_menu_script' , 10, 3);
+
+function bookinvideo_add_type_module_to_menu_script($tag, $handle, $src) {
+    if ( 'menu-mobile-js' !== $handle ) {
+        return $tag;
+    }
+    $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+    return $tag;
 }
 
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
