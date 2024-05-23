@@ -1,6 +1,6 @@
 <?php
-add_filter('woocommerce_add_cart_item_data', 'emptyCartBeforeAdd');
-function emptyCartBeforeAdd($cartItemData) {
+add_filter('woocommerce_add_cart_item_data', 'bookinvideo_emptyCartBeforeAdd');
+function bookinvideo_emptyCartBeforeAdd($cartItemData) {
     WC()->cart->empty_cart();
     return $cartItemData;
 }
