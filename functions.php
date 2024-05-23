@@ -50,7 +50,7 @@ function bookinvideo_register_css() {
 add_action('wp_enqueue_scripts', 'bookinvideo_register_hamburguer_menu_js');
 
 function bookinvideo_register_hamburguer_menu_js() {
-    wp_enqueue_script('menu-mobile-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.0');
+    wp_enqueue_script('menu-mobile-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.2');
 }
 
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
