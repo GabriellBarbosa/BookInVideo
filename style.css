@@ -438,7 +438,7 @@ body.home .header {
     grid-template-columns: minmax(0, 360px);
   }
 }
-#page-home .course_section .course_link {
+#page-home .course_section .course_card {
   justify-self: end;
   position: relative;
   display: block;
@@ -448,11 +448,14 @@ body.home .header {
   border-radius: 4px;
 }
 @media screen and (max-width: 760px) {
-  #page-home .course_section .course_link {
+  #page-home .course_section .course_card {
     margin: 0 auto;
   }
 }
-#page-home .course_section .course_link .beta {
+#page-home .course_section .course_card:hover {
+  background-color: var(--gray-0);
+}
+#page-home .course_section .course_card .beta {
   position: absolute;
   top: 0;
   left: 50%;
@@ -464,32 +467,50 @@ body.home .header {
   border: 2px solid #9be564;
   color: #9be564;
 }
-#page-home .course_section .course_link h3 {
+#page-home .course_section .course_card h3 {
   font-family: "PT Serif", serif;
   text-transform: uppercase;
   font-size: 24px;
   line-height: 28.8px;
 }
-#page-home .course_section .course_link p {
+#page-home .course_section .course_card p {
   font-family: "PT Serif", serif;
   font-style: italic;
   color: var(--gray-5);
   font-size: 14px;
   line-height: 21px;
 }
-#page-home .course_section .course_link ul {
+#page-home .course_section .course_card ul {
   display: flex;
   align-items: center;
   margin-top: 16px;
 }
-#page-home .course_section .course_link ul li {
+#page-home .course_section .course_card ul li {
   font-family: "PT Serif";
   color: var(--gray-6);
 }
-#page-home .course_section .course_link ul li:nth-child(2) {
+#page-home .course_section .course_card ul li:nth-child(2) {
   display: flex;
   align-items: center;
   margin: 0 16px;
+}
+#page-home .course_section .course_card .watch_icon {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 24px;
+  padding: 10px;
+  background-color: var(--gray-3);
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+@media screen and (max-width: 760px) {
+  #page-home .course_section .course_card .watch_icon {
+    display: none;
+  }
+}
+#page-home .course_section .course_card .watch_icon img {
+  max-width: 24px;
 }
 #page-home .course_section .keywords li {
   display: flex;
@@ -500,8 +521,7 @@ body.home .header {
 }
 #page-home .course_section .keywords li:nth-child(odd) {
   background-color: var(--gray-3);
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-radius: 4px;
 }
 #page-home .course_section .keywords li::before {
   content: "";

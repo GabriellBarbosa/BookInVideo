@@ -26,7 +26,7 @@
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
         <div class="course_wrapper">
-            <a class="course_link" href="/curso/codigo-limpo/0101-configuracao">
+            <a class="course_card" href="/curso/codigo-limpo/0101-configuracao">
                 <span class="beta">beta</span>
                 <p>Robert C. Martin</p>
                 <h3>Código Limpo</h3>
@@ -35,6 +35,9 @@
                     <li>4.4 horas</li>
                     <li>5 capítulos</li>
                 </ul>
+                <span class="watch_icon">
+                    <img src="<?= get_template_directory_uri() . '/assets/images/play.png' ?>" alt="Assistir">
+                </span>
             </a>
             <ul class="keywords">
                 <li>Nomes significativos</li>
