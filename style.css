@@ -498,10 +498,11 @@ body.home .header {
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
-  right: 24px;
-  padding: 10px;
+  right: 0;
+  padding: 10px 20px;
   background-color: var(--gray-3);
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   transition: 0.2s ease;
 }
 @media screen and (max-width: 760px) {
@@ -510,7 +511,7 @@ body.home .header {
   }
 }
 #page-home .course_section .course_card .watch_icon img {
-  max-width: 24px;
+  max-width: 18px;
 }
 #page-home .course_section .keywords li {
   display: flex;

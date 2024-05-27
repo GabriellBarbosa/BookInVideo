@@ -225,10 +225,11 @@ body.home .header {
                 position: absolute;
                 transform: translateY(-50%);
                 top: 50%;
-                right: 24px;
-                padding: 10px;
+                right: 0;
+                padding: 10px 20px;
                 background-color: var(--gray-3);
-                border-radius: 4px;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
                 transition: .2s ease;
 
                 @media screen and (max-width: 760px) {
@@ -236,7 +237,7 @@ body.home .header {
                 }
 
                 img {
-                    max-width: 24px;
+                    max-width: 18px;
                 }
             }
         }
