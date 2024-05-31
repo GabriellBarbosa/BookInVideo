@@ -1234,6 +1234,7 @@ body.woocommerce-checkout form.checkout.woocommerce-checkout .col-1 {
 body.woocommerce-checkout form.checkout.woocommerce-checkout .col-2 {
   display: none;
 }
+body.woocommerce-checkout #billing_number_field,
 body.woocommerce-checkout #customer_details {
   width: 47%;
   float: left;
