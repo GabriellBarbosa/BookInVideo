@@ -33,26 +33,25 @@ class Course {
     }
 
     private function getLessons($moduleSlug) {
-        $completedLessons = $this->courseRepository->getCompletedLessons($this->courseSlug);
         $lessons = $this->courseRepository->getLessons(
             $this->courseSlug, $moduleSlug);
-        return $this->addCompletedLessonField($lessons, $completedLessons);
+        return $this->addCompletedLessonField($lessons);
     }
 
-    private function addCompletedLessonField($lessons, $completedLessons) {
+    private function addCompletedLessonField($lessons) {
         $result = array();
         foreach ($lessons as $lesson) {
             $lessonCopy = $lesson;
-            $lessonCopy['completed'] = $this->lessonIsCompleted(
-                $completedLessons, $lessonCopy['slug']);
+            $lessonCopy['completed'] = $this->lessonIsCompleted($lessonCopy['slug']);
             array_push($result, $lessonCopy);
         }
         return $result;
     }
 
-    private function lessonIsCompleted($completedLessons, $lessonSlug) {
-        foreach ($completedLessons as $completedLesson) {
-            if ($completedLesson->lessonSlug == $lessonSlug) 
+    private function lessonIsCompleted($lessonSlug) {
+        $completedLessons = $this->courseRepository->getCompletedLessons($this->courseSlug);
+        foreach ($completedLessons as $completed) {
+            if ($completed->lessonSlug == $lessonSlug) 
                 return true;
         }
         return false;

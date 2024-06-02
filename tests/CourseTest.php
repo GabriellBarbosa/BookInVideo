@@ -30,6 +30,7 @@ final class CourseTest extends TestCase {
                             'slug' => '0000-random-lesson',
                             'sequence' => '01',
                             'duration' => '15:05',
+                            'free' => 'true',
                             'completed' => true
                         ),
                         array(
@@ -37,6 +38,7 @@ final class CourseTest extends TestCase {
                             'slug' => '0000-other-lesson',
                             'sequence' => '02',
                             'duration' => '15:05',
+                            'free' => '',
                             'completed' => false
                         ),
                     )
@@ -65,13 +67,15 @@ final class CourseTest extends TestCase {
                 'name' => 'random lesson',
                 'slug' => '0000-random-lesson',
                 'sequence' => '01',
-                'duration' => '15:05'
+                'duration' => '15:05',
+                'free' => 'true',
             ),
             array(
                 'name' => 'other lesson', 
                 'slug' => '0000-other-lesson',
                 'sequence' => '02',
-                'duration' => '15:05'
+                'duration' => '15:05',
+                'free' => '',
             ),
         );
     }

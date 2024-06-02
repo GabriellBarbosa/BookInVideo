@@ -20,7 +20,7 @@ class CourseRepositoryImpl implements CourseRepository {
     }
 
     public function getLessons($courseSlug, $moduleSlug) {
-        $fields = ['name', 'slug', 'sequence','duration'];
+        $fields = ['name', 'slug', 'sequence', 'duration', 'free'];
         $queryResult = $this->lessonsQuery($courseSlug, $moduleSlug);
         return $this->getLessonsWithCustomFields($queryResult, $fields);
     }
