@@ -1,5 +1,5 @@
 <?php
-require_once get_stylesheet_directory() . '/utils/LessonMetaBox.php';
+require_once get_stylesheet_directory() . '/custom-meta-boxes/LessonMetaBox.php';
 
 add_action('init', 'registerLessonCustomPostType');
 
