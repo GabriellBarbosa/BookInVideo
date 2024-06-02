@@ -20,12 +20,15 @@ class Lesson {
     }
 
     private function enrichLesson($lesson, $completedLessons, $lessonSlug) {
-        $lesson['completed'] = false;
-        if ($this->userRepository->isSubscribed()) {
-            $lesson['completed'] = $this->lessonIsCompleted($completedLessons, $lessonSlug);
-            return $lesson;
+        $lessonCopy = $lesson;
+        $lessonCopy['completed'] = false;
+        if ($this->userRepository->isSubscribed() || $lessonCopy['free'] == 'true') {
+            if ($this->userRepository->isSubscribed()) {
+                $lessonCopy['completed'] = $this->lessonIsCompleted($completedLessons, $lessonSlug);
+            }
+            return $lessonCopy;
         } else {
-            return $this->emptySensitiveFields($lesson);
+            return $this->emptySensitiveFields($lessonCopy);
         }
     }
 

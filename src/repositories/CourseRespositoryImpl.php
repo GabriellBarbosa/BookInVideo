@@ -60,7 +60,8 @@ class CourseRepositoryImpl implements CourseRepository {
             'next', 
             'code', 
             'slide',
-            'note'
+            'note',
+            'free'
         ];
         $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
         $lessonPosts = $queryResult->get_posts();

@@ -11,6 +11,7 @@ class LessonMetaBox {
         'code',
         'slide',
         'note',
+        'free'
     );
 
     public function displayFields($postID) { ?>
