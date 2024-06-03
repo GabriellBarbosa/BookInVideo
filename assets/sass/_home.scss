@@ -146,12 +146,22 @@ body.home .header {
     .course_section {
         margin-top: 75px;
 
+        .subtitle {
+            font-family: 'PT Serif', sans-serif;
+            font-style: italic;
+            color: var(--gray-5);
+            text-align: center;
+            max-width: 560px;
+            margin: 16px auto 0 auto;
+            line-height: 24px;
+        }
+
         .course_wrapper {
             display: grid;
             grid-template-columns:  repeat(2, minmax(300px, 400px));
             align-items: start;
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 60px;
             gap: 40px;
 
             @media screen and (max-width: 760px) {

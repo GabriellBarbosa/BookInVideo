@@ -25,6 +25,7 @@
     
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
+        <p class="subtitle">Domine as técnicas de código limpo para desenvolver programas mais fáceis de manter e compreender. Comece a construir softwares de qualidade.</p>
         <div class="course_wrapper">
             <a class="course_card" href="/curso/codigo-limpo/0101-configuracao">
                 <span class="beta">beta</span>
