@@ -242,10 +242,6 @@ body.home .header {
                 border-bottom-left-radius: 4px;
                 transition: .2s ease;
 
-                @media screen and (max-width: 760px) {
-                    display: none;
-                }
-
                 img {
                     max-width: 18px;
                 }

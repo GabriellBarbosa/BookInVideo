@@ -513,11 +513,6 @@ body.home .header {
   border-bottom-left-radius: 4px;
   transition: 0.2s ease;
 }
-@media screen and (max-width: 760px) {
-  #page-home .course_section .course_card .watch_icon {
-    display: none;
-  }
-}
 #page-home .course_section .course_card .watch_icon img {
   max-width: 18px;
 }
