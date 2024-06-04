@@ -28,7 +28,6 @@
         <p class="subtitle">Domine as técnicas de código limpo para desenvolver programas mais fáceis de manter e compreender. Comece a construir softwares de qualidade.</p>
         <div class="course_wrapper">
             <a class="course_card" href="/curso/codigo-limpo/0101-configuracao">
-                <span class="beta">beta</span>
                 <p>Robert C. Martin</p>
                 <h3>Código Limpo</h3>
                 <ul>
@@ -50,6 +49,30 @@
             </ul>
         </div>
     </main>
+
+    <section class="clean_code_example_section">
+        <div class="container">
+            <h2 class="title title_separator">Simplicidade</h2>
+            <p class="subtitle">
+                Um código limpo é simples e direto. Ele é tão bem legível quanto uma prosa bem escrita. 
+                Ele jamais torna confuso o objetivo do desenvolvedor.
+                <br>Citação de Grady Booch - Livro código limpo.
+            </p>
+            <div class="clean_code_example">
+                <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-before.png' ?>" alt="Função grande com muita informação"></div>
+                <div class="code_description before">
+                    <h3>Antes</h3>
+                    <p>Muita informação para entender de primeira.</p>
+                </div>
+                <div class="code_description after">
+                    <h3>Depois</h3>
+                    <p>Agora dá para entender tudo que está acontecendo.</p>
+                </div>
+                <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-after.png' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
+            </div>
+            <p class="lesson_ref title_separator">Refatoramos esse código passo a passo no exercício de Nomes Significativos.</p>
+        </div>
+    </section>
 
     <section class="video_wrapper">
         <div class="container">
