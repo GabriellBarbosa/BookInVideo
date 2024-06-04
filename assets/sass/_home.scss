@@ -30,6 +30,19 @@ body.home .header {
         line-height: 24px;
     }
 
+    .text {
+        font-family: 'PT Serif', sans-serif;
+        color: var(--gray-5);
+        line-height: 24px;
+    }
+
+    .gray_light_section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-top: 60px;
+        background-color: var(--gray-3);
+    }
+
     .banner {
         background-image: url('assets/images/banner.jpg');
         background-repeat: no-repeat;
@@ -264,7 +277,7 @@ body.home .header {
         }
     }
 
-    .video_wrapper {
+    .video_section {
         margin-top: 60px;
 
         .video {
@@ -272,10 +285,6 @@ body.home .header {
             border-radius: 4px;
             overflow: hidden;
         }
-    }
-
-    .pricing_wrapper {
-        padding: 60px 0;
     }
 
     .pricing_wrapper .pricing_card_wrapper {
@@ -288,11 +297,6 @@ body.home .header {
     }
 
     .clean_code_example_section {
-        margin-top: 60px;
-        padding-top: 60px;
-        padding-bottom: 60px;
-        background-color: var(--gray-3);
-
         .clean_code_example {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -323,12 +327,6 @@ body.home .header {
             h3 {
                 font-size: 36px;
                 font-style: italic;
-            }
-
-            p {
-                font-family: 'PT Serif', sans-serif;
-                color: var(--gray-5);
-                line-height: 24px;
             }
 
             @media screen and (max-width: 760px) {

@@ -50,7 +50,7 @@
         </div>
     </main>
 
-    <section class="clean_code_example_section">
+    <section class="clean_code_example_section gray_light_section">
         <div class="container">
             <h2 class="title title_separator">Simplicidade</h2>
             <p class="subtitle">
@@ -62,11 +62,11 @@
                 <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-before.png' ?>" alt="Função grande com muita informação"></div>
                 <div class="code_description before">
                     <h3>Antes</h3>
-                    <p>Muita informação para entender de primeira.</p>
+                    <p class="text">Muita informação para entender de primeira.</p>
                 </div>
                 <div class="code_description after">
                     <h3>Depois</h3>
-                    <p>Agora dá para entender tudo que está acontecendo.</p>
+                    <p class="text">Agora dá para entender tudo que está acontecendo.</p>
                 </div>
                 <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-after.png' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
@@ -74,9 +74,11 @@
         </div>
     </section>
 
-    <section class="video_wrapper">
+    <section class="video_section">
         <div class="container">
             <h2 class="title title_separator">Introdução</h2>
+            <p class="subtitle">O que você vai aprender</p>
+
             <div class="video">
                 <div style="padding:56.25% 0 0 0;position:relative;">
                     <iframe src="https://player.vimeo.com/video/922895312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0000-intro"></iframe>
@@ -86,9 +88,10 @@
         </div>
     </section>
 
-    <section class="pricing_wrapper">
+    <section class="pricing_wrapper gray_light_section">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
+            <p class="subtitle">Garanta seu Acesso Vitalício pelo preço da versão beta</p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
             <ul class="payment_methods">
                 <li>Pix</li>

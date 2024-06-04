@@ -315,6 +315,17 @@ body.home .header {
   margin: 16px auto 0 auto;
   line-height: 24px;
 }
+#page-home .text {
+  font-family: "PT Serif", sans-serif;
+  color: var(--gray-5);
+  line-height: 24px;
+}
+#page-home .gray_light_section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 60px;
+  background-color: var(--gray-3);
+}
 #page-home .banner {
   background-image: url("assets/images/banner.jpg");
   background-repeat: no-repeat;
@@ -529,16 +540,13 @@ body.home .header {
   background-color: var(--c-0-light);
   margin-right: 10px;
 }
-#page-home .video_wrapper {
+#page-home .video_section {
   margin-top: 60px;
 }
-#page-home .video_wrapper .video {
+#page-home .video_section .video {
   margin-top: 40px;
   border-radius: 4px;
   overflow: hidden;
-}
-#page-home .pricing_wrapper {
-  padding: 60px 0;
 }
 #page-home .pricing_wrapper .pricing_card_wrapper {
   width: -moz-fit-content;
@@ -547,12 +555,6 @@ body.home .header {
 }
 #page-home .payment_methods {
   margin: 0 auto;
-}
-#page-home .clean_code_example_section {
-  margin-top: 60px;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: var(--gray-3);
 }
 #page-home .clean_code_example_section .clean_code_example {
   display: grid;
@@ -582,11 +584,6 @@ body.home .header {
 #page-home .clean_code_example_section .code_description h3 {
   font-size: 36px;
   font-style: italic;
-}
-#page-home .clean_code_example_section .code_description p {
-  font-family: "PT Serif", sans-serif;
-  color: var(--gray-5);
-  line-height: 24px;
 }
 @media screen and (max-width: 760px) {
   #page-home .clean_code_example_section .code_description.before {
