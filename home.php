@@ -40,12 +40,11 @@
                 </span>
             </a>
             <ul class="keywords">
+                <li>Introdução</li>
                 <li>Nomes significativos</li>
                 <li>Funções</li>
                 <li>Testes unitários</li>
                 <li>Classes</li>
-                <li>Single responsability principle</li>
-                <li>Open-closed principle</li>
             </ul>
         </div>
     </main>
