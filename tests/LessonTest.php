@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
-require_once __ROOT__ . '/src/interfaces/CourseRepository.php';
+require_once __ROOT__ . '/src/Course/CourseRepository.php';
 require_once __ROOT__ . '/src/interfaces/UserRepository.php';
 require_once __ROOT__ . '/src/repositories/CourseRespositoryImpl.php';
 require_once __ROOT__ . '/src/repositories/UserRepositoryImpl.php';

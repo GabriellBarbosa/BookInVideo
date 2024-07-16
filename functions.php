@@ -2,7 +2,7 @@
 $template_directory =  get_template_directory();
 
 require_once($template_directory . '/src/SubscribedUser.php');
-require_once($template_directory . '/src/interfaces/CourseRepository.php');
+require_once($template_directory . '/src/Course/CourseRepository.php');
 require_once($template_directory . '/src/interfaces/UserRepository.php');
 
 require_once($template_directory . '/src/repositories/CourseRespositoryImpl.php');
