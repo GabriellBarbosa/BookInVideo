@@ -11,7 +11,7 @@ function registerGetUser() {
 }
 
 function getUser($request) {
-    $user = new UserImpl(wp_get_current_user());
+    $user = new UserImpl(wp_get_current_user(), new UserRepositoryImpl());
     $response = array(
         'user' => $user->getInfoIfLoggedIn(),
         'activated' => $user->isSubscribed()

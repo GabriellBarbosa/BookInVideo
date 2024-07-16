@@ -15,7 +15,9 @@ function registerGetLessonRoute() {
 }       
 
 function getLesson($request) {
-    $lesson = new Lesson(new CourseRepositoryImpl(), new UserImpl(wp_get_current_user()));
+    $courseRepository = new CourseRepositoryImpl();
+    $user = new UserImpl(wp_get_current_user(), new UserRepositoryImpl());
+    $lesson = new Lesson($courseRepository, $user);
     $lessonFound = $lesson->get($request['courseSlug'], $request['lessonSlug']);
     $response = $lessonFound
         ? $lessonFound

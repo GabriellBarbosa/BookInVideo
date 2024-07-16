@@ -14,7 +14,7 @@ function registerCompleteLesson() {
             'methods' => WP_REST_Server::CREATABLE,
             'callback' => 'completeLesson',
             'permission_callback' => function($request) {
-                $user = new UserImpl(wp_get_current_user());
+                $user = new UserImpl(wp_get_current_user(), new UserRepositoryImpl());
                 return $user->isSubscribed();
             }
         )
@@ -28,7 +28,9 @@ function completeLesson($request) {
 
 function tryToCompleteLesson($courseSlug, $lessonSlug) {
     try {
-        $lesson = new Lesson(new CourseRepositoryImpl(), new UserImpl(wp_get_current_user()));
+        $courseRepository = new CourseRepositoryImpl();
+        $user = new UserImpl(wp_get_current_user(), new UserRepositoryImpl());
+        $lesson = new Lesson($courseRepository, $user);
         return $lesson->complete($courseSlug, $lessonSlug);
     } catch (Exception $err) {
         return new WP_Error('forbidden', $err->getMessage(), array('status' => 403));

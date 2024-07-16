@@ -1,9 +1,11 @@
 <?php
 class UserImpl implements User {
     private $user;
+    private $repository;
 
-    public function __construct($currentUser) {
+    public function __construct($currentUser, UserRepository $repository) {
         $this->user = $currentUser;
+        $this->repository = $repository;
     }
 
     public function getInfoIfLoggedIn() {
@@ -15,7 +17,7 @@ class UserImpl implements User {
     }
 
     private function firstName() {
-        return get_user_meta($this->user->ID, 'first_name', true);
+        return $this->repository->getFirstName($this->user->ID);
     }
 
     public function isSubscribed(): bool {
