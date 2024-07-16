@@ -1,5 +1,5 @@
 <?php
-require_once get_template_directory() . '/src/entities/Course.php';
+require_once get_template_directory() . '/src/Course/Course.php';
 
 add_action('rest_api_init', 'registerGetCourseContentRoute');
 

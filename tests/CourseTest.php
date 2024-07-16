@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once __ROOT__ . '/src/interfaces/CourseRepository.php';
 require_once __ROOT__ . '/src/repositories/CourseRespositoryImpl.php';
-require_once __ROOT__ . '/src/entities/Course.php';
+require_once __ROOT__ . '/src/Course/Course.php';
 
 final class CourseTest extends TestCase {
     public function testGetCourseContent(): void {
