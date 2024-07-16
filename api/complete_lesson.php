@@ -1,5 +1,5 @@
 <?php
-require_once get_template_directory() . '/src/entities/Lesson.php';
+require_once get_template_directory() . '/src/Lesson/Lesson.php';
 require_once get_template_directory() . '/src/repositories/CourseRespositoryImpl.php';
 require_once get_template_directory() . '/src/repositories/UserRepositoryImpl.php';
 

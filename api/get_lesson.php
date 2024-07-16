@@ -1,5 +1,5 @@
 <?php
-require_once get_template_directory() . '/src/entities/Lesson.php';
+require_once get_template_directory() . '/src/Lesson/Lesson.php';
 
 add_action('rest_api_init', 'registerGetLessonRoute');
 

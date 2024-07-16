@@ -5,7 +5,7 @@ require_once __ROOT__ . '/src/interfaces/CourseRepository.php';
 require_once __ROOT__ . '/src/interfaces/UserRepository.php';
 require_once __ROOT__ . '/src/repositories/CourseRespositoryImpl.php';
 require_once __ROOT__ . '/src/repositories/UserRepositoryImpl.php';
-require_once __ROOT__ . '/src/entities/Lesson.php';
+require_once __ROOT__ . '/src/Lesson/Lesson.php';
 
 final class LessonTest extends TestCase {
     private $lesson = null;
