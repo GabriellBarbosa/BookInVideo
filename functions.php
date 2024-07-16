@@ -9,6 +9,10 @@ require_once($template_directory . '/src/User/UserRepositoryImpl.php');
 require_once($template_directory . '/src/Course/CourseRepository.php');
 require_once($template_directory . '/src/Course/CourseRespositoryImpl.php');
 
+require_once($template_directory . '/src/Lesson/ILesson.php');
+require_once($template_directory . '/src/Lesson/LessonForSubscribed.php');
+require_once($template_directory . '/src/Lesson/LessonForUnsubscribed.php');
+
 require_once($template_directory . '/api/get_course_content.php');
 require_once($template_directory . '/api/get_user.php');
 require_once($template_directory . '/api/get_lesson.php');

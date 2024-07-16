@@ -2,10 +2,15 @@
 declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 require_once __ROOT__ . '/src/Course/CourseRepository.php';
-require_once __ROOT__ . '/src/User/User.php';
 require_once __ROOT__ . '/src/Course/CourseRespositoryImpl.php';
+
+require_once __ROOT__ . '/src/User/User.php';
 require_once __ROOT__ . '/src/User/UserImpl.php';
+
 require_once __ROOT__ . '/src/Lesson/Lesson.php';
+require_once __ROOT__ . '/src/Lesson/ILesson.php';
+require_once __ROOT__ . '/src/Lesson/LessonForSubscribed.php';
+require_once __ROOT__ . '/src/Lesson/LessonForUnsubscribed.php';
 
 final class LessonTest extends TestCase {
     private $lesson = null;

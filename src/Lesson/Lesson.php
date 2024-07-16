@@ -3,48 +3,36 @@ class Lesson {
     private $courseRepository;
     private $user;
 
-    public function __construct(CourseRepository $courseRepo, User $user) {
-        $this->courseRepository = $courseRepo;
+    public function __construct(CourseRepository $courseRepository, User $user) {
+        $this->courseRepository = $courseRepository;
         $this->user = $user;
     }
 
     public function get($courseSlug, $lessonSlug) {
         $completedLessons = $this->courseRepository->getCompletedLessons($courseSlug);
-        $lesson = $this->courseRepository->getSingleLesson($courseSlug, $lessonSlug);
-        if ($lesson)
-            return $this->enrichLesson($lesson, $completedLessons, $lessonSlug);
-        else
-            return null;
+        $rawLesson = $this->courseRepository->getSingleLesson($courseSlug, $lessonSlug);
+        if ($rawLesson != null) {
+            return $this->getLessonData($courseSlug, $rawLesson, $completedLessons);
+        }
+        return null;
     }
 
-    private function enrichLesson($lesson, $completedLessons, $lessonSlug) {
-        $lessonCopy = $lesson;
-        $lessonCopy['completed'] = false;
-        if ($this->user->isSubscribed() || $lessonCopy['free'] == 'true') {
-            if ($this->user->isSubscribed()) {
-                $lessonCopy['completed'] = $this->lessonIsCompleted($completedLessons, $lessonSlug);
-            }
-            return $lessonCopy;
+    private function getLessonData($courseSlug, $rawLesson, $completedLessons) {
+        $lesson = $this->createLesson($courseSlug, $rawLesson);
+        $lessonData = $lesson->getData($completedLessons);
+        return $lessonData;
+    }
+
+    private function createLesson($courseSlug, $rawLesson) {
+        if ($this->userCanAccessLesson($rawLesson)) {
+            return new LessonForSubscribed($rawLesson);
         } else {
-            return $this->emptySensitiveFields($lessonCopy);
+            return new LessonForUnsubscribed($rawLesson);
         }
     }
 
-    private function lessonIsCompleted($completedLessons, $lessonSlug) {
-        foreach ($completedLessons as $completedLesson) {
-            if ($completedLesson->lessonSlug == $lessonSlug) 
-                return true;
-        }
-        return false;
-    }
-
-    private function emptySensitiveFields($lesson) {
-        $lessonCopy = $lesson;
-        $lessonCopy['video_src'] = '';
-        $lessonCopy['slide'] = '';
-        $lessonCopy['code'] = '';
-        $lessonCopy['note'] = '';
-        return $lessonCopy;
+    public function userCanAccessLesson($rawLesson) {
+        return $this->user->isSubscribed() || $rawLesson['free'] == 'true';
     }
 
     public function complete($courseSlug, $lessonSlug) {
