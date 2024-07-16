@@ -2,9 +2,9 @@
 declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 require_once __ROOT__ . '/src/Course/CourseRepository.php';
-require_once __ROOT__ . '/src/User/UserRepository.php';
+require_once __ROOT__ . '/src/User/User.php';
 require_once __ROOT__ . '/src/Course/CourseRespositoryImpl.php';
-require_once __ROOT__ . '/src/User/UserRepositoryImpl.php';
+require_once __ROOT__ . '/src/User/UserImpl.php';
 require_once __ROOT__ . '/src/Lesson/Lesson.php';
 
 final class LessonTest extends TestCase {
@@ -13,7 +13,7 @@ final class LessonTest extends TestCase {
     private $courseRepository = null;
 
     protected function setUp(): void {
-        $this->userRepository = $this->createMock(UserRepositoryImpl::class);
+        $this->userRepository = $this->createMock(UserImpl::class);
         $this->courseRepository = $this->createMock(CourseRepositoryImpl::class);
         $this->lesson = new Lesson($this->courseRepository, $this->userRepository);
     }

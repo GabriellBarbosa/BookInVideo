@@ -1,5 +1,5 @@
 <?php
-interface UserRepository {
+interface User {
     public function isSubscribed(): bool;
 }
 ?>

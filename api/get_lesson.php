@@ -15,7 +15,7 @@ function registerGetLessonRoute() {
 }       
 
 function getLesson($request) {
-    $lesson = new Lesson(new CourseRepositoryImpl(), new UserRepositoryImpl());
+    $lesson = new Lesson(new CourseRepositoryImpl(), new UserImpl());
     $lessonFound = $lesson->get($request['courseSlug'], $request['lessonSlug']);
     $response = $lessonFound
         ? $lessonFound

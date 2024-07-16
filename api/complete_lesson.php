@@ -1,7 +1,7 @@
 <?php
 require_once get_template_directory() . '/src/Lesson/Lesson.php';
 require_once get_template_directory() . '/src/Course/CourseRespositoryImpl.php';
-require_once get_template_directory() . '/src/User/UserRepositoryImpl.php';
+require_once get_template_directory() . '/src/User/UserImpl.php';
 
 add_action('rest_api_init', 'registerCompleteLesson');
 
@@ -14,8 +14,8 @@ function registerCompleteLesson() {
             'methods' => WP_REST_Server::CREATABLE,
             'callback' => 'completeLesson',
             'permission_callback' => function($request) {
-                $userRepository = new UserRepositoryImpl();
-                return $userRepository->isSubscribed();
+                $user = new UserImpl();
+                return $user->isSubscribed();
             }
         )
     ));
@@ -28,7 +28,7 @@ function completeLesson($request) {
 
 function tryToCompleteLesson($courseSlug, $lessonSlug) {
     try {
-        $lesson = new Lesson(new CourseRepositoryImpl(), new UserRepositoryImpl());
+        $lesson = new Lesson(new CourseRepositoryImpl(), new UserImpl());
         return $lesson->complete($courseSlug, $lessonSlug);
     } catch (Exception $err) {
         return new WP_Error('forbidden', $err->getMessage(), array('status' => 403));

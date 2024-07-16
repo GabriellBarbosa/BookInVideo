@@ -1,5 +1,5 @@
 <?php
-class UserRepositoryImpl implements UserRepository {
+class UserImpl implements User {
     public function isSubscribed(): bool {
         $user = wp_get_current_user();
         if ($user->ID > 0) {
