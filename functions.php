@@ -6,7 +6,7 @@ require_once($template_directory . '/src/Course/CourseRepository.php');
 require_once($template_directory . '/src/User/UserRepository.php');
 
 require_once($template_directory . '/src/Course/CourseRespositoryImpl.php');
-require_once($template_directory . '/src/repositories/UserRepositoryImpl.php');
+require_once($template_directory . '/src/User/UserRepositoryImpl.php');
 
 require_once($template_directory . '/api/get_course_content.php');
 require_once($template_directory . '/api/get_user.php');
