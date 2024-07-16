@@ -11,12 +11,10 @@ function registerGetUser() {
 }
 
 function getUser($request) {
-    $currentUser = wp_get_current_user();
+    $user = new UserImpl(wp_get_current_user());
     $response = array(
-        'user' => $currentUser->ID == 0 ? null : array(
-            'username' => get_user_meta($currentUser->ID, 'first_name', true)
-        ),
-        'activated' => SubscribedUserSpec::isSastifiedBy($currentUser)
+        'user' => $user->getInfoIfLoggedIn(),
+        'activated' => $user->isSubscribed()
     );
     return rest_ensure_response($response);
 }

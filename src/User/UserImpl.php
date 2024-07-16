@@ -1,18 +1,39 @@
 <?php
 class UserImpl implements User {
+    private $user;
+
+    public function __construct($currentUser) {
+        $this->user = $currentUser;
+    }
+
+    public function getInfoIfLoggedIn() {
+        if ($this->isLoggedIn()) {
+            return array('username' => $this->firstName());
+        } else {
+            return null;
+        }
+    }
+
+    private function firstName() {
+        return get_user_meta($this->user->ID, 'first_name', true);
+    }
+
     public function isSubscribed(): bool {
-        $user = wp_get_current_user();
-        if ($user->ID > 0) {
-            return $this->userBoughtCourse($user->ID);
+        if ($this->isLoggedIn()) {
+            return $this->boughtCourse();
         }
         return false;
     }
 
-    private function userBoughtCourse($userID) {
+    private function isLoggedIn() {
+        return $this->user->ID > 0;
+    }
+
+    private function boughtCourse() {
         $productPost = get_page_by_path('codigo-limpo', OBJECT, 'product');
         $wcProduct = new WC_Product($productPost);
         return wc_customer_bought_product(
-            '', $userID, $wcProduct->get_id());
+            '', $this->user->ID, $wcProduct->get_id());
     }
 }
 ?>
