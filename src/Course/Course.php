@@ -1,15 +1,15 @@
 <?php
 class Course {
-    private $courseRepository = null;
-    private $courseSlug = null;
+    private $repository;
+    private $slug;
 
-    public function __construct($courseSlug, CourseRepository $courseRepository) {
-        $this->courseRepository = $courseRepository;
-        $this->courseSlug = $courseSlug;
+    public function __construct($courseSlug, CourseRepository $repository) {
+        $this->repository = $repository;
+        $this->slug = $courseSlug;
     }
 
     public function getContent() {
-        $course = $this->courseRepository->getCourse($this->courseSlug);
+        $course = $this->repository->getCourse($this->slug);
         if ($course) {
             return array(
                 'name' => $course['name'],
@@ -20,7 +20,7 @@ class Course {
     }
 
     private function getModules() {
-        $modules = $this->courseRepository->getModules($this->courseSlug);
+        $modules = $this->repository->getModules($this->slug);
         $result = array();
         foreach ($modules as $module) {
             array_push($result, array(
@@ -33,8 +33,7 @@ class Course {
     }
 
     private function getLessons($moduleSlug) {
-        $lessons = $this->courseRepository->getLessons(
-            $this->courseSlug, $moduleSlug);
+        $lessons = $this->repository->getLessons($this->slug, $moduleSlug);
         return $this->addCompletedLessonField($lessons);
     }
 
@@ -49,7 +48,7 @@ class Course {
     }
 
     private function lessonIsCompleted($lessonSlug) {
-        $completedLessons = $this->courseRepository->getCompletedLessons($this->courseSlug);
+        $completedLessons = $this->repository->getCompletedLessons($this->slug);
         foreach ($completedLessons as $completed) {
             if ($completed->lessonSlug == $lessonSlug) 
                 return true;
