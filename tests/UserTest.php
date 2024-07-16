@@ -7,17 +7,37 @@ require_once __ROOT__ . '/src/User/UserRepository.php';
 require_once __ROOT__ . '/src/User/UserRepositoryImpl.php';
 
 final class UserTest extends TestCase {
-    private $user;
-
-    protected function setUp(): void {
-        $obj = new stdClass();
-        $obj->ID = 2;
-        $userRepository = $this->createMock(UserRepositoryImpl::class);
-        $this->user = new UserImpl($obj, $userRepository);
-    }
 
     public function testUnloggedUserInfo() {
-        $userInfo = $this->user->getInfoIfLoggedIn();
+        $unlogged = $this->createUnloggedUser();
+        $userInfo = $unlogged->getInfoIfLoggedIn();
+        $this->assertEquals(null, $userInfo);
+    }
+
+    public function testLoggedUserInfo() {
+        $logged = $this->createLoggedUser();
+        $userInfo = $logged->getInfoIfLoggedIn();
+        $this->assertEquals(array("username" => "Gabriel"), $userInfo);
+    }
+
+    private function createUnloggedUser() {
+        $unloggedUser = new stdClass();
+        $unloggedUser->ID = 0;
+        $userRepo = $this->createMock(UserRepositoryImpl::class);
+        return new UserImpl($unloggedUser, $userRepo);
+    }
+
+    private function createLoggedUser() {
+        $loggedUser = new stdClass();
+        $loggedUser->ID = 1;
+        $userRepo = $this->mockedUserRepository();
+        return new UserImpl($loggedUser, $userRepo);
+    }
+
+    private function mockedUserRepository() {
+        $repository = $this->createMock(UserRepositoryImpl::class);
+        $repository->method("getFirstName")->willReturn("Gabriel");
+        return $repository;
     }
 }
 ?>
