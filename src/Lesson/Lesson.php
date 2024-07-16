@@ -1,13 +1,11 @@
 <?php
 class Lesson {
-    private $courseRepository = null;
-    private $userRepository = null;
+    private $courseRepository;
+    private $user;
 
-    public function __construct(
-        CourseRepository $courseRepo, User $userRepo
-    ) {
+    public function __construct(CourseRepository $courseRepo, User $user) {
         $this->courseRepository = $courseRepo;
-        $this->userRepository = $userRepo;
+        $this->user = $user;
     }
 
     public function get($courseSlug, $lessonSlug) {
@@ -22,8 +20,8 @@ class Lesson {
     private function enrichLesson($lesson, $completedLessons, $lessonSlug) {
         $lessonCopy = $lesson;
         $lessonCopy['completed'] = false;
-        if ($this->userRepository->isSubscribed() || $lessonCopy['free'] == 'true') {
-            if ($this->userRepository->isSubscribed()) {
+        if ($this->user->isSubscribed() || $lessonCopy['free'] == 'true') {
+            if ($this->user->isSubscribed()) {
                 $lessonCopy['completed'] = $this->lessonIsCompleted($completedLessons, $lessonSlug);
             }
             return $lessonCopy;
@@ -50,7 +48,7 @@ class Lesson {
     }
 
     public function complete($courseSlug, $lessonSlug) {
-        if ($this->userRepository->isSubscribed()) {
+        if ($this->user->isSubscribed()) {
             $isCompleted = $this->courseRepository->completeLesson($courseSlug, $lessonSlug);
             return $isCompleted;
         }

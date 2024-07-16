@@ -6,7 +6,7 @@ require_once __ROOT__ . '/src/Course/CourseRepository.php';
 require_once __ROOT__ . '/src/Course/CourseRespositoryImpl.php';
 require_once __ROOT__ . '/src/Course/Course.php';
 
-final class CourseTest extends TestCase {
+final class CourseContentTest extends TestCase {
     public function testCourseContent(): void {
         $mockedRepo = $this->mockRepository();
         $course = new Course('codigo-limpo', $mockedRepo);
