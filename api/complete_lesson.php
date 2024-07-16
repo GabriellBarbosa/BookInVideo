@@ -1,6 +1,6 @@
 <?php
 require_once get_template_directory() . '/src/Lesson/Lesson.php';
-require_once get_template_directory() . '/src/repositories/CourseRespositoryImpl.php';
+require_once get_template_directory() . '/src/Course/CourseRespositoryImpl.php';
 require_once get_template_directory() . '/src/repositories/UserRepositoryImpl.php';
 
 add_action('rest_api_init', 'registerCompleteLesson');

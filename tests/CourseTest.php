@@ -3,7 +3,7 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once __ROOT__ . '/src/Course/CourseRepository.php';
-require_once __ROOT__ . '/src/repositories/CourseRespositoryImpl.php';
+require_once __ROOT__ . '/src/Course/CourseRespositoryImpl.php';
 require_once __ROOT__ . '/src/Course/Course.php';
 
 final class CourseTest extends TestCase {
