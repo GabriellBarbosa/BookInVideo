@@ -81,24 +81,6 @@ final class CourseTest extends TestCase {
         $this->assertEquals('some note', $lesson['note']);
     }
 
-    public function testCompleteLesson() {
-        $this->courseRepository->method('completeLesson')->willReturn(true);
-        $this->user->method('isSubscribed')->willReturn(true);
-
-        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo');
-
-        $this->assertEquals(true, $wasCompleted);
-    }
-
-    public function testCompleteLessonFail() {
-        $this->courseRepository->method('completeLesson')->willReturn(false);
-        $this->user->method('isSubscribed')->willReturn(true);
-
-        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo');
-
-        $this->assertEquals(false, $wasCompleted);
-    }
-
     public function testUnsubscribedUserTryToCompleteLesson() {
         $this->user->method('isSubscribed')->willReturn(false);
 

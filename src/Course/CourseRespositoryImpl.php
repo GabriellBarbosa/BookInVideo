@@ -109,8 +109,14 @@ class CourseRepositoryImpl implements CourseRepository {
     }
 
     public function completeLesson($lessonSlug, $userID) {
+        if ($this->lessonIsNotCompleted($lessonSlug, $userID)) {
+            $this->addCompletedLesson($lessonSlug, $userID);
+        }
+    }
+
+    private function addCompletedLesson($lessonSlug, $userID) {
         global $wpdb;
-        $insertionFeedback = $wpdb->insert( 
+        $wpdb->insert( 
             'wp_completed_lessons', 
             array(
                 'userId' => $userID,
@@ -119,8 +125,18 @@ class CourseRepositoryImpl implements CourseRepository {
                 'createdAt' => current_time( 'mysql' ), 
             ) 
         );
+    }
 
-        return $insertionFeedback > 0;
+    private function lessonIsNotCompleted($lessonSlug, $userID) {
+        global $wpdb;
+        $query = $wpdb->prepare(
+            "SELECT EXISTS(
+                SELECT `*` FROM `wp_completed_lessons` 
+                WHERE `userId` = %d AND `courseSlug` = %s AND `lessonSlug` = %s
+            );",
+            array($userID, $this->slug, $lessonSlug)
+        );
+        return $wpdb->get_var($query) == 0;
     }
 
     public function getCompletedLessons($userID) {

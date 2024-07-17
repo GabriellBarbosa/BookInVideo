@@ -80,13 +80,10 @@ class Course {
 
     public function completeLesson($lessonSlug) {
         if ($this->user->isSubscribed()) {
-            $isCompleted = $this->repository->completeLesson(
-                $lessonSlug, 
-                $this->user->getID()
-            );
-            return $isCompleted;
+            $this->repository->completeLesson($lessonSlug, $this->user->getID());
+        } else {
+            throw new Exception('Não foi possível completar a aula');
         }
-        throw new Exception('Não foi possível completar a aula');
     }
 }
 ?>
