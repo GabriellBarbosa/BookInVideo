@@ -1,37 +1,43 @@
 <?php
 class CourseRepositoryImpl implements CourseRepository {
-    public function getCourse($slug) {
+    private $slug;
+
+    public function __construct($slug) {
+        $this->slug = $slug;
+    }
+
+    public function getCourse() {
         $fields = ['name', 'slug'];
-        $queryResult = $this->courseQuery($slug);
+        $queryResult = $this->courseQuery();
         $coursePosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($coursePosts, $fields);
     }
 
-    private function courseQuery($slug) {
+    private function courseQuery() {
         return new WP_Query(array(
             'post_type' => 'curso',
-            'name' => $slug,
+            'name' => $this->slug,
             'numberposts' => 1,
         ));
     }
 
-    public function getModules($courseSlug) {
-        return get_terms($courseSlug);
+    public function getModules() {
+        return get_terms($this->slug);
     }
 
-    public function getLessons($courseSlug, $moduleSlug) {
+    public function getLessons($moduleSlug) {
         $fields = ['name', 'slug', 'sequence', 'duration', 'free'];
-        $queryResult = $this->lessonsQuery($courseSlug, $moduleSlug);
+        $queryResult = $this->lessonsQuery($moduleSlug);
         return $this->getLessonsWithCustomFields($queryResult, $fields);
     }
 
-    private function lessonsQuery($courseSlug, $moduleSlug) {
+    private function lessonsQuery($moduleSlug) {
         wp_reset_query();
         return new WP_Query(array(
             'post_type' => 'aula',
             'tax_query' => array(
                 array(
-                    'taxonomy' => $courseSlug,
+                    'taxonomy' => $this->slug,
                     'field' => 'slug',
                     'terms' => $moduleSlug
                 ),
@@ -50,7 +56,7 @@ class CourseRepositoryImpl implements CourseRepository {
         return $result;
     }
 
-    public function getSingleLesson($courseSlug, $lessonSlug) {
+    public function getSingleLesson($lessonSlug) {
         $fields = [
             'name', 
             'slug', 
@@ -63,17 +69,17 @@ class CourseRepositoryImpl implements CourseRepository {
             'note',
             'free'
         ];
-        $queryResult = $this->lessonQuery($courseSlug, $lessonSlug);
+        $queryResult = $this->lessonQuery($lessonSlug);
         $lessonPosts = $queryResult->get_posts();
         return $this->getSinglePostWithCustomFields($lessonPosts, $fields);
     }
 
-    private function lessonQuery($courseSlug, $lessonSlug) {
+    private function lessonQuery($lessonSlug) {
         return new WP_Query(array(
             'post_type' => 'aula',
             'tax_query' => array(
                 array(
-                    'taxonomy' => $courseSlug,
+                    'taxonomy' => $this->slug,
                     'operator' => 'EXISTS'
                 )
             ),
@@ -85,7 +91,6 @@ class CourseRepositoryImpl implements CourseRepository {
             )
         ));
     }
-
 
     private function getSinglePostWithCustomFields($posts, $fields) {
         $post = array_shift($posts);
@@ -103,14 +108,14 @@ class CourseRepositoryImpl implements CourseRepository {
         return $result;
     }
 
-    public function completeLesson($courseSlug, $lessonSlug) {
+    public function completeLesson($lessonSlug) {
         global $wpdb;
         $user = wp_get_current_user();
         $insertionFeedback = $wpdb->insert( 
             'wp_completed_lessons', 
             array(
                 'userId' => $user->ID,
-                'courseSlug' => $courseSlug, 
+                'courseSlug' => $this->slug, 
                 'lessonSlug' => $lessonSlug, 
                 'createdAt' => current_time( 'mysql' ), 
             ) 
@@ -119,12 +124,12 @@ class CourseRepositoryImpl implements CourseRepository {
         return $insertionFeedback > 0;
     }
 
-    public function getCompletedLessons($courseSlug) {
+    public function getCompletedLessons() {
         global $wpdb;
         $user = wp_get_current_user();
         $query = $wpdb->prepare(
             "SELECT `lessonSlug` FROM `wp_completed_lessons` WHERE `userId` = %d AND `courseSlug` = %s;",
-            array($user->ID, $courseSlug)
+            array($user->ID, $this->slug)
         );
         return $wpdb->get_results($query);
     }

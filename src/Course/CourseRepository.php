@@ -1,9 +1,9 @@
 <?php
 interface CourseRepository {
-    public function getCourse($slug);
-    public function getModules($courseSlug);
-    public function getLessons($courseSlug, $moduleSlug);
-    public function completeLesson($courseSlug, $lessonSlug);
-    public function getCompletedLessons($courseSlug);
+    public function getCourse();
+    public function getModules();
+    public function getLessons($moduleSlug);
+    public function completeLesson($lessonSlug);
+    public function getCompletedLessons();
 }
 ?>

@@ -1,17 +1,15 @@
 <?php
 class Course {
     private $repository;
-    private $slug;
     private $user;
 
-    public function __construct($courseSlug, CourseRepository $repository, User $user) {
+    public function __construct(CourseRepository $repository, User $user) {
         $this->repository = $repository;
-        $this->slug = $courseSlug;
         $this->user = $user;
     }
 
     public function getContent() {
-        $course = $this->repository->getCourse($this->slug);
+        $course = $this->repository->getCourse();
         if ($course) {
             return array(
                 'name' => $course['name'],
@@ -22,7 +20,7 @@ class Course {
     }
 
     private function getModules() {
-        $modules = $this->repository->getModules($this->slug);
+        $modules = $this->repository->getModules();
         $result = array();
         foreach ($modules as $module) {
             array_push($result, array(
@@ -35,7 +33,7 @@ class Course {
     }
 
     private function getLessons($moduleSlug) {
-        $lessons = $this->repository->getLessons($this->slug, $moduleSlug);
+        $lessons = $this->repository->getLessons($moduleSlug);
         return $this->addCompletedLessonField($lessons);
     }
 
@@ -50,7 +48,7 @@ class Course {
     }
 
     private function lessonIsCompleted($lessonSlug) {
-        $completedLessons = $this->repository->getCompletedLessons($this->slug);
+        $completedLessons = $this->repository->getCompletedLessons();
         foreach ($completedLessons as $completed) {
             if ($completed->lessonSlug == $lessonSlug) 
                 return true;
@@ -59,7 +57,7 @@ class Course {
     }
 
     public function findLesson($lessonSlug) {
-        $rawLesson = $this->repository->getSingleLesson($this->slug, $lessonSlug);
+        $rawLesson = $this->repository->getSingleLesson($lessonSlug);
         if ($rawLesson != null) {
             $lesson = $this->createLesson($rawLesson);
             return $lesson->getData();
@@ -70,17 +68,17 @@ class Course {
     private function createLesson($rawLesson) {
         if ($this->user->isSubscribed() ) {
             return new LessonForSubscribed(
-                $rawLesson, $this->repository->getCompletedLessons($this->slug));
+                $rawLesson, $this->repository->getCompletedLessons());
         } else if ($rawLesson['free'] == 'true') {
             return new LessonFree($rawLesson);
         } else {
             return new LessonForUnsubscribed($rawLesson);
         }
     }
-    
-    public function completeLesson($lessonSlug, $user) {
-        if ($user->isSubscribed()) {
-            $isCompleted = $this->repository->completeLesson($this->slug, $lessonSlug);
+
+    public function completeLesson($lessonSlug) {
+        if ($this->user->isSubscribed()) {
+            $isCompleted = $this->repository->completeLesson($lessonSlug);
             return $isCompleted;
         }
         throw new Exception('Não foi possível completar a aula');

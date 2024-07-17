@@ -21,7 +21,7 @@ final class CourseTest extends TestCase {
     protected function setUp(): void {
         $this->user = $this->createMock(UserImpl::class);
         $this->courseRepository = $this->createMock(CourseRepositoryImpl::class);
-        $this->course = new Course('codigo-limpo', $this->courseRepository, $this->user);
+        $this->course = new Course($this->courseRepository, $this->user);
     }
 
     public function testGetLessonSubscribedUser() {
@@ -85,7 +85,7 @@ final class CourseTest extends TestCase {
         $this->courseRepository->method('completeLesson')->willReturn(true);
         $this->user->method('isSubscribed')->willReturn(true);
 
-        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo', $this->user);
+        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo');
 
         $this->assertEquals(true, $wasCompleted);
     }
@@ -94,7 +94,7 @@ final class CourseTest extends TestCase {
         $this->courseRepository->method('completeLesson')->willReturn(false);
         $this->user->method('isSubscribed')->willReturn(true);
 
-        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo', $this->user);
+        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo');
 
         $this->assertEquals(false, $wasCompleted);
     }
@@ -104,7 +104,7 @@ final class CourseTest extends TestCase {
 
         $this->expectException(Exception::class);
         
-        $this->course->completeLesson('0102-codigo-limpo', $this->user);
+        $this->course->completeLesson('0102-codigo-limpo');
     }
 
     private function rawLesson() {

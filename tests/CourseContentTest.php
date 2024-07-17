@@ -13,7 +13,7 @@ final class CourseContentTest extends TestCase {
     public function testCourseContent(): void {
         $mockedRepo = $this->mockRepository();
         $user = $this->createMock(UserImpl::class);
-        $course = new Course('codigo-limpo', $mockedRepo, $user);
+        $course = new Course($mockedRepo, $user);
         $content = $course->getContent();
         $this->assertSame($this->expected(), $content);
     }
