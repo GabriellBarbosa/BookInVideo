@@ -147,6 +147,21 @@ class CourseRepositoryImpl implements CourseRepository {
         );
         return $wpdb->get_results($query);
     }
+
+    public function countAllLessons() {
+        $allLessons = new WP_Query(array(
+            'post_type' => 'aula',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $this->slug,
+                    'operator' => 'EXISTS'
+                )
+            )
+        ));
+        return $allLessons->found_posts;
+    }
+
+    public function generateCertificate($userID) {}
 }
 ?>
 

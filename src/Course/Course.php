@@ -85,5 +85,13 @@ class Course {
             throw new Exception('Não foi possível completar a aula');
         }
     }
+
+    public function tryToGenerateCertificate() {
+        $userID = $this->user->getID();
+        $completedLessons = $this->repository->getCompletedLessons($userID);
+        if ($this->repository->countAllLessons() == count($completedLessons)) {
+            $this->repository->generateCertificate($userID);
+        }
+    }
 }
 ?>

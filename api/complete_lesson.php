@@ -29,6 +29,7 @@ function tryToCompleteLesson($courseSlug, $lessonSlug) {
         $user = new UserImpl(wp_get_current_user(), $userRepository);
         $course = new Course($courseRepository, $user);
         $course->completeLesson($lessonSlug);
+        $course->tryToGenerateCertificate();
         return true;
     } catch (Exception $err) {
         return new WP_Error('forbidden', $err->getMessage(), array('status' => 403));
