@@ -66,9 +66,11 @@ class Course {
     }
 
     private function createLesson($rawLesson, $user) {
-        if ($this->userCanAccessLesson($rawLesson, $user)) {
+        if ($user->isSubscribed() ) {
             return new LessonForSubscribed(
                 $rawLesson, $this->repository->getCompletedLessons($this->slug));
+        } else if ($rawLesson['free'] == 'true') {
+            return new LessonFree($rawLesson);
         } else {
             return new LessonForUnsubscribed($rawLesson);
         }

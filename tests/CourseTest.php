@@ -9,6 +9,7 @@ require_once __ROOT__ . '/src/User/User.php';
 require_once __ROOT__ . '/src/User/UserImpl.php';
 
 require_once __ROOT__ . '/src/Lesson/Lesson.php';
+require_once __ROOT__ . '/src/Lesson/LessonFree.php';
 require_once __ROOT__ . '/src/Lesson/LessonForSubscribed.php';
 require_once __ROOT__ . '/src/Lesson/LessonForUnsubscribed.php';
 
