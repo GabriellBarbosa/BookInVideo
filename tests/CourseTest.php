@@ -21,14 +21,14 @@ final class CourseTest extends TestCase {
     protected function setUp(): void {
         $this->user = $this->createMock(UserImpl::class);
         $this->courseRepository = $this->createMock(CourseRepositoryImpl::class);
-        $this->course = new Course('codigo-limpo', $this->courseRepository);
+        $this->course = new Course('codigo-limpo', $this->courseRepository, $this->user);
     }
 
     public function testGetLessonSubscribedUser() {
         $this->user->method('isSubscribed')->willReturn(true);
         $this->courseRepository->method('getSingleLesson')->willReturn($this->rawLesson());
 
-        $lessonFound = $this->course->findLesson('0102-codigo-limpo', $this->user);
+        $lessonFound = $this->course->findLesson('0102-codigo-limpo');
 
         $this->assertEquals(false, $lessonFound['completed']);
         $this->assertEquals('http://vimeo.com', $lessonFound['video_src']);
@@ -41,7 +41,7 @@ final class CourseTest extends TestCase {
         $this->user->method('isSubscribed')->willReturn(false);
         $this->courseRepository->method('getSingleLesson')->willReturn($this->rawLesson());
 
-        $lessonFound = $this->course->findLesson('0102-codigo-limpo', $this->user);
+        $lessonFound = $this->course->findLesson('0102-codigo-limpo');
 
         $this->assertEquals(false, $lessonFound['completed']);
         $this->assertEquals('', $lessonFound['video_src']);
@@ -57,14 +57,14 @@ final class CourseTest extends TestCase {
         $this->user->method('isSubscribed')->willReturn(true);
         $this->courseRepository->method('getSingleLesson')->willReturn($this->rawLesson());
 
-        $lesson = $this->course->findLesson('0102-codigo-limpo', $this->user);
+        $lesson = $this->course->findLesson('0102-codigo-limpo');
 
         $this->assertEquals($lesson['completed'], true);
     }
 
     public function testLessonNotFound() {
         $this->courseRepository->method('getSingleLesson')->willReturn(null);
-        $lesson = $this->course->findLesson('0102-codigo-limpo', $this->user);
+        $lesson = $this->course->findLesson('0102-codigo-limpo');
         $this->assertEquals(null, $lesson);
     }
 
@@ -72,7 +72,7 @@ final class CourseTest extends TestCase {
         $this->user->method('isSubscribed')->willReturn(false);
         $this->courseRepository->method('getSingleLesson')->willReturn($this->rawFreeLesson());
 
-        $lesson = $this->course->findLesson('0102-codigo-limpo', $this->user);
+        $lesson = $this->course->findLesson('0102-codigo-limpo');
 
         $this->assertEquals('true', $lesson['free']);
         $this->assertEquals('http://vimeo.com', $lesson['video_src']);

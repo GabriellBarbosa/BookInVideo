@@ -16,8 +16,10 @@ function registerGetCourseContentRoute() {
 }
 
 function getCourseContent($request) {
-    $course = new Course(
-        $request['slug'], new CourseRepositoryImpl());
+    $courseRepository = new CourseRepositoryImpl();
+    $userRepository = new UserRepositoryImpl();
+    $user = new UserImpl(wp_get_current_user(), $userRepository);
+    $course = new Course($request['slug'], $courseRepository, $user);
     $content = $course->getContent();
     $response = $content 
         ? $content 

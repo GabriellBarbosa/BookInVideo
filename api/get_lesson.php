@@ -14,10 +14,10 @@ function registerGetLessonRoute() {
 
 function getLesson($request) {
     $courseRepository = new CourseRepositoryImpl();
-    $course = new Course($request['courseSlug'], $courseRepository);
     $userRepository = new UserRepositoryImpl();
     $user = new UserImpl(wp_get_current_user(), $userRepository);
-    $lessonFound = $course->findLesson($request['lessonSlug'], $user);
+    $course = new Course($request['courseSlug'], $courseRepository, $user);
+    $lessonFound = $course->findLesson($request['lessonSlug']);
     $response = $lessonFound
         ? $lessonFound
         : getNotFoundErr('A aula não foi encontrada');

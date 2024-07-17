@@ -6,10 +6,14 @@ require_once __ROOT__ . '/src/Course/CourseRepository.php';
 require_once __ROOT__ . '/src/Course/CourseRespositoryImpl.php';
 require_once __ROOT__ . '/src/Course/Course.php';
 
+require_once __ROOT__ . '/src/User/User.php';
+require_once __ROOT__ . '/src/User/UserImpl.php';
+
 final class CourseContentTest extends TestCase {
     public function testCourseContent(): void {
         $mockedRepo = $this->mockRepository();
-        $course = new Course('codigo-limpo', $mockedRepo);
+        $user = $this->createMock(UserImpl::class);
+        $course = new Course('codigo-limpo', $mockedRepo, $user);
         $content = $course->getContent();
         $this->assertSame($this->expected(), $content);
     }

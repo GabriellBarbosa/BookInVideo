@@ -2,10 +2,12 @@
 class Course {
     private $repository;
     private $slug;
+    private $user;
 
-    public function __construct($courseSlug, CourseRepository $repository) {
+    public function __construct($courseSlug, CourseRepository $repository, User $user) {
         $this->repository = $repository;
         $this->slug = $courseSlug;
+        $this->user = $user;
     }
 
     public function getContent() {
@@ -56,17 +58,17 @@ class Course {
         return false;
     }
 
-    public function findLesson($lessonSlug, $user) {
+    public function findLesson($lessonSlug) {
         $rawLesson = $this->repository->getSingleLesson($this->slug, $lessonSlug);
         if ($rawLesson != null) {
-            $lesson = $this->createLesson($rawLesson, $user);
+            $lesson = $this->createLesson($rawLesson);
             return $lesson->getData();
         }
         return null;
     }
 
-    private function createLesson($rawLesson, $user) {
-        if ($user->isSubscribed() ) {
+    private function createLesson($rawLesson) {
+        if ($this->user->isSubscribed() ) {
             return new LessonForSubscribed(
                 $rawLesson, $this->repository->getCompletedLessons($this->slug));
         } else if ($rawLesson['free'] == 'true') {
@@ -75,11 +77,7 @@ class Course {
             return new LessonForUnsubscribed($rawLesson);
         }
     }
-
-    private function userCanAccessLesson($rawLesson, $user) {
-        return $user->isSubscribed() || $rawLesson['free'] == 'true';
-    }
-
+    
     public function completeLesson($lessonSlug, $user) {
         if ($user->isSubscribed()) {
             $isCompleted = $this->repository->completeLesson($this->slug, $lessonSlug);
