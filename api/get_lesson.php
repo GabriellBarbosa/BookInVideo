@@ -1,6 +1,4 @@
 <?php
-require_once get_template_directory() . '/src/Lesson/Lesson.php';
-
 add_action('rest_api_init', 'registerGetLessonRoute');
 
 function registerGetLessonRoute() {
@@ -16,9 +14,10 @@ function registerGetLessonRoute() {
 
 function getLesson($request) {
     $courseRepository = new CourseRepositoryImpl();
-    $user = new UserImpl(wp_get_current_user(), new UserRepositoryImpl());
-    $lesson = new Lesson($courseRepository, $user);
-    $lessonFound = $lesson->get($request['courseSlug'], $request['lessonSlug']);
+    $course = new Course($request['courseSlug'], $courseRepository);
+    $userRepository = new UserRepositoryImpl();
+    $user = new UserImpl(wp_get_current_user(), $userRepository);
+    $lessonFound = $course->findLesson($request['lessonSlug'], $user);
     $response = $lessonFound
         ? $lessonFound
         : getNotFoundErr('A aula não foi encontrada');

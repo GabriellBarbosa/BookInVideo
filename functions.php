@@ -10,6 +10,7 @@ require_once($template_directory . '/src/Course/CourseRepository.php');
 require_once($template_directory . '/src/Course/CourseRespositoryImpl.php');
 
 require_once($template_directory . '/src/Lesson/ILesson.php');
+require_once($template_directory . '/src/Lesson/Lesson.php');
 require_once($template_directory . '/src/Lesson/LessonForSubscribed.php');
 require_once($template_directory . '/src/Lesson/LessonForUnsubscribed.php');
 

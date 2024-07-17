@@ -55,5 +55,32 @@ class Course {
         }
         return false;
     }
+
+    public function findLesson($lessonSlug, $user) {
+        $rawLesson = $this->repository->getSingleLesson($this->slug, $lessonSlug);
+        if ($rawLesson != null) {
+            $completedLessons = $this->repository->getCompletedLessons($this->slug);
+            return $this->getLessonData($rawLesson, $completedLessons, $user);
+        }
+        return null;
+    }
+
+    private function getLessonData($rawLesson, $completedLessons, $user) {
+        $lesson = $this->createLesson($rawLesson, $user);
+        $lessonData = $lesson->getData($completedLessons);
+        return $lessonData;
+    }
+
+    private function createLesson($rawLesson, $user) {
+        if ($this->userCanAccessLesson($rawLesson, $user)) {
+            return new LessonForSubscribed($rawLesson);
+        } else {
+            return new LessonForUnsubscribed($rawLesson);
+        }
+    }
+
+    private function userCanAccessLesson($rawLesson, $user) {
+        return $user->isSubscribed() || $rawLesson['free'] == 'true';
+    }
 }
 ?>
