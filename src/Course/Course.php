@@ -59,21 +59,16 @@ class Course {
     public function findLesson($lessonSlug, $user) {
         $rawLesson = $this->repository->getSingleLesson($this->slug, $lessonSlug);
         if ($rawLesson != null) {
-            $completedLessons = $this->repository->getCompletedLessons($this->slug);
-            return $this->getLessonData($rawLesson, $completedLessons, $user);
+            $lesson = $this->createLesson($rawLesson, $user);
+            return $lesson->getData();
         }
         return null;
     }
 
-    private function getLessonData($rawLesson, $completedLessons, $user) {
-        $lesson = $this->createLesson($rawLesson, $user);
-        $lessonData = $lesson->getData($completedLessons);
-        return $lessonData;
-    }
-
     private function createLesson($rawLesson, $user) {
         if ($this->userCanAccessLesson($rawLesson, $user)) {
-            return new LessonForSubscribed($rawLesson);
+            return new LessonForSubscribed(
+                $rawLesson, $this->repository->getCompletedLessons($this->slug));
         } else {
             return new LessonForUnsubscribed($rawLesson);
         }

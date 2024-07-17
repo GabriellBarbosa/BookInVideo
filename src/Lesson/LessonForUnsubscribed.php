@@ -1,12 +1,12 @@
 <?php
-class LessonForUnsubscribed implements ILesson {
+class LessonForUnsubscribed implements Lesson {
     private $lesson;
 
     public function __construct($lesson) {
         $this->lesson = $lesson;
     }
 
-    public function getData($completedLessons) {
+    public function getData() {
         $lessonCopy = $this->lesson;
         $lessonCopy['completed'] = false;
         $lessonCopy['video_src'] = '';
