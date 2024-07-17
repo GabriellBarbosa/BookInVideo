@@ -13,7 +13,6 @@ require_once __ROOT__ . '/src/Lesson/LessonForSubscribed.php';
 require_once __ROOT__ . '/src/Lesson/LessonForUnsubscribed.php';
 
 final class CourseTest extends TestCase {
-    private $lesson;
     private $course;
     private $user;
     private $courseRepository;
@@ -79,6 +78,32 @@ final class CourseTest extends TestCase {
         $this->assertEquals('/slide', $lesson['slide']);
         $this->assertEquals('/code', $lesson['code']);
         $this->assertEquals('some note', $lesson['note']);
+    }
+
+    public function testCompleteLesson() {
+        $this->courseRepository->method('completeLesson')->willReturn(true);
+        $this->user->method('isSubscribed')->willReturn(true);
+
+        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo', $this->user);
+
+        $this->assertEquals(true, $wasCompleted);
+    }
+
+    public function testCompleteLessonFail() {
+        $this->courseRepository->method('completeLesson')->willReturn(false);
+        $this->user->method('isSubscribed')->willReturn(true);
+
+        $wasCompleted = $this->course->completeLesson('0102-codigo-limpo', $this->user);
+
+        $this->assertEquals(false, $wasCompleted);
+    }
+
+    public function testUnsubscribedUserTryToCompleteLesson() {
+        $this->user->method('isSubscribed')->willReturn(false);
+
+        $this->expectException(Exception::class);
+        
+        $this->course->completeLesson('0102-codigo-limpo', $this->user);
     }
 
     private function rawLesson() {

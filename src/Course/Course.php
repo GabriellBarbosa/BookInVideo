@@ -82,5 +82,13 @@ class Course {
     private function userCanAccessLesson($rawLesson, $user) {
         return $user->isSubscribed() || $rawLesson['free'] == 'true';
     }
+
+    public function completeLesson($lessonSlug, $user) {
+        if ($user->isSubscribed()) {
+            $isCompleted = $this->repository->completeLesson($this->slug, $lessonSlug);
+            return $isCompleted;
+        }
+        throw new Exception('Não foi possível completar a aula');
+    }
 }
 ?>
