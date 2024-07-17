@@ -7,10 +7,10 @@ class CourseRepositoryImpl implements CourseRepository {
     }
 
     public function getCourse() {
-        $fields = ['name', 'slug'];
+        $customFields = ['name', 'slug'];
         $queryResult = $this->courseQuery();
         $coursePosts = $queryResult->get_posts();
-        return $this->getSinglePostWithCustomFields($coursePosts, $fields);
+        return $this->getPostWithCustomFields($coursePosts, $customFields);
     }
 
     private function courseQuery() {
@@ -50,14 +50,14 @@ class CourseRepositoryImpl implements CourseRepository {
         $result = array();
         if ($lessonsQuery->have_posts()) {
             while ($lessonsQuery->have_posts()) : $lessonsQuery->the_post();
-                array_push($result, $this->getPostCustomFields($post->ID, $fields));
+                array_push($result, $this->getCustomFields($post->ID, $fields));
             endwhile;
         }
         return $result;
     }
 
     public function getSingleLesson($lessonSlug) {
-        $fields = [
+        $customFields = [
             'name', 
             'slug', 
             'sequence', 
@@ -71,7 +71,7 @@ class CourseRepositoryImpl implements CourseRepository {
         ];
         $queryResult = $this->lessonQuery($lessonSlug);
         $lessonPosts = $queryResult->get_posts();
-        return $this->getSinglePostWithCustomFields($lessonPosts, $fields);
+        return $this->getPostWithCustomFields($lessonPosts, $customFields);
     }
 
     private function lessonQuery($lessonSlug) {
@@ -92,14 +92,14 @@ class CourseRepositoryImpl implements CourseRepository {
         ));
     }
 
-    private function getSinglePostWithCustomFields($posts, $fields) {
+    private function getPostWithCustomFields($posts, $fields) {
         $post = array_shift($posts);
         return $post 
-            ? $this->getPostCustomFields($post->ID, $fields)
+            ? $this->getCustomFields($post->ID, $fields)
             : null;
     }
 
-    private function getPostCustomFields($postID, $fields) {
+    private function getCustomFields($postID, $fields) {
         $metaData = get_post_meta($postID);
         $result = array();
         foreach ($fields as $field) {
