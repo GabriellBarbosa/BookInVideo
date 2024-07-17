@@ -48,8 +48,7 @@ class Course {
     }
 
     private function lessonIsCompleted($lessonSlug) {
-        $completedLessons = $this->repository->getCompletedLessons();
-        foreach ($completedLessons as $completed) {
+        foreach ($this->getCompletedLessons() as $completed) {
             if ($completed->lessonSlug == $lessonSlug) 
                 return true;
         }
@@ -67,13 +66,16 @@ class Course {
 
     private function createLesson($rawLesson) {
         if ($this->user->isSubscribed() ) {
-            return new LessonForSubscribed(
-                $rawLesson, $this->repository->getCompletedLessons());
+            return new LessonForSubscribed($rawLesson, $this->getCompletedLessons());
         } else if ($rawLesson['free'] == 'true') {
             return new LessonFree($rawLesson);
         } else {
             return new LessonForUnsubscribed($rawLesson);
         }
+    }
+
+    private function getCompletedLessons() {
+        return $this->repository->getCompletedLessons();
     }
 
     public function completeLesson($lessonSlug) {
