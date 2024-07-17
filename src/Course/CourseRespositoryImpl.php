@@ -108,13 +108,12 @@ class CourseRepositoryImpl implements CourseRepository {
         return $result;
     }
 
-    public function completeLesson($lessonSlug) {
+    public function completeLesson($lessonSlug, $userID) {
         global $wpdb;
-        $user = wp_get_current_user();
         $insertionFeedback = $wpdb->insert( 
             'wp_completed_lessons', 
             array(
-                'userId' => $user->ID,
+                'userId' => $userID,
                 'courseSlug' => $this->slug, 
                 'lessonSlug' => $lessonSlug, 
                 'createdAt' => current_time( 'mysql' ), 
@@ -124,12 +123,11 @@ class CourseRepositoryImpl implements CourseRepository {
         return $insertionFeedback > 0;
     }
 
-    public function getCompletedLessons() {
+    public function getCompletedLessons($userID) {
         global $wpdb;
-        $user = wp_get_current_user();
         $query = $wpdb->prepare(
             "SELECT `lessonSlug` FROM `wp_completed_lessons` WHERE `userId` = %d AND `courseSlug` = %s;",
-            array($user->ID, $this->slug)
+            array($userID, $this->slug)
         );
         return $wpdb->get_results($query);
     }

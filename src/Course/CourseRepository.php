@@ -4,7 +4,7 @@ interface CourseRepository {
     public function getModules();
     public function getLessons($moduleSlug);
     public function getSingleLesson($lessonSlug);
-    public function completeLesson($lessonSlug);
-    public function getCompletedLessons();
+    public function completeLesson($lessonSlug, $userID);
+    public function getCompletedLessons($userID);
 }
 ?>

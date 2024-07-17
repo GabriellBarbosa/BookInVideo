@@ -8,6 +8,10 @@ class UserImpl implements User {
         $this->repository = $repository;
     }
 
+    public function getID() {
+        return $this->user->ID;
+    }
+
     public function getInfoIfLoggedIn() {
         if ($this->isLoggedIn()) {
             return array('username' => $this->firstName());

@@ -75,12 +75,15 @@ class Course {
     }
 
     private function getCompletedLessons() {
-        return $this->repository->getCompletedLessons();
+        return $this->repository->getCompletedLessons($this->user->getID());
     }
 
     public function completeLesson($lessonSlug) {
         if ($this->user->isSubscribed()) {
-            $isCompleted = $this->repository->completeLesson($lessonSlug);
+            $isCompleted = $this->repository->completeLesson(
+                $lessonSlug, 
+                $this->user->getID()
+            );
             return $isCompleted;
         }
         throw new Exception('Não foi possível completar a aula');
