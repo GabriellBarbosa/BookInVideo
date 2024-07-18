@@ -88,10 +88,16 @@ class Course {
 
     public function tryToGenerateCertificate() {
         $userID = $this->user->getID();
-        $completedLessons = $this->repository->getCompletedLessons($userID);
-        if ($this->repository->countAllLessons() == count($completedLessons)) {
+        if ($this->shouldGenerateCertificate($userID)) {
             $this->repository->generateCertificate($userID);
         }
+    }
+
+    private function shouldGenerateCertificate($userID) {
+        $hasCertificate = $this->repository->hasCertificate($userID);
+        $completedLessons = $this->repository->getCompletedLessons($userID);
+        $totalLessons = $this->repository->getTotalLessons();
+        return $totalLessons == count($completedLessons) && !$hasCertificate;
     }
 }
 ?>

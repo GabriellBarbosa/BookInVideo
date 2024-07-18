@@ -129,9 +129,10 @@ class CourseRepositoryImpl implements CourseRepository {
 
     private function lessonIsNotCompleted($lessonSlug, $userID) {
         global $wpdb;
+        $tableName = $wpdb->prefix . 'completed_lessons';
         $query = $wpdb->prepare(
             "SELECT EXISTS(
-                SELECT `*` FROM `wp_completed_lessons` 
+                SELECT `*` FROM `$tableName` 
                 WHERE `userId` = %d AND `courseSlug` = %s AND `lessonSlug` = %s
             );",
             array($userID, $this->slug, $lessonSlug)
@@ -148,7 +149,7 @@ class CourseRepositoryImpl implements CourseRepository {
         return $wpdb->get_results($query);
     }
 
-    public function countAllLessons() {
+    public function getTotalLessons() {
         $lessons = new WP_Query(array(
             'post_type' => 'aula',
             'tax_query' => array(
@@ -191,6 +192,18 @@ class CourseRepositoryImpl implements CourseRepository {
         );
         $results = $wpdb->get_results($query);
         return array_shift($results);
+    }
+
+    public function hasCertificate($userID) {
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'conclusion_certificates';
+        $query = $wpdb->prepare(
+            "SELECT EXISTS(
+                SELECT `*` FROM `$tableName` WHERE `userId` = %d AND `courseSlug` = %s
+            );",
+            array($userID, $this->slug)
+        );
+        return $wpdb->get_var($query) > 0;
     }
 }
 ?>

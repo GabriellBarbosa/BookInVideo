@@ -92,7 +92,7 @@ final class CourseTest extends TestCase {
     public function testCertificateGeneration() {
         $lesson = new stdClass();
         $lesson->lessonSlug = '0201-codigo-limpo';
-        $this->courseRepository->method('countAllLessons')->willReturn(1);
+        $this->courseRepository->method('getTotalLessons')->willReturn(1);
         $this->courseRepository->method('getCompletedLessons')->willReturn(array($lesson));
         
         $this->courseRepository->expects($this->once())->method('generateCertificate');
@@ -101,10 +101,20 @@ final class CourseTest extends TestCase {
     }
 
     public function testCertificateGenerationWithNotCompletedLessons() {
+        $this->courseRepository->method('getTotalLessons')->willReturn(1);
+        $this->courseRepository->method('getCompletedLessons')->willReturn(array());
+        
+        $this->courseRepository->expects($this->never())->method('generateCertificate');
+
+        $this->course->tryToGenerateCertificate();
+    }
+
+    public function testCertificateDuplication() {
         $lesson = new stdClass();
         $lesson->lessonSlug = '0201-codigo-limpo';
-        $this->courseRepository->method('countAllLessons')->willReturn(1);
-        $this->courseRepository->method('getCompletedLessons')->willReturn(array());
+        $this->courseRepository->method('getTotalLessons')->willReturn(1);
+        $this->courseRepository->method('getCompletedLessons')->willReturn(array($lesson));
+        $this->courseRepository->method('hasCertificate')->willReturn(true);
         
         $this->courseRepository->expects($this->never())->method('generateCertificate');
 
