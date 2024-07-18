@@ -10,7 +10,7 @@ function createCompletedLessonsTable() {
         userId int NOT NULL,
         lessonSlug varchar(255) NOT NULL,
         courseSlug varchar(255) NOT NULL,
-        createdAt datetime NOT NULL,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (userId, courseSlug, lessonSlug)
     ) $charset_collate;";
 

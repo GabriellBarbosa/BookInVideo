@@ -22,6 +22,7 @@ require_once($template_directory . '/api/complete_lesson.php');
 require_once($template_directory . '/custom-post-types/cpt-course.php');
 require_once($template_directory . '/custom-post-types/cpt-lesson.php');
 require_once($template_directory . '/custom-db-tables/completedLessons.php');
+require_once($template_directory . '/custom-db-tables/conclusionCertificates.php');
 require_once($template_directory . '/custom-taxonomies/codigo-limpo-taxonomy.php');
 
 require_once($template_directory . '/plugin-overwrite/wc_login.php');

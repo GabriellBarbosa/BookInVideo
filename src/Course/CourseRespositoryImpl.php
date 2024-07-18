@@ -149,7 +149,7 @@ class CourseRepositoryImpl implements CourseRepository {
     }
 
     public function countAllLessons() {
-        $allLessons = new WP_Query(array(
+        $lessons = new WP_Query(array(
             'post_type' => 'aula',
             'tax_query' => array(
                 array(
@@ -158,10 +158,40 @@ class CourseRepositoryImpl implements CourseRepository {
                 )
             )
         ));
-        return $allLessons->found_posts;
+        return $lessons->found_posts;
     }
 
-    public function generateCertificate($userID) {}
+    public function generateCertificate($userID) {
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'conclusion_certificates';
+        $startedDate = $this->getStartedDate($userID);
+        $wpdb->insert($tableName, array(
+            'userId' => $userID,
+            'courseSlug' => $this->slug, 
+            'startDate' => $startedDate, 
+        ));
+    }
+
+    private function getStartedDate($userID) {
+        $lesson = $this->getFirstCompletedLesson($userID);
+        if ($lesson) {
+            return $lesson->createdAt;
+        }
+        throw new Exception("data de início do curso não encontrada", 404);
+    }
+
+    private function getFirstCompletedLesson($userID) {
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'completed_lessons';
+        $query = $wpdb->prepare(
+            "SELECT * FROM `$tableName` 
+            WHERE `userId` = %d AND `courseSlug` = %s 
+            ORDER BY `createdAt` ASC LIMIT 1;",
+            array($userID, $this->slug)
+        );
+        $results = $wpdb->get_results($query);
+        return array_shift($results);
+    }
 }
 ?>
 
