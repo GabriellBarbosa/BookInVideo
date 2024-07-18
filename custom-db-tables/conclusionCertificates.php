@@ -11,7 +11,7 @@ function createTableOfConclusionCertificates() {
         userId int NOT NULL,
         courseSlug varchar(255) NOT NULL,
         startDate datetime NOT NULL,
-        endDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        endDate datetime DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
     ) $charset_collate;";
 
