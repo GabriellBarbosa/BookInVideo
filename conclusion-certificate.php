@@ -1,8 +1,12 @@
 <?php
 /* Template Name: Certificate */
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/fpdf/fpdf.php';
 
-$mpdf = new \Mpdf\Mpdf();
-$mpdf->WriteHTML('<h1>Hello world!</h1>');
-$mpdf->Output();
+$imagePath = __DIR__ . '/assets/images/certificate.png';
+$pdf = new FPDF('L');
+
+$pdf->SetTitle('87ec6b');
+$pdf->addPage();
+$pdf->Image($imagePath, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight());
+$pdf->Output();
 ?>
