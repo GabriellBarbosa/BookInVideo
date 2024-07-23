@@ -4,7 +4,13 @@
 require_once __DIR__ . '/fpdf/fpdf.php';
 $imagePath = __DIR__ . '/assets/images/certificate.png';
 
-$user = wp_get_current_user();
+class PDF extends FPDF {
+    function Cell( $w, $h = 0, $t = '', $b = 0, $l = 0, $a = '', $f = false, $y = '' ) {
+        parent::Cell( $w, $h, iconv( 'UTF-8', 'windows-1252', $t ), $b, $l, $a, $f, $y );
+    }
+}
+
+$user = wp_get_current_user(); // So pode ver se tiver logado?
 $certificateId = get_query_var('certificate_id');
 $certificate = getCertificate($certificateId);
 
@@ -12,24 +18,37 @@ $courseName = getCourseName($certificate->courseSlug);
 $totalHours = totalHours($certificate->courseSlug);
 $startDate = date_create($certificate->startDate);
 $endDate = date_create($certificate->endDate);
-$first_name = get_user_meta($user->ID, 'first_name', true);
-$last_name = get_user_meta($user->ID, 'last_name', true);
+$first_name = get_user_meta($user->ID, 'first_name', true); // nome do usuario logado?
+$last_name = get_user_meta($user->ID, 'last_name', true); // nome do usuario logado?
 
-echo '<pre>';
-print_r($totalHours);
-echo '</pre>';
+$pdf = new PDF('L');
+$pdf->AddFont('Inter', '', 'Inter-Bold.php');
 
-if (
-    $user->ID > 0 && 
-    $certificateId != null &&
-    $courseName != null 
-) {
-    // $pdf = new FPDF('L');
-    // $pdf->SetTitle('87ec6b');
-    // $pdf->addPage();
-    // $pdf->Image($imagePath, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight());
-    // $pdf->Output();
-}
+$pdf->addPage();
+$pdf->Image($imagePath, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight());
+
+$pdf->SetTitle($certificateId);
+
+$pdf->SetFont('Inter', '', 32);
+$pdf->SetXY(75, 71);
+$pdf->MultiCell(100, 12, 'Código limpo', 0);
+
+$pdf->SetXY(189, 71);
+$pdf->MultiCell(100, 12, '12 horas', 0);
+
+$pdf->SetXY(80, 119);
+$pdf->MultiCell(215, 12, 'Gabriel Barbosa', 0);
+
+$pdf->SetFont('Inter', '', 16);
+$pdf->SetXY(189, 86);
+$pdf->SetTextColor(96, 97, 99);
+$pdf->MultiCell(100, 12, '13/09/2022 - 13/09/2022', 0);
+
+$pdf->SetFont('Inter', '', 14);
+$pdf->SetXY(189, 139);
+$pdf->MultiCell(100, 12, 'bookinvideo.com/certificate/87ec6b', 0);
+
+$pdf->Output();
 
 function getCertificate($certificateId) {
     global $wpdb;
