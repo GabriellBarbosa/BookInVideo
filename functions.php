@@ -79,6 +79,23 @@ function bookinvideo_enqueue_react_css() {
     wp_enqueue_style('course-css');
 }
 
+add_action('init', 'custom_certificate_route');
+
+function custom_certificate_route() {
+    add_rewrite_rule(
+        '^certificate/([A-Za-z0-9]+)/?$',
+        'index.php?pagename=certificate&certificate_id=$matches[1]',
+        'top'
+    );
+}
+
+add_filter('query_vars', 'add_certificate_id_to_query_vars');
+
+function add_certificate_id_to_query_vars($query_vars) {
+    $query_vars[] = 'certificate_id';
+    return $query_vars;
+}
+
 function displayPricingCard($displayAssignButton = true) { 
     $product = getCourseProductData(); ?>
     <div class="pricing_card"> 

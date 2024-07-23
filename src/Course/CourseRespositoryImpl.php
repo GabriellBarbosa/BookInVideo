@@ -1,9 +1,9 @@
 <?php
 class CourseRepositoryImpl implements CourseRepository {
-    private $slug;
+    private $courseSlug;
 
     public function __construct($slug) {
-        $this->slug = $slug;
+        $this->courseSlug = $slug;
     }
 
     public function getCourse() {
@@ -16,13 +16,13 @@ class CourseRepositoryImpl implements CourseRepository {
     private function courseQuery() {
         return new WP_Query(array(
             'post_type' => 'curso',
-            'name' => $this->slug,
+            'name' => $this->courseSlug,
             'numberposts' => 1,
         ));
     }
 
     public function getModules() {
-        return get_terms($this->slug);
+        return get_terms($this->courseSlug);
     }
 
     public function getLessons($moduleSlug) {
@@ -35,9 +35,10 @@ class CourseRepositoryImpl implements CourseRepository {
         wp_reset_query();
         return new WP_Query(array(
             'post_type' => 'aula',
+            'posts_per_page' => -1,
             'tax_query' => array(
                 array(
-                    'taxonomy' => $this->slug,
+                    'taxonomy' => $this->courseSlug,
                     'field' => 'slug',
                     'terms' => $moduleSlug
                 ),
@@ -79,7 +80,7 @@ class CourseRepositoryImpl implements CourseRepository {
             'post_type' => 'aula',
             'tax_query' => array(
                 array(
-                    'taxonomy' => $this->slug,
+                    'taxonomy' => $this->courseSlug,
                     'operator' => 'EXISTS'
                 )
             ),
@@ -120,9 +121,8 @@ class CourseRepositoryImpl implements CourseRepository {
             'wp_completed_lessons', 
             array(
                 'userId' => $userID,
-                'courseSlug' => $this->slug, 
+                'courseSlug' => $this->courseSlug, 
                 'lessonSlug' => $lessonSlug, 
-                'createdAt' => current_time( 'mysql' ), 
             ) 
         );
     }
@@ -135,7 +135,7 @@ class CourseRepositoryImpl implements CourseRepository {
                 SELECT `*` FROM `$tableName` 
                 WHERE `userId` = %d AND `courseSlug` = %s AND `lessonSlug` = %s
             );",
-            array($userID, $this->slug, $lessonSlug)
+            array($userID, $this->courseSlug, $lessonSlug)
         );
         return $wpdb->get_var($query) == 0;
     }
@@ -144,7 +144,7 @@ class CourseRepositoryImpl implements CourseRepository {
         global $wpdb;
         $query = $wpdb->prepare(
             "SELECT `lessonSlug` FROM `wp_completed_lessons` WHERE `userId` = %d AND `courseSlug` = %s;",
-            array($userID, $this->slug)
+            array($userID, $this->courseSlug)
         );
         return $wpdb->get_results($query);
     }
@@ -154,7 +154,7 @@ class CourseRepositoryImpl implements CourseRepository {
             'post_type' => 'aula',
             'tax_query' => array(
                 array(
-                    'taxonomy' => $this->slug,
+                    'taxonomy' => $this->courseSlug,
                     'operator' => 'EXISTS'
                 )
             )
@@ -168,7 +168,7 @@ class CourseRepositoryImpl implements CourseRepository {
         $startedDate = $this->getStartedDate($userID);
         $wpdb->insert($tableName, array(
             'userId' => $userID,
-            'courseSlug' => $this->slug, 
+            'courseSlug' => $this->courseSlug, 
             'startDate' => $startedDate, 
         ));
     }
@@ -188,7 +188,7 @@ class CourseRepositoryImpl implements CourseRepository {
             "SELECT * FROM `$tableName` 
             WHERE `userId` = %d AND `courseSlug` = %s 
             ORDER BY `createdAt` ASC LIMIT 1;",
-            array($userID, $this->slug)
+            array($userID, $this->courseSlug)
         );
         $results = $wpdb->get_results($query);
         return array_shift($results);
@@ -201,7 +201,7 @@ class CourseRepositoryImpl implements CourseRepository {
             "SELECT EXISTS(
                 SELECT `*` FROM `$tableName` WHERE `userId` = %d AND `courseSlug` = %s
             );",
-            array($userID, $this->slug)
+            array($userID, $this->courseSlug)
         );
         return $wpdb->get_var($query) > 0;
     }
