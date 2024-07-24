@@ -25,7 +25,7 @@
     
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
-        <p class="subtitle">Domine as técnicas que te ajudarão a desenvolver programas mais fáceis de manter e compreender. Comece a construir softwares de qualidade.</p>
+        <p class="subtitle">Escreva um código que você olhe e diga com orgulho: Caraca, esse fui eu que fiz.</p>
         <div class="course_wrapper">
             <a class="course_card" href="/curso/codigo-limpo/0101-configuracao">
                 <p>Robert C. Martin</p>
@@ -45,6 +45,7 @@
                 <li>Funções</li>
                 <li>Testes unitários</li>
                 <li>Classes</li>
+                <li>Mais código limpo...</li>
             </ul>
         </div>
     </main>
@@ -53,9 +54,9 @@
         <div class="container">
             <h2 class="title title_separator">Simplicidade</h2>
             <p class="subtitle">
-                Um código limpo é simples e direto. Ele é tão bem legível quanto uma prosa bem escrita. 
-                Ele jamais torna confuso o objetivo do desenvolvedor.
-                <br>Citação de Grady Booch - Livro código limpo.
+                "Um código limpo é simples e direto. Ele é tão bem legível quanto uma prosa bem escrita. 
+                Ele jamais torna confuso o objetivo do desenvolvedor."
+                <br>Grady Booch - Livro código limpo.
             </p>
             <div class="clean_code_example">
                 <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-before.png' ?>" alt="Função grande com muita informação"></div>
@@ -65,7 +66,7 @@
                 </div>
                 <div class="code_description after">
                     <h3>Depois</h3>
-                    <p class="text">Agora dá para entender tudo que está acontecendo.</p>
+                    <p class="text">Agora dá para entender tudo.</p>
                 </div>
                 <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-after.png' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
@@ -76,11 +77,11 @@
     <section class="video_section">
         <div class="container">
             <h2 class="title title_separator">Introdução</h2>
-            <p class="subtitle">O que você vai aprender</p>
+            <p class="subtitle">Sobre o curso</p>
 
             <div class="video">
                 <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/922895312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0000-intro"></iframe>
+                    <iframe src="https://player.vimeo.com/video/989775623?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0000-intro"></iframe>
                 </div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
