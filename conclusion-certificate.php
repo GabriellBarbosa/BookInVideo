@@ -10,16 +10,12 @@ displayCertificateIfValid($certificateID);
 
 function displayCertificateIfValid($certificateID) {
     try {
-        displayCertificate($certificateID);
+        $queryResult = queryCertificate($certificateID);
+        $certificate = returnCertificateIfValid($queryResult);
+        tryToDisplayCertificate($certificate);
     } catch(Exception $e) {
         echo $e->getMessage();
     }
-}
-
-function displayCertificate($certificateID) {
-    $certificateQueryResult = queryCertificate($certificateID);
-    $certificate = returnCertificateIfValid($certificateQueryResult);
-    tryToDisplayCertificate($certificate);
 }
 
 function returnCertificateIfValid($queryResult) {
