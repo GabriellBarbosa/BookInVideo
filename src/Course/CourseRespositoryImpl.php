@@ -167,6 +167,7 @@ class CourseRepositoryImpl implements CourseRepository {
         $tableName = $wpdb->prefix . 'conclusion_certificates';
         $startedDate = $this->getStartedDate($userID);
         $wpdb->insert($tableName, array(
+            'id' => uniqid(),
             'userId' => $userID,
             'courseSlug' => $this->courseSlug, 
             'startDate' => $startedDate, 

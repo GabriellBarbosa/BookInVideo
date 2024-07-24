@@ -7,7 +7,7 @@ function createTableOfConclusionCertificates() {
     $charset_collate = $wpdb->get_charset_collate();
 
     $sql = "CREATE TABLE $table_name (
-        id int NOT NULL AUTO_INCREMENT,
+        id varchar(255) NOT NULL,
         userId int NOT NULL,
         courseSlug varchar(255) NOT NULL,
         startDate datetime NOT NULL,

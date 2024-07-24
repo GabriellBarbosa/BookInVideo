@@ -5,27 +5,42 @@ require_once(__DIR__ . '/utils/pdf-viewer/pdf.php');
 require_once(__DIR__ . '/utils/Certificate.php');
 
 $certificateID = get_query_var('certificate_id');
-$certificate = findCertificate($certificateID);
 
-if ($certificate != null) {
-    displayCertificate($certificate);
+displayCertificateIfValid($certificateID);
+
+function displayCertificateIfValid($certificateID) {
+    try {
+        displayCertificate($certificateID);
+    } catch(Exception $e) {
+        echo $e->getMessage();
+    }
 }
 
-function findCertificate($certificateID) {
+function displayCertificate($certificateID) {
+    $certificateQueryResult = queryCertificate($certificateID);
+    $certificate = returnCertificateIfValid($certificateQueryResult);
+    tryToDisplayCertificate($certificate);
+}
+
+function returnCertificateIfValid($queryResult) {
+    $certicatesFound = count($queryResult);
+    if ($certicatesFound == 0) {
+        throw new Exception('');
+    } else if ($certicatesFound > 1) {
+        throw new Exception('Erro ao recuperar o certificado, contate gabriel@bookinvideo.com');
+    } else {
+        return $queryResult[0];
+    }
+}
+
+function queryCertificate($certificateID) {
     global $wpdb;
     $tableName = $wpdb->prefix . 'conclusion_certificates';
     $query = $wpdb->prepare(
-        "SELECT `*` FROM `$tableName` WHERE `id` = %d",
+        "SELECT `*` FROM `$tableName` WHERE `id` = %s",
         array($certificateID)
     );
-    $results = $wpdb->get_results($query);
-    return $results[0];
-}
-
-function displayCertificate($certificate) {
-    try {
-        tryToDisplayCertificate($certificate);
-    } catch (Exception $err) {}
+    return $wpdb->get_results($query);
 }
 
 function tryToDisplayCertificate($certificate) {
@@ -67,9 +82,9 @@ function tryToDisplayCertificate($certificate) {
         $course->getStartDate() . " - " . $course->getEndDate()
     );
     
-    $pdf->SetFont('Inter', '', 14);
+    $pdf->SetFont('Inter', '', 12);
     $pdf->SetXY(189, 139);
-    $pdf->MultiCell(100, 12, "bookinvideo.com/certificate/{$certificate->id}");
+    $pdf->MultiCell(107, 12, "bookinvideo.com/certificate/{$certificate->id}");
     
     $pdf->Output();
 }
