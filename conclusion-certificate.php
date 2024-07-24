@@ -10,16 +10,22 @@ class PDF extends FPDF {
     }
 }
 
-$user = wp_get_current_user(); // So pode ver se tiver logado?
 $certificateId = get_query_var('certificate_id');
 $certificate = getCertificate($certificateId);
 
+$user = get_userdata($certificate->userId);
+
 $courseName = getCourseName($certificate->courseSlug);
 $totalHours = totalHours($certificate->courseSlug);
+
 $startDate = date_create($certificate->startDate);
+$formattedStartDate = date_format($startDate, 'd/m/Y');
+
 $endDate = date_create($certificate->endDate);
-$first_name = get_user_meta($user->ID, 'first_name', true); // nome do usuario logado?
-$last_name = get_user_meta($user->ID, 'last_name', true); // nome do usuario logado?
+$formattedEndDate = date_format($endDate, 'd/m/Y');
+
+$first_name = get_user_meta($user->ID, 'first_name', true);
+$last_name = get_user_meta($user->ID, 'last_name', true);
 
 $pdf = new PDF('L');
 $pdf->AddFont('Inter', '', 'Inter-Bold.php');
@@ -31,22 +37,22 @@ $pdf->SetTitle($certificateId);
 
 $pdf->SetFont('Inter', '', 32);
 $pdf->SetXY(75, 71);
-$pdf->MultiCell(100, 12, 'Código limpo', 0);
+$pdf->MultiCell(100, 12, $courseName);
 
 $pdf->SetXY(189, 71);
-$pdf->MultiCell(100, 12, '12 horas', 0);
+$pdf->MultiCell(100, 12, "{$totalHours} horas");
 
 $pdf->SetXY(80, 119);
-$pdf->MultiCell(215, 12, 'Gabriel Barbosa', 0);
+$pdf->MultiCell(215, 12, "{$first_name} {$last_name}");
 
 $pdf->SetFont('Inter', '', 16);
 $pdf->SetXY(189, 86);
 $pdf->SetTextColor(96, 97, 99);
-$pdf->MultiCell(100, 12, '13/09/2022 - 13/09/2022', 0);
+$pdf->MultiCell(100, 12, "{$formattedStartDate} - {$formattedEndDate}");
 
 $pdf->SetFont('Inter', '', 14);
 $pdf->SetXY(189, 139);
-$pdf->MultiCell(100, 12, 'bookinvideo.com/certificate/87ec6b', 0);
+$pdf->MultiCell(100, 12, "bookinvideo.com/certificate/{$certificateId}");
 
 $pdf->Output();
 
