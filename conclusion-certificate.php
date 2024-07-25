@@ -2,7 +2,8 @@
 /* Template Name: Certificate */
 
 require_once(__DIR__ . '/utils/pdf-viewer/pdf.php');
-require_once(__DIR__ . '/utils/Certificate.php');
+require_once(__DIR__ . '/utils/Course.php');
+require_once(__DIR__ . '/utils/User.php');
 
 $certificateID = get_query_var('certificate_id');
 
@@ -40,14 +41,8 @@ function queryCertificate($certificateID) {
 }
 
 function tryToDisplayCertificate($certificate) {
-    $course = new \AppCertificate\Certificate(
-        $certificate->userId,
-        $certificate->courseSlug,
-        array(
-            'startDate' => $certificate->startDate,
-            'endDate' => $certificate->endDate,
-        )
-    );
+    $course = new \AppCourse\Course($certificate->courseSlug);
+    $user = new \AppUser\User($certificate->userId);
     
     $pdf = new PDF('L');
     $pdf->AddFont('Inter', '', 'Inter-Bold.php');
@@ -61,13 +56,13 @@ function tryToDisplayCertificate($certificate) {
     
     $pdf->SetFont('Inter', '', 32);
     $pdf->SetXY(75, 71);
-    $pdf->MultiCell(100, 12, $course->getCourseName());
+    $pdf->MultiCell(100, 12, $course->getName());
     
     $pdf->SetXY(189, 71);
     $pdf->MultiCell(100, 12, $course->totalHours() . ' horas');
     
     $pdf->SetXY(80, 119);
-    $pdf->MultiCell(215, 12, $course->getStudentFullName());
+    $pdf->MultiCell(215, 12, $user->getFullName());
     
     $pdf->SetFont('Inter', '', 16);
     $pdf->SetXY(189, 86);
@@ -75,7 +70,7 @@ function tryToDisplayCertificate($certificate) {
     $pdf->MultiCell(
         100, 
         12, 
-        $course->getStartDate() . " - " . $course->getEndDate()
+        formatDate($certificate->startDate) . " - " . formatDate($certificate->endDate)
     );
     
     $pdf->SetFont('Inter', '', 12);
@@ -83,5 +78,10 @@ function tryToDisplayCertificate($certificate) {
     $pdf->MultiCell(107, 12, "bookinvideo.com/certificate/{$certificate->id}");
     
     $pdf->Output();
+}
+
+function formatDate($rawDate) {
+    $date = date_create($rawDate);
+    return date_format($date, 'd/m/Y');
 }
 ?>

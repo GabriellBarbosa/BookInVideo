@@ -1,28 +1,14 @@
 <?php
-namespace AppCertificate;
+namespace AppCourse;
 
-class Certificate {
-    private $user;
+class Course {
     private $courseSlug;
-    private $conclusionPeriod;
 
-    public function __construct(
-        $userID,
-        $courseSlug,
-        $conclusionPeriod
-    ) {
-        $this->user = get_userdata($userID);
+    public function __construct($courseSlug) {
         $this->courseSlug = $courseSlug;
-        $this->conclusionPeriod = $conclusionPeriod;
     }
 
-    public function getStudentFullName() {
-        $first_name = get_user_meta($this->user->ID, 'first_name', true);
-        $last_name = get_user_meta($this->user->ID, 'last_name', true);
-        return "{$first_name} {$last_name}";
-    }
-
-    public function getCourseName() {
+    public function getName() {
         $query = $this->queryCourse();
         $posts = $query->get_posts();
         $firstPost = array_shift($posts);
@@ -96,16 +82,6 @@ class Certificate {
             $result += $seconds;
         }
         return $result;
-    }
-
-    public function getStartDate() {
-        $startDate = date_create($this->conclusionPeriod['startDate']);
-        return date_format($startDate, 'd/m/Y');
-    }
-
-    public function getEndDate() {
-        $endDate = date_create($this->conclusionPeriod['endDate']);
-        return date_format($endDate, 'd/m/Y');
     }
 }
 ?>
