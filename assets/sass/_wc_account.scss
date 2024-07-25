@@ -70,6 +70,31 @@
                 font-family: 'PT Serif';
                 color: var(--gray-6);
             }
+
+            .certificate_link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-family: "PT Serif", sans-serif;
+                font-size: 20px;
+                padding: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+                background-color: var(--gray-1);
+                border: 1px solid var(--gray-0);
+                border-radius: 4px;
+            }
+
+            .certificate_link::after {
+                content: "";
+                display: block;
+                background-image: url('assets/images/medal.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 32px;
+            }
         }
 
         .woocommerce-EditAccountForm.edit-account,

@@ -35,6 +35,9 @@ require_once($template_directory . '/plugin-overwrite/wc_address.php');
 require_once($template_directory . '/plugin-overwrite/wc_order-status.php');
 require_once($template_directory . '/plugin-overwrite/wc_order-details.php');
 
+require_once($template_directory . '/utils/Certificate.php');
+require_once($template_directory . '/utils/Course.php');
+
 add_action('after_setup_theme', 'bookinvideo_add_woocommerce_support');
 
 function bookinvideo_add_woocommerce_support() {

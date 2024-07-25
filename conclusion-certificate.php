@@ -2,7 +2,6 @@
 /* Template Name: Certificate */
 
 require_once(__DIR__ . '/utils/pdf-viewer/pdf.php');
-require_once(__DIR__ . '/utils/Course.php');
 require_once(__DIR__ . '/utils/User.php');
 
 $certificateID = get_query_var('certificate_id');

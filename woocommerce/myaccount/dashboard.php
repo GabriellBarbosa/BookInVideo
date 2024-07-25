@@ -20,6 +20,17 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$currentUser = wp_get_current_user();
+$certificate = new \AppCertificate\Certificate($currentUser->ID);
+$userCertificate = $certificate->getByUser();
+
+$course;
+$certificateLink;
+if ($userCertificate != null) {
+	$course = new \AppCourse\Course($userCertificate->courseSlug);
+	$certificateLink = '/certificate' . '/' . $userCertificate->id;
+}
 ?>
 
 <div class="myaccount_content">
@@ -28,7 +39,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<h2>Curso</h2>
 	<a class="call_to_action" href="/curso/codigo-limpo/0101-configuracao">Ir para o curso</a>
 	<h2>Certificado</h2>
-	<p>O certificado estará disponível aqui quando você completar todas as aulas.</p>
+	<?php if ($userCertificate == null): ?>
+		<p>O certificado estará disponível aqui quando você completar todas as aulas.</p>
+	<?php else: ?>
+		<p class>O seu certificado está disponível.</p>
+		<p>
+			<a class="certificate_link" href="<?= $certificateLink ?>" target="_blank"><?= $course->getName() ?></a>
+		</p>
+	<?php endif; ?>
 </div>
 
 <?php
