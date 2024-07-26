@@ -409,6 +409,11 @@ body.home .header {
 #page-home .banner .intro_call_to_action button {
   margin: 60px auto 140px auto;
 }
+@media screen and (max-width: 760px) {
+  #page-home .banner .intro_call_to_action button {
+    margin-bottom: 120px;
+  }
+}
 #page-home .course_info_wrapper {
   position: relative;
   top: -80px;
