@@ -153,6 +153,11 @@ body.home .header {
         font-family: 'PT Serif', serif;
     }
 
+    .course_info_wrapper li {
+        color: var(--gray-6);
+        font-style: italic;
+    }
+
     .course_info_wrapper ul li:nth-child(2)::before,
     .course_info_wrapper ul li:nth-child(2)::after,
     .payment_methods li:nth-child(2)::before,

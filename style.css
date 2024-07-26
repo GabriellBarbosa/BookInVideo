@@ -430,6 +430,10 @@ body.home .header {
   justify-content: center;
   font-family: "PT Serif", serif;
 }
+#page-home .course_info_wrapper li {
+  color: var(--gray-6);
+  font-style: italic;
+}
 #page-home .course_info_wrapper ul li:nth-child(2)::before,
 #page-home .course_info_wrapper ul li:nth-child(2)::after,
 #page-home .payment_methods li:nth-child(2)::before,

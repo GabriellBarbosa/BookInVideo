@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$course = new \AppCourse\Course('codigo-limpo');
+$totalLessons =$course->totalLessons();
+$totalHours =$course->totalHours();
+?>
 
 <div id="page-home">
     <section class="banner">
@@ -16,9 +21,9 @@
         </div>
         <div class="course_info_wrapper">
             <ul>
-                <li>Versão beta</li>
-                <li>4.4 horas</li>
-                <li>23 aulas</li>
+                <li>Acesso Vitalício</li>
+                <li>Certificado</li>
+                <li><?= $totalHours ?> Horas de Curso</li>
             </ul>
         </div>
     </section>
@@ -31,9 +36,8 @@
                 <p>Robert C. Martin</p>
                 <h3>Código Limpo</h3>
                 <ul>
-                    <li>23 aulas</li>
-                    <li>4.4 horas</li>
-                    <li>5 capítulos</li>
+                    <li><?= $totalLessons ?> Aulas</li>
+                    <li><?= $totalHours ?> Horas</li>
                 </ul>
                 <span class="watch_icon">
                     <img src="<?= get_template_directory_uri() . '/assets/images/play.png' ?>" alt="Assistir">

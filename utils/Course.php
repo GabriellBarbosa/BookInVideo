@@ -9,22 +9,27 @@ class Course {
     }
 
     public function getName() {
-        $query = $this->queryCourse();
-        $posts = $query->get_posts();
-        $firstPost = array_shift($posts);
-        if ($firstPost != null) {
-            $metaData = get_post_meta($firstPost->ID);
+        $post = $this->queryCourse();
+        if ($post != null) {
+            $metaData = get_post_meta($post->ID);
             return $metaData['name'][0];
         }
         throw new Exception('Course not found');
     }
 
     private function queryCourse() {
-        return new \WP_Query(array(
+        $query = new \WP_Query(array(
             'post_type' => 'curso',
             'name' => $this->courseSlug,
             'numberposts' => 1,
         ));
+        $posts = $query->get_posts();
+        return array_shift($posts);
+    }
+
+    public function totalLessons() {
+        $query = $this->queryAllLessons();
+        return $query->found_posts;
     }
 
     public function totalHours() {
@@ -35,16 +40,13 @@ class Course {
     }
     
     private function lessonsDurationInMinutes() {
-        $query = $this->queryAllLessons();
-        global $post;
-    
         $result = array();
-        if ($query->have_posts()) {
-            while ($query->have_posts()) : $query->the_post();
-                $metaData = get_post_meta($post->ID);
-                array_push($result, $metaData['duration'][0]);
-            endwhile;
+        $query = $this->queryAllLessons();
+        foreach($query->get_posts() as $post) {
+            $metaData = get_post_meta($post->ID);
+            array_push($result, $metaData['duration'][0]);
         }
+
         return $result;
     }
     
