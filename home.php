@@ -19,15 +19,19 @@ $totalHours =$course->totalHours();
                 </div>
             </div>
         </div>
+    </section>
+    
+    <section class="container">
         <div class="course_info_wrapper">
             <ul>
                 <li>Acesso Vitalício</li>
-                <li>Certificado</li>
-                <li><?= $totalHours ?>hrs de Curso</li>
+                <li>Certificado de Conclusão</li>
+                <li><?= $totalHours ?> Horas de Curso</li>
+                <li><?= $totalLessons ?> Aulas</li>
             </ul>
         </div>
     </section>
-    
+
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
         <p class="subtitle">Escreva um código que você olhe e diga com orgulho: Caraca, esse fui eu que fiz.</p>

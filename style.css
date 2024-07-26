@@ -407,22 +407,35 @@ body.home .header {
   }
 }
 #page-home .banner .intro_call_to_action button {
-  margin: 60px auto 0 auto;
+  margin: 60px auto 140px auto;
 }
-#page-home .banner .course_info_wrapper {
+#page-home .course_info_wrapper {
+  position: relative;
+  top: -80px;
   background-color: var(--gray-3);
   color: var(--gray-8);
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 10px 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto -100px auto;
+  padding: 0 40px;
   border-radius: 4px;
-  margin-top: 40px;
-  transform: translateY(50%);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
 }
-#page-home .course_info_wrapper ul,
-#page-home .course_info_wrapper li,
+#page-home .course_info_wrapper li {
+  display: flex;
+  align-items: center;
+  font-family: "PT Serif", serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-6);
+  padding: 10px 0;
+  border-bottom: 2px solid var(--gray-2);
+  border-right: 2px solid var(--gray-2);
+}
+#page-home .course_info_wrapper li:last-child {
+  border-bottom: 0;
+}
 #page-home .payment_methods,
 #page-home .payment_methods li {
   display: flex;
@@ -430,12 +443,7 @@ body.home .header {
   justify-content: center;
   font-family: "PT Serif", serif;
 }
-#page-home .course_info_wrapper li {
-  color: var(--gray-6);
-  font-style: italic;
-}
-#page-home .course_info_wrapper ul li:nth-child(2)::before,
-#page-home .course_info_wrapper ul li:nth-child(2)::after,
+#page-home .course_info_wrapper ul li:before,
 #page-home .payment_methods li:nth-child(2)::before,
 #page-home .payment_methods li:nth-child(2)::after {
   content: "";
@@ -444,7 +452,22 @@ body.home .header {
   height: 6px;
   border-radius: 50%;
   background-color: #9be564;
+}
+#page-home .payment_methods li:nth-child(2)::before,
+#page-home .payment_methods li:nth-child(2)::after {
   margin: 0 16px;
+}
+#page-home .course_info_wrapper ul li:before {
+  margin-right: 8px;
+}
+@media screen and (max-width: 760px) {
+  #page-home .course_info_wrapper {
+    width: 100%;
+  }
+  #page-home .course_info_wrapper ul li {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 #page-home .course_section {
   margin-top: 75px;
