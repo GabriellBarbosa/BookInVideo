@@ -23,7 +23,7 @@ $totalHours =$course->totalHours();
             <ul>
                 <li>Acesso Vitalício</li>
                 <li>Certificado</li>
-                <li><?= $totalHours ?> Horas de Curso</li>
+                <li><?= $totalHours ?>hrs de Curso</li>
             </ul>
         </div>
     </section>
@@ -37,7 +37,7 @@ $totalHours =$course->totalHours();
                 <h3>Código Limpo</h3>
                 <ul>
                     <li><?= $totalLessons ?> Aulas</li>
-                    <li><?= $totalHours ?> Horas</li>
+                    <li><?= $totalHours ?> Horas de Curso</li>
                 </ul>
                 <span class="watch_icon">
                     <img src="<?= get_template_directory_uri() . '/assets/images/play.png' ?>" alt="Assistir">
