@@ -40,7 +40,7 @@ if ($userCertificate != null) {
 	<a class="call_to_action" href="/curso/codigo-limpo/0101-configuracao">Ir para o curso</a>
 	<h2>Certificado</h2>
 	<?php if ($userCertificate == null): ?>
-		<p>O certificado estará disponível aqui quando você completar todas as aulas.</p>
+		<p>O seu certificado estará disponível aqui quando você completar todas as aulas.</p>
 	<?php else: ?>
 		<p class>O seu certificado está disponível.</p>
 		<p>
