@@ -63,14 +63,14 @@ function tryToDisplayCertificate($certificate) {
     $pdf->SetXY(80, 119);
     $pdf->MultiCell(215, 12, $user->getFullName());
     
-    $pdf->SetFont('Inter', '', 16);
-    $pdf->SetXY(189, 86);
+    $pdf->SetFont('Inter', '', 14);
+    $pdf->SetXY(189, 94);
     $pdf->SetTextColor(96, 97, 99);
-    $pdf->MultiCell(
-        100, 
-        12, 
-        formatDate($certificate->startDate) . " - " . formatDate($certificate->endDate)
-    );
+    $pdf->MultiCell(100, 12, formatDate($certificate->startDate));
+
+    $pdf->SetXY(232, 94);
+    $pdf->SetTextColor(96, 97, 99);
+    $pdf->MultiCell(100, 12, formatDate($certificate->endDate));
     
     $pdf->SetFont('Inter', '', 12);
     $pdf->SetXY(189, 139);
