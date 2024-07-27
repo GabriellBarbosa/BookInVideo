@@ -4,7 +4,8 @@
 require_once(__DIR__ . '/utils/pdf-viewer/pdf.php');
 require_once(__DIR__ . '/utils/User.php');
 
-$certificateID = get_query_var('certificate_id');
+// $certificateID = get_query_var('certificate_id');
+$certificateID = $_GET['certificate_id'];
 
 displayCertificateIfValid($certificateID);
 
@@ -21,7 +22,7 @@ function displayCertificateIfValid($certificateID) {
 function returnCertificateIfValid($queryResult) {
     $certicatesFound = count($queryResult);
     if ($certicatesFound == 0) {
-        throw new Exception($_GET['certificate_id']);
+        throw new Exception($certificateID);
     } else if ($certicatesFound > 1) {
         throw new Exception('Erro ao recuperar o certificado, contate gabriel@bookinvideo.com');
     } else {
