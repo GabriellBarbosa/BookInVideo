@@ -5,12 +5,15 @@ require_once(__DIR__ . '/utils/pdf-viewer/pdf.php');
 require_once(__DIR__ . '/utils/User.php');
 
 $certificateID = get_query_var('certificate_id');
-echo $certificateID;
+
 displayCertificateIfValid($certificateID);
 
 function displayCertificateIfValid($certificateID) {
     try {
         $queryResult = queryCertificate($certificateID);
+        echo "<pre>";
+        print_r($queryResult);
+        echo "</pre>";
         $certificate = returnCertificateIfValid($queryResult);
         tryToDisplayCertificate($certificate);
     } catch(Exception $e) {
