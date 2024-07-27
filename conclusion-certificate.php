@@ -21,7 +21,7 @@ function displayCertificateIfValid($certificateID) {
 function returnCertificateIfValid($queryResult) {
     $certicatesFound = count($queryResult);
     if ($certicatesFound == 0) {
-        throw new Exception('Erro');
+        throw new Exception($certificateID);
     } else if ($certicatesFound > 1) {
         throw new Exception('Erro ao recuperar o certificado, contate gabriel@bookinvideo.com');
     } else {
