@@ -4,9 +4,8 @@
 require_once(__DIR__ . '/utils/pdf-viewer/pdf.php');
 require_once(__DIR__ . '/utils/User.php');
 
-// $certificateID = get_query_var('certificate_id');
-$certificateID = 'panda';
-
+$certificateID = get_query_var('certificate_id');
+echo $certificateID;
 displayCertificateIfValid($certificateID);
 
 function displayCertificateIfValid($certificateID) {
@@ -22,7 +21,7 @@ function displayCertificateIfValid($certificateID) {
 function returnCertificateIfValid($queryResult) {
     $certicatesFound = count($queryResult);
     if ($certicatesFound == 0) {
-        throw new Exception($certificateID);
+        throw new Exception('Erro');
     } else if ($certicatesFound > 1) {
         throw new Exception('Erro ao recuperar o certificado, contate gabriel@bookinvideo.com');
     } else {
