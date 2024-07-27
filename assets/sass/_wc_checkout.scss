@@ -54,6 +54,17 @@ body.woocommerce-checkout {
         content: "3";
     }
 
+    h3#order_review_heading::before {
+        display: none;
+    }
+
+    h3#order_review_heading {
+        margin-top: 0;
+        @media screen and (max-width: 760px) {
+            margin-top: 40px;
+        }
+    }
+
     label {
         color: var(--gray-4);
     }

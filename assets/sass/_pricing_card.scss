@@ -1,9 +1,7 @@
-
 .pricing_card {
     padding: 36px 0 36px 36px;
     border-radius: 4px;
     background-color: var(--gray-1);
-    width: fit-content;
 }
 
 .pricing_card .price_info_wrapper {
@@ -25,15 +23,15 @@
 
 .pricing_card .price p {
     font-family: 'PT Serif', serif;
+    font-size: 36px;
     font-style: italic;
-    line-height: 24px;
+    font-weight: bold;
 }
 
 .pricing_card .price span {
     display: block;
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 43.2px;
+    font-size: 28px;
+    font-style: italic;
 }
 
 .pricing_card .pricing_card_info {
@@ -55,6 +53,7 @@
     align-items: center;
     font-family: 'PT Serif', serif;
     padding: 10px 36px 10px 10px;
+    color: var(--gray-6);
 
     &:nth-child(even) {
         background-color: var(--gray-0);

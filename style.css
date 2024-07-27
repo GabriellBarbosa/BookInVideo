@@ -367,12 +367,6 @@ body.home .header {
   font-style: italic;
   text-align: center;
 }
-@media only screen and (max-width: 760px) {
-  #page-home .banner .intro_quote {
-    font-size: 14px;
-    line-height: 21px;
-  }
-}
 #page-home .banner .intro_quote::before, #page-home .banner .intro_quote::after {
   content: "";
   position: absolute;
@@ -399,12 +393,6 @@ body.home .header {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
-}
-@media only screen and (max-width: 760px) {
-  #page-home .banner .intro_quoter {
-    font-size: 12px;
-    line-height: 16.8px;
-  }
 }
 #page-home .banner .intro_call_to_action button {
   margin: 60px auto 140px auto;
@@ -469,10 +457,6 @@ body.home .header {
   #page-home .course_info_wrapper {
     width: 100%;
   }
-  #page-home .course_info_wrapper ul li {
-    font-size: 14px;
-    line-height: 21px;
-  }
 }
 #page-home .course_section {
   margin-top: 75px;
@@ -487,7 +471,7 @@ body.home .header {
 }
 @media screen and (max-width: 760px) {
   #page-home .course_section .course_wrapper {
-    grid-template-columns: minmax(0, 360px);
+    grid-template-columns: minmax(0, 400px);
   }
 }
 #page-home .course_section .course_card {
@@ -580,6 +564,12 @@ body.home .header {
   width: fit-content;
   margin: 40px auto;
 }
+@media screen and (max-width: 760px) {
+  #page-home .pricing_wrapper .pricing_card_wrapper {
+    max-width: 400px;
+    width: 100%;
+  }
+}
 #page-home .payment_methods {
   margin: 0 auto;
 }
@@ -613,6 +603,9 @@ body.home .header {
   font-style: italic;
 }
 @media screen and (max-width: 760px) {
+  #page-home .clean_code_example_section .code_description.after h3 {
+    margin-top: 20px;
+  }
   #page-home .clean_code_example_section .code_description.before {
     grid-row: 1/2;
   }
@@ -625,8 +618,6 @@ body.home .header {
   padding: 36px 0 36px 36px;
   border-radius: 4px;
   background-color: var(--gray-1);
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .pricing_card .price_info_wrapper {
@@ -650,15 +641,15 @@ body.home .header {
 
 .pricing_card .price p {
   font-family: "PT Serif", serif;
+  font-size: 36px;
   font-style: italic;
-  line-height: 24px;
+  font-weight: bold;
 }
 
 .pricing_card .price span {
   display: block;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 43.2px;
+  font-size: 28px;
+  font-style: italic;
 }
 
 .pricing_card .pricing_card_info {
@@ -681,6 +672,7 @@ body.home .header {
   align-items: center;
   font-family: "PT Serif", serif;
   padding: 10px 36px 10px 10px;
+  color: var(--gray-6);
 }
 .pricing_card .pricing_card_info ul li:nth-child(even) {
   background-color: var(--gray-0);
@@ -1273,6 +1265,17 @@ body.woocommerce-checkout h3.form-row::before {
 }
 body.woocommerce-checkout h3:nth-child(2)::before {
   content: "3";
+}
+body.woocommerce-checkout h3#order_review_heading::before {
+  display: none;
+}
+body.woocommerce-checkout h3#order_review_heading {
+  margin-top: 0;
+}
+@media screen and (max-width: 760px) {
+  body.woocommerce-checkout h3#order_review_heading {
+    margin-top: 40px;
+  }
 }
 body.woocommerce-checkout label {
   color: var(--gray-4);

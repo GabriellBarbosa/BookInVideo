@@ -84,11 +84,6 @@ body.home .header {
             font-style: italic;
             text-align: center;
 
-            @media only screen and (max-width: 760px) {
-                font-size: 14px;
-                line-height: 21px;
-            }
-
             &::before, &::after {
                 content: "";
                 position: absolute;
@@ -119,11 +114,6 @@ body.home .header {
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 1px;
-
-            @media only screen and (max-width: 760px) {
-                font-size: 12px;
-                line-height: 16.8px;
-            }
         }
 
         .intro_call_to_action button {
@@ -196,11 +186,6 @@ body.home .header {
         .course_info_wrapper {
             width: 100%;
         }
-
-        .course_info_wrapper ul li {
-            font-size: 14px;
-            line-height: 21px;
-        }
     }
 
     .course_section {
@@ -215,7 +200,7 @@ body.home .header {
             gap: 40px;
 
             @media screen and (max-width: 760px) {
-                grid-template-columns: minmax(0, 360px);
+                grid-template-columns: minmax(0, 400px);
             }
         }
 
@@ -323,6 +308,10 @@ body.home .header {
     .pricing_wrapper .pricing_card_wrapper {
         width: fit-content;
         margin: 40px auto;
+        @media screen and (max-width: 760px) {
+            max-width: 400px;
+            width: 100%;
+        }
     }
 
     .payment_methods {
@@ -363,6 +352,10 @@ body.home .header {
             }
 
             @media screen and (max-width: 760px) {
+                &.after h3 {
+                    margin-top: 20px;
+                }
+
                 &.before {
                     grid-row: 1/2;
                 }

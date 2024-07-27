@@ -8,7 +8,7 @@
                 <li><a href="/politica-de-privacidade">Privacidade</a></li>
                 <li><a href="mailto:gabriel@bookinvideo.com">gabriel@bookinvideo.com</a></li>
             </ul>
-            <p class="copyright">BookInVideo © 2024. Alguns direitos reservados. <br /> CNPJ: 54.914.624/0001-43</p>
+            <p class="copyright">BookInVideo © 2024. Todos os Direitos Reservados. <br /> CNPJ: 54.914.624/0001-43</p>
         </div>
     </div>
 

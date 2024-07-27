@@ -34,7 +34,7 @@ $totalHours =$course->totalHours();
 
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
-        <p class="subtitle">Escreva um código que você olhe e diga com orgulho: Caraca, esse fui eu que fiz.</p>
+        <p class="subtitle">Escreva um código que você olhe com orgulho e diga: Caraca, esse fui eu que fiz.</p>
         <div class="course_wrapper">
             <a class="course_card" href="/curso/codigo-limpo/0101-configuracao">
                 <p>Robert C. Martin</p>
@@ -97,7 +97,7 @@ $totalHours =$course->totalHours();
     <section class="pricing_wrapper gray_light_section">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
-            <p class="subtitle">Garanta seu Acesso Vitalício pelo preço da versão beta</p>
+            <p class="subtitle">Acesso Ilimitado para sempre.</p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
             <ul class="payment_methods">
                 <li>Pix</li>
