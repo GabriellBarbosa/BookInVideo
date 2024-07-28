@@ -18,6 +18,17 @@ function displayCertificateIfValid($certificateID) {
     }
 }
 
+function queryCertificate($certificateID) {
+    global $wpdb;
+    $tableName = $wpdb->prefix . 'conclusion_certificates';
+    $wpdb->show_errors();
+    $query = $wpdb->prepare(
+        "SELECT * FROM `$tableName` WHERE id = %s",
+        array($certificateID)
+    );
+    return $wpdb->get_results($query);
+}
+
 function returnCertificateIfValid($queryResult) {
     $certicatesFound = count($queryResult);
     if ($certicatesFound == 0) {
@@ -27,16 +38,6 @@ function returnCertificateIfValid($queryResult) {
     } else {
         return $queryResult[0];
     }
-}
-
-function queryCertificate($certificateID) {
-    global $wpdb;
-    $tableName = $wpdb->prefix . 'conclusion_certificates';
-    $query = $wpdb->prepare(
-        "SELECT `*` FROM `$tableName` WHERE `id` = %s",
-        array($certificateID)
-    );
-    return $wpdb->get_results($query);
 }
 
 function tryToDisplayCertificate($certificate) {
