@@ -64,9 +64,9 @@ function tryToDisplayCertificate($certificate) {
     $pdf->MultiCell(215, 12, $user->getFullName());
     
     $pdf->SetFont('Inter', '', 14);
-    // $pdf->SetXY(189, 94);
-    // $pdf->SetTextColor(96, 97, 99);
-    // $pdf->MultiCell(100, 12, formattedDate($certificate->startDate));
+    $pdf->SetXY(189, 94);
+    $pdf->SetTextColor(96, 97, 99);
+    $pdf->MultiCell(100, 12, formattedDate($certificate->startDate));
 
     $pdf->SetXY(232, 94);
     $pdf->SetTextColor(96, 97, 99);
@@ -82,10 +82,7 @@ function tryToDisplayCertificate($certificate) {
 function formattedDate($utcDate) {
     $date = new DateTime($utcDate, new DateTimeZone('UTC'));
     $date->setTimezone(new DateTimeZone('America/Sao_Paulo'));
-    $formattedDatetime = $date->format('d/m/Y H:i:s');
+    $formattedDatetime = $date->format('d/m/Y');
     return $formattedDatetime;
-    // date_default_timezone_set('America/Sao_Paulo');
-    // $date = date_create($rawDate);
-    // return date_format($date, 'd/m/Y H:i:s');
 }
 ?>
