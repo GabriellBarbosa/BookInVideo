@@ -132,7 +132,7 @@ class CourseRepositoryImpl implements CourseRepository {
         $tableName = $wpdb->prefix . 'completed_lessons';
         $query = $wpdb->prepare(
             "SELECT EXISTS(
-                SELECT `*` FROM `$tableName` 
+                SELECT * FROM `$tableName` 
                 WHERE `userId` = %d AND `courseSlug` = %s AND `lessonSlug` = %s
             );",
             array($userID, $this->courseSlug, $lessonSlug)
@@ -200,7 +200,7 @@ class CourseRepositoryImpl implements CourseRepository {
         $tableName = $wpdb->prefix . 'conclusion_certificates';
         $query = $wpdb->prepare(
             "SELECT EXISTS(
-                SELECT `*` FROM `$tableName` WHERE `userId` = %d AND `courseSlug` = %s
+                SELECT * FROM `$tableName` WHERE `userId` = %d AND `courseSlug` = %s
             );",
             array($userID, $this->courseSlug)
         );
