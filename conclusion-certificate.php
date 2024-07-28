@@ -21,7 +21,6 @@ function displayCertificateIfValid($certificateID) {
 function queryCertificate($certificateID) {
     global $wpdb;
     $tableName = $wpdb->prefix . 'conclusion_certificates';
-    $wpdb->show_errors();
     $query = $wpdb->prepare(
         "SELECT * FROM `$tableName` WHERE id = %s",
         array($certificateID)
