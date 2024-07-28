@@ -22,7 +22,7 @@ function queryCertificate($certificateID) {
     global $wpdb;
     $tableName = $wpdb->prefix . 'conclusion_certificates';
     $query = $wpdb->prepare(
-        "SELECT `*` FROM `$tableName` WHERE `id` = %s",
+        "SELECT * FROM `$tableName` WHERE `id` = %s",
         array($certificateID)
     );
     return $wpdb->get_results($query);
