@@ -67,7 +67,7 @@ $totalHours =$course->totalHours();
                 <br>Grady Booch - Livro código limpo.
             </p>
             <div class="clean_code_example">
-                <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-before.png' ?>" alt="Função grande com muita informação"></div>
+                <div class="code-img"><img src="<?= get_template_directory_uri() . '/assets/images/home-code-before.jpg' ?>" alt="Função grande com muita informação"></div>
                 <div class="code_description before">
                     <h3>Antes</h3>
                     <p class="text">Muita informação para entender de primeira.</p>
@@ -76,7 +76,7 @@ $totalHours =$course->totalHours();
                     <h3>Depois</h3>
                     <p class="text">Agora dá para entender tudo.</p>
                 </div>
-                <div><img src="<?= get_template_directory_uri() . '/assets/images/home-code-after.png' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
+                <div class="code-img"><img src="<?= get_template_directory_uri() . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
             <p class="lesson_ref title_separator">Refatoramos esse código passo a passo no exercício de Nomes Significativos.</p>
         </div>

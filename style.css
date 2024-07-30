@@ -585,6 +585,11 @@ body.home .header {
     row-gap: 20px;
   }
 }
+#page-home .clean_code_example_section .code-img {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
 #page-home .clean_code_example_section .lesson_ref {
   font-family: "PT Serif", sans-serif;
   text-align: center;

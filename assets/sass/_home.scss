@@ -331,6 +331,12 @@ body.home .header {
             }
         }
 
+        .code-img {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+        }
+
         .lesson_ref {
             font-family: 'PT Serif', sans-serif;
             text-align: center;
