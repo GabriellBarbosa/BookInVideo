@@ -629,16 +629,12 @@ body.home .header {
 
 .slide-wrapper {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 10px 0;
 }
 
 .slide {
   display: flex;
-}
-
-.slide:hover {
-  will-change: transform;
 }
 
 .slide li {
@@ -676,15 +672,16 @@ body.home .header {
   }
 }
 
-.slide li .external_link {
+.slide li .github_link {
   display: block;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
+  text-align: center;
+}
+.slide li .github_link a {
+  display: inline-block;
   padding: 10px 0;
   text-decoration: underline;
 }
-.slide li .external_link:hover {
+.slide li .github_link a:hover {
   color: var(--c-0-light);
 }
 
@@ -714,7 +711,7 @@ body.home .header {
 
 @media screen and (max-width: 760px) {
   .slide li {
-    width: 90vw;
+    width: 95vw;
   }
 }
 .slide img {
@@ -725,27 +722,6 @@ body.home .header {
 .slide li.active {
   opacity: 1;
   transform: scale(1);
-}
-
-[data-control=slide] {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-[data-control=slide] li a {
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: #FB5;
-  border-radius: 50%;
-  overflow: hidden;
-  text-indent: -999px;
-  margin: 5px;
-}
-
-[data-control=slide] li.active a, [data-control=slide] li a:hover {
-  background: #E54;
 }
 
 .custom-controls {

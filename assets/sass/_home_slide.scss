@@ -1,15 +1,11 @@
 .slide-wrapper {
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 10px 0;
 }
   
 .slide {
     display: flex;
-}
-  
-.slide:hover {
-    will-change: transform;
 }
 
 .slide li {
@@ -46,14 +42,16 @@
     }
 }
 
-.slide li .external_link {
+.slide li .github_link {
     display: block;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 10px 0;
-    text-decoration: underline;
-    &:hover {
-        color: var(--c-0-light);
+    text-align: center;
+    a {
+        display: inline-block;
+        padding: 10px 0;
+        text-decoration: underline;
+        &:hover {
+            color: var(--c-0-light);
+        }
     }
 }
 
@@ -84,7 +82,7 @@
   
 @media screen and (max-width: 760px) {
     .slide li {
-        width: 90vw;
+        width: 95vw;
     }
 }
   
@@ -98,27 +96,6 @@
     transform: scale(1);
 }
   
-[data-control="slide"] {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-  
-[data-control="slide"] li a {
-    display: block;
-    width: 12px;
-    height: 12px;
-    background: #FB5;
-    border-radius: 50%;
-    overflow: hidden;
-    text-indent: -999px;
-    margin: 5px;
-}
-  
-[data-control="slide"] li.active a, [data-control="slide"] li a:hover {
-    background: #E54;
-}
-
 .custom-controls {
     display: flex;
     justify-content: center;

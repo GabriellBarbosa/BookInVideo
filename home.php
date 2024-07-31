@@ -79,7 +79,10 @@ $template_directory =  get_template_directory_uri();
                 </div>
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
-            <p class="home_text title_separator">Refatorado passo a passo no exercício de Nomes Significativos.</p>
+            <p class="home_text title_separator">
+                Essas duas versões possuem o mesmo comportamento observável. A diferença é que uma é muito 
+                mais expressiva. Refatoramos esse código passo a passo no exercício de Nomes Significativos.
+            </p>
         </div>
     </section>
 
@@ -115,7 +118,9 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/PrimeGenerator-before.jpg' ?>">
                     </div>
-                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/antes/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
+                    <div class="github_link">
+                        <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/antes/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
+                    </div>
                 </li>
                 <li>
                     <p class="slide_name">PrimeGenerator</p>
@@ -123,7 +128,9 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/PrimeGenerator-after.jpg' ?>">
                     </div>
-                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/depois/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
+                    <div class="github_link">
+                        <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/depois/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
+                    </div>
                 </li>
                 <li>
                     <p class="slide_name">GildedRose Kata</p>
@@ -131,7 +138,9 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/GildedRose-before.jpg' ?>">
                     </div>
-                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0506-exercicio/antes/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
+                    <div class="github_link">
+                        <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0506-exercicio/antes/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
+                    </div>
                 </li>
                 <li>
                     <p class="slide_name">GildedRose Kata</p>
@@ -139,23 +148,29 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/GildedRose-after.jpg' ?>">
                     </div>
-                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0507-exercicio-continuacao/depois/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
+                    <div class="github_link">
+                        <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0507-exercicio-continuacao/depois/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
+                    </div>
                 </li>
                 <li>
-                    <p class="slide_name">ClientsSumamry</p>
+                    <p class="slide_name">ClientsSummary</p>
                     <p class="slide_title">Antes</p>
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/SumarizedClients-before.jpg' ?>">
                     </div>
-                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/antes/main.js" target="_blank">Ver no GitHub.</a>
+                    <div class="github_link">
+                        <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/antes/main.js" target="_blank">Ver no GitHub.</a>
+                    </div>
                 </li>
                 <li>
-                    <p class="slide_name">ClientsSumamry</p>
+                    <p class="slide_name">ClientsSummary</p>
                     <p class="slide_title">Depois</p>
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/SumarizedClients-after.jpg' ?>">
                     </div>
-                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/depois/main.js" target="_blank">Ver no GitHub.</a>
+                    <div class="github_link">
+                        <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/depois/main.js" target="_blank">Ver no GitHub.</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -169,7 +184,7 @@ $template_directory =  get_template_directory_uri();
     <section class="pricing_wrapper gray_dark_section">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
-            <p class="subtitle">Achou o seu código parecido com algum dos exemplos ruins? Ninguém nasce sabendo e a solução está aqui.</p>
+            <p class="subtitle">Achou o seu código parecido com algum dos exemplos ruins? Ainda bem que você descobriu que a solução está aqui.</p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
             <ul class="payment_methods">
                 <li>Pix</li>
