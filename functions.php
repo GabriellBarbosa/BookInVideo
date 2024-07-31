@@ -53,20 +53,20 @@ function bookinvideo_fix_react_routing() {
 add_action('wp_enqueue_scripts', 'bookinvideo_register_css');
 
 function bookinvideo_register_css() {
-    wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '5.7');
+    wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '5.8');
     wp_enqueue_style('bookinvideo-style');
 }
 
 add_action('wp_enqueue_scripts', 'bookinvideo_register_hamburguer_menu_js');
 
 function bookinvideo_register_hamburguer_menu_js() {
-    wp_enqueue_script('menu-mobile-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.3');
+    wp_enqueue_script('menu-mobile-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.5');
 }
 
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
 
 function bookinvideo_enqueue_react_js() {
-    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '3.5');
+    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '3.6');
     $wcProduct = new WC_Product(getCourseProductPostID());
     wp_localize_script('course-js', 'wp_data',  array(
         'product' => get_permalink(getCourseProductPostID()),
