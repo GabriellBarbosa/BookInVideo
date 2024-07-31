@@ -36,6 +36,12 @@ body.home .header {
         line-height: 24px;
     }
 
+    .gray_dark_section {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        background-color: transparent;
+    }
+
     .gray_light_section {
         padding-top: 60px;
         padding-bottom: 60px;
@@ -295,14 +301,10 @@ body.home .header {
         }
     }
 
-    .video_section {
-        margin-top: 60px;
-
-        .video {
-            margin-top: 40px;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+    .video_section .video {
+        margin-top: 40px;
+        border-radius: 4px;
+        overflow: hidden;
     }
 
     .pricing_wrapper .pricing_card_wrapper {
@@ -337,24 +339,21 @@ body.home .header {
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
         }
 
-        .lesson_ref {
-            font-family: 'PT Serif', sans-serif;
-            text-align: center;
-            margin-top: 40px;
-            color: var(--gray-5);
-            line-height: 24px;
-        }
-
         .code_description {
             align-self: center;
 
             h3, p {
                 text-align: center;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            p {
+                margin-top: 10px;
             }
 
             h3 {
                 font-size: 36px;
-                font-style: italic;
             }
 
             @media screen and (max-width: 760px) {
@@ -371,5 +370,16 @@ body.home .header {
                 }
             }
         }
+
+    }
+
+    .home_text {
+        font-family: 'PT Serif', sans-serif;
+        line-height: 24px;
+        text-align: center;
+        margin: 40px auto 0 auto;
+        color: var(--gray-6);
+        line-height: 24px;
+        max-width: 600px;
     }
 }

@@ -3,6 +3,7 @@ get_header();
 $course = new \AppCourse\Course('codigo-limpo');
 $totalLessons =$course->totalLessons();
 $totalHours =$course->totalHours();
+$template_directory =  get_template_directory_uri();
 ?>
 
 <div id="page-home">
@@ -24,7 +25,7 @@ $totalHours =$course->totalHours();
     <section class="container">
         <div class="course_info_wrapper">
             <ul>
-                <li>Acesso Vitalício</li>
+                <li>Acesso Vitalício Ilimitado</li>
                 <li>Certificado de Conclusão</li>
                 <li><?= $totalHours ?> Horas de Curso</li>
                 <li><?= $totalLessons ?> Aulas</li>
@@ -44,7 +45,7 @@ $totalHours =$course->totalHours();
                     <li><?= $totalHours ?> Horas de Curso</li>
                 </ul>
                 <span class="watch_icon">
-                    <img src="<?= get_template_directory_uri() . '/assets/images/play.png' ?>" alt="Assistir">
+                    <img src="<?= $template_directory . '/assets/images/play.png' ?>" alt="Assistir">
                 </span>
             </a>
             <ul class="keywords">
@@ -67,22 +68,22 @@ $totalHours =$course->totalHours();
                 <br>Grady Booch - Livro código limpo.
             </p>
             <div class="clean_code_example">
-                <div class="code-img"><img src="<?= get_template_directory_uri() . '/assets/images/home-code-before.jpg' ?>" alt="Função grande com muita informação"></div>
+                <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-before.jpg' ?>" alt="Função grande com muita informação"></div>
                 <div class="code_description before">
                     <h3>Antes</h3>
-                    <p class="text">Muita informação para entender de primeira.</p>
+                    <p class="text">Muita informação para entender de primeira. Isso gera uma sobrecarga mental.</p>
                 </div>
                 <div class="code_description after">
                     <h3>Depois</h3>
-                    <p class="text">Agora dá para entender tudo.</p>
+                    <p class="text">Cada responsabilidade separada na sua devida função. Agora dá para entender tudo.</p>
                 </div>
-                <div class="code-img"><img src="<?= get_template_directory_uri() . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
+                <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
-            <p class="lesson_ref title_separator">Refatoramos esse código passo a passo no exercício de Nomes Significativos.</p>
+            <p class="home_text title_separator">Refatorado passo a passo no exercício de Nomes Significativos.</p>
         </div>
     </section>
 
-    <section class="video_section">
+    <section class="video_section gray_dark_section">
         <div class="container">
             <h2 class="title title_separator">Introdução</h2>
             <div class="video">
@@ -94,10 +95,81 @@ $totalHours =$course->totalHours();
         </div>
     </section>
 
-    <section class="pricing_wrapper gray_light_section">
+    <section class="refactorings_section gray_light_section">
+        <h2 class="title title_separator container">Mais Refatorações</h2>
+        <p class="subtitle">Essas refatorações foram feitas durante as aulas.</p>
+
+        <div class="slide-wrapper">
+            <ul class="custom-controls">
+                <li>Bef</li>
+                <li>Aft</li>
+                <li>Bef</li>
+                <li>Aft</li>
+                <li>Bef</li>
+                <li>Aft</li>
+            </ul>
+            <ul class="slide">
+                <li>
+                    <p class="slide_name">PrimeGenerator</p>
+                    <p class="slide_title">Antes</p>
+                    <div class="img">
+                        <img src="<?= $template_directory . '/assets/images/PrimeGenerator-before.jpg' ?>">
+                    </div>
+                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/antes/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
+                </li>
+                <li>
+                    <p class="slide_name">PrimeGenerator</p>
+                    <p class="slide_title">Depois</p>
+                    <div class="img">
+                        <img src="<?= $template_directory . '/assets/images/PrimeGenerator-after.jpg' ?>">
+                    </div>
+                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/depois/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
+                </li>
+                <li>
+                    <p class="slide_name">GildedRose Kata</p>
+                    <p class="slide_title">Antes</p>
+                    <div class="img">
+                        <img src="<?= $template_directory . '/assets/images/GildedRose-before.jpg' ?>">
+                    </div>
+                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0506-exercicio/antes/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
+                </li>
+                <li>
+                    <p class="slide_name">GildedRose Kata</p>
+                    <p class="slide_title">Depois</p>
+                    <div class="img">
+                        <img src="<?= $template_directory . '/assets/images/GildedRose-after.jpg' ?>">
+                    </div>
+                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0507-exercicio-continuacao/depois/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
+                </li>
+                <li>
+                    <p class="slide_name">ClientsSumamry</p>
+                    <p class="slide_title">Antes</p>
+                    <div class="img">
+                        <img src="<?= $template_directory . '/assets/images/SumarizedClients-before.jpg' ?>">
+                    </div>
+                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/antes/main.js" target="_blank">Ver no GitHub.</a>
+                </li>
+                <li>
+                    <p class="slide_name">ClientsSumamry</p>
+                    <p class="slide_title">Depois</p>
+                    <div class="img">
+                        <img src="<?= $template_directory . '/assets/images/SumarizedClients-after.jpg' ?>">
+                    </div>
+                    <a class="external_link" href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/depois/main.js" target="_blank">Ver no GitHub.</a>
+                </li>
+            </ul>
+        </div>
+
+        <p class="home_text title_separator container">
+            Não é apenas sobre ter um código esteticamente bonito, é sobre evitar horas de depuração, 
+            ser mais flexível às mudanças e talvez o mais importante, ter orgulho do seu trabalho.
+        </p>
+    </section>
+
+    <section class="pricing_wrapper gray_dark_section">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
-            <p class="subtitle">Acesso Ilimitado para sempre.</p>
+            <p class="subtitle">Achou o seu código parecido com algum dos exemplos ruins? Ninguém nasce sabendo e a solução está aqui.</p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
             <ul class="payment_methods">
                 <li>Pix</li>
