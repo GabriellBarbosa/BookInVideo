@@ -106,8 +106,7 @@ body.home .header {
         .intro_call_to_action button {
             margin: 60px auto 140px auto;
             @media screen and (max-width: 760px) {
-                margin-bottom: 120px;
-
+                margin: 40px auto 120px auto;
             }
         }
     }

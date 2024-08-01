@@ -388,7 +388,7 @@ body.home .header {
 }
 @media screen and (max-width: 760px) {
   #page-home .banner .intro_call_to_action button {
-    margin-bottom: 120px;
+    margin: 40px auto 120px auto;
   }
 }
 #page-home .course_info_wrapper {
@@ -633,8 +633,27 @@ body.home .header {
 }
 
 .slide li .slide_name {
-  text-align: center;
   color: var(--gray-5);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide li .slide_name::before, .slide li .slide_name::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: 0 12px;
+}
+
+.slide li:nth-child(odd) .slide_name::before, .slide li:nth-child(odd) .slide_name::after {
+  background-color: #bc3908;
+}
+
+.slide li:nth-child(even) .slide_name::before, .slide li:nth-child(even) .slide_name::after {
+  background-color: #9be564;
 }
 
 .slide li .slide_title {
@@ -655,6 +674,16 @@ body.home .header {
   .slide li .img {
     max-height: 300px;
   }
+}
+
+.slide .code_description {
+  font-family: "PT Serif", serif;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--gray-5);
 }
 
 .slide li .github_link {

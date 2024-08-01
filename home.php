@@ -118,6 +118,10 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/PrimeGenerator-before.jpg' ?>">
                     </div>
+                    <p class="code_description">
+                        Essa função está muito grande e possui variáveis de uma letra só, e isso é ruim porque 
+                        você tem que ficar lembrando o significado dessas variáveis sempre que vê elas mais abaixo.
+                    </p>
                     <div class="github_link">
                         <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/antes/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
                     </div>
@@ -128,6 +132,10 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/PrimeGenerator-after.jpg' ?>">
                     </div>
+                    <p class="code_description">
+                        Agora, com funções pequenas que fazem apenas uma coisa, consigo colocar um Nome Significativo em cada
+                        uma delas, deixando a classe tão expressiva quanto uma prosa bem escrita.
+                    </p>
                     <div class="github_link">
                         <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0607-comentarios/depois/PrimeGenerator.js" target="_blank">Ver no GitHub.</a>
                     </div>
@@ -138,6 +146,10 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/GildedRose-before.jpg' ?>">
                     </div>
+                    <p class="code_description">
+                        Esse código é de uma loja que atualiza o "quality" e "sellIn" dos itens no final de cada dia. 
+                        Cada item tem uma regra diferente de atualização; por isso, tem esse monte de condicionais aí.
+                    </p>
                     <div class="github_link">
                         <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0506-exercicio/antes/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
                     </div>
@@ -148,6 +160,10 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/GildedRose-after.jpg' ?>">
                     </div>
+                    <p class="code_description">
+                        Criamos uma classe para cada tipo de item e cada classe tem os métodos 
+                        "updatedQuality" e "updatedSellIn", com implementação conforme a regra do item.
+                    </p>
                     <div class="github_link">
                         <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0507-exercicio-continuacao/depois/src/gilded_rose.js" target="_blank">Ver no GitHub.</a>
                     </div>
@@ -158,6 +174,9 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/SumarizedClients-before.jpg' ?>">
                     </div>
+                    <p class="code_description">
+                        Uma função relativamente grande com um nome que não reflete no que ela realmente faz.
+                    </p>
                     <div class="github_link">
                         <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/antes/main.js" target="_blank">Ver no GitHub.</a>
                     </div>
@@ -168,23 +187,25 @@ $template_directory =  get_template_directory_uri();
                     <div class="img">
                         <img src="<?= $template_directory . '/assets/images/SumarizedClients-after.jpg' ?>">
                     </div>
+                    <p class="code_description">
+                        Fui refatorando o corpo da função até ficar tão claro o que ela faz que a escolha do nome ficou fácil. 
+                        Como Kent Beck diz: "deixe fácil a mudança, então faça a mudança fácil".
+                    </p>
                     <div class="github_link">
                         <a href="https://github.com/BookInVideo/codigo-limpo/blob/main/0201-nomes-significativos/depois/main.js" target="_blank">Ver no GitHub.</a>
                     </div>
                 </li>
             </ul>
         </div>
-
-        <p class="home_text title_separator container">
-            Não é apenas sobre ter um código esteticamente bonito, é sobre evitar horas de depuração, 
-            ser flexível às mudanças e talvez o mais importante, ter orgulho do seu trabalho.
-        </p>
     </section>
 
     <section class="pricing_wrapper gray_dark_section">
         <div class="container">
             <h2 class="title title_separator">Inscreva-se</h2>
-            <p class="subtitle">Achou o seu código parecido com algum dos exemplos ruins? Ainda bem que você descobriu que a solução está aqui.</p>
+            <p class="subtitle">
+                Não é apenas sobre ter um código esteticamente bonito, é sobre evitar horas de depuração, 
+                ser flexível às mudanças e talvez o mais importante, ter orgulho do seu trabalho.
+            </p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
             <ul class="payment_methods">
                 <li>Pix</li>
