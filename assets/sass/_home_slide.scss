@@ -6,6 +6,7 @@
   
 .slide {
     display: flex;
+    transition: transform .3s;
 }
 
 .slide li {

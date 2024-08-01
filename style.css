@@ -635,6 +635,7 @@ body.home .header {
 
 .slide {
   display: flex;
+  transition: transform 0.3s;
 }
 
 .slide li {
