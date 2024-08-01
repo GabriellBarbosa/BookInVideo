@@ -11,10 +11,10 @@ $template_directory =  get_template_directory_uri();
         <div class="intro container">
             <div>
                 <h1 class="title intro_title">Curso de Código Limpo</h1>
-                <blockquote class="intro_quote">
-                    "Um código limpo sempre parece ter sido escrito por alguém que se importava"
-                </blockquote>
-                <span class="intro_quoter">MICHAEL FEATHERS</span>
+                <p class="intro_quote">
+                    Aprenda a desenvolver códigos expressivos, que revelem propósito e 
+                    evite perder horas tentando entender um código confuso.
+                </p>
                 <div class="intro_call_to_action">
                     <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
                 </div>
@@ -80,8 +80,8 @@ $template_directory =  get_template_directory_uri();
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
             <p class="home_text title_separator">
-                Essas duas versões possuem o mesmo comportamento observável. A diferença é que uma é muito 
-                mais expressiva. Refatoramos esse código passo a passo no exercício de Nomes Significativos.
+                Essas duas versões possuem o mesmo comportamento observável, a diferença é que uma é muito 
+                mais fácil de entender. Refatoramos esse código passo a passo no exercício de Nomes Significativos.
             </p>
         </div>
     </section>
@@ -177,7 +177,7 @@ $template_directory =  get_template_directory_uri();
 
         <p class="home_text title_separator container">
             Não é apenas sobre ter um código esteticamente bonito, é sobre evitar horas de depuração, 
-            ser mais flexível às mudanças e talvez o mais importante, ter orgulho do seu trabalho.
+            ser flexível às mudanças e talvez o mais importante, ter orgulho do seu trabalho.
         </p>
     </section>
 
