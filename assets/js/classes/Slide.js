@@ -1,9 +1,9 @@
 import debounce from './debounce.js';
 
 export default class Slide {
-  constructor(slide, wrapper) {
-    this.slideElement = document.querySelector(slide);
-    this.wrapperElement = document.querySelector(wrapper);
+  constructor(slideElement, wrapperElement) {
+    this.slideElement = slideElement;
+    this.wrapperElement = wrapperElement;
 
     this.slides = [];
     this.pointerStartPosition = 0;

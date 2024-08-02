@@ -6,16 +6,6 @@ export default class SlideNav extends Slide {
     this.bindControlEvents();
   }
 
-  createControl() {
-    const control = document.createElement('ul');
-    control.dataset.control = 'slide';
-    this.slideArray.forEach((item, index) => {
-      control.innerHTML += `<li><a href="#slide${index + 1}">${index + 1}</a></li>`;
-    });
-    this.wrapperElement.appendChild(control);
-    return control;
-  }
-
   eventControl(item, index) {
     item.addEventListener('click', (event) => {
       event.preventDefault();
@@ -30,7 +20,7 @@ export default class SlideNav extends Slide {
   }
 
   addControl(customControl) {
-    this.control = document.querySelector(customControl) || this.createControl();
+    this.control = customControl;
     this.controlArray = [...this.control.children];
 
     this.activeControlItem();

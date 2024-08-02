@@ -12,7 +12,16 @@ function hamburguerMenuControl() {
 }
 
 function initHomeSlide() {
-    const slide = new SlideNav('.slide', '.slide-wrapper');
-    slide.init();
-    slide.addControl('.custom-controls');
+    const slideElement = document.querySelector('.slide');
+    const wrapperElement = document.querySelector('.slide-wrapper');
+    const customControlsElement = document.querySelector('.custom-controls');
+    if (
+        slideElement &&
+        wrapperElement &&
+        customControlsElement
+    ) {
+        const slide = new SlideNav(slideElement, wrapperElement);
+        slide.init();
+        slide.addControl(customControlsElement);
+    }
 }

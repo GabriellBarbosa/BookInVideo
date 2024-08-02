@@ -60,7 +60,7 @@ function bookinvideo_register_css() {
 add_action('wp_enqueue_scripts', 'bookinvideo_register_js');
 
 function bookinvideo_register_js() {
-    wp_enqueue_script('bookinvideo-theme-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.7');
+    wp_enqueue_script('bookinvideo-theme-js', get_template_directory_uri() . '/assets/js/index.js', [], '1.8');
 }
 
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
