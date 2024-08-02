@@ -151,7 +151,7 @@ img {
   margin-bottom: 6px;
 }
 .header .navigation #header_menu #hamburguer_menu span.line:nth-child(2) {
-  width: 16px;
+  width: 12px;
   align-self: flex-end;
 }
 .header .navigation #header_menu #hamburguer_menu span.line:nth-child(3) {

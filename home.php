@@ -12,11 +12,11 @@ $template_directory =  get_template_directory_uri();
             <div>
                 <h1 class="title intro_title">Curso de Código Limpo</h1>
                 <p class="intro_quote">
-                    Aprenda a desenvolver códigos expressivos, que revelem propósito e 
+                    Aprenda a desenvolver um código expressivo, que revele propósito e 
                     evite perder horas tentando entender um código confuso.
                 </p>
                 <div class="intro_call_to_action">
-                    <?= displaySubscribeButton('Inscreva-se', 'call_to_action'); ?>
+                    <?= displaySubscribeButton('Inscreva-se Agora', 'call_to_action'); ?>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@ $template_directory =  get_template_directory_uri();
             </div>
             <p class="home_text title_separator">
                 Essas duas versões possuem o mesmo comportamento observável, a diferença é que uma é muito 
-                mais fácil de entender. Refatoramos esse código passo a passo no exercício de Nomes Significativos.
+                mais fácil de entender.
             </p>
         </div>
     </section>
