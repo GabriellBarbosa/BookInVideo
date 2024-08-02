@@ -384,12 +384,7 @@ body.home .header {
   transform: translateX(-50%);
 }
 #page-home .banner .intro_call_to_action button {
-  margin: 60px auto 140px auto;
-}
-@media screen and (max-width: 760px) {
-  #page-home .banner .intro_call_to_action button {
-    margin: 40px auto 120px auto;
-  }
+  margin: 40px auto 140px auto;
 }
 #page-home .course_info_wrapper {
   position: relative;
