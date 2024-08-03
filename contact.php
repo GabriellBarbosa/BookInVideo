@@ -29,7 +29,7 @@ $template_directory =  get_template_directory();
             <label>Nome</label>
             <input type="text" name="username" required>
             <label>Email</label>
-            <input type="text" name="useremail" required>
+            <input type="email" name="useremail" required>
             <label>Mensagem</label>
             <textarea name="usermessage" required></textarea>
             <button type="submit">Enviar mensagem</button>
@@ -63,7 +63,7 @@ function tryToSendMail(PHPMailer $mail) {
 
     //Server settings
     $mail->isSMTP();
-    $mail->CharSet = "UTF-8";
+    $mail->CharSet    = "UTF-8";
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'gabriel@bookinvideo.com';
