@@ -27,6 +27,7 @@ $template_directory =  get_template_directory_uri();
             <ul>
                 <li>Acesso Vitalício Ilimitado</li>
                 <li>Certificado de Conclusão</li>
+                <li>Suporte do professor</li>
                 <li><?= $totalHours ?> Horas de Curso</li>
                 <li><?= $totalLessons ?> Aulas</li>
             </ul>
