@@ -74,6 +74,7 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
                         <div class="subscribe_form">
                             <?= displaySubscribeButton('Inscreva-se', 'link'); ?>
                         </div>
+                        <a href="/contato" class="link">Contato</a>
                         <a href="/conta" class="link login"><?= getMyAccountButtonText(); ?></a>
                     </div>
                 </div>

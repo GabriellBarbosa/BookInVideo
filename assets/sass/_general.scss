@@ -75,3 +75,49 @@ img {
         padding-bottom: 20px;
     }
 }
+
+#contact-page input,
+#contact-page textarea,
+.woocommerce-Input.woocommerce-Input--text.input-text,
+.woocommerce-Input.woocommerce-Input--email.input-text,
+.woocommerce-Input.woocommerce-Input--password.input-text,
+.woocommerce-input-wrapper .input-text,
+span.select2-selection {
+    display: block;
+    padding: 15px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--gray-2);
+    color: var(--gray-8);
+    box-shadow:  0 0 0 1px rgb(0, 0, 0);
+}
+
+#contact-page input:focus,
+#contact-page textarea:focus,
+.woocommerce-Input.woocommerce-Input--text.input-text:focus,
+.woocommerce-input-wrapper .input-text:focus {
+    box-shadow: 0 0 3px 1px var(--c-0-light);
+}
+
+#contact-page label,
+.woocommerce label {
+    color: var(--gray-6);
+}
+
+#contact-page button,
+.woocommerce-account .woocommerce .woocommerce-form-login__submit {
+    background-color: var(--c-0-dark);
+    color: var(--gray-8);
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    transition: .2s ease;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}

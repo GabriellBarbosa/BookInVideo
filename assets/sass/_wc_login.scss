@@ -47,20 +47,6 @@
             display: none;
         }
 
-        .woocommerce-form-login__submit {
-            background-color: var(--c-0-dark);
-            color: var(--gray-8);
-            padding: 10px 20px;
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: normal;
-            transition: .2s ease;
-    
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
-    
         .woocommerce-form-login__rememberme {
             margin-top: 20px;
             cursor: pointer;

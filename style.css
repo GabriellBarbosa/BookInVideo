@@ -14,7 +14,7 @@ a {
   color: #fff;
 }
 
-input {
+input, textarea {
   outline: none;
   border: none;
 }
@@ -100,6 +100,52 @@ img {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+#contact-page input,
+#contact-page textarea,
+.woocommerce-Input.woocommerce-Input--text.input-text,
+.woocommerce-Input.woocommerce-Input--email.input-text,
+.woocommerce-Input.woocommerce-Input--password.input-text,
+.woocommerce-input-wrapper .input-text,
+span.select2-selection {
+  display: block;
+  padding: 15px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  background-color: var(--gray-2);
+  color: var(--gray-8);
+  box-shadow: 0 0 0 1px rgb(0, 0, 0);
+}
+
+#contact-page input:focus,
+#contact-page textarea:focus,
+.woocommerce-Input.woocommerce-Input--text.input-text:focus,
+.woocommerce-input-wrapper .input-text:focus {
+  box-shadow: 0 0 3px 1px var(--c-0-light);
+}
+
+#contact-page label,
+.woocommerce label {
+  color: var(--gray-6);
+}
+
+#contact-page button,
+.woocommerce-account .woocommerce .woocommerce-form-login__submit {
+  background-color: var(--c-0-dark);
+  color: var(--gray-8);
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  transition: 0.2s ease;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#contact-page button:hover,
+.woocommerce-account .woocommerce .woocommerce-form-login__submit:hover {
+  transform: scale(1.1);
 }
 
 .header {
@@ -898,6 +944,61 @@ body.page-id-34 .content ul li {
   margin-left: 32px;
 }
 
+#contact-page {
+  background-color: var(--gray-3);
+}
+#contact-page input, #contact-page textarea {
+  width: 100%;
+}
+#contact-page textarea {
+  min-height: 240px;
+}
+#contact-page label {
+  display: block;
+  padding: 20px 0 10px 0;
+}
+#contact-page .page-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#contact-page .page-content h2 {
+  font-size: 32px;
+}
+#contact-page .page-content h2::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--gray-4);
+  margin-top: 10px;
+}
+#contact-page .contact_success,
+#contact-page .contact_fail {
+  font-size: 16px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+#contact-page .contact_success::before,
+#contact-page .contact_fail::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+#contact-page .contact_success::before {
+  background-color: #9be564;
+}
+#contact-page .contact_fail::before {
+  background-color: #bc3908;
+}
+
 body.woocommerce-page {
   background-color: var(--gray-3);
 }
@@ -954,23 +1055,6 @@ body.woocommerce-page {
   text-decoration: underline;
 }
 
-.woocommerce label {
-  color: var(--gray-6);
-}
-
-.woocommerce-Input.woocommerce-Input--text.input-text,
-.woocommerce-Input.woocommerce-Input--email.input-text,
-.woocommerce-Input.woocommerce-Input--password.input-text,
-.woocommerce-input-wrapper .input-text,
-span.select2-selection {
-  padding: 15px 10px;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: var(--gray-2);
-  color: var(--gray-8);
-  box-shadow: 0 0 0 1px rgb(0, 0, 0);
-}
-
 .woocommerce-Input.woocommerce-Input--email.input-text.disable-input,
 .woocommerce-Input.woocommerce-Input--text.input-text.disable-input {
   color: var(--gray-plus);
@@ -980,11 +1064,6 @@ span.select2-selection {
 
 .woocommerce-Input.woocommerce-Input--text.input-text.disable-input:focus {
   box-shadow: none;
-}
-
-.woocommerce-Input.woocommerce-Input--text.input-text:focus,
-.woocommerce-input-wrapper .input-text:focus {
-  box-shadow: 0 0 3px 1px var(--c-0-light);
 }
 
 .woocommerce form .form-row .required,
@@ -1125,18 +1204,6 @@ address {
 }
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-row label .required {
   display: none;
-}
-.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__submit {
-  background-color: var(--c-0-dark);
-  color: var(--gray-8);
-  padding: 10px 20px;
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: normal;
-  transition: 0.2s ease;
-}
-.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__submit:hover {
-  transform: scale(1.1);
 }
 .woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login.login .woocommerce-form-login__rememberme {
   margin-top: 20px;
