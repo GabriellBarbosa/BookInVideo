@@ -63,6 +63,7 @@ function tryToSendMail(PHPMailer $mail) {
 
     //Server settings
     $mail->isSMTP();
+    $mail->CharSet = "UTF-8";
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'gabriel@bookinvideo.com';
