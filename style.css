@@ -255,12 +255,12 @@ span.select2-selection {
     display: block;
     width: 100%;
     padding: 15px 5px;
-    border-bottom: 1px solid var(--gray-3);
+    border-top: 1px solid var(--gray-3);
   }
-  .header .navigation #header_menu .links_container a.link.link:nth-child(2), .header .navigation #header_menu .links_container a.link.login,
-  .header .navigation #header_menu .links_container button.link.link:nth-child(2),
+  .header .navigation #header_menu .links_container a.link.link:nth-child(1), .header .navigation #header_menu .links_container a.link.login,
+  .header .navigation #header_menu .links_container button.link.link:nth-child(1),
   .header .navigation #header_menu .links_container button.link.login {
-    border-bottom: none;
+    border-top: none;
   }
   .header .navigation #header_menu .links_container a.link.login,
   .header .navigation #header_menu .links_container button.link.login {
@@ -963,6 +963,11 @@ body.page-id-34 .content ul li {
   gap: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+@media screen and (max-width: 760px) {
+  #contact-page .page-content {
+    grid-template-columns: 1fr;
+  }
 }
 #contact-page .page-content h2 {
   font-size: 32px;

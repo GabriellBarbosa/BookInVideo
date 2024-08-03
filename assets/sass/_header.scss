@@ -115,10 +115,10 @@
                         display: block;
                         width: 100%;
                         padding: 15px 5px;
-                        border-bottom: 1px solid var(--gray-3);
+                        border-top: 1px solid var(--gray-3);
 
-                        &.link:nth-child(2), &.login {
-                            border-bottom: none;
+                        &.link:nth-child(1), &.login {
+                            border-top: none;
                         }
 
                         &.login {
