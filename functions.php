@@ -53,7 +53,7 @@ function bookinvideo_fix_react_routing() {
 add_action('wp_enqueue_scripts', 'bookinvideo_register_css');
 
 function bookinvideo_register_css() {
-    wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '6.5');
+    wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '6.6');
     wp_enqueue_style('bookinvideo-style');
 }
 
@@ -97,6 +97,14 @@ add_filter('query_vars', 'add_certificate_id_to_query_vars');
 function add_certificate_id_to_query_vars($query_vars) {
     $query_vars[] = 'certificate_id';
     return $query_vars;
+}
+
+function getSafePurchageText() {
+    return '
+    Por questão de segurança, utilizamos intermediadores de pagamento com Certificação 
+    PCI DSS - padrão de mercado que assegura a proteção de dados de cartões de crédito; 
+    para realizar as transações, utilizamos atualmente o PagBank. Não armazenamos nenhum 
+    dado de cartão de crédito.';
 }
 
 function displayPricingCard($displayAssignButton = true) { 

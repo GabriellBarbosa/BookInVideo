@@ -1,4 +1,13 @@
 <footer id="footer_component">
+    <?php if ($pagename == 'checkout'): ?>
+        <div class="bookinvideo_checkout_safe_purchase">
+            <div class="container">
+                <h1>A compra é segura?</h1>
+                <p><?= getSafePurchageText(); ?></p>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <div class="container">
         <div class="footer_wrapper">
             <ul>
