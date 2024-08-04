@@ -29,7 +29,6 @@ $template_directory =  get_template_directory_uri();
                 <li>Certificado de Conclusão</li>
                 <li>Suporte do professor</li>
                 <li><?= $totalHours ?> Horas de Curso</li>
-                <li><?= $totalLessons ?> Aulas</li>
             </ul>
         </div>
     </section>
