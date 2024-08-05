@@ -204,7 +204,7 @@ $template_directory =  get_template_directory_uri();
             <h2 class="title title_separator">Inscreva-se</h2>
             <p class="subtitle">
                 Não é apenas sobre ter um código esteticamente bonito, é sobre evitar horas de depuração, 
-                ser flexível às mudanças e talvez o mais importante, ter orgulho do seu trabalho.
+                ser flexível às mudanças e o mais importante, ter orgulho do seu trabalho.
             </p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
             <ul class="payment_methods">
