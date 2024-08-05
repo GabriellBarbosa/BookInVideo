@@ -3,43 +3,56 @@
 
     .footer_wrapper {
         padding: 40px 0;
+        display: flex;
+        justify-content: space-between;
 
-        ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        h3 {
+            margin-bottom: 20px;
         }
 
-        ul li {
-            margin: 0 10px;
+        ul li a, ul li p {
+            display: inline-block;
+            padding: 5px 0;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--gray-6);
+        }
 
-            a {
-                display: block;
-                font-size: 16px;
-                color: var(--gray-8);
-                padding: 10px 0;
+        @media screen and (max-width: 760px) {
+            flex-direction: column;
 
-                &:hover {
-                    color: var(--c-0-light);
-                }
+            ul h3 {
+                margin-top: 40px;
+            }
+
+            ul:first-child h3 {
+                margin-top: 0;
             }
         }
     }
 
     .copyright {
-        font-family: 'PT Serif', serif;
-        line-height: 24px;
-        text-align: center;
-        color: var(--gray-5);
-        margin-top: 16px;
-        
-        @media only screen and (max-width: 860px) {
-            text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid var(--gray-4);
+
+        p {
+            line-height: 24px;
+            color: var(--gray-6);
+        }
+
+        @media screen and (max-width: 760px) {
+            p {
+                text-align: center;
+            }
+
+            p:first-child {
+                margin-bottom: 10px;
+            }
         }
     }
 
     .bookinvideo_checkout_safe_purchase {
-        background-color: var(--gray-1);
+        background-color: var(--gray-2);
         padding: 40px 0;
 
         p {

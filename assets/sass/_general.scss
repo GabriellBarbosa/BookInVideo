@@ -121,3 +121,7 @@ span.select2-selection {
         transform: scale(1.1);
     }
 }
+
+.link_highlight:hover {
+    color: var(--c-0-light) !important;
+}

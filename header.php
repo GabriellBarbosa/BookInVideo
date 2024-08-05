@@ -70,7 +70,7 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
 
                 <div class="links_container">
                     <div class="links_wrapper">
-                        <a href="/curso/codigo-limpo/0101-configuracao" class="link">Curso</a>
+                        <a href="<?= getCourseLink() ?>" class="link">Curso</a>
                         <div class="subscribe_form">
                             <?= displaySubscribeButton('Inscreva-se', 'link'); ?>
                         </div>

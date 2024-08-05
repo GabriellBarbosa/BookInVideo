@@ -11,13 +11,37 @@
     <div class="container">
         <div class="footer_wrapper">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/conta">Minha Conta</a></li>
-                <li><a href="/termos-de-uso">Termos</a></li>
-                <li><a href="/politica-de-privacidade">Privacidade</a></li>
-                <li><a href="mailto:gabriel@bookinvideo.com">gabriel@bookinvideo.com</a></li>
+                <h3>Páginas do site</h3>
+                <li><a class="link_highlight" href="/">Home</a></li>
+                <li><a class="link_highlight" href="/contato">Contato</a></li>
+                <li><a class="link_highlight" href="/conta">Minha Conta</a></li>
+                <li><a class="link_highlight" href="<?= getCourseLink() ?>">Curso</a></li>
             </ul>
-            <p class="copyright">BookInVideo © 2024. Todos os Direitos Reservados. <br /> CNPJ: 54.914.624/0001-43</p>
+            <ul>
+                <h3>Termos e Privacidade</h3>
+                <li><a class="link_highlight" href="/termos-de-uso">Termos de uso</a></li>
+                <li><a class="link_highlight" href="/politica-de-privacidade">Política de privacidade</a></li>
+            </ul>
+            <ul>
+                <h3>Links</h3>
+                <li>
+                    <a class="link_highlight" target="_blank" href="https://www.instagram.com/bookinvideo/">Instagram</a>
+                </li>
+                <li>
+                    <a class="link_highlight" target="_blank" href="https://www.facebook.com/profile.php?id=61559032261972&locale=pt_BR">Facebook</a>
+                </li>
+                <li>
+                    <a class="link_highlight" target="_blank" href="https://www.linkedin.com/company/bookinvideo/">LinkedIn</a>
+                </li>
+            </ul>
+            <ul>
+                <h3>Contato</h3>
+                <li><p>gabriel@bookinvideo.com</p></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2024 BookInVideo - CNPJ: 54.914.624/0001-43</p>
+            <p>Avenida Paulista, 171 - 4º andar, CEP: 01311-000, Bela Vista, São Paulo, SP.</p>
         </div>
     </div>
 

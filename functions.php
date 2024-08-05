@@ -53,7 +53,7 @@ function bookinvideo_fix_react_routing() {
 add_action('wp_enqueue_scripts', 'bookinvideo_register_css');
 
 function bookinvideo_register_css() {
-    wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '6.7');
+    wp_register_style('bookinvideo-style', get_template_directory_uri() . '/style.css', [], '6.8');
     wp_enqueue_style('bookinvideo-style');
 }
 
@@ -105,6 +105,10 @@ function getSafePurchageText() {
     PCI DSS - padrão de mercado que assegura a proteção de dados de cartões de crédito; 
     para realizar as transações, utilizamos atualmente o PagBank. Não armazenamos nenhum 
     dado de cartão de crédito.';
+}
+
+function getCourseLink() {
+    return '/curso/codigo-limpo/0101-configuracao';
 }
 
 function displayPricingCard($displayAssignButton = true) { 
