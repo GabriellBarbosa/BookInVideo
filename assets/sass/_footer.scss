@@ -4,10 +4,13 @@
     .footer_wrapper {
         padding: 40px 0;
         display: flex;
-        justify-content: space-between;
 
         h3 {
             margin-bottom: 20px;
+        }
+
+        ul {
+            margin-right: 60px;
         }
 
         ul li a, ul li p {
@@ -21,6 +24,10 @@
         @media screen and (max-width: 760px) {
             flex-direction: column;
 
+            ul {
+                margin-right: 0;
+            }
+
             ul h3 {
                 margin-top: 40px;
             }
@@ -33,9 +40,10 @@
 
     .copyright {
         padding: 20px 0;
-        border-top: 1px solid var(--gray-4);
+        border-top: 2px solid var(--gray-3);
 
         p {
+            font-style: italic;
             line-height: 24px;
             color: var(--gray-6);
         }
@@ -44,7 +52,7 @@
             p {
                 text-align: center;
             }
-
+            
             p:first-child {
                 margin-bottom: 10px;
             }

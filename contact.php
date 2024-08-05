@@ -34,6 +34,20 @@ $template_directory =  get_template_directory();
             <textarea name="usermessage" required></textarea>
             <button type="submit">Enviar mensagem</button>
         </form>
+        <ul class="faq">
+            <li>
+                <h2>A compra é segura?</h2>
+                <p><?= getSafePurchageText(); ?></p>
+            </li>
+            <li>
+                <h2>Certificado</h2>
+                <p>
+                    O certificado é liberado assim que você completar 100% das aulas. Ele estará 
+                    disponível na página "Minha Conta". O certificado é válido em todo território 
+                    nacional brasileiro, conforme a lei do Curso livre.
+                </p>
+            </li>
+        </ul>
     </div>
 </div>
 

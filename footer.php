@@ -23,7 +23,7 @@
                 <li><a class="link_highlight" href="/politica-de-privacidade">Política de privacidade</a></li>
             </ul>
             <ul>
-                <h3>Links</h3>
+                <h3>Páginas oficiais</h3>
                 <li>
                     <a class="link_highlight" target="_blank" href="https://www.instagram.com/bookinvideo/">Instagram</a>
                 </li>
@@ -40,7 +40,7 @@
             </ul>
         </div>
         <div class="copyright">
-            <p>© 2024 BookInVideo - CNPJ: 54.914.624/0001-43</p>
+            <p>BookInVideo © 2024 - CNPJ: 54.914.624/0001-43.</p>
             <p>Avenida Paulista, 171 - 4º andar, CEP: 01311-000, Bela Vista, São Paulo, SP.</p>
         </div>
     </div>
