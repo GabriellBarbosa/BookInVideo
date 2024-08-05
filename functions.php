@@ -66,7 +66,7 @@ function bookinvideo_register_js() {
 add_action('wp_enqueue_scripts', 'bookinvideo_enqueue_react_js');
 
 function bookinvideo_enqueue_react_js() {
-    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '3.9');
+    wp_enqueue_script('course-js', get_template_directory_uri() . '/react-app/index.js', [], '4.0');
     $wcProduct = new WC_Product(getCourseProductPostID());
     wp_localize_script('course-js', 'wp_data',  array(
         'product' => get_permalink(getCourseProductPostID()),
