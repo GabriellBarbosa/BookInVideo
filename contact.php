@@ -47,6 +47,10 @@ $template_directory =  get_template_directory();
                     nacional brasileiro, conforme a lei do Curso livre.
                 </p>
             </li>
+            <li>
+                <h2>O livro vem junto?</h2>
+                <p>Não.</p>
+            </li>
         </ul>
     </div>
 </div>
