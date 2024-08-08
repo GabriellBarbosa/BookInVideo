@@ -31,7 +31,16 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
     <link rel="manifest" href="<?= $stylesheetDirectoryUri; ?>/site.webmanifest">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#222222">
+
     <meta property="og:image" content="https://bookinvideo.com/wp-content/themes/theme/assets/images/favicon/link-share.png">
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Book and Play icons" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bookinvideo.com/"/>
+    <meta property="og:title" content="Curso de Código Limpo" />
+    <meta property="og:description" content="Aprenda a desenvolver um código expressivo, que revele propósito e evite perder horas tentando entender um código confuso." />
     <?php wp_head(); ?>
 
     <!-- Facebook Pixel Code -->
