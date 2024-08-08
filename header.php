@@ -27,7 +27,7 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
     <link rel="icon" type="image/png" sizes="48x48" href="<?= $stylesheetDirectoryUri; ?>/assets/images/favicon/favicon-search-engine.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $stylesheetDirectoryUri; ?>/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $stylesheetDirectoryUri; ?>/assets/images/favicon/favicon-16x16.png">
-    <link rel="mask-icon" href="<?= $stylesheetDirectoryUri; ?>/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="<?= $stylesheetDirectoryUri; ?>/assets/images/favicon/safari-pinned-tab.svg" color="#000000">
     <link rel="manifest" href="<?= $stylesheetDirectoryUri; ?>/site.webmanifest">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#222222">
