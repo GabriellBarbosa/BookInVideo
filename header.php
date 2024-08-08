@@ -36,7 +36,7 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
     <meta property="og:description" content="Aprenda a desenvolver um código expressivo, que revele propósito e evite perder horas tentando entender um código confuso." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bookinvideo.com/"/>
-    <meta property="og:image" content="https://bookinvideo.com/wp-content/themes/theme/assets/images/favicon/link-share.png?q=v1">
+    <meta property="og:image" content="https://bookinvideo.com/wp-content/themes/theme/assets/images/favicon/link-share.png?reset=1">
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
