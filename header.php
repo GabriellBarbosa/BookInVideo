@@ -31,6 +31,7 @@ $stylesheetDirectoryUri = get_stylesheet_directory_uri();
     <link rel="manifest" href="<?= $stylesheetDirectoryUri; ?>/site.webmanifest">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#222222">
+    <meta property="og:image" content="<?= $stylesheetDirectoryUri ?>/assets/images/favicon/link-share.png">
     <?php wp_head(); ?>
 
     <!-- Facebook Pixel Code -->
