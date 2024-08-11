@@ -71,11 +71,11 @@ $template_directory =  get_template_directory_uri();
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-before.jpg' ?>" alt="Função grande com muita informação"></div>
                 <div class="code_description before">
                     <h3>Antes</h3>
-                    <p class="text">Muita informação para entender de primeira. Isso gera uma sobrecarga mental.</p>
+                    <p class="text">A função estava lidando com várias informações no mesmo nível de abstração.</p>
                 </div>
                 <div class="code_description after">
                     <h3>Depois</h3>
-                    <p class="text">Cada responsabilidade separada na sua devida função. Agora dá para entender tudo.</p>
+                    <p class="text">Cada responsabilidade foi colocada na sua devida função. Assim fica bem melhor de entender.</p>
                 </div>
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
