@@ -350,6 +350,12 @@ body.home .header {
 
     }
 
+    .message_btn_wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
     .home_text {
         font-family: 'PT Serif', sans-serif;
         line-height: 24px;

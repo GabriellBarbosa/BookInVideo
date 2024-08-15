@@ -214,6 +214,16 @@ $template_directory =  get_template_directory_uri();
             </ul>
         </div>
     </section>
+
+    <section class="home_contact gray_light_section">
+        <div class="container">
+            <h2 class="title title_separator">Alguma dúvida?</h2>
+            <p class="subtitle">Me envie uma mensagem</p>
+            <div class="message_btn_wrapper">
+                <a class="call_to_action" href="/contato">Enviar mensagem</a>
+            </div>
+        </div>
+    </section>
 </div>
 
 <?php get_footer() ?>

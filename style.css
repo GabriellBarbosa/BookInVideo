@@ -673,6 +673,11 @@ body.home .header {
     font-size: 32px;
   }
 }
+#page-home .message_btn_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 #page-home .home_text {
   font-family: "PT Serif", sans-serif;
   line-height: 24px;
