@@ -14,7 +14,7 @@
 }
 
 .pricing_card .price {
-    padding-right: 36px;
+    padding-right: 24px;
     
     @media screen and (max-width: 760px) {
         text-align: center;
@@ -23,15 +23,17 @@
 
 .pricing_card .price p {
     font-family: 'PT Serif', serif;
-    font-size: 36px;
-    font-style: italic;
+    font-size: 24px;
     font-weight: bold;
+    font-style: italic;
 }
 
 .pricing_card .price span {
+    font-family: 'PT Serif', serif;
     display: block;
-    font-size: 28px;
+    font-size: 16px;
     font-style: italic;
+    color: #9be564;
 }
 
 .pricing_card .pricing_card_info {

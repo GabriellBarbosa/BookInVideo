@@ -25,9 +25,9 @@ $template_directory =  get_template_directory_uri();
     <section class="container">
         <div class="course_info_wrapper">
             <ul>
-                <li>Acesso Vitalício Ilimitado</li>
-                <li>Certificado de Conclusão</li>
-                <li>Suporte do professor</li>
+                <li>Acesso Ilimitado</li>
+                <li>Certificado (Para quem se inscrever)</li>
+                <li>Suporte às dúvidas</li>
                 <li><?= $totalHours ?> Horas de Curso</li>
             </ul>
         </div>
@@ -207,11 +207,6 @@ $template_directory =  get_template_directory_uri();
                 ser flexível às mudanças e o mais importante, ter orgulho do seu trabalho.
             </p>
             <div class="pricing_card_wrapper"><?php displayPricingCard(); ?></div>
-            <ul class="payment_methods">
-                <li>Pix</li>
-                <li>Cartão de crédito</li>
-                <li>Boleto</li>
-            </ul>
         </div>
     </section>
 

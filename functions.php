@@ -116,8 +116,8 @@ function displayPricingCard($displayAssignButton = true) {
     <div class="pricing_card"> 
         <div class="price_info_wrapper">
             <div class="price">
+                <span>It's free</span>
                 <p><?= $product['name']; ?></p>
-                <span>R$ <?= $product['price']; ?></span>
             </div>
             <div class="pricing_card_info"><?= $product['description']; ?></div>
         </div>
@@ -151,7 +151,7 @@ function getCourseProductData() {
 }
 
 function getCourseProductPostID() {
-    $course = get_page_by_path('vitalicio', OBJECT, 'product');
+    $course = get_page_by_path('codigo-limpo', OBJECT, 'product');
     return $course->ID;
 }
 ?>

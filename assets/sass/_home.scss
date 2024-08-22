@@ -137,28 +137,13 @@ body.home .header {
         }
     }
 
-    .payment_methods,
-    .payment_methods li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'PT Serif', serif;
-    }
-
-    .course_info_wrapper ul li:before,
-    .payment_methods li:nth-child(2)::before,
-    .payment_methods li:nth-child(2)::after {
+    .course_info_wrapper ul li:before {
         content: "";
         display: block;
         width: 6px;
         height: 6px;
         border-radius: 50%;
         background-color: #9be564;
-    }
-
-    .payment_methods li:nth-child(2)::before,
-    .payment_methods li:nth-child(2)::after {
-        margin: 0 16px;
     }
 
     .course_info_wrapper ul li:before {
@@ -291,10 +276,6 @@ body.home .header {
             max-width: 400px;
             width: 100%;
         }
-    }
-
-    .payment_methods {
-        margin: 0 auto;
     }
 
     .clean_code_example_section {

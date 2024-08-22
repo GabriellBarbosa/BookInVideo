@@ -36,7 +36,7 @@ class UserImpl implements User {
     }
 
     private function boughtCourse() {
-        $productPost = get_page_by_path('vitalicio', OBJECT, 'product');
+        $productPost = get_page_by_path('codigo-limpo', OBJECT, 'product');
         $wcProduct = new WC_Product($productPost);
         return wc_customer_bought_product(
             '', $this->user->ID, $wcProduct->get_id());
