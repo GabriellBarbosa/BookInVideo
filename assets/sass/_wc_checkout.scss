@@ -18,50 +18,20 @@ body.woocommerce-checkout {
         margin-top: 40px;
     }
 
-    form.checkout h3:nth-child(1),
-    form.checkout h3.form-row,
-    form.checkout h3:nth-child(2) {
-        display: flex;
-        align-items: center;
-    }
-
-    form.checkout h3:nth-child(1)::before,
-    form.checkout h3.form-row::before,
-    form.checkout h3:nth-child(2)::before {
-        content: "";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        color: var(--gray-4);
-        width: 24px;
-        height: 24px;
-        margin: 0 12px 0 0;
-        background: transparent;
-        border: 2px solid var(--gray-plus);
-        border-radius: 50%;
-    }
-
-    form.checkout h3:nth-child(1)::before {
-        content: "1";
-    }
-
-    form.checkout h3.form-row::before {
-        content: "2";
-    }
-
-    form.checkout h3:nth-child(2)::before {
-        content: "3";
-    }
-
-    h3#order_review_heading::before {
-        display: none;
+    form.checkout h3::before {
+        background-color: var(--gray-5);
     }
 
     form.checkout h3#order_review_heading {
         margin-top: 0;
         @media screen and (max-width: 760px) {
             margin-top: 40px;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        #order_review_heading::before {
+            margin-top: 20px;
         }
     }
 
@@ -99,15 +69,18 @@ body.woocommerce-checkout {
         width: 100%;
     }
 
-    .woocommerce form .show-password-input::after, .woocommerce-page form .show-password-input::after {
+    .woocommerce form .show-password-input::after, 
+    .woocommerce-page form .show-password-input::after {
         color: var(--gray-3);
     }
 
-    .woocommerce form .show-password-input.display-password::after, .woocommerce-page form .show-password-input.display-password::after {
+    .woocommerce form .show-password-input.display-password::after, 
+    .woocommerce-page form .show-password-input.display-password::after {
         color: var(--c-0-dark);
     }
 
-    .woocommerce form .show-password-input, .woocommerce-page form .show-password-input {
+    .woocommerce form .show-password-input, 
+    .woocommerce-page form .show-password-input {
         top: 14px;
         padding: 4px;
     }
@@ -159,13 +132,6 @@ body.woocommerce-checkout {
         content: "";
         clear: both;
         display: table;
-    }
-
-    #order_review_heading::before {
-        background-color: var(--gray-5);
-        @media screen and (max-width: 1100px) {
-            margin-top: 20px;
-        }
     }
 
     .shop_table.woocommerce-checkout-review-order-table {
