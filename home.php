@@ -26,7 +26,7 @@ $template_directory =  get_template_directory_uri();
         <div class="course_info_wrapper">
             <ul>
                 <li>Acesso Ilimitado</li>
-                <li>Certificado (Para quem se inscrever)</li>
+                <li>Certificado (Para inscritos)</li>
                 <li>Suporte às dúvidas</li>
                 <li><?= $totalHours ?> Horas de Curso</li>
             </ul>
