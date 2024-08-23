@@ -13,8 +13,8 @@ $total_users = get_user_count();
             <div>
                 <h1 class="title intro_title">Curso de Código Limpo</h1>
                 <p class="intro_quote">
-                    Descubra as técnicas por trás de um código expressivo, que revele propósito e nunca 
-                    mais passe horas perdido num código confuso.
+                    Descubra as técnicas por trás de um código expressivo que revele seu propósito 
+                    e nunca mais passe horas perdido num código confuso.
                 </p>
                 <div class="intro_call_to_action">
                     <?= displaySubscribeButton('Inscreva-se Agora', 'call_to_action'); ?>
