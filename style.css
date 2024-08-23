@@ -448,6 +448,11 @@ body.home .header {
   font-style: italic;
   text-align: center;
 }
+@media screen and (max-width: 760px) {
+  #page-home .banner .intro_quote {
+    max-width: 360px;
+  }
+}
 #page-home .banner .intro_quote::before {
   content: "";
   display: block;

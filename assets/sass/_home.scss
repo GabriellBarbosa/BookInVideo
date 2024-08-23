@@ -89,6 +89,10 @@ body.home .header {
             font-style: italic;
             text-align: center;
 
+            @media screen and (max-width: 760px) {
+                max-width: 360px;
+            }
+
             &::before  {
                 content: "";
                 display: block;
