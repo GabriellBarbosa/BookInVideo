@@ -12,8 +12,8 @@ $template_directory =  get_template_directory_uri();
             <div>
                 <h1 class="title intro_title">Curso de Código Limpo</h1>
                 <p class="intro_quote">
-                    Aprenda a desenvolver um código expressivo, que revele propósito e 
-                    evite perder horas tentando entender um código confuso.
+                    Descubra as técnicas por trás de um código expressivo, que revele propósito e nunca 
+                    mais passe horas perdido num código confuso.
                 </p>
                 <div class="intro_call_to_action">
                     <?= displaySubscribeButton('Inscreva-se Agora', 'call_to_action'); ?>
@@ -35,7 +35,7 @@ $template_directory =  get_template_directory_uri();
 
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
-        <p class="subtitle">Escreva um código que você olhe com orgulho e diga: Caraca, esse fui eu que fiz.</p>
+        <p class="subtitle">Agora você vai olhar para seu código e falar com orgulho: Caraca, esse fui eu que fiz!</p>
         <div class="course_wrapper">
             <a class="course_card" href="<?= getCourseLink(); ?>">
                 <p>Robert C. Martin</p>
