@@ -1403,76 +1403,76 @@ address {
   padding: 0 4px;
 }
 
-.woocommerce-edit-address.logged-in .woocommerce-MyAccount-content > p {
+.woocommerce-edit-address.logged-in .woocommerce .woocommerce-MyAccount-content > p {
   display: none;
 }
-.woocommerce-edit-address.logged-in h3 {
+.woocommerce-edit-address.logged-in .woocommerce h3 {
   display: inline-block;
   font-size: 32px;
   line-height: 38.4px;
 }
-.woocommerce-edit-address.logged-in a.edit {
+.woocommerce-edit-address.logged-in .woocommerce a.edit {
   display: inline-block;
   margin-left: 16px;
   font-size: 16px;
   padding: 5px 0;
   text-decoration: underline;
 }
-.woocommerce-edit-address.logged-in a.edit:hover {
+.woocommerce-edit-address.logged-in .woocommerce a.edit:hover {
   color: var(--c-0-light);
 }
 @media screen and (max-width: 760px) {
-  .woocommerce-edit-address.logged-in a.edit {
+  .woocommerce-edit-address.logged-in .woocommerce a.edit {
     display: block;
     margin-left: 0;
     margin-top: 8px;
   }
 }
-.woocommerce-edit-address.logged-in address {
+.woocommerce-edit-address.logged-in .woocommerce address {
   margin-top: 16px;
   color: var(--gray-6);
 }
-.woocommerce-edit-address.logged-in .woocommerce-address-fields {
+.woocommerce-edit-address.logged-in .woocommerce .woocommerce-address-fields {
   margin-top: 10px;
 }
-.woocommerce-edit-address.logged-in .form-row {
+.woocommerce-edit-address.logged-in .woocommerce .form-row {
   padding-top: 10px;
 }
-.woocommerce-edit-address.logged-in .button {
+.woocommerce-edit-address.logged-in .woocommerce .button {
   margin-top: 20px;
   color: var(--gray-1);
 }
-.woocommerce-edit-address.logged-in #billing_neighborhood_field {
+.woocommerce-edit-address.logged-in .woocommerce #billing_neighborhood_field {
   float: right;
 }
-.woocommerce-edit-address.logged-in #billing_city_field {
+.woocommerce-edit-address.logged-in .woocommerce #billing_city_field {
   float: none;
   width: 100%;
 }
 @media screen and (max-width: 760px) {
-  .woocommerce-edit-address.logged-in .form-row-first,
-  .woocommerce-edit-address.logged-in .form-row-last {
+  .woocommerce-edit-address.logged-in .woocommerce .form-row-first,
+  .woocommerce-edit-address.logged-in .woocommerce .form-row-last {
     float: none;
     width: 100%;
   }
 }
-.woocommerce-edit-address.logged-in .woocommerce form .form-row.woocommerce-validated input.input-text {
+.woocommerce-edit-address.logged-in .woocommerce .woocommerce form .form-row.woocommerce-validated input.input-text {
   border: none;
 }
-.woocommerce-edit-address.logged-in .select2-dropdown.select2-dropdown--below {
+.woocommerce-edit-address.logged-in .woocommerce .select2-dropdown.select2-dropdown--below {
   border: none;
 }
-.woocommerce-edit-address.logged-in .select2-container--default .select2-selection--single,
-.woocommerce-edit-address.logged-in .select2-results__options {
+.woocommerce-edit-address.logged-in .woocommerce .select2-container--default .select2-selection--single,
+.woocommerce-edit-address.logged-in .woocommerce .select2-results__options {
   background-color: var(--gray-2);
   color: var(--gray-6);
   border: none;
 }
-.woocommerce-edit-address.logged-in .select2-container--default .select2-results__option[data-selected=true],
-.woocommerce-edit-address.logged-in .select2-results__option--highlighted[data-selected] {
+.woocommerce-edit-address.logged-in .woocommerce .select2-container--default .select2-results__option[data-selected=true],
+.woocommerce-edit-address.logged-in .woocommerce .select2-results__option--highlighted[data-selected] {
   background-color: var(--gray-3);
 }
-.woocommerce-edit-address.logged-in .select2-selection__rendered {
+.woocommerce-edit-address.logged-in .woocommerce .select2-selection__rendered {
   color: var(--gray-8);
 }
 
