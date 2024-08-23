@@ -4,6 +4,7 @@ $course = new \AppCourse\Course('codigo-limpo');
 $totalLessons =$course->totalLessons();
 $totalHours =$course->totalHours();
 $template_directory =  get_template_directory_uri();
+$total_users = get_user_count();
 ?>
 
 <div id="page-home">
@@ -28,7 +29,7 @@ $template_directory =  get_template_directory_uri();
                 <li>Acesso Ilimitado</li>
                 <li>Certificado (Para inscritos)</li>
                 <li>Suporte às dúvidas</li>
-                <li><?= $totalHours ?> Horas de Curso</li>
+                <li>Total de Alunos/Alunas: <?= $total_users ?></li>
             </ul>
         </div>
     </section>
