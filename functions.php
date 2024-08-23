@@ -99,14 +99,6 @@ function add_certificate_id_to_query_vars($query_vars) {
     return $query_vars;
 }
 
-function getSafePurchageText() {
-    return '
-    Por questão de segurança, utilizamos intermediadores de pagamento com Certificação 
-    PCI DSS - padrão de mercado que assegura a proteção de dados de cartões de crédito; 
-    para realizar as transações, utilizamos atualmente o PagBank. Não armazenamos nenhum 
-    dado de cartão de crédito.';
-}
-
 function getCourseLink() {
     return '/curso/codigo-limpo/0101-configuracao';
 }
@@ -123,7 +115,7 @@ function displayPricingCard($displayAssignButton = true) {
         </div>
         <?php if ($displayAssignButton) { ?>
         <div class="redirect">
-            <?= displaySubscribeButton('Assinar', 'subscribe_btn'); ?>
+            <?= displaySubscribeButton('Bora!', 'subscribe_btn'); ?>
         </div>
         <?php } ?>
     </div>

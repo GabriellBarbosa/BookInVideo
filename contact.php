@@ -36,10 +36,6 @@ $template_directory =  get_template_directory();
         </form>
         <ul class="faq">
             <li>
-                <h2>A compra é segura?</h2>
-                <p><?= getSafePurchageText(); ?></p>
-            </li>
-            <li>
                 <h2>Certificado</h2>
                 <p>
                     O certificado é liberado assim que você completar 100% das aulas. Ele estará 
