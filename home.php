@@ -35,7 +35,7 @@ $template_directory =  get_template_directory_uri();
 
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
-        <p class="subtitle">Agora você vai olhar para seu código e falar com orgulho: Caraca, esse fui eu que fiz!</p>
+        <p class="subtitle">Agora você vai poder olhar para o seu código e falar com orgulho: Caraca, esse fui eu que fiz!</p>
         <div class="course_wrapper">
             <a class="course_card" href="<?= getCourseLink(); ?>">
                 <p>Robert C. Martin</p>
