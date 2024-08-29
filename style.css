@@ -645,6 +645,9 @@ body.home .header {
   font-style: italic;
 }
 @media screen and (max-width: 760px) {
+  #page-home .clean_code_example_section .code_description h3 {
+    text-align: center;
+  }
   #page-home .clean_code_example_section .code_description.after h3 {
     margin-top: 20px;
   }
@@ -659,15 +662,6 @@ body.home .header {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-#page-home .home_text {
-  font-family: "PT Serif", sans-serif;
-  line-height: 24px;
-  text-align: center;
-  margin: 40px auto 0 auto;
-  color: var(--gray-6);
-  line-height: 24px;
-  max-width: 500px;
 }
 
 .slide-wrapper {
@@ -856,18 +850,19 @@ body.home .header {
 }
 
 .pricing_card .price p {
-  font-family: "PT Serif", serif;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
   font-style: italic;
 }
 
 .pricing_card .price span {
-  font-family: "PT Serif", serif;
+  font-family: "Inter", sans-serif;
   display: block;
   font-size: 16px;
   font-style: italic;
-  color: #9be564;
+  color: var(--gray-6);
 }
 
 .pricing_card .pricing_card_info {

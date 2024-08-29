@@ -22,18 +22,19 @@
 }
 
 .pricing_card .price p {
-    font-family: 'PT Serif', serif;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
     font-style: italic;
 }
 
 .pricing_card .price span {
-    font-family: 'PT Serif', serif;
+    font-family: 'Inter', sans-serif;
     display: block;
     font-size: 16px;
     font-style: italic;
-    color: #9be564;
+    color: var(--gray-6);
 }
 
 .pricing_card .pricing_card_info {

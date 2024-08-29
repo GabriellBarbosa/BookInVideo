@@ -10,7 +10,7 @@ $template_directory =  get_template_directory_uri();
     <section class="banner">
         <div class="intro container">
             <div>
-                <h1 class="title intro_title">Curso de Código Limpo</h1>
+                <h1 class="title intro_title">Comece a codar limpo</h1>
                 <p class="intro_quote">
                     Descubra as técnicas por trás de um código expressivo, que revela propósito 
                     e nunca mais passe horas perdido em um código confuso.
@@ -36,7 +36,7 @@ $template_directory =  get_template_directory_uri();
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
         <p class="subtitle">
-            Aqui você vai ver como diferenciar um código sujo de um código limpo e, claro, vou te entregar as técnicas 
+            Aqui você vai aprender a diferenciar um código sujo de um código limpo e, claro, vou te passar as técnicas 
             para você conseguir limpar o código passo a passo sem alterar o comportamento observável dele.
         </p>
         <div class="course_wrapper">
@@ -92,9 +92,6 @@ $template_directory =  get_template_directory_uri();
                 </div>
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
-            <p class="home_text title_separator">
-                Essa refatoração foi feita passa a passo no exercício de Nomes Significativos.
-            </p>
         </div>
     </section>
 
