@@ -12,8 +12,8 @@ $template_directory =  get_template_directory_uri();
             <div>
                 <h1 class="title intro_title">Curso de Código Limpo</h1>
                 <p class="intro_quote">
-                    Descubra as técnicas por trás de um código expressivo que revele seu propósito 
-                    e nunca mais passe horas perdido num código confuso.
+                    Descubra as técnicas por trás de um código expressivo, que revela propósito 
+                    e nunca mais passe horas perdido em um código confuso.
                 </p>
                 <div class="intro_call_to_action">
                     <?= displaySubscribeButton('Inscreva-se Agora', 'call_to_action'); ?>
@@ -35,7 +35,10 @@ $template_directory =  get_template_directory_uri();
 
     <main class="course_section container">
         <h2 class="title title_separator">Curso</h2>
-        <p class="subtitle">Agora você vai poder olhar para o seu código e falar com orgulho: Caraca, esse fui eu que fiz!</p>
+        <p class="subtitle">
+            Aqui você vai ver como diferenciar um código sujo de um código limpo e, claro, vou te entregar as técnicas 
+            para você conseguir limpar o código passo a passo sem alterar o comportamento observável dele.
+        </p>
         <div class="course_wrapper">
             <a class="course_card" href="<?= getCourseLink(); ?>">
                 <p>Robert C. Martin</p>
@@ -71,17 +74,26 @@ $template_directory =  get_template_directory_uri();
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-before.jpg' ?>" alt="Função grande com muita informação"></div>
                 <div class="code_description before">
                     <h3>Antes</h3>
-                    <p class="text">A função estava lidando com várias informações no mesmo nível de abstração.</p>
+                    <p class="text">
+                        Esse código até que não está difícil de entender, pois é só uma função, mas agora 
+                        imagina um sistema grande com várias funções como essa, que não faz uso apropriado de 
+                        abstrações. Caso você tenha que adicionar ou alterar alguma funcionalidade, você vai 
+                        ter que ficar procurando onde você deve mexer no meio de vários detalhes.
+                    </p>
                 </div>
                 <div class="code_description after">
                     <h3>Depois</h3>
-                    <p class="text">Cada responsabilidade foi colocada na sua devida função. Assim fica bem melhor de entender.</p>
+                    <p class="text">
+                        Agora cada responsabilidade foi separada na sua devida função. Então, por exemplo, se você 
+                        tem que alterar as mensagens da rodada, você só mexe na função que exibe as mensagens, se 
+                        você tem que incrementar os pontos em 2 em vez de 1, você só mexe na função que incrementa 
+                        os pontos. Assim diminui o risco de outra funcionalidade quebrar quando você fizer alguma alteração.
+                    </p>
                 </div>
                 <div class="code-img"><img src="<?= $template_directory . '/assets/images/home-code-after.jpg' ?>" alt="Função refatorada em mais funções com cada informação extraída para sua respectiva função"></div>
             </div>
             <p class="home_text title_separator">
-                Essas duas versões possuem o mesmo comportamento observável, a diferença é que uma é muito 
-                mais fácil de entender.
+                Essa refatoração foi feita passa a passo no exercício de Nomes Significativos.
             </p>
         </div>
     </section>
@@ -100,7 +112,7 @@ $template_directory =  get_template_directory_uri();
 
     <section class="refactorings_section gray_light_section">
         <h2 class="title title_separator container">Mais Refatorações</h2>
-        <p class="subtitle">Essas refatorações foram feitas durante as aulas.</p>
+        <p class="subtitle">Todas refatorações foram feitas durante as aulas.</p>
 
         <div class="slide-wrapper">
             <ul class="custom-controls">
