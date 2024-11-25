@@ -76,14 +76,14 @@ function tryToSendMail(PHPMailer $mail) {
     $mail->CharSet    = "UTF-8";
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'gabriel@bookinvideo.com';
-    $mail->Password   = 'PodeentrarRhcp#900';
+    $mail->Username   = 'email@sample.com';
+    $mail->Password   = 'password';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
     //Recipients
-    $mail->setFrom('gabriel@bookinvideo.com', "{$userName} - {$isLogged}");
-    $mail->addAddress('gabriel@bookinvideo.com', 'bookinvideo');
+    $mail->setFrom('email@sample.com', "{$userName} - {$isLogged}");
+    $mail->addAddress('email@sample.com', 'bookinvideo');
 
     //Content
     $mail->isHTML(true);
